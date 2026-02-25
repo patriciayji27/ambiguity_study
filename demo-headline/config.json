@@ -241,16 +241,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -289,16 +279,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -338,16 +318,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -392,16 +362,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -441,16 +401,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -490,16 +440,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -539,16 +479,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -588,16 +518,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -637,16 +557,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -686,16 +596,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -735,16 +635,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -784,16 +674,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -833,16 +713,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -882,16 +752,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -931,16 +791,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -980,16 +830,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1029,16 +869,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1078,16 +908,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1127,16 +947,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1176,16 +986,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1225,16 +1025,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1274,16 +1064,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1323,16 +1103,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1372,16 +1142,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1421,16 +1181,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1470,16 +1220,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1519,16 +1259,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1568,16 +1298,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1617,16 +1337,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1666,16 +1376,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1715,16 +1415,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1764,16 +1454,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1813,16 +1493,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1862,16 +1532,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1911,16 +1571,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -1960,16 +1610,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2009,16 +1649,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2058,16 +1688,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2107,16 +1727,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2156,16 +1766,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2205,16 +1805,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2254,16 +1844,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2303,16 +1883,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2352,16 +1922,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2401,16 +1961,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2450,16 +2000,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2499,16 +2039,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2548,16 +2078,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2597,16 +2117,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2646,16 +2156,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2695,16 +2195,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2744,16 +2234,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2793,16 +2273,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2842,16 +2312,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2891,16 +2351,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2940,16 +2390,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -2989,16 +2429,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3038,16 +2468,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3087,16 +2507,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3136,16 +2546,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3185,16 +2585,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3234,16 +2624,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3283,16 +2663,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3332,16 +2702,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3381,16 +2741,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3430,16 +2780,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3479,16 +2819,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3528,16 +2858,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3577,16 +2897,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3626,16 +2936,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3675,16 +2975,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3724,16 +3014,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3773,16 +3053,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3822,16 +3092,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3871,16 +3131,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3920,16 +3170,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -3969,16 +3209,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4018,16 +3248,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4067,16 +3287,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4116,16 +3326,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4165,16 +3365,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4214,16 +3404,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4263,16 +3443,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4312,16 +3482,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4361,16 +3521,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4410,16 +3560,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4459,16 +3599,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4508,16 +3638,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4557,16 +3677,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4606,16 +3716,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4655,16 +3755,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4704,16 +3794,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4753,16 +3833,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4802,16 +3872,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4851,16 +3911,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4900,16 +3950,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4949,16 +3989,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -4998,16 +4028,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
@@ -5038,16 +4058,6 @@
               "value": "optionB"
             }
           ]
-        },
-        {
-          "id": "confidence",
-          "prompt": "How confident are you in this choice?",
-          "required": true,
-          "location": "belowStimulus",
-          "type": "likert",
-          "numItems": 5,
-          "leftLabel": "Not at all confident",
-          "rightLabel": "Very confident"
         }
       ]
     },
