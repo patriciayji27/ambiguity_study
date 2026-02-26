@@ -1,0 +1,16 @@
+/* Box the question + radio options for visual cue */
+#investment-choice {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px 28px 16px;
+  margin-top: 16px;
+}
+
+/* Center the radio group while keeping options left-aligned with each other */
+#investment-choice .mantine-Stack-root {
+  width: fit-content;
+}
+
+#investment-choice .mantine-Group-root {
+  width: fit-content;
+}
