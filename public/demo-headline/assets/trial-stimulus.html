@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: start; padding: 12px 4px; }
+  .headline-col { padding-top: 8px; }
+  .headline-title { font-size: 19px; font-weight: 500; line-height: 1.35; color: #1a1a1a; margin-bottom: 10px; }
+  .headline-lede { font-size: 14px; font-weight: 400; line-height: 1.55; color: #5f6368; }
+  .chart-col img { width: 100%; height: auto; display: block; }
+  .chart-only { display: flex; justify-content: center; padding: 12px 4px; }
+  .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="../../revisit-communicate.js"></script>
+<script>
+  Revisit.onDataReceive(function(data) {
+    var root = document.getElementById('root');
+    var p = data.parameters || data;
+    var chartSrc = p.chartPath || '';
+
+    if (p.hasHeadline && p.headline) {
+      root.innerHTML =
+        '<div class="two-col">' +
+          '<div class="headline-col">' +
+            '<div class="headline-title">' + p.headline + '</div>' +
+            '<div class="headline-lede">' + p.lede + '</div>' +
+          '</div>' +
+          '<div class="chart-col">' +
+            '<img src="' + chartSrc + '" alt="Asset performance chart" />' +
+          '</div>' +
+        '</div>';
+    } else {
+      root.innerHTML =
+        '<div class="chart-only">' +
+          '<img src="' + chartSrc + '" alt="Asset performance chart" />' +
+        '</div>';
+    }
+  });
+</script>
+</body>
+</html>
