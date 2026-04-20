@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
   "studyMetadata": {
     "title": "Investment Decision-Making Under Uncertainty: Headline Study",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "authors": [
       "DCL Research Team"
     ],
@@ -207,8 +207,8 @@
       ]
     },
     "practice-trial-1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/practice-trial-1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Practice Trial 1 of 2\n\nImagine you have $1,000 to invest. You will receive feedback after answering.",
       "nextButtonLocation": "belowStimulus",
@@ -257,15 +257,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "practice-trial-2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/practice-trial-2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Practice Trial 2 of 2\n\nImagine you have $1,000 to invest. You will receive feedback after answering.",
       "nextButtonLocation": "belowStimulus",
@@ -314,15 +314,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -373,15 +373,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -432,15 +432,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -491,15 +491,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -550,15 +550,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -609,15 +609,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -668,15 +668,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -727,15 +727,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -786,15 +786,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -845,15 +845,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D4-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -904,15 +904,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D4-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -963,15 +963,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V1-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D4-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1022,15 +1022,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1081,15 +1081,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1140,15 +1140,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1199,15 +1199,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1258,15 +1258,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1317,15 +1317,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1376,15 +1376,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1435,15 +1435,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1494,15 +1494,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1553,15 +1553,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D4-S1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1612,15 +1612,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D4-S2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1671,15 +1671,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H1-V2-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D4-S3.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1730,17 +1730,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D1-S1",
@@ -1789,17 +1789,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D1-S2",
@@ -1848,17 +1848,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D1-S3",
@@ -1907,17 +1907,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D2-S1",
@@ -1966,17 +1966,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D2-S2",
@@ -2025,17 +2025,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D2-S3",
@@ -2084,17 +2084,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D3-S1",
@@ -2143,17 +2143,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D3-S2",
@@ -2202,17 +2202,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D3-S3",
@@ -2261,17 +2261,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D4-S1",
@@ -2320,17 +2320,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D4-S2",
@@ -2379,17 +2379,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V1-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V1-D4-S3",
@@ -2438,17 +2438,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D1-S1",
@@ -2497,17 +2497,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D1-S2",
@@ -2556,17 +2556,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D1-S3",
@@ -2615,17 +2615,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D2-S1",
@@ -2674,17 +2674,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D2-S2",
@@ -2733,17 +2733,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D2-S3",
@@ -2792,17 +2792,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D3-S1",
@@ -2851,17 +2851,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D3-S2",
@@ -2910,17 +2910,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D3-S3",
@@ -2969,17 +2969,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks edge higher amid steady growth outlook</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Major indices rose modestly as investors digested encouraging economic data pointing to resilient consumer spending.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D4-S1",
@@ -3028,17 +3028,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets climb on strong earnings reports</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">A wave of better-than-expected quarterly results lifted investor sentiment across multiple sectors.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D4-S2",
@@ -3087,17 +3087,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H2-V2-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors turn optimistic as economy shows resilience</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Recent indicators suggest the economy may be on firmer footing than analysts had anticipated earlier this quarter.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H2-V2-D4-S3",
@@ -3146,17 +3146,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D1-S1",
@@ -3205,17 +3205,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D1-S2",
@@ -3264,17 +3264,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D1-S3",
@@ -3323,17 +3323,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D2-S1",
@@ -3382,17 +3382,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D2-S2",
@@ -3441,17 +3441,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D2-S3",
@@ -3500,17 +3500,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D3-S1",
@@ -3559,17 +3559,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D3-S2",
@@ -3618,17 +3618,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D3-S3",
@@ -3677,17 +3677,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D4-S1",
@@ -3736,17 +3736,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D4-S2",
@@ -3795,17 +3795,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V1-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V1-D4-S3",
@@ -3854,17 +3854,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D1-S1",
@@ -3913,17 +3913,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D1-S2",
@@ -3972,17 +3972,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D1-S3",
@@ -4031,17 +4031,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D2-S1",
@@ -4090,17 +4090,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D2-S2",
@@ -4149,17 +4149,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D2-S3",
@@ -4208,17 +4208,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D3-S1",
@@ -4267,17 +4267,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D3-S2",
@@ -4326,17 +4326,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D3-S3",
@@ -4385,17 +4385,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks slip as investors turn cautious ahead of key updates</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Equities pulled back as uncertainty over upcoming policy decisions and mixed signals from the labor market weighed on sentiment.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D4-S1",
@@ -4444,17 +4444,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets decline amid growing recession concerns</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Weaker-than-expected economic data fueled fresh worries about a potential downturn in the months ahead.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D4-S2",
@@ -4503,17 +4503,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H3-V2-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Investors retreat as volatility spikes across sectors</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Broad selling pressure emerged after a string of disappointing corporate outlooks rattled confidence.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H3-V2-D4-S3",
@@ -4562,17 +4562,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D1-S1",
@@ -4621,17 +4621,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D1-S2",
@@ -4680,17 +4680,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D1-S3",
@@ -4739,17 +4739,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D2-S1",
@@ -4798,17 +4798,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D2-S2",
@@ -4857,17 +4857,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D2-S3",
@@ -4916,17 +4916,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D3-S1",
@@ -4975,17 +4975,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D3-S2",
@@ -5034,17 +5034,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D3-S3",
@@ -5093,17 +5093,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D4-S1",
@@ -5152,17 +5152,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D4-S2",
@@ -5211,17 +5211,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V1-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V1-D4-S3",
@@ -5270,17 +5270,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D1-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D1-S1",
@@ -5329,17 +5329,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D1-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D1-S2",
@@ -5388,17 +5388,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D1-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D1-S3",
@@ -5447,17 +5447,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D2-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D2-S1",
@@ -5506,17 +5506,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D2-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D2-S2",
@@ -5565,17 +5565,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D2-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D2-S3",
@@ -5624,17 +5624,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D3-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D3-S1",
@@ -5683,17 +5683,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D3-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D3-S2",
@@ -5742,17 +5742,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D3-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D3-S3",
@@ -5801,17 +5801,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S1": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D4-S1.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Markets hold steady in light trading session</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Indices closed with little change as traders awaited more clarity on the economic outlook before making large moves.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D4-S1",
@@ -5860,17 +5860,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S2": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D4-S2.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S2.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Mixed signals leave investors weighing next moves</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Conflicting data releases left market participants uncertain about the near-term direction for equities.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D4-S2",
@@ -5919,17 +5919,17 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S3": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/hl-H4-V2-D4-S3.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S3.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
-      "instruction": "<div style=\"margin-bottom:14px; padding:10px 14px; border-left:3px solid #4285f4; background:#f8f9fa; border-radius:0 4px 4px 0;\"><div style=\"font-size:17px; font-weight:500; line-height:1.35; margin-bottom:6px; color:#1a1a1a;\">Stocks trade flat as market awaits fresh catalysts</div><div style=\"font-size:14px; line-height:1.5; color:#5f6368;\">Trading was subdued with no major economic reports or corporate events on the calendar to drive conviction.</div></div>\n\nImagine you have $1,000 to invest.",
+      "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-H4-V2-D4-S3",
@@ -5978,15 +5978,15 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
       }
     },
     "attention-check": {
-      "type": "image",
-      "path": "demo-headline/assets/plots/attention-check.png",
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=attention-check.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.\n\nFor quality assurance: please select Option B for this trial.",
       "nextButtonLocation": "belowStimulus",
@@ -6033,7 +6033,7 @@
         }
       ],
       "style": {
-        "maxWidth": "700px",
+        "maxWidth": "900px",
         "width": "100%",
         "height": "auto",
         "margin": "0 auto"
@@ -6178,7 +6178,7 @@
               "value": "masters"
             },
             {
-              "label": "Doctoral or professional degree (PhD, MD, JD)",
+              "label": "Doctoral or professional degree",
               "value": "doctoral"
             },
             {
@@ -6189,7 +6189,7 @@
         },
         {
           "id": "chart-frequency",
-          "prompt": "How often do you use or read data charts or graphs (of any kind)?",
+          "prompt": "How often do you use or read data charts or graphs?",
           "required": true,
           "type": "radio",
           "options": [
@@ -6285,7 +6285,7 @@
         },
         {
           "id": "financial-news-frequency",
-          "prompt": "How often do you follow financial news (TV, websites, podcasts, social media)?",
+          "prompt": "How often do you follow financial news?",
           "required": true,
           "type": "radio",
           "options": [
@@ -6328,14 +6328,14 @@
       "response": [
         {
           "id": "strategy",
-          "prompt": "How did you decide between Option A and Option B? What strategy or reasoning did you use?",
+          "prompt": "How did you decide between Option A and Option B?",
           "required": false,
           "type": "longText",
           "placeholder": "Describe your approach..."
         },
         {
           "id": "chart-features",
-          "prompt": "Which features of the charts did you pay the most attention to when making your decisions?",
+          "prompt": "Which features of the charts did you pay the most attention to?",
           "required": false,
           "type": "longText",
           "placeholder": "Describe what you focused on..."
@@ -6349,7 +6349,7 @@
         },
         {
           "id": "headline-influence",
-          "prompt": "Did the news headlines shown alongside some charts influence your investment decisions? If so, how?",
+          "prompt": "Did the news headlines shown alongside some charts influence your decisions? If so, how?",
           "required": false,
           "type": "longText",
           "placeholder": "Describe any influence..."

@@ -6,116 +6,52 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; }
-  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: start; padding: 12px 4px; }
-  .headline-col { padding-top: 8px; }
+  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: start; padding: 4px; }
+  .headline-col { padding-top: 4px; }
   .headline-title { font-size: 19px; font-weight: 500; line-height: 1.35; color: #1a1a1a; margin-bottom: 10px; }
   .headline-lede { font-size: 14px; font-weight: 400; line-height: 1.55; color: #5f6368; }
   .chart-col img { width: 100%; height: auto; display: block; }
-  .chart-only { display: flex; justify-content: center; padding: 12px 4px; }
+  .chart-only { display: flex; justify-content: center; padding: 4px; }
   .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script>
-  var rendered = false;
+  var params = new URLSearchParams(window.location.search);
+  var chartFile = params.get('c') || '';
+  var headline = params.get('h') || '';
+  var lede = params.get('l') || '';
+  var root = document.getElementById('root');
 
-  function renderStimulus(p) {
-    if (rendered || !p) return;
-    rendered = true;
+  var imgSrc = 'plots/' + chartFile;
 
-    var root = document.getElementById('root');
-    var chartPath = p.chartPath || '';
-
-    // Build the full image path.
-    // chartPath from config is like "plots/hl-H2-V1-D1-S1.png"
-    // The HTML file lives at demo-headline/assets/trial-stimulus.html
-    // So we need to resolve relative to this file, OR use absolute path.
-    // Try both: first as-is (relative to HTML), then with study prefix.
-    var imgSrc = chartPath;
-
-    if (p.hasHeadline && p.headline) {
-      root.innerHTML =
-        '<div class="two-col">' +
-          '<div class="headline-col">' +
-            '<div class="headline-title">' + p.headline + '</div>' +
-            '<div class="headline-lede">' + (p.lede || '') + '</div>' +
-          '</div>' +
-          '<div class="chart-col">' +
-            '<img id="chart-img" src="' + imgSrc + '" alt="Asset performance chart" />' +
-          '</div>' +
-        '</div>';
-    } else {
-      root.innerHTML =
-        '<div class="chart-only">' +
-          '<img id="chart-img" src="' + imgSrc + '" alt="Asset performance chart" />' +
-        '</div>';
-    }
-
-    // If the image fails to load, try alternate paths
-    var img = document.getElementById('chart-img');
-    if (img) {
-      img.onerror = function() {
-        if (this.dataset.retried) return;
-        this.dataset.retried = '1';
-        // Try with full study prefix from root
-        this.src = '/demo-headline/assets/' + chartPath;
-      };
-    }
+  if (headline) {
+    root.innerHTML =
+      '<div class="two-col">' +
+        '<div class="headline-col">' +
+          '<div class="headline-title">' + decodeURIComponent(headline) + '</div>' +
+          '<div class="headline-lede">' + decodeURIComponent(lede) + '</div>' +
+        '</div>' +
+        '<div class="chart-col">' +
+          '<img id="ci" src="' + imgSrc + '" alt="Chart" />' +
+        '</div>' +
+      '</div>';
+  } else {
+    root.innerHTML =
+      '<div class="chart-only">' +
+        '<img id="ci" src="' + imgSrc + '" alt="Chart" />' +
+      '</div>';
   }
 
-  // === Primary: raw postMessage listener ===
-  // REVISIT sends data to website iframes via postMessage.
-  // This removes any dependency on revisit-communicate.js.
-  window.addEventListener('message', function(event) {
-    if (!event.data || rendered) return;
-
-    var d = event.data;
-    var params = null;
-
-    // Try known REVISIT data shapes
-    if (d.parameters && d.parameters.chartPath !== undefined) {
-      params = d.parameters;
-    } else if (d.chartPath !== undefined) {
-      params = d;
-    } else if (typeof d === 'object') {
-      // Walk one level to find parameters
-      var keys = Object.keys(d);
-      for (var i = 0; i < keys.length; i++) {
-        var val = d[keys[i]];
-        if (val && typeof val === 'object' && val.chartPath !== undefined) {
-          params = val;
-          break;
-        }
-      }
-    }
-
-    if (params) renderStimulus(params);
-  });
-
-  // === Backup: try loading revisit-communicate.js ===
-  var scriptPaths = [
-    '../../revisit-communicate.js',
-    '/revisit-communicate.js',
-    '../revisit-communicate.js',
-    './revisit-communicate.js'
-  ];
-
-  function tryNextScript(idx) {
-    if (idx >= scriptPaths.length || rendered) return;
-    var s = document.createElement('script');
-    s.src = scriptPaths[idx];
-    s.onload = function() {
-      if (typeof Revisit !== 'undefined' && Revisit.onDataReceive && !rendered) {
-        Revisit.onDataReceive(function(data) {
-          renderStimulus(data.parameters || data);
-        });
-      }
+  var img = document.getElementById('ci');
+  if (img) {
+    img.onerror = function() {
+      if (this.dataset.r) return;
+      this.dataset.r = '1';
+      this.src = '/demo-headline/assets/plots/' + chartFile;
     };
-    s.onerror = function() { tryNextScript(idx + 1); };
-    document.head.appendChild(s);
   }
-  tryNextScript(0);
 </script>
 </body>
 </html>
