@@ -3,7 +3,8 @@
   "configsList": [
     "tutorial",
     "tutorial-replication",
-    "demo-headline"
+    "demo-headline",
+    "demo-uncertainty"
   ],
   "configs": {
     "tutorial": {
