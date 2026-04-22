@@ -6,24 +6,57 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; }
-  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: center; padding: 8px 4px; min-height: 380px; }
+  .balance { text-align: right; padding: 4px 8px; font-size: 13px; color: #666; }
+  .balance span { font-weight: 500; color: #333; }
+  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: center; padding: 8px 4px; }
   .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 12px; }
   .headline-title { font-size: 24px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 14px; }
   .headline-lede { font-size: 15px; font-weight: 400; line-height: 1.6; color: #5f6368; }
   .chart-col img { width: 100%; height: auto; display: block; }
   .chart-only { display: flex; justify-content: center; align-items: center; padding: 8px 4px; }
   .chart-only img { max-width: 100%; width: 100%; height: auto; display: block; }
+  .outcome-area { padding: 6px 12px; font-size: 12px; color: #999; margin-top: 4px; }
+  .outcome-area a { color: #888; cursor: pointer; text-decoration: underline; font-style: italic; }
+  .outcome-area a:hover { color: #555; }
+  .outcome-msg { margin-top: 6px; font-size: 13px; padding: 6px 10px; border-radius: 4px; display: none; }
+  .outcome-gain { background: #e8f5e9; color: #2e7d32; display: block; }
+  .outcome-zero { background: #f5f5f5; color: #616161; display: block; }
+  .outcome-loss { background: #fbe9e7; color: #c62828; display: block; }
 </style>
 </head>
 <body>
+
+<div class="balance">Portfolio: <span id="bal">$1,000</span></div>
+
 <div id="root"></div>
+
+<div class="outcome-area" id="oa">
+  <span>After selecting your answer below, check your outcome: </span>
+  <a onclick="reveal('A')">Option A</a> | <a onclick="reveal('B')">Option B</a>
+  <div class="outcome-msg" id="omsg"></div>
+</div>
+
 <script>
   var params = new URLSearchParams(window.location.search);
   var chartFile = params.get('c') || '';
-  var headline = decodeURIComponent(params.get('h') || '');
-  var lede = decodeURIComponent(params.get('l') || '');
+  // FIX: strip anything after ? in lede (REVISIT appends ?trialid=xxx)
+  var headline = (params.get('h') || '').split('?')[0];
+  var lede = (params.get('l') || '').split('?')[0];
   var root = document.getElementById('root');
   var imgSrc = 'plots/' + chartFile;
+
+  // Decode URI components after stripping
+  try { headline = decodeURIComponent(headline); } catch(e) {}
+  try { lede = decodeURIComponent(lede); } catch(e) {}
+
+  // Portfolio balance
+  var balKey = 'hl_study_balance';
+  var balance = parseFloat(localStorage.getItem(balKey)) || 1000;
+  document.getElementById('bal').textContent = '$' + Math.round(balance).toLocaleString();
+
+  // Signal percentage for Option A outcome
+  var sigRaw = params.get('sig');
+  var signalPct = sigRaw ? parseFloat(sigRaw) : 5.5;
 
   if (headline) {
     root.innerHTML =
@@ -50,6 +83,33 @@
       this.dataset.r = '1';
       this.src = '/demo-headline/assets/plots/' + chartFile;
     };
+  }
+
+  // Outcome reveal
+  var revealed = false;
+  function reveal(choice) {
+    if (revealed) return;
+    revealed = true;
+    var gain = 0, msg = '', cls = '';
+
+    if (choice === 'A') {
+      gain = Math.round(balance * signalPct / 100);
+      if (gain > 0) { msg = 'Option A: +$' + gain.toLocaleString(); cls = 'outcome-gain'; }
+      else if (gain < 0) { msg = 'Option A: -$' + Math.abs(gain).toLocaleString(); cls = 'outcome-loss'; }
+      else { msg = 'Option A: $0 change'; cls = 'outcome-zero'; }
+    } else {
+      var won = Math.random() < 0.55;
+      if (won) { gain = Math.round(balance * 0.10); msg = 'Option B paid out: +$' + gain.toLocaleString(); cls = 'outcome-gain'; }
+      else { gain = 0; msg = 'Option B: no payout, principal returned'; cls = 'outcome-zero'; }
+    }
+
+    balance += gain;
+    localStorage.setItem(balKey, balance.toString());
+    document.getElementById('bal').textContent = '$' + Math.round(balance).toLocaleString();
+
+    var el = document.getElementById('omsg');
+    el.textContent = msg + '  |  Balance: $' + Math.round(balance).toLocaleString();
+    el.className = 'outcome-msg ' + cls;
   }
 </script>
 </body>
