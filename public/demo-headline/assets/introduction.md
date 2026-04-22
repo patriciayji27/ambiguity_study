@@ -1,36 +1,43 @@
-# Study Instructions
+# Task Instructions
+
+In this study, you will make a series of investment decisions. On each trial, you will choose between two options.
+
+## Option A — The Charted Asset
+
+Option A is an asset whose projected performance is shown in a chart. Each chart displays:
+
+- A solid line on the left showing the asset's recent price history over the past 60 days.
+- A dashed line on the right showing the asset's projected return over the next 60 days.
+- On some trials, additional lines showing optimistic and pessimistic scenarios.
+- A light green shaded band showing the range of possible returns for Option B (for comparison).
+
+Each chart also appears alongside a financial news headline providing market context for the asset. To make the most informed and profitable decisions, you should consider both the chart information and the headline when evaluating Option A.
+
+The y-axis shows Investment Return (%), where 0% represents no change from today's value.
+
+## Option B — A Structured Note
+
+Option B is the same on every trial. It is a structured note tied to a market benchmark:
+
+- If the benchmark closes above its current level at maturity, you receive a $100 bonus (10% return on your $1,000 investment).
+- If not, your $1,000 principal is returned with no gain or loss.
+- Based on current market conditions, the estimated probability of the payout condition being met is 55%.
+
+The expected return for Option B is 5.5% ($55), represented by the green shaded region on each chart.
 
 ## Your Task
 
-In this study, you will act as an investor making a series of decisions. On each trial, you will choose between two investment options for a hypothetical **$100 investment**:
+On each trial, review the headline and chart for Option A, and decide whether Option A or Option B offers the better investment. You can maximize your performance bonus by choosing the option with the higher expected return on each trial.
 
-### Option A — A Charted Asset
-You will see a chart showing:
-- **Solid line (left side):** The asset's historical performance over the past 60 days.
-- **Dashed line(s) (right side):** The asset's projected performance over the next 60 days.
-- The **y-axis** shows the **Investment Return (%)** — how much you would gain or lose on your $100 investment. A value of 0% means you break even; +10% means you earn $10 profit; -5% means you lose $5.
-- Some charts may include a **news headline** above the chart providing market context.
-- Some charts may show **multiple projected lines** (Bull, Base, Bear) representing optimistic, baseline, and pessimistic scenarios.
+Your portfolio starts at $1,000. After each decision, you will see the outcome and your running balance.
 
-### Option B — A Fixed-Odds Investment
-A simple investment with known odds:
-- **55% chance** of earning a **$10 profit** (10% return on your $100)
-- **45% chance** of earning **$0 profit** (0% return — you simply get your $100 back)
-- This option's expected profit is **$5.50** (or a 5.5% expected return).
+## What Comes Next
 
-## How to Decide
-
-On each trial, compare what the chart suggests about Option A's likely return to the known expected return of Option B (5.5%). Choose whichever option you believe gives you the better investment.
-
-There are no trick questions — use your best judgment based on the information provided.
-
-## What to Expect
-
-1. **Comprehension check** — A few questions to confirm you understand the task.
-2. **Risk preferences** — A short set of questions about your attitude toward risk.
-3. **Practice rounds** — 2 practice trials with feedback to help you get comfortable.
-4. **Main trials** — 32 investment decisions (the core of the study).
-5. **Survey & feedback** — Brief demographics and your thoughts on the study.
+1. A few comprehension questions to confirm the task is clear.
+2. Questions about your risk preferences.
+3. Two practice trials with feedback.
+4. 32 main investment decisions.
+5. A brief closing survey.
 
 ---
 
