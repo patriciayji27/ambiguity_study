@@ -2,11 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
   "studyMetadata": {
     "title": "Investment Decision-Making Under Uncertainty: Headline Study",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "authors": [
       "DCL Research Team"
     ],
-    "date": "2026-04-21",
+    "date": "2026-04-22",
     "description": "Examines how news headlines and uncertainty visualization influence financial decision-making.",
     "organizations": [
       "DCL Lab"
@@ -19,7 +19,7 @@
     "withProgressBar": true,
     "autoDownloadStudy": false,
     "withSidebar": false,
-    "studyEndMsg": "Thank you for completing this study! Your responses have been recorded.",
+    "studyEndMsg": "Thank you for completing this study!",
     "urlParticipantIdParam": "PROLIFIC_PID"
   },
   "components": {
@@ -51,84 +51,6 @@
       "path": "demo-headline/assets/introduction.md",
       "nextButtonText": "Continue",
       "response": []
-    },
-    "cognition-check": {
-      "type": "questionnaire",
-      "nextButtonText": "Continue",
-      "response": [
-        {
-          "id": "numeracy-1",
-          "prompt": "If an investment has a 55% chance of earning $100 profit and a 45% chance of earning $0 profit, what is the expected (average) profit?",
-          "required": true,
-          "type": "radio",
-          "options": [
-            {
-              "label": "$35",
-              "value": "35"
-            },
-            {
-              "label": "$55",
-              "value": "55"
-            },
-            {
-              "label": "$75",
-              "value": "75"
-            },
-            {
-              "label": "$100",
-              "value": "100"
-            }
-          ]
-        },
-        {
-          "id": "numeracy-2",
-          "prompt": "A chart shows an asset's projected return at +8%. If you invest $1,000, approximately how much profit would you earn?",
-          "required": true,
-          "type": "radio",
-          "options": [
-            {
-              "label": "$40",
-              "value": "40"
-            },
-            {
-              "label": "$60",
-              "value": "60"
-            },
-            {
-              "label": "$80",
-              "value": "80"
-            },
-            {
-              "label": "$120",
-              "value": "120"
-            }
-          ]
-        },
-        {
-          "id": "chart-reading",
-          "prompt": "On the charts, the y-axis shows 'Investment Return (%)'. If the projected line ends at +3%, what does that mean?",
-          "required": true,
-          "type": "radio",
-          "options": [
-            {
-              "label": "The asset is expected to lose 3%",
-              "value": "lose3"
-            },
-            {
-              "label": "The asset is expected to gain 3%",
-              "value": "gain3"
-            },
-            {
-              "label": "The asset is expected to stay the same",
-              "value": "same"
-            },
-            {
-              "label": "The asset's past performance was 3%",
-              "value": "past3"
-            }
-          ]
-        }
-      ]
     },
     "risk-precheck": {
       "type": "markdown",
@@ -267,7 +189,7 @@
     },
     "practice-trial-1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-1.png&sig=11.5&tid=practice-trial-1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-1.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Practice Trial 1 of 2\n\nImagine you have $1,000 to invest. You will receive feedback after answering.",
       "nextButtonLocation": "belowStimulus",
@@ -316,15 +238,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "800px",
         "width": "100%",
-        "height": "auto",
+        "height": "420px",
         "margin": "0 auto"
       }
     },
     "practice-trial-2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-2.png&sig=-0.5&tid=practice-trial-2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=practice-trial-2.png",
       "instructionLocation": "aboveStimulus",
       "instruction": "Practice Trial 2 of 2\n\nImagine you have $1,000 to invest. You will receive feedback after answering.",
       "nextButtonLocation": "belowStimulus",
@@ -373,15 +295,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "800px",
         "width": "100%",
-        "height": "auto",
+        "height": "420px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=-0.5&tid=hl-H1-V1-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -432,15 +354,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=-0.5&tid=hl-H1-V1-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -491,15 +413,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=-0.5&tid=hl-H1-V1-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -550,15 +472,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=3.5&tid=hl-H1-V1-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -609,15 +531,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=3.5&tid=hl-H1-V1-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -668,15 +590,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=3.5&tid=hl-H1-V1-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -727,15 +649,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=7.5&tid=hl-H1-V1-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -786,15 +708,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=7.5&tid=hl-H1-V1-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -845,15 +767,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V1-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=7.5&tid=hl-H1-V1-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V1-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -904,15 +826,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=-0.5&tid=hl-H1-V2-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -963,15 +885,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=-0.5&tid=hl-H1-V2-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1022,15 +944,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=-0.5&tid=hl-H1-V2-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D1-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1081,15 +1003,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=3.5&tid=hl-H1-V2-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1140,15 +1062,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=3.5&tid=hl-H1-V2-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1199,15 +1121,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=3.5&tid=hl-H1-V2-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D2-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1258,15 +1180,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.&sig=7.5&tid=hl-H1-V2-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S1.png&h=Stocks%20edge%20higher%20amid%20steady%20growth%20outlook&l=Major%20indices%20rose%20modestly%20as%20investors%20digested%20encouraging%20economic%20data%20pointing%20to%20resilient%20consumer%20spending.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1317,15 +1239,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.&sig=7.5&tid=hl-H1-V2-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S2.png&h=Markets%20climb%20on%20strong%20earnings%20reports&l=A%20wave%20of%20better-than-expected%20quarterly%20results%20lifted%20investor%20sentiment%20across%20multiple%20sectors.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1376,15 +1298,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H1-V2-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.&sig=7.5&tid=hl-H1-V2-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H1-V2-D3-S3.png&h=Investors%20turn%20optimistic%20as%20economy%20shows%20resilience&l=Recent%20indicators%20suggest%20the%20economy%20may%20be%20on%20firmer%20footing%20than%20analysts%20had%20anticipated%20earlier%20this%20quarter.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1435,15 +1357,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=3.5&tid=hl-H2-V1-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1494,15 +1416,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=3.5&tid=hl-H2-V1-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1553,15 +1475,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=3.5&tid=hl-H2-V1-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1612,15 +1534,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=7.5&tid=hl-H2-V1-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1671,15 +1593,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=7.5&tid=hl-H2-V1-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1730,15 +1652,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=7.5&tid=hl-H2-V1-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1789,15 +1711,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=11.5&tid=hl-H2-V1-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1848,15 +1770,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=11.5&tid=hl-H2-V1-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1907,15 +1829,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V1-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=11.5&tid=hl-H2-V1-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V1-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -1966,15 +1888,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=-0.5&tid=hl-H2-V2-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2025,15 +1947,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=-0.5&tid=hl-H2-V2-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2084,15 +2006,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=-0.5&tid=hl-H2-V2-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D1-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2143,15 +2065,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=3.5&tid=hl-H2-V2-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2202,15 +2124,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=3.5&tid=hl-H2-V2-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2261,15 +2183,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=3.5&tid=hl-H2-V2-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D2-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2320,15 +2242,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=7.5&tid=hl-H2-V2-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2379,15 +2301,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=7.5&tid=hl-H2-V2-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2438,15 +2360,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=7.5&tid=hl-H2-V2-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D3-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2497,15 +2419,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.&sig=11.5&tid=hl-H2-V2-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S1.png&h=Stocks%20slip%20as%20investors%20turn%20cautious%20ahead%20of%20key%20updates&l=Equities%20pulled%20back%20as%20uncertainty%20over%20upcoming%20policy%20decisions%20and%20mixed%20signals%20from%20the%20labor%20market%20weighed%20on%20sentiment.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2556,15 +2478,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.&sig=11.5&tid=hl-H2-V2-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S2.png&h=Markets%20decline%20amid%20growing%20recession%20concerns&l=Weaker-than-expected%20economic%20data%20fueled%20fresh%20worries%20about%20a%20potential%20downturn%20in%20the%20months%20ahead.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2615,15 +2537,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H2-V2-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.&sig=11.5&tid=hl-H2-V2-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H2-V2-D4-S3.png&h=Investors%20retreat%20as%20volatility%20spikes%20across%20sectors&l=Broad%20selling%20pressure%20emerged%20after%20a%20string%20of%20disappointing%20corporate%20outlooks%20rattled%20confidence.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2674,15 +2596,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=-0.5&tid=hl-H3-V1-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2733,15 +2655,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=-0.5&tid=hl-H3-V1-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2792,15 +2714,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=-0.5&tid=hl-H3-V1-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D1-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2851,15 +2773,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=3.5&tid=hl-H3-V1-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2910,15 +2832,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=3.5&tid=hl-H3-V1-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -2969,15 +2891,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=3.5&tid=hl-H3-V1-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D2-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3028,15 +2950,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=7.5&tid=hl-H3-V1-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3087,15 +3009,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=7.5&tid=hl-H3-V1-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3146,15 +3068,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=7.5&tid=hl-H3-V1-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D3-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3205,15 +3127,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=11.5&tid=hl-H3-V1-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3264,15 +3186,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=11.5&tid=hl-H3-V1-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3323,15 +3245,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V1-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=11.5&tid=hl-H3-V1-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V1-D4-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3382,15 +3304,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=-0.5&tid=hl-H3-V2-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3441,15 +3363,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=-0.5&tid=hl-H3-V2-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3500,15 +3422,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=-0.5&tid=hl-H3-V2-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D1-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3559,15 +3481,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=3.5&tid=hl-H3-V2-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3618,15 +3540,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=3.5&tid=hl-H3-V2-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3677,15 +3599,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=3.5&tid=hl-H3-V2-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D2-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3736,15 +3658,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=7.5&tid=hl-H3-V2-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3795,15 +3717,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=7.5&tid=hl-H3-V2-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3854,15 +3776,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=7.5&tid=hl-H3-V2-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D3-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3913,15 +3835,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.&sig=11.5&tid=hl-H3-V2-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S1.png&h=Markets%20hold%20steady%20in%20light%20trading%20session&l=Indices%20closed%20with%20little%20change%20as%20traders%20awaited%20more%20clarity%20on%20the%20economic%20outlook%20before%20making%20large%20moves.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -3972,15 +3894,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.&sig=11.5&tid=hl-H3-V2-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S2.png&h=Stocks%20trade%20flat%20as%20market%20awaits%20fresh%20catalysts&l=Trading%20was%20subdued%20with%20no%20major%20economic%20reports%20or%20corporate%20events%20on%20the%20calendar%20to%20drive%20conviction.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4031,15 +3953,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H3-V2-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.&sig=11.5&tid=hl-H3-V2-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H3-V2-D4-S3.png&h=Equities%20pause%20after%20recent%20moves&l=Investors%20took%20a%20wait-and-see%20approach%20following%20a%20stretch%20of%20heightened%20activity%2C%20with%20volume%20below%20average.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4090,15 +4012,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=-0.5&tid=hl-H4-V1-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4149,15 +4071,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=-0.5&tid=hl-H4-V1-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4208,15 +4130,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=-0.5&tid=hl-H4-V1-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D1-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4267,15 +4189,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=3.5&tid=hl-H4-V1-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4326,15 +4248,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=3.5&tid=hl-H4-V1-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4385,15 +4307,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=3.5&tid=hl-H4-V1-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D2-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4444,15 +4366,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=7.5&tid=hl-H4-V1-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4503,15 +4425,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=7.5&tid=hl-H4-V1-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4562,15 +4484,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=7.5&tid=hl-H4-V1-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D3-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4621,15 +4543,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=11.5&tid=hl-H4-V1-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4680,15 +4602,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=11.5&tid=hl-H4-V1-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4739,15 +4661,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V1-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=11.5&tid=hl-H4-V1-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V1-D4-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4798,15 +4720,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=-0.5&tid=hl-H4-V2-D1-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4857,15 +4779,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=-0.5&tid=hl-H4-V2-D1-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4916,15 +4838,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D1-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=-0.5&tid=hl-H4-V2-D1-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D1-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -4975,15 +4897,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=3.5&tid=hl-H4-V2-D2-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5034,15 +4956,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=3.5&tid=hl-H4-V2-D2-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5093,15 +5015,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D2-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=3.5&tid=hl-H4-V2-D2-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D2-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5152,15 +5074,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=7.5&tid=hl-H4-V2-D3-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5211,15 +5133,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=7.5&tid=hl-H4-V2-D3-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5270,15 +5192,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D3-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=7.5&tid=hl-H4-V2-D3-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D3-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5329,15 +5251,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.&sig=11.5&tid=hl-H4-V2-D4-S1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S1.png&h=Mixed%20signals%20leave%20investors%20weighing%20next%20moves&l=Conflicting%20data%20releases%20left%20market%20participants%20uncertain%20about%20the%20near-term%20direction%20for%20equities.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5388,15 +5310,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.&sig=11.5&tid=hl-H4-V2-D4-S2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S2.png&h=Markets%20churn%20as%20bulls%20and%20bears%20clash%20over%20outlook&l=Strong%20corporate%20earnings%20collided%20with%20worrying%20macroeconomic%20data%2C%20leaving%20indices%20caught%20between%20competing%20narratives.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5447,15 +5369,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "hl-H4-V2-D4-S3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.&sig=11.5&tid=hl-H4-V2-D4-S3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=hl-H4-V2-D4-S3.png&h=Uncertainty%20lingers%20as%20economic%20signals%20diverge&l=Positive%20labor%20data%20contrasted%20with%20declining%20manufacturing%20output%2C%20giving%20investors%20little%20consensus%20on%20the%20path%20forward.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5506,15 +5428,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "attn-check-1": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-1.png&h=Stocks%20surge%20as%20economy%20outperforms%20expectations&l=Markets%20rallied%20sharply%20after%20a%20series%20of%20strong%20reports%20exceeded%20forecasts%20across%20all%20major%20indicators.&sig=15.5&tid=attn-check-1",
+      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-1.png&h=Stocks%20surge%20as%20economy%20outperforms%20expectations&l=Markets%20rallied%20sharply%20after%20a%20series%20of%20strong%20reports%20exceeded%20forecasts%20across%20all%20major%20indicators.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5557,15 +5479,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "attn-check-2": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-2.png&h=Markets%20plummet%20amid%20deepening%20downturn%20signals&l=Equities%20fell%20steeply%20as%20multiple%20indicators%20confirmed%20a%20significant%20deterioration%20in%20economic%20conditions.&sig=-4.5&tid=attn-check-2",
+      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-2.png&h=Markets%20plummet%20amid%20deepening%20downturn%20signals&l=Equities%20fell%20steeply%20as%20multiple%20indicators%20confirmed%20a%20significant%20deterioration%20in%20economic%20conditions.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5608,15 +5530,15 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
     "attn-check-3": {
       "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-3.png&h=Strong%20rally%20signals%20sustained%20growth%20ahead&l=Broad-based%20gains%20accelerated%20as%20investors%20responded%20to%20overwhelmingly%20positive%20developments.&sig=15.5&tid=attn-check-3",
+      "path": "demo-headline/assets/trial-stimulus.html?c=attn-check-3.png&h=Strong%20rally%20signals%20sustained%20growth%20ahead&l=Broad-based%20gains%20accelerated%20as%20investors%20responded%20to%20overwhelmingly%20positive%20developments.",
       "instructionLocation": "aboveStimulus",
       "instruction": "Imagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
@@ -5659,9 +5581,9 @@
         }
       ],
       "style": {
-        "maxWidth": "900px",
+        "maxWidth": "950px",
         "width": "100%",
-        "height": "auto",
+        "height": "450px",
         "margin": "0 auto"
       }
     },
@@ -5843,7 +5765,6 @@
     "components": [
       "consent",
       "introduction",
-      "cognition-check",
       "risk-precheck",
       "practice-trial-1",
       "practice-trial-2",
