@@ -6,59 +6,23 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; }
-
-  .balance-bar { display: flex; justify-content: flex-end; padding: 6px 12px; font-size: 14px; color: #444; }
-  .balance-bar span { font-weight: 500; }
-
-  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: center; padding: 8px 4px; min-height: 320px; }
-  .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 8px; }
-  .headline-title { font-size: 24px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 12px; }
-  .headline-lede { font-size: 15px; font-weight: 400; line-height: 1.55; color: #5f6368; }
+  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: center; padding: 8px 4px; min-height: 380px; }
+  .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 12px; }
+  .headline-title { font-size: 24px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 14px; }
+  .headline-lede { font-size: 15px; font-weight: 400; line-height: 1.6; color: #5f6368; }
   .chart-col img { width: 100%; height: auto; display: block; }
-
-  .chart-only { display: flex; justify-content: center; padding: 8px 4px; }
-  .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
-
-  .feedback-area { padding: 10px 12px; margin-top: 8px; }
-  .feedback-btns { display: flex; gap: 10px; }
-  .feedback-btns button { padding: 6px 16px; font-size: 13px; border: 1px solid #ccc; border-radius: 4px; background: #f8f9fa; cursor: pointer; color: #333; }
-  .feedback-btns button:hover { background: #e8eaed; }
-  .feedback-msg { margin-top: 8px; font-size: 14px; padding: 8px 12px; border-radius: 4px; display: none; }
-  .feedback-gain { background: #e8f5e9; color: #2e7d32; }
-  .feedback-loss { background: #fbe9e7; color: #c62828; }
-  .feedback-zero { background: #f5f5f5; color: #616161; }
+  .chart-only { display: flex; justify-content: center; align-items: center; padding: 8px 4px; }
+  .chart-only img { max-width: 100%; width: 100%; height: auto; display: block; }
 </style>
 </head>
 <body>
-
-<div class="balance-bar">Portfolio: <span id="bal">&nbsp;$1,000</span></div>
-
 <div id="root"></div>
-
-<div class="feedback-area" id="fb-area">
-  <div style="font-size:13px; color:#888; margin-bottom:6px;">After making your choice below, reveal your outcome:</div>
-  <div class="feedback-btns">
-    <button onclick="reveal('A')">I chose Option A (chart)</button>
-    <button onclick="reveal('B')">I chose Option B (structured note)</button>
-  </div>
-  <div class="feedback-msg" id="fb-msg"></div>
-</div>
-
 <script>
   var params = new URLSearchParams(window.location.search);
   var chartFile = params.get('c') || '';
   var headline = decodeURIComponent(params.get('h') || '');
   var lede = decodeURIComponent(params.get('l') || '');
-  var signalPct = parseFloat(params.get('sig') || '5.5');
-  var trialId = params.get('tid') || '';
   var root = document.getElementById('root');
-
-  // ── Balance from localStorage ──
-  var balKey = 'hl_study_balance';
-  var balance = parseFloat(localStorage.getItem(balKey)) || 1000;
-  document.getElementById('bal').textContent = ' $' + balance.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
-
-  // ── Render layout ──
   var imgSrc = 'plots/' + chartFile;
 
   if (headline) {
@@ -79,7 +43,6 @@
       '</div>';
   }
 
-  // Image fallback
   var img = document.getElementById('ci');
   if (img) {
     img.onerror = function() {
@@ -87,60 +50,6 @@
       this.dataset.r = '1';
       this.src = '/demo-headline/assets/plots/' + chartFile;
     };
-  }
-
-  // ── Feedback reveal ──
-  var revealed = false;
-
-  function reveal(choice) {
-    if (revealed) return;
-    revealed = true;
-
-    var gain = 0;
-    var msg = '';
-    var cls = '';
-
-    if (choice === 'A') {
-      // Option A: return = signalPct% of current balance
-      gain = Math.round(balance * signalPct / 100);
-      if (gain > 0) {
-        msg = 'Option A earned +' + gain.toLocaleString() + ' (' + signalPct.toFixed(1) + '% return)';
-        cls = 'feedback-gain';
-      } else if (gain < 0) {
-        msg = 'Option A lost ' + gain.toLocaleString() + ' (' + signalPct.toFixed(1) + '% return)';
-        cls = 'feedback-loss';
-      } else {
-        msg = 'Option A returned 0% — no change.';
-        cls = 'feedback-zero';
-      }
-    } else {
-      // Option B: 55% chance of +10%, 45% chance of 0%
-      var won = Math.random() < 0.55;
-      if (won) {
-        gain = Math.round(balance * 0.10);
-        msg = 'Option B paid out! You earned +$' + gain.toLocaleString() + ' (10% bonus)';
-        cls = 'feedback-gain';
-      } else {
-        gain = 0;
-        msg = 'Option B did not pay out. Your principal was returned ($0 gain).';
-        cls = 'feedback-zero';
-      }
-    }
-
-    balance += gain;
-    localStorage.setItem(balKey, balance.toString());
-
-    // Update balance display
-    document.getElementById('bal').textContent = ' $' + balance.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
-
-    // Show feedback
-    var fbEl = document.getElementById('fb-msg');
-    fbEl.textContent = msg + '  |  New balance: $' + balance.toLocaleString();
-    fbEl.className = 'feedback-msg ' + cls;
-    fbEl.style.display = 'block';
-
-    // Hide buttons
-    document.querySelector('.feedback-btns').style.display = 'none';
   }
 </script>
 </body>
