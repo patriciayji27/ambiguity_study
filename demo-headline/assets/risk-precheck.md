@@ -1,5 +1,7 @@
 # Risk Preferences
 
-The following questions ask about your preferences between guaranteed outcomes and uncertain ones. There are no right or wrong answers. For each question, choose the option you would genuinely prefer if the decision were real.
+Before the main task, we would like to understand how you approach financial decisions involving uncertainty. The following questions present choices between a guaranteed outcome and a risky alternative.
 
-All amounts are hypothetical but please respond as if the money were real.
+There are no right or wrong answers — we are interested in your genuine preferences. For each question, imagine the amounts are real and choose the option you would truly prefer.
+
+The choices involve amounts ranging from $1,000 to $10,000. Some involve potential gains, some involve potential losses, and some involve both. Please read each scenario carefully before responding.
