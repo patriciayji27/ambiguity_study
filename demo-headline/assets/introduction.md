@@ -15,45 +15,46 @@ The horizontal axis shows time. **Day 0 is today**:
 
 ## Option A: the charted asset
 
-Option A is the asset shown by the blue line.
+Option A is the asset shown in blue.
 
-You can think of this as directly investing in a broad stock index. A stock index tracks the combined performance of many stocks, so it is often used as a simple measure of how a larger part of the stock market is moving.
+You can think of Option A as directly investing in a broad stock index. A stock index tracks the combined performance of many stocks, so it is often used as a simple measure of how a larger part of the stock market is moving.
 
 On the chart:
 
-- The solid blue line shows how Option A moved over the past 60 days.
-- The blue projection lines show possible future returns for Option A over the next 60 days.
-- When the projection lines are farther apart, the future outcome is more uncertain.
+- The solid blue line before Day 0 shows Option A's recent return history.
+- The blue projection after Day 0 shows possible future returns for Option A.
+- Wider blue projection bands mean the future outcome is more uncertain.
 
-Some trials will also include a short market headline. The headline gives context that may or may not be useful for judging Option A.
+Some trials also include a short market headline. The headline gives context that provides you more information to judge Option A.
 
-## Option B: the fixed-odds alternative
 
-Option B is the same on every trial. It is a simplified structured investment, similar to some option-linked financial products.
+## Option B: the structured-note alternative
 
-Option B is tied to a market benchmark. A benchmark is a reference measure of market performance.
+Option B is not another projected asset path. It is a simplified structured note with an option-like payoff.
+
+A structured note is a financial product whose payoff depends on whether a market condition is met. In this study, Option B depends on whether a market benchmark closes above its current level.
 
 For Option B:
 
-- If the benchmark ends above its current level, your investment gains 10%.
-- If the benchmark does not end above its current level, your investment gains 0%.
-- The estimated chance of the 10% gain is 55%.
+- If the benchmark closes above its current level, the investment pays a $100 bonus, equal to a +10% return on $1,000.
+- If the benchmark does not close above its current level, your $1,000 principal is returned, equal to a 0% return.
+- The estimated probability that the +10% payout condition is met is 55%.
 
-This also means Option B has an expected return of 5.5%.
+On the chart, Option B is shown by the green horizontal lines:
 
-On the chart, Option B is shown with the green horizontal lines:
+- The 0% green line is the return if the note does not pay the bonus.
+- The +10% green line is the return if the note pays the bonus.
+- The dashed 5.5% green line is the average return implied by a 55% chance of receiving +10%.
 
-- The lower green line marks the 0% outcome.
-- The upper green line marks the +10% outcome.
-- The dashed green line marks the 5.5% expected return**.
+The 5.5% line is not a guaranteed return. It is the expected value of Option B's payoff.
 
 ## Your task
 
-On each trial, compare Option A and Option B and choose the option you think is better.
+On each trial, compare Option A with Option B and choose the option you would prefer.
 
-There is no need to calculate anything exactly. Use all the information including the chart, the headline, and your own judgment is the best way to yield the highest return. Your goal is to choose the option that you think offers the better investment outcome.
+Use the chart, the headline when shown, and your own judgment. There is no need to calculate anything exactly.
 
-After each decision, you will see the outcome. Once an outcome is shown, you cannot change your choice.
+After each decision, you will see the outcome for the option you chose. Once the outcome is shown, you cannot change your choice.
 
 ---
 
