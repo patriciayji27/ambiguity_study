@@ -1,7 +1,11 @@
 # Risk Preferences
 
-Before the main task, we would like to understand how you approach financial decisions involving uncertainty. The following questions present choices between a guaranteed outcome and a risky alternative.
+Before the main task, we would like to understand how you approach decisions involving uncertain outcomes.
 
-There are no right or wrong answers — we are interested in your genuine preferences. For each question, imagine the amounts are real and choose the option you would truly prefer.
+You will see three short sections of choices. In each section, you will be asked to choose between two options — sometimes a guaranteed outcome and a gamble, sometimes whether to accept or reject a risky bet. The amounts involved range from a few hundred to several thousand dollars.
 
-The choices involve amounts ranging from $1,000 to $10,000. Some involve potential gains, some involve potential losses, and some involve both. Please read each scenario carefully before responding.
+There are no right or wrong answers. We are interested in your genuine preferences. The amounts are hypothetical, but please respond as if the money were real and the consequences were yours to live with.
+
+You will only see one question at a time, and you will move through the sections quickly. The whole risk preferences task takes about two minutes.
+
+When you are ready, click **Continue** below.
