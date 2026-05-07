@@ -6,14 +6,14 @@
     "authors": [
       "DCL Research Team"
     ],
-    "date": "2026-04-22",
+    "date": "2026-05-07",
     "description": "Examines how news headlines and uncertainty visualization influence financial decision-making.",
     "organizations": [
       "DCL Lab"
     ]
   },
   "uiConfig": {
-    "contactEmail": "researcher@university.edu",
+    "contactEmail": "pyji@uchicago.edu",
     "helpTextPath": "demo-headline/assets/help.md",
     "logoPath": "demo-headline/assets/logo.png",
     "withProgressBar": true,
