@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 12px; color: #1a1a1a; }
+  .frame { max-width: 720px; margin: 0 auto; }
+  .progress { font-size: 13px; color: #666; margin-bottom: 8px; }
+  .mpl-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .mpl-context { font-size: 14px; color: #555; margin-bottom: 18px; line-height: 1.5; }
+  .question-card { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px 20px; margin-top: 12px; }
+  .question-prompt { font-size: 15px; margin-bottom: 14px; line-height: 1.5; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt-btn { padding: 14px 18px; font-size: 15px; font-weight: 500; border: 2px solid #2166AC; border-radius: 6px; background: white; color: #2166AC; cursor: pointer; text-align: left; transition: all 0.12s; }
+  .opt-btn:hover { background: #e3f2fd; }
+  .opt-btn:disabled { cursor: default; opacity: 0.5; }
+  .done-msg { padding: 24px; text-align: center; font-size: 16px; color: #2e7d32; background: #f1f8e9; border-radius: 8px; }
+  .done-msg strong { display: block; font-size: 18px; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="progress" id="progress"></div>
+  <div class="mpl-title" id="title"></div>
+  <div class="mpl-context" id="context"></div>
+  <div id="qa"></div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// MPL DEFINITIONS
+// 3 price lists: gain, loss, mixed (loss aversion)
+// Each row holds the gamble constant; the alternative varies
+// ══════════════════════════════════════════════════════════════
+
+var MPLS = [
+  {
+    id: 'gain',
+    title: 'Part 1 of 3 — Choices about possible gains',
+    context: 'In each question, you will choose between a guaranteed amount of money and a gamble. The gamble is the same in all questions in this section: <strong>a 55% chance of winning $5,000 and a 45% chance of winning $0</strong>. Only the guaranteed amount changes.',
+    rows: [4500, 4000, 3500, 3000, 2750, 2500, 2000, 1500, 1000, 750, 500],
+    fmtCertain: function(v) { return 'A guaranteed gain of $' + v.toLocaleString(); },
+    fmtGamble: function() { return 'A 55% chance of gaining $5,000 and a 45% chance of gaining $0'; },
+    labelCertain: 'certain',
+    labelGamble: 'gamble'
+  },
+  {
+    id: 'loss',
+    title: 'Part 2 of 3 — Choices about possible losses',
+    context: 'In each question, you will choose between a guaranteed loss and a gamble that might involve a larger loss. The gamble is the same in all questions: <strong>a 55% chance of losing $5,000 and a 45% chance of losing $0</strong>. Only the guaranteed loss changes.',
+    rows: [-500, -750, -1000, -1500, -2000, -2500, -2750, -3000, -3500, -4000, -4500],
+    fmtCertain: function(v) { return 'A guaranteed loss of $' + Math.abs(v).toLocaleString(); },
+    fmtGamble: function() { return 'A 55% chance of losing $5,000 and a 45% chance of losing $0'; },
+    labelCertain: 'certain',
+    labelGamble: 'gamble'
+  },
+  {
+    id: 'mixed',
+    title: 'Part 3 of 3 — Mixed gain and loss gambles',
+    context: 'In each question, you will decide whether to <strong>accept or reject</strong> a 50/50 gamble. The possible loss is the same in all questions: a 50% chance of losing $1,500. Only the possible gain changes.',
+    rows: [1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 7000],
+    fmtCertain: function(v) { return 'Reject the gamble (you keep the status quo)'; },
+    fmtGamble: function(v) { return 'Accept: 50% chance of gaining $' + v.toLocaleString() + ', 50% chance of losing $1,500'; },
+    labelCertain: 'reject',
+    labelGamble: 'accept'
+  }
+];
+
+// ══════════════════════════════════════════════════════════════
+// RAPID ELICITATION STATE MACHINE
+// Per Holden et al. 2025: random start row, jump to extreme after
+// first answer, then bisect until switch point identified.
+// ══════════════════════════════════════════════════════════════
+
+var mplIdx = 0;
+var state = null;     // current MPL bisection state
+var allResults = [];  // per-MPL results
+
+function startMPL(idx) {
+  var mpl = MPLS[idx];
+  var N = mpl.rows.length;
+  state = {
+    mpl: mpl,
+    N: N,
+    rangeLow: 0,        // earliest possible switch row (inclusive)
+    rangeHigh: N,       // latest possible switch row + 1 (N = corner: always certain)
+    history: [],
+    currentRow: Math.floor(Math.random() * N),  // random starting row
+    randomStart: -1
+  };
+  state.randomStart = state.currentRow;
+  document.getElementById('title').innerHTML = mpl.title;
+  document.getElementById('context').innerHTML = mpl.context;
+  document.getElementById('progress').textContent = 'Risk Preferences (Section ' + (idx + 1) + ' of 3)';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  var mpl = state.mpl;
+  var row = state.currentRow;
+  var certainAmt = mpl.rows[row];
+
+  var labelA, labelB, valueA, valueB;
+  if (mpl.id === 'mixed') {
+    // For mixed: A = reject, B = accept the 50/50 gamble
+    labelA = mpl.fmtCertain(certainAmt);
+    labelB = mpl.fmtGamble(certainAmt);
+    valueA = 'reject';
+    valueB = 'accept';
+  } else {
+    labelA = mpl.fmtCertain(certainAmt);
+    labelB = mpl.fmtGamble(certainAmt);
+    valueA = 'certain';
+    valueB = 'gamble';
+  }
+
+  document.getElementById('qa').innerHTML =
+    '<div class="question-card">' +
+      '<div class="question-prompt">Which would you prefer?</div>' +
+      '<div class="options">' +
+        '<button class="opt-btn" onclick="recordAnswer(\'' + valueA + '\')">' + labelA + '</button>' +
+        '<button class="opt-btn" onclick="recordAnswer(\'' + valueB + '\')">' + labelB + '</button>' +
+      '</div>' +
+    '</div>';
+}
+
+function recordAnswer(answer) {
+  var mpl = state.mpl;
+  var row = state.currentRow;
+
+  // Disable buttons
+  var btns = document.querySelectorAll('.opt-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+
+  state.history.push({
+    row: row,
+    rowAmount: mpl.rows[row],
+    answer: answer,
+    timestamp: Date.now()
+  });
+
+  // Map answer to bisection direction
+  // "certain"/"reject" preferred → switch is at later row (smaller certain / better gain needed)
+  //   → rangeLow = row + 1
+  // "gamble"/"accept" preferred → switch is at this row or earlier
+  //   → rangeHigh = row
+  if (answer === 'certain' || answer === 'reject') {
+    state.rangeLow = Math.max(state.rangeLow, row + 1);
+  } else {
+    state.rangeHigh = Math.min(state.rangeHigh, row);
+  }
+
+  // Convergence check
+  if (state.rangeLow >= state.rangeHigh) {
+    finalizeMPL();
+    return;
+  }
+
+  // Pick next row
+  var nextRow;
+  if (state.history.length === 1) {
+    // After first answer: jump to opposite extreme (per Holden et al.)
+    nextRow = (answer === 'certain' || answer === 'reject') ? (state.N - 1) : 0;
+    // Make sure it's still in range
+    if (nextRow < state.rangeLow) nextRow = state.rangeLow;
+    if (nextRow >= state.rangeHigh) nextRow = state.rangeHigh - 1;
+  } else {
+    // Bisect within current range
+    nextRow = Math.floor((state.rangeLow + state.rangeHigh - 1) / 2);
+  }
+
+  state.currentRow = nextRow;
+  setTimeout(renderQuestion, 280);  // brief delay for UX
+}
+
+function finalizeMPL() {
+  var mpl = state.mpl;
+  var switchRow = state.rangeLow;
+  var ce, ceLow, ceHigh;
+
+  if (switchRow === 0) {
+    // Corner: gamble always preferred (or accepted)
+    ce = null;
+    ceLow = mpl.rows[0];   // CE > top row
+    ceHigh = null;
+    cornerType = 'always_gamble';
+  } else if (switchRow >= state.N) {
+    // Corner: certain always preferred (or always rejected)
+    ce = null;
+    ceLow = null;
+    ceHigh = mpl.rows[state.N - 1];  // CE < bottom row
+    cornerType = 'always_certain';
+  } else {
+    // Switch identified between row (switchRow - 1) and row switchRow
+    // Both rows seen by the participant; CE is between them
+    ceLow = mpl.rows[switchRow];      // smaller end of bracket
+    ceHigh = mpl.rows[switchRow - 1]; // larger end of bracket
+    ce = (ceLow + ceHigh) / 2;
+    cornerType = null;
+  }
+
+  allResults.push({
+    mpl_id: mpl.id,
+    switchRow: switchRow,
+    ce: ce,
+    ceLow: ceLow,
+    ceHigh: ceHigh,
+    randomStart: state.randomStart,
+    nQuestions: state.history.length,
+    cornerType: cornerType,
+    history: state.history
+  });
+
+  mplIdx += 1;
+  if (mplIdx < MPLS.length) {
+    setTimeout(function() { startMPL(mplIdx); }, 300);
+  } else {
+    showDone();
+  }
+}
+
+function showDone() {
+  // Persist all results to localStorage
+  try {
+    localStorage.setItem('hl_study_risk_precheck', JSON.stringify({
+      timestamp: new Date().toISOString(),
+      results: allResults
+    }));
+  } catch (e) { console.warn('localStorage failed', e); }
+
+  // Build summary for postAnswers
+  var summary = {};
+  for (var i = 0; i < allResults.length; i++) {
+    var r = allResults[i];
+    summary[r.mpl_id + '_switch_row'] = r.switchRow;
+    summary[r.mpl_id + '_ce'] = r.ce;
+    summary[r.mpl_id + '_ce_low'] = r.ceLow;
+    summary[r.mpl_id + '_ce_high'] = r.ceHigh;
+  }
+  // Single field with full JSON for capture
+  summary['risk_precheck_complete'] = 'completed';
+  summary['risk_precheck_data'] = JSON.stringify(allResults);
+
+  // Send to REVISIT
+  try {
+    if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
+      Revisit.postAnswers(summary);
+    } else if (window.parent && window.parent.postMessage) {
+      window.parent.postMessage({type: 'revisit-data', answers: summary}, '*');
+    }
+  } catch (e) { console.warn('postAnswers failed', e); }
+
+  document.getElementById('title').textContent = 'Section complete';
+  document.getElementById('context').textContent = '';
+  document.getElementById('progress').textContent = '';
+  document.getElementById('qa').innerHTML =
+    '<div class="done-msg">' +
+      '<strong>Thank you.</strong>' +
+      'Your risk preference responses have been recorded. Click <em>Next</em> below to continue.' +
+    '</div>';
+}
+
+// ── Try loading revisit-communicate.js (best effort) ──
+function tryScript(src) {
+  var s = document.createElement('script');
+  s.src = src;
+  s.onerror = function() {};
+  document.head.appendChild(s);
+}
+tryScript('../../revisit-communicate.js');
+tryScript('/revisit-communicate.js');
+
+// Start
+startMPL(0);
+</script>
+</body>
+</html>

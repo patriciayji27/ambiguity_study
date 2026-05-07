@@ -5,58 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; }
-  .balance { text-align: right; padding: 4px 8px; font-size: 13px; color: #666; }
-  .balance span { font-weight: 500; color: #333; }
-  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 20px; align-items: center; padding: 8px 4px; }
-  .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 12px; }
-  .headline-title { font-size: 24px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 14px; }
-  .headline-lede { font-size: 15px; font-weight: 400; line-height: 1.6; color: #5f6368; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 8px; }
+
+  .frame { max-width: 1100px; margin: 0 auto; }
+
+  .invest-prompt { font-size: 15px; color: #333; margin-bottom: 16px; }
+
+  .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: center; padding: 4px 0; }
+  .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 8px; }
+  .headline-title { font-size: 22px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 12px; }
+  .headline-lede { font-size: 14px; font-weight: 400; line-height: 1.55; color: #5f6368; }
   .chart-col img { width: 100%; height: auto; display: block; }
-  .chart-only { display: flex; justify-content: center; align-items: center; padding: 8px 4px; }
-  .chart-only img { max-width: 100%; width: 100%; height: auto; display: block; }
-  .outcome-area { padding: 6px 12px; font-size: 12px; color: #999; margin-top: 4px; }
-  .outcome-area a { color: #888; cursor: pointer; text-decoration: underline; font-style: italic; }
-  .outcome-area a:hover { color: #555; }
-  .outcome-msg { margin-top: 6px; font-size: 13px; padding: 6px 10px; border-radius: 4px; display: none; }
-  .outcome-gain { background: #e8f5e9; color: #2e7d32; display: block; }
-  .outcome-zero { background: #f5f5f5; color: #616161; display: block; }
-  .outcome-loss { background: #fbe9e7; color: #c62828; display: block; }
+
+  .options-area { margin-top: 20px; padding: 14px 0; border-top: 1px solid #e5e7eb; }
+  .option-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; }
+  .option-label { font-weight: 600; min-width: 80px; color: #1a1a1a; }
+  .option-desc { font-size: 14px; color: #4b5563; line-height: 1.5; flex: 1; }
+
+  .choice-area { margin-top: 18px; display: flex; gap: 12px; justify-content: center; }
+  .choice-btn { padding: 12px 28px; font-size: 15px; font-weight: 500; border: 2px solid #2166AC; border-radius: 6px; background: white; color: #2166AC; cursor: pointer; transition: all 0.15s; }
+  .choice-btn:hover { background: #e3f2fd; }
+  .choice-btn.selected { background: #2166AC; color: white; }
+  .choice-btn:disabled { cursor: default; opacity: 0.6; }
+
+  .feedback { margin-top: 18px; padding: 14px 18px; border-radius: 6px; font-size: 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.gain { background: #e8f5e9; color: #1b5e20; border: 1px solid #66BB6A; }
+  .feedback.zero { background: #f5f5f5; color: #424242; border: 1px solid #bdbdbd; }
+  .feedback.loss { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
+  .feedback strong { font-size: 16px; }
+  .feedback-detail { margin-top: 4px; font-size: 13px; opacity: 0.85; }
 </style>
 </head>
 <body>
 
-<div class="balance">Portfolio: <span id="bal">$1,000</span></div>
+<div class="frame">
 
-<div id="root"></div>
+  <div class="invest-prompt">Imagine you have <strong>$1,000</strong> to invest in this trial.</div>
 
-<div class="outcome-area" id="oa">
-  <span>After selecting your answer below, check your outcome: </span>
-  <a onclick="reveal('A')">Option A</a> | <a onclick="reveal('B')">Option B</a>
-  <div class="outcome-msg" id="omsg"></div>
+  <div id="root"></div>
+
+  <div class="options-area">
+    <div class="option-row">
+      <div class="option-label">Option A</div>
+      <div class="option-desc">The asset whose projected performance is shown in the chart above.</div>
+    </div>
+    <div class="option-row">
+      <div class="option-label">Option B</div>
+      <div class="option-desc">A structured note that pays a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%.</div>
+    </div>
+  </div>
+
+  <div class="choice-area">
+    <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A</button>
+    <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B</button>
+  </div>
+
+  <div class="feedback" id="fb"></div>
+
 </div>
 
 <script>
+  // ── URL parameters ──
   var params = new URLSearchParams(window.location.search);
   var chartFile = params.get('c') || '';
-  // FIX: strip anything after ? in lede (REVISIT appends ?trialid=xxx)
   var headline = (params.get('h') || '').split('?')[0];
   var lede = (params.get('l') || '').split('?')[0];
+  var sigRaw = params.get('sig');
+  var basePct = sigRaw ? parseFloat(sigRaw) : 5.5;  // chart's base forecast %
+
+  var TRIAL_PRINCIPAL = 1000;   // each trial = $1000 fresh
+
+  // ── Render headline + chart ──
   var root = document.getElementById('root');
   var imgSrc = 'plots/' + chartFile;
-
-  // Decode URI components after stripping
-  try { headline = decodeURIComponent(headline); } catch(e) {}
-  try { lede = decodeURIComponent(lede); } catch(e) {}
-
-  // Portfolio balance
-  var balKey = 'hl_study_balance';
-  var balance = parseFloat(localStorage.getItem(balKey)) || 1000;
-  document.getElementById('bal').textContent = '$' + Math.round(balance).toLocaleString();
-
-  // Signal percentage for Option A outcome
-  var sigRaw = params.get('sig');
-  var signalPct = sigRaw ? parseFloat(sigRaw) : 5.5;
 
   if (headline) {
     root.innerHTML =
@@ -71,8 +93,8 @@
       '</div>';
   } else {
     root.innerHTML =
-      '<div class="chart-only">' +
-        '<img id="ci" src="' + imgSrc + '" alt="Chart" />' +
+      '<div style="display:flex;justify-content:center;">' +
+        '<img id="ci" src="' + imgSrc + '" style="max-width:720px;width:100%;" alt="Chart" />' +
       '</div>';
   }
 
@@ -85,32 +107,116 @@
     };
   }
 
-  // Outcome reveal
-  var revealed = false;
-  function reveal(choice) {
-    if (revealed) return;
-    revealed = true;
-    var gain = 0, msg = '', cls = '';
+  // ── Hidden cumulative tracker (researcher-only, localStorage) ──
+  var CUM_KEY = 'hl_study_cumulative_pnl';
+  var TRIALS_KEY = 'hl_study_trial_log';
+  var cumPnL = parseFloat(localStorage.getItem(CUM_KEY)) || 0;
+
+  // ── Choice handler ──
+  var hasChosen = false;
+
+  function choose(choice) {
+    if (hasChosen) return;
+    hasChosen = true;
+
+    document.getElementById('btn-a').disabled = true;
+    document.getElementById('btn-b').disabled = true;
+    if (choice === 'A') document.getElementById('btn-a').classList.add('selected');
+    else document.getElementById('btn-b').classList.add('selected');
+
+    // Compute outcome (each trial fresh at $1000)
+    var payoff = 0;
+    var msg = '';
+    var detail = '';
+    var cls = '';
+    var optionB_won = null;
 
     if (choice === 'A') {
-      gain = Math.round(balance * signalPct / 100);
-      if (gain > 0) { msg = 'Option A: +$' + gain.toLocaleString(); cls = 'outcome-gain'; }
-      else if (gain < 0) { msg = 'Option A: -$' + Math.abs(gain).toLocaleString(); cls = 'outcome-loss'; }
-      else { msg = 'Option A: $0 change'; cls = 'outcome-zero'; }
+      // Option A: deterministic return based on chart base forecast
+      payoff = Math.round(TRIAL_PRINCIPAL * basePct / 100);
+      if (payoff > 0) {
+        msg = 'Option A returned +$' + payoff.toLocaleString();
+        detail = 'The charted asset projected +' + basePct.toFixed(1) + '% on your $1,000 investment.';
+        cls = 'gain';
+      } else if (payoff < 0) {
+        msg = 'Option A returned -$' + Math.abs(payoff).toLocaleString();
+        detail = 'The charted asset projected ' + basePct.toFixed(1) + '% on your $1,000 investment.';
+        cls = 'loss';
+      } else {
+        msg = 'Option A returned $0';
+        detail = 'The charted asset projected 0% on your $1,000 investment.';
+        cls = 'zero';
+      }
     } else {
-      var won = Math.random() < 0.55;
-      if (won) { gain = Math.round(balance * 0.10); msg = 'Option B paid out: +$' + gain.toLocaleString(); cls = 'outcome-gain'; }
-      else { gain = 0; msg = 'Option B: no payout, principal returned'; cls = 'outcome-zero'; }
+      // Option B: 55% chance of $100 bonus, 45% chance of $0
+      optionB_won = Math.random() < 0.55;
+      if (optionB_won) {
+        payoff = 100;
+        msg = 'Option B paid out: +$100 bonus';
+        detail = 'The market benchmark met the payout condition (10% return).';
+        cls = 'gain';
+      } else {
+        payoff = 0;
+        msg = 'Option B did not pay out';
+        detail = 'The market benchmark did not meet the payout condition. Your $1,000 principal was returned.';
+        cls = 'zero';
+      }
     }
 
-    balance += gain;
-    localStorage.setItem(balKey, balance.toString());
-    document.getElementById('bal').textContent = '$' + Math.round(balance).toLocaleString();
+    // Show feedback (each trial fresh — no running balance shown)
+    var fb = document.getElementById('fb');
+    fb.className = 'feedback show ' + cls;
+    fb.innerHTML = '<strong>' + msg + '</strong>' +
+                   '<div class="feedback-detail">' + detail + '</div>';
 
-    var el = document.getElementById('omsg');
-    el.textContent = msg + '  |  Balance: $' + Math.round(balance).toLocaleString();
-    el.className = 'outcome-msg ' + cls;
+    // ── Update HIDDEN cumulative tracker (researcher only) ──
+    cumPnL += payoff;
+    localStorage.setItem(CUM_KEY, cumPnL.toString());
+
+    // Append trial outcome to log
+    var log = JSON.parse(localStorage.getItem(TRIALS_KEY) || '[]');
+    log.push({
+      time: new Date().toISOString(),
+      chart: chartFile,
+      choice: choice,
+      payoff: payoff,
+      basePct: basePct,
+      optionB_won: optionB_won,
+      cumulative: cumPnL
+    });
+    localStorage.setItem(TRIALS_KEY, JSON.stringify(log));
+
+    // ── Send choice data to REVISIT ──
+    // Try multiple methods for compatibility
+    try {
+      if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
+        Revisit.postAnswers({
+          'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
+          'trial-payoff': payoff,
+          'optionB-won': optionB_won
+        });
+      } else if (window.parent && window.parent.postMessage) {
+        window.parent.postMessage({
+          type: 'revisit-data',
+          answers: {
+            'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
+            'trial-payoff': payoff
+          }
+        }, '*');
+      }
+    } catch(e) { console.warn('postAnswers failed:', e); }
   }
+
+  // ── Try loading revisit-communicate.js (best effort) ──
+  function tryScript(src) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onerror = function() {};
+    document.head.appendChild(s);
+  }
+  tryScript('../../revisit-communicate.js');
+  tryScript('/revisit-communicate.js');
 </script>
+
 </body>
 </html>
