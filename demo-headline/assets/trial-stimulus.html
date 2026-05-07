@@ -35,6 +35,7 @@
   .feedback.loss { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
   .feedback strong { font-size: 16px; }
   .feedback-detail { margin-top: 4px; font-size: 13px; opacity: 0.85; }
+  .next-hint { margin-top: 10px; font-size: 13px; color: #555; font-style: italic; }
 </style>
 </head>
 <body>
@@ -167,7 +168,8 @@
     var fb = document.getElementById('fb');
     fb.className = 'feedback show ' + cls;
     fb.innerHTML = '<strong>' + msg + '</strong>' +
-                   '<div class="feedback-detail">' + detail + '</div>';
+                   '<div class="feedback-detail">' + detail + '</div>' +
+                   '<div class="next-hint">Click <strong>Next</strong> below to continue to the next trial.</div>';
 
     // ── Update HIDDEN cumulative tracker (researcher only) ──
     cumPnL += payoff;
