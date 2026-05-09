@@ -3954,14 +3954,40 @@
           "id": "financial_concepts_understanding",
           "prompt": "How would you rate your overall understanding of financial concepts, such as compound interest, diversification, and the risk-return tradeoff?",
           "required": true,
-          "type": "likert",
+          "type": "radio",
           "location": "belowStimulus",
-          "numItems": 7,
-          "start": 1,
-          "spacing": 1,
-          "leftLabel": "Very low",
-          "rightLabel": "Very high",
-          "labelLocation": "inline"
+          "options": [
+            {
+              "label": "1 — Very low",
+              "value": "1"
+            },
+            {
+              "label": "2",
+              "value": "2"
+            },
+            {
+              "label": "3",
+              "value": "3"
+            },
+            {
+              "label": "4",
+              "value": "4"
+            },
+            {
+              "label": "5",
+              "value": "5"
+            },
+            {
+              "label": "6",
+              "value": "6"
+            },
+            {
+              "label": "7 — Very high",
+              "value": "7"
+            }
+          ],
+          "horizontal": true,
+          "withDivider": true
         }
       ],
       "style": {
