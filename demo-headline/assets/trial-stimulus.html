@@ -5,47 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 8px; }
-
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 8px; color: #202124; }
   .frame { max-width: 1100px; margin: 0 auto; }
-
   .invest-prompt { font-size: 15px; color: #333; margin-bottom: 16px; }
-
   .two-col { display: grid; grid-template-columns: 2fr 3fr; gap: 24px; align-items: center; padding: 4px 0; }
   .headline-col { display: flex; flex-direction: column; justify-content: center; padding: 0 8px; }
-  .headline-title { font-size: 22px; font-weight: 600; line-height: 1.3; color: #1a1a1a; margin-bottom: 12px; }
+  .headline-title { font-size: 22px; font-weight: 650; line-height: 1.3; color: #1a1a1a; margin-bottom: 12px; }
   .headline-lede { font-size: 14px; font-weight: 400; line-height: 1.55; color: #5f6368; }
   .chart-col img { width: 100%; height: auto; display: block; }
-
-  .options-area { margin-top: 20px; padding: 14px 0; border-top: 1px solid #e5e7eb; }
-  .option-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; }
-  .option-label { font-weight: 600; min-width: 80px; color: #1a1a1a; }
-  .option-desc { font-size: 14px; color: #4b5563; line-height: 1.5; flex: 1; }
-
-  .choice-area { margin-top: 18px; display: flex; gap: 12px; justify-content: center; }
-  .choice-btn { padding: 12px 28px; font-size: 15px; font-weight: 500; border: 2px solid #2166AC; border-radius: 6px; background: white; color: #2166AC; cursor: pointer; transition: all 0.15s; }
-  .choice-btn:hover { background: #e3f2fd; }
-  .choice-btn.selected { background: #2166AC; color: white; }
-  .choice-btn:disabled { cursor: default; opacity: 0.6; }
-
-  .feedback { margin-top: 18px; padding: 14px 18px; border-radius: 6px; font-size: 14px; display: none; }
-  .feedback.show { display: block; }
-  .feedback.gain { background: #e8f5e9; color: #1b5e20; border: 1px solid #66BB6A; }
-  .feedback.zero { background: #f5f5f5; color: #424242; border: 1px solid #bdbdbd; }
-  .feedback.loss { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
-  .feedback strong { font-size: 16px; }
-  .feedback-detail { margin-top: 4px; font-size: 13px; opacity: 0.85; }
-  .next-hint { margin-top: 10px; font-size: 13px; color: #555; font-style: italic; }
+  .chart-only { display: flex; justify-content: center; }
+  .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
+  .options-area { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .option-row { border: 1px solid #dadce0; border-radius: 10px; padding: 14px 16px; background: #fff; min-height: 88px; }
+  .option-label { font-weight: 650; font-size: 15px; margin-bottom: 6px; }
+  .option-desc { font-size: 13px; line-height: 1.45; color: #444; }
+  .choice-area { margin-top: 14px; display: flex; gap: 12px; justify-content: center; }
+  .choice-btn { border: 1px solid #1a73e8; color: #1a73e8; background: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; cursor: pointer; min-width: 160px; }
+  .choice-btn:hover:not(:disabled) { background: #f4f8ff; }
+  .choice-btn.selected { background: #1a73e8; color: #fff; }
+  .choice-btn:disabled { cursor: default; opacity: 0.65; }
+  .feedback { margin: 14px auto 0; max-width: 720px; min-height: 42px; text-align: center; font-size: 14px; line-height: 1.45; }
+  .feedback.gain { color: #176c2f; }
+  .feedback.loss { color: #b3261e; }
+  .feedback.zero { color: #5f6368; }
+  .feedback .main { font-weight: 650; margin-bottom: 4px; }
+  .next-hint { margin-top: 8px; color: #5f6368; font-size: 13px; }
+  @media (max-width: 820px) {
+    .two-col { grid-template-columns: 1fr; gap: 12px; }
+    .options-area { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-
 <div class="frame">
-
   <div class="invest-prompt">Imagine you have <strong>$1,000</strong> to invest in this trial.</div>
-
   <div id="root"></div>
-
   <div class="options-area">
     <div class="option-row">
       <div class="option-label">Option A</div>
@@ -53,53 +47,870 @@
     </div>
     <div class="option-row">
       <div class="option-label">Option B</div>
-      <div class="option-desc">A structured note that pays a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%.</div>
+      <div class="option-desc">A structured note that pays a $100 bonus (10% return) if the market benchmark closes above its current level; otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%.</div>
     </div>
   </div>
-
   <div class="choice-area">
     <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A</button>
     <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B</button>
   </div>
-
   <div class="feedback" id="fb"></div>
-
 </div>
 
 <script>
-  // ── URL parameters ──
-  var params = new URLSearchParams(window.location.search);
-  var chartFile = params.get('c') || '';
-  var headline = (params.get('h') || '').split('?')[0];
-  var lede = (params.get('l') || '').split('?')[0];
-  var sigRaw = params.get('sig');
-  var basePct = sigRaw ? parseFloat(sigRaw) : 5.5;  // chart's base forecast %
+// Source of truth for headline text. Config passes only hid=<id>, so URL strings do
+// not carry repeated long headline text and every trial can be audited by headline_id.
+const HEADLINE_BANK = {
+  "AMB01": {
+    "id": "AMB01",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "policy",
+    "headline": "Fed officials split as growth cools while prices stay firm",
+    "lede": "Policy commentary left investors weighing softer activity data against inflation readings that remain above target."
+  },
+  "AMB02": {
+    "id": "AMB02",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "policy",
+    "headline": "Rate-cut timing stays uncertain after mixed policy signals",
+    "lede": "Traders saw little consensus after officials emphasized both progress on inflation and caution about easing too early."
+  },
+  "AMB03": {
+    "id": "AMB03",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "policy",
+    "headline": "Yields drift as investors parse uneven macro data",
+    "lede": "Bond-market moves were muted as weaker growth indicators competed with signs that price pressures may persist."
+  },
+  "AMB04": {
+    "id": "AMB04",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "labor",
+    "headline": "Labor data point in opposite directions before next jobs report",
+    "lede": "Hiring remained positive, but softer hours worked and slower wage growth complicated the read on household income."
+  },
+  "AMB05": {
+    "id": "AMB05",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "labor",
+    "headline": "Job openings cool while layoff activity remains contained",
+    "lede": "The labor market showed signs of normalization without yet confirming a sharper deterioration in demand."
+  },
+  "AMB06": {
+    "id": "AMB06",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "labor",
+    "headline": "Wage growth moderates, but services hiring stays resilient",
+    "lede": "Investors weighed easing pay pressure against continued strength in labor-intensive parts of the economy."
+  },
+  "AMB07": {
+    "id": "AMB07",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "earnings",
+    "headline": "Earnings beats mask uneven guidance across sectors",
+    "lede": "Several companies exceeded near-term estimates while management teams gave more cautious outlooks for the next quarter."
+  },
+  "AMB08": {
+    "id": "AMB08",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "earnings",
+    "headline": "Revenue trends improve, but margin commentary stays mixed",
+    "lede": "Corporate updates showed better top-line momentum alongside debate over whether cost pressure has fully faded."
+  },
+  "AMB09": {
+    "id": "AMB09",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "earnings",
+    "headline": "Analysts lift estimates selectively after uneven results",
+    "lede": "Forecast revisions improved for some industries while cyclical sectors continued to face skepticism."
+  },
+  "AMB10": {
+    "id": "AMB10",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "consumer",
+    "headline": "Consumer spending holds up as savings buffers thin",
+    "lede": "Retail activity remained positive, but households showed more sensitivity to prices and financing costs."
+  },
+  "AMB11": {
+    "id": "AMB11",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "consumer",
+    "headline": "Retail sales stabilize while discretionary categories lag",
+    "lede": "Headline spending avoided a sharp drop, though higher-ticket purchases remained softer than staples and services."
+  },
+  "AMB12": {
+    "id": "AMB12",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "consumer",
+    "headline": "Household demand looks resilient but less broad-based",
+    "lede": "Spending strength became more concentrated, leaving investors unsure how durable the expansion is."
+  },
+  "AMB13": {
+    "id": "AMB13",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "credit",
+    "headline": "Credit spreads stay calm despite rising refinancing questions",
+    "lede": "Funding markets remained orderly, but investors continued to monitor maturities for lower-rated borrowers."
+  },
+  "AMB14": {
+    "id": "AMB14",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "credit",
+    "headline": "Corporate bond demand holds as default concerns edge higher",
+    "lede": "New issuance was absorbed without major stress even as analysts flagged pockets of credit deterioration."
+  },
+  "AMB15": {
+    "id": "AMB15",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "credit",
+    "headline": "Lenders report tighter standards while markets remain liquid",
+    "lede": "Bank commentary pointed to caution, but public credit markets did not yet show broad funding pressure."
+  },
+  "AMB16": {
+    "id": "AMB16",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "energy",
+    "headline": "Energy prices ease, but supply risks remain in focus",
+    "lede": "Oil and gas markets pulled back from recent highs while geopolitical and inventory concerns stayed unresolved."
+  },
+  "AMB17": {
+    "id": "AMB17",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "energy",
+    "headline": "Lower fuel costs support sentiment as shipping costs stay elevated",
+    "lede": "Investors balanced relief from energy prices against signs that logistics expenses remain sticky."
+  },
+  "AMB18": {
+    "id": "AMB18",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "energy",
+    "headline": "Commodity markets send mixed signal on global demand",
+    "lede": "Industrial inputs softened while energy volatility kept the inflation outlook difficult to interpret."
+  },
+  "AMB19": {
+    "id": "AMB19",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "technology",
+    "headline": "Tech shares pause as AI spending debate intensifies",
+    "lede": "Investors weighed stronger infrastructure demand against questions about return on investment and valuation discipline."
+  },
+  "AMB20": {
+    "id": "AMB20",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "technology",
+    "headline": "Chip demand remains firm while software budgets look uneven",
+    "lede": "Earnings commentary suggested continued investment in compute capacity but more selective enterprise spending."
+  },
+  "AMB21": {
+    "id": "AMB21",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "technology",
+    "headline": "Mega-cap gains narrow as investors reassess growth durability",
+    "lede": "Leadership remained concentrated, making it harder to read whether the broader market trend has improved."
+  },
+  "AMB22": {
+    "id": "AMB22",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "breadth",
+    "headline": "Index holds steady as market breadth sends a weaker signal",
+    "lede": "Large-cap strength offset softness in more cyclical shares, leaving the headline index little changed."
+  },
+  "AMB23": {
+    "id": "AMB23",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "breadth",
+    "headline": "Small-cap momentum fades while defensive sectors catch a bid",
+    "lede": "The rotation in leadership suggested investors were not fully committing to a risk-on view."
+  },
+  "AMB24": {
+    "id": "AMB24",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "breadth",
+    "headline": "Sector leadership shifts without a clear market direction",
+    "lede": "Gains in some defensive groups balanced weakness in economically sensitive areas."
+  },
+  "AMB25": {
+    "id": "AMB25",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "volatility",
+    "headline": "Options markets price caution despite calm index moves",
+    "lede": "Implied volatility edged higher even though the broad market showed limited movement on the day."
+  },
+  "AMB26": {
+    "id": "AMB26",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "volatility",
+    "headline": "Hedging demand rises as realized volatility stays low",
+    "lede": "Investors added protection while recent price action remained quieter than the options market implied."
+  },
+  "AMB27": {
+    "id": "AMB27",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "volatility",
+    "headline": "Volatility gauges diverge ahead of major data releases",
+    "lede": "Short-dated hedges became more expensive while longer-term measures showed less stress."
+  },
+  "AMB28": {
+    "id": "AMB28",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "dollar",
+    "headline": "Dollar strength complicates outlook for multinational earnings",
+    "lede": "Currency moves supported import prices but created translation headwinds for companies with large overseas exposure."
+  },
+  "AMB29": {
+    "id": "AMB29",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "dollar",
+    "headline": "Global markets steady as currency moves cloud earnings read-through",
+    "lede": "The dollar’s move left investors debating whether foreign demand or translation effects matter more."
+  },
+  "AMB30": {
+    "id": "AMB30",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "dollar",
+    "headline": "Stronger dollar offsets part of the benefit from lower input costs",
+    "lede": "Companies with international revenue faced a mixed setup as currency and commodity effects moved in opposite directions."
+  },
+  "AMB31": {
+    "id": "AMB31",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "housing",
+    "headline": "Housing activity improves from low levels as mortgage rates stay high",
+    "lede": "Builder commentary turned less negative, but affordability remained a constraint on stronger demand."
+  },
+  "AMB32": {
+    "id": "AMB32",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "housing",
+    "headline": "Homebuilder sentiment rises while transaction volumes stay muted",
+    "lede": "Investors saw tentative stabilization, though high financing costs continued to limit turnover."
+  },
+  "AMB33": {
+    "id": "AMB33",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "housing",
+    "headline": "Construction data firm, but affordability pressure persists",
+    "lede": "Supply activity looked healthier than existing-home sales, leaving the housing signal mixed."
+  },
+  "AMB34": {
+    "id": "AMB34",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "liquidity",
+    "headline": "Liquidity conditions improve while cash balances remain elevated",
+    "lede": "Markets absorbed issuance smoothly, but investors still held substantial dry powder outside equities."
+  },
+  "AMB35": {
+    "id": "AMB35",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "liquidity",
+    "headline": "Fund flows stabilize after weeks of defensive positioning",
+    "lede": "Allocations stopped moving sharply toward cash, though risk appetite remained selective."
+  },
+  "AMB36": {
+    "id": "AMB36",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "liquidity",
+    "headline": "Deal activity reopens gradually as valuation gaps persist",
+    "lede": "Capital-market activity picked up, but buyers and sellers remained far apart on pricing."
+  },
+  "AMB37": {
+    "id": "AMB37",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "global",
+    "headline": "Global growth signals diverge across major regions",
+    "lede": "Strength in some economies contrasted with weaker manufacturing and trade data elsewhere."
+  },
+  "AMB38": {
+    "id": "AMB38",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "global",
+    "headline": "Export data improve while domestic demand indicators soften",
+    "lede": "The cross-current made it difficult to infer whether growth momentum is accelerating or merely rotating."
+  },
+  "AMB39": {
+    "id": "AMB39",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "global",
+    "headline": "International markets trade unevenly after mixed factory data",
+    "lede": "Regional performance varied as investors compared resilient services activity with weaker goods demand."
+  },
+  "AMB40": {
+    "id": "AMB40",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "margins",
+    "headline": "Cost pressure eases, but pricing power looks less certain",
+    "lede": "Companies reported relief on some input costs while warning that customers are becoming more price-sensitive."
+  },
+  "AMB41": {
+    "id": "AMB41",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "margins",
+    "headline": "Margin outlook steadies as demand visibility remains limited",
+    "lede": "Management teams sounded more comfortable on costs but less certain about order growth."
+  },
+  "AMB42": {
+    "id": "AMB42",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "margins",
+    "headline": "Inventory normalization supports margins while sales trends vary",
+    "lede": "Retailers cited cleaner inventories even as category-level demand remained uneven."
+  },
+  "AMB43": {
+    "id": "AMB43",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "positioning",
+    "headline": "Investors trim risk slowly after a crowded rally",
+    "lede": "Positioning data suggested some profit-taking without a broad reversal in market exposure."
+  },
+  "AMB44": {
+    "id": "AMB44",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "positioning",
+    "headline": "Flows show caution as benchmark remains near recent highs",
+    "lede": "Investors added selectively rather than chasing the index-wide move."
+  },
+  "AMB45": {
+    "id": "AMB45",
+    "valence": "ambiguous",
+    "strength": 0,
+    "domain": "positioning",
+    "headline": "Crowded positioning raises debate over near-term upside",
+    "lede": "Strategists disagreed on whether strong momentum reflects conviction or vulnerability to disappointment."
+  },
+  "POS01": {
+    "id": "POS01",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "policy",
+    "headline": "Softer inflation data support hopes for easier policy",
+    "lede": "Investors took modest encouragement from price data that moved closer to the central bank’s target."
+  },
+  "POS02": {
+    "id": "POS02",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "policy",
+    "headline": "Rate-sensitive shares firm as policy pressure appears to ease",
+    "lede": "Lower yields helped sentiment in areas of the market most exposed to financing costs."
+  },
+  "POS03": {
+    "id": "POS03",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "policy",
+    "headline": "Markets gain as inflation trend shows incremental improvement",
+    "lede": "The latest data reduced some concern that restrictive policy will need to last much longer."
+  },
+  "POS04": {
+    "id": "POS04",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "earnings",
+    "headline": "Corporate guidance improves as demand proves resilient",
+    "lede": "Management commentary pointed to steadier orders and less pressure on near-term revenue expectations."
+  },
+  "POS05": {
+    "id": "POS05",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "earnings",
+    "headline": "Earnings revisions turn higher after constructive updates",
+    "lede": "Analysts raised forecasts selectively after companies reported better-than-feared operating trends."
+  },
+  "POS06": {
+    "id": "POS06",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "earnings",
+    "headline": "Margins stabilize as firms manage costs more effectively",
+    "lede": "Cost controls and easing input pressure helped improve the near-term profit outlook."
+  },
+  "POS07": {
+    "id": "POS07",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "consumer",
+    "headline": "Consumer demand holds up despite higher financing costs",
+    "lede": "Retail and services data suggested households remain willing to spend in key categories."
+  },
+  "POS08": {
+    "id": "POS08",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "consumer",
+    "headline": "Spending data surprise to the upside across core categories",
+    "lede": "Demand looked broader than expected, supporting a more constructive read on the economy."
+  },
+  "POS09": {
+    "id": "POS09",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "consumer",
+    "headline": "Household balance sheets look sturdier than feared",
+    "lede": "Recent data showed fewer signs of stress than investors had expected earlier in the quarter."
+  },
+  "POS10": {
+    "id": "POS10",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "technology",
+    "headline": "AI infrastructure demand lifts outlook for technology spending",
+    "lede": "Companies tied to compute and data-center investment reported continued order strength."
+  },
+  "POS11": {
+    "id": "POS11",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "technology",
+    "headline": "Tech sentiment improves as enterprise budgets hold firm",
+    "lede": "Software and infrastructure commentary suggested customers are still funding priority projects."
+  },
+  "POS12": {
+    "id": "POS12",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "technology",
+    "headline": "Growth shares advance on stronger investment-cycle signals",
+    "lede": "Investors responded to evidence that capital spending plans remain intact."
+  },
+  "POS13": {
+    "id": "POS13",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "credit",
+    "headline": "Credit markets signal confidence as spreads tighten modestly",
+    "lede": "Corporate borrowing conditions improved, suggesting investors see limited near-term default risk."
+  },
+  "POS14": {
+    "id": "POS14",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "credit",
+    "headline": "New issuance clears smoothly as risk appetite improves",
+    "lede": "Demand for corporate bonds remained solid even as supply picked up."
+  },
+  "POS15": {
+    "id": "POS15",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "credit",
+    "headline": "Financing conditions ease for higher-quality borrowers",
+    "lede": "Lower risk premiums supported a more constructive view of corporate balance sheets."
+  },
+  "POS16": {
+    "id": "POS16",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "breadth",
+    "headline": "Market breadth improves as gains extend beyond mega-caps",
+    "lede": "More sectors joined the advance, reducing concern that index strength is too concentrated."
+  },
+  "POS17": {
+    "id": "POS17",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "breadth",
+    "headline": "Cyclical shares firm as growth concerns ease",
+    "lede": "Industrials and consumer-sensitive groups improved alongside better economic data."
+  },
+  "POS18": {
+    "id": "POS18",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "breadth",
+    "headline": "Rotation into lagging sectors supports broader rally",
+    "lede": "Investors added exposure outside the largest technology names, a sign of healthier participation."
+  },
+  "POS19": {
+    "id": "POS19",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "liquidity",
+    "headline": "Fund flows turn positive as cash moves back into equities",
+    "lede": "Allocation data showed investors gradually rebuilding risk exposure after a defensive stretch."
+  },
+  "POS20": {
+    "id": "POS20",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "liquidity",
+    "headline": "Liquidity backdrop improves as volatility demand fades",
+    "lede": "Lower hedging pressure and steadier funding markets supported risk assets."
+  },
+  "POS21": {
+    "id": "POS21",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "liquidity",
+    "headline": "Deal activity picks up as confidence in valuations improves",
+    "lede": "Capital-market activity resumed, suggesting buyers and sellers are becoming more aligned."
+  },
+  "POS22": {
+    "id": "POS22",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "global",
+    "headline": "Global growth data improve at the margin",
+    "lede": "Better trade and manufacturing readings reduced concern about a synchronized slowdown."
+  },
+  "POS23": {
+    "id": "POS23",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "global",
+    "headline": "Export demand strengthens as overseas indicators stabilize",
+    "lede": "International data provided a modest tailwind for companies with global revenue exposure."
+  },
+  "POS24": {
+    "id": "POS24",
+    "valence": "slight_positive",
+    "strength": 1,
+    "domain": "global",
+    "headline": "Factory activity recovers from recent weakness",
+    "lede": "Manufacturing surveys showed tentative improvement after a soft patch."
+  },
+  "NEG01": {
+    "id": "NEG01",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "policy",
+    "headline": "Sticky inflation revives concern over delayed rate relief",
+    "lede": "Investors grew more cautious after price data suggested policy may need to stay restrictive for longer."
+  },
+  "NEG02": {
+    "id": "NEG02",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "policy",
+    "headline": "Higher yields pressure risk assets as policy uncertainty rises",
+    "lede": "Rate-sensitive sectors weakened as traders reduced expectations for near-term easing."
+  },
+  "NEG03": {
+    "id": "NEG03",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "policy",
+    "headline": "Markets soften as officials push back on early cuts",
+    "lede": "Central-bank commentary emphasized caution, weighing on sentiment toward equities."
+  },
+  "NEG04": {
+    "id": "NEG04",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "earnings",
+    "headline": "Guidance cuts point to weaker demand next quarter",
+    "lede": "Several management teams cited slower order growth and more cautious customer behavior."
+  },
+  "NEG05": {
+    "id": "NEG05",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "earnings",
+    "headline": "Profit warnings increase as margin pressure returns",
+    "lede": "Companies flagged cost and demand headwinds that could limit earnings growth."
+  },
+  "NEG06": {
+    "id": "NEG06",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "earnings",
+    "headline": "Analysts trim estimates after disappointing outlooks",
+    "lede": "Forward earnings expectations moved lower following a wave of cautious corporate updates."
+  },
+  "NEG07": {
+    "id": "NEG07",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "consumer",
+    "headline": "Consumer cracks widen as discretionary spending slows",
+    "lede": "Recent data showed households pulling back on higher-ticket purchases and nonessential categories."
+  },
+  "NEG08": {
+    "id": "NEG08",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "consumer",
+    "headline": "Retail weakness raises concern over household resilience",
+    "lede": "Sales trends disappointed as shoppers became more selective under higher price pressure."
+  },
+  "NEG09": {
+    "id": "NEG09",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "consumer",
+    "headline": "Credit-card delinquencies edge higher as demand softens",
+    "lede": "Signs of household stress increased, adding caution to the growth outlook."
+  },
+  "NEG10": {
+    "id": "NEG10",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "technology",
+    "headline": "Tech shares slip as valuation concerns resurface",
+    "lede": "Investors questioned whether recent gains have moved faster than the earnings outlook."
+  },
+  "NEG11": {
+    "id": "NEG11",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "technology",
+    "headline": "AI spending optimism cools after cautious supplier commentary",
+    "lede": "Updates from key suppliers suggested some customers may phase investment more slowly."
+  },
+  "NEG12": {
+    "id": "NEG12",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "technology",
+    "headline": "Growth stocks lag as long-duration pressure returns",
+    "lede": "Higher discount rates weighed on companies with more earnings expected in future years."
+  },
+  "NEG13": {
+    "id": "NEG13",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "credit",
+    "headline": "Credit stress pockets grow as refinancing costs stay high",
+    "lede": "Lower-rated borrowers faced renewed pressure as debt maturities approached."
+  },
+  "NEG14": {
+    "id": "NEG14",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "credit",
+    "headline": "Spreads widen modestly after cautious lender commentary",
+    "lede": "Bank updates suggested tighter credit standards and weaker borrower demand."
+  },
+  "NEG15": {
+    "id": "NEG15",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "credit",
+    "headline": "Corporate borrowing costs rise as default concerns build",
+    "lede": "Investors demanded more compensation for credit risk, especially in cyclical sectors."
+  },
+  "NEG16": {
+    "id": "NEG16",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "breadth",
+    "headline": "Market breadth deteriorates as rally narrows again",
+    "lede": "A small group of large-cap winners masked weakness across much of the index."
+  },
+  "NEG17": {
+    "id": "NEG17",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "breadth",
+    "headline": "Defensive rotation points to lower risk appetite",
+    "lede": "Investors favored stable sectors while economically sensitive groups moved lower."
+  },
+  "NEG18": {
+    "id": "NEG18",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "breadth",
+    "headline": "Cyclical shares weaken after softer activity data",
+    "lede": "Industrials and consumer-linked names declined as growth concerns resurfaced."
+  },
+  "NEG19": {
+    "id": "NEG19",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "liquidity",
+    "headline": "Hedging demand rises as investors cut risk exposure",
+    "lede": "Options activity showed more demand for downside protection after a volatile stretch."
+  },
+  "NEG20": {
+    "id": "NEG20",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "liquidity",
+    "headline": "Fund flows turn defensive amid valuation concerns",
+    "lede": "Investors moved capital toward cash and lower-risk assets as equity multiples came under scrutiny."
+  },
+  "NEG21": {
+    "id": "NEG21",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "liquidity",
+    "headline": "Liquidity looks thinner as large orders move prices more sharply",
+    "lede": "Trading conditions became less forgiving, increasing concern about short-term volatility."
+  },
+  "NEG22": {
+    "id": "NEG22",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "global",
+    "headline": "Global manufacturing weakness weighs on cyclicals",
+    "lede": "Factory surveys deteriorated, raising questions about external demand and earnings exposure."
+  },
+  "NEG23": {
+    "id": "NEG23",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "global",
+    "headline": "Export indicators soften as overseas demand slows",
+    "lede": "Companies with international revenue faced renewed concern over weaker order growth."
+  },
+  "NEG24": {
+    "id": "NEG24",
+    "valence": "slight_negative",
+    "strength": -1,
+    "domain": "global",
+    "headline": "Dollar strength pressures global revenue outlook",
+    "lede": "Currency moves threatened to reduce translated earnings for multinational companies."
+  },
+  "ATN_POS_1": {
+    "id": "ATN_POS_1",
+    "valence": "attention_positive",
+    "strength": 3,
+    "domain": "attention",
+    "headline": "Market outlook turns clearly positive after broad-based gains",
+    "lede": "Strong earnings, improving demand, and supportive policy expectations all pointed in the same favorable direction."
+  },
+  "ATN_POS_2": {
+    "id": "ATN_POS_2",
+    "valence": "attention_positive",
+    "strength": 3,
+    "domain": "attention",
+    "headline": "Stocks rally as economic indicators beat expectations",
+    "lede": "Multiple data releases showed stronger growth and easing inflation pressure, creating an unusually clear positive setup."
+  },
+  "ATN_POS_3": {
+    "id": "ATN_POS_3",
+    "valence": "attention_positive",
+    "strength": 3,
+    "domain": "attention",
+    "headline": "Investors embrace risk as momentum strengthens across sectors",
+    "lede": "Market breadth improved sharply as nearly every major sector participated in the advance."
+  },
+  "ATN_NEG_1": {
+    "id": "ATN_NEG_1",
+    "valence": "attention_negative",
+    "strength": -3,
+    "domain": "attention",
+    "headline": "Market outlook turns clearly negative after broad-based declines",
+    "lede": "Weak earnings, deteriorating demand, and tighter financial conditions all pointed in the same unfavorable direction."
+  },
+  "ATN_NEG_2": {
+    "id": "ATN_NEG_2",
+    "valence": "attention_negative",
+    "strength": -3,
+    "domain": "attention",
+    "headline": "Stocks fall as economic indicators miss expectations",
+    "lede": "Multiple data releases showed weaker growth and renewed inflation pressure, creating an unusually clear negative setup."
+  },
+  "ATN_NEG_3": {
+    "id": "ATN_NEG_3",
+    "valence": "attention_negative",
+    "strength": -3,
+    "domain": "attention",
+    "headline": "Investors cut risk as losses spread across sectors",
+    "lede": "Market breadth deteriorated sharply as selling pressure reached nearly every major sector."
+  }
+};
 
-  var TRIAL_PRINCIPAL = 1000;   // each trial = $1000 fresh
+const params = new URLSearchParams(window.location.search);
+const chartFile = params.get('c') || '';
+const headlineId = params.get('hid') || params.get('headline_id') || '';
+const sigRaw = params.get('sig');
+const basePct = sigRaw ? parseFloat(sigRaw) : 5.5;
+const TRIAL_PRINCIPAL = 1000;
 
-  // ── Render headline + chart ──
-  var root = document.getElementById('root');
-  var imgSrc = 'plots/' + chartFile;
+// Legacy fallback: old config can still pass h/l directly. New config should use hid.
+const legacyHeadline = (params.get('h') || '').split('?')[0];
+const legacyLede = (params.get('l') || '').split('?')[0];
+const headlineObj = HEADLINE_BANK[headlineId] || (legacyHeadline ? { headline: legacyHeadline, lede: legacyLede, id: 'legacy-url', valence: params.get('sent') || 'legacy', domain: params.get('domain') || 'legacy' } : null);
 
-  if (headline) {
-    root.innerHTML =
-      '<div class="two-col">' +
-        '<div class="headline-col">' +
-          '<div class="headline-title">' + headline + '</div>' +
-          '<div class="headline-lede">' + lede + '</div>' +
-        '</div>' +
-        '<div class="chart-col">' +
-          '<img id="ci" src="' + imgSrc + '" alt="Chart" />' +
-        '</div>' +
-      '</div>';
+function appendText(parent, className, text) {
+  const el = document.createElement('div');
+  el.className = className;
+  el.textContent = text || '';
+  parent.appendChild(el);
+  return el;
+}
+
+function renderStimulus() {
+  const root = document.getElementById('root');
+  const imgSrc = 'plots/' + chartFile;
+
+  if (headlineObj && headlineObj.headline) {
+    const wrap = document.createElement('div');
+    wrap.className = 'two-col';
+
+    const headlineCol = document.createElement('div');
+    headlineCol.className = 'headline-col';
+    appendText(headlineCol, 'headline-title', headlineObj.headline);
+    appendText(headlineCol, 'headline-lede', headlineObj.lede);
+
+    const chartCol = document.createElement('div');
+    chartCol.className = 'chart-col';
+    const img = document.createElement('img');
+    img.id = 'ci';
+    img.src = imgSrc;
+    img.alt = 'Chart';
+    chartCol.appendChild(img);
+
+    wrap.appendChild(headlineCol);
+    wrap.appendChild(chartCol);
+    root.appendChild(wrap);
   } else {
-    root.innerHTML =
-      '<div style="display:flex;justify-content:center;">' +
-        '<img id="ci" src="' + imgSrc + '" style="max-width:720px;width:100%;" alt="Chart" />' +
-      '</div>';
+    const chartOnly = document.createElement('div');
+    chartOnly.className = 'chart-only';
+    const img = document.createElement('img');
+    img.id = 'ci';
+    img.src = imgSrc;
+    img.alt = 'Chart';
+    chartOnly.appendChild(img);
+    root.appendChild(chartOnly);
   }
 
-  var img = document.getElementById('ci');
+  const img = document.getElementById('ci');
   if (img) {
     img.onerror = function() {
       if (this.dataset.r) return;
@@ -107,118 +918,110 @@
       this.src = '/demo-headline/assets/plots/' + chartFile;
     };
   }
+}
+renderStimulus();
 
-  // ── Hidden cumulative tracker (researcher-only, localStorage) ──
-  var CUM_KEY = 'hl_study_cumulative_pnl';
-  var TRIALS_KEY = 'hl_study_trial_log';
-  var cumPnL = parseFloat(localStorage.getItem(CUM_KEY)) || 0;
+const CUM_KEY = 'hl_study_cumulative_pnl';
+const TRIALS_KEY = 'hl_study_trial_log';
+let cumPnL = parseFloat(localStorage.getItem(CUM_KEY)) || 0;
+let hasChosen = false;
 
-  // ── Choice handler ──
-  var hasChosen = false;
+function choose(choice) {
+  if (hasChosen) return;
+  hasChosen = true;
+  document.getElementById('btn-a').disabled = true;
+  document.getElementById('btn-b').disabled = true;
+  if (choice === 'A') document.getElementById('btn-a').classList.add('selected');
+  else document.getElementById('btn-b').classList.add('selected');
 
-  function choose(choice) {
-    if (hasChosen) return;
-    hasChosen = true;
+  let payoff = 0;
+  let msg = '';
+  let detail = '';
+  let cls = '';
+  let optionB_won = null;
 
-    document.getElementById('btn-a').disabled = true;
-    document.getElementById('btn-b').disabled = true;
-    if (choice === 'A') document.getElementById('btn-a').classList.add('selected');
-    else document.getElementById('btn-b').classList.add('selected');
-
-    // Compute outcome (each trial fresh at $1000)
-    var payoff = 0;
-    var msg = '';
-    var detail = '';
-    var cls = '';
-    var optionB_won = null;
-
-    if (choice === 'A') {
-      // Option A: deterministic return based on chart base forecast
-      payoff = Math.round(TRIAL_PRINCIPAL * basePct / 100);
-      if (payoff > 0) {
-        msg = 'Option A returned +$' + payoff.toLocaleString();
-        detail = 'The charted asset projected +' + basePct.toFixed(1) + '% on your $1,000 investment.';
-        cls = 'gain';
-      } else if (payoff < 0) {
-        msg = 'Option A returned -$' + Math.abs(payoff).toLocaleString();
-        detail = 'The charted asset projected ' + basePct.toFixed(1) + '% on your $1,000 investment.';
-        cls = 'loss';
-      } else {
-        msg = 'Option A returned $0';
-        detail = 'The charted asset projected 0% on your $1,000 investment.';
-        cls = 'zero';
-      }
+  if (choice === 'A') {
+    payoff = Math.round(TRIAL_PRINCIPAL * basePct / 100);
+    if (payoff > 0) {
+      msg = 'Option A returned +$' + payoff.toLocaleString();
+      detail = 'The charted asset projected +' + basePct.toFixed(1) + '% on your $1,000 investment.';
+      cls = 'gain';
+    } else if (payoff < 0) {
+      msg = 'Option A returned -$' + Math.abs(payoff).toLocaleString();
+      detail = 'The charted asset projected ' + basePct.toFixed(1) + '% on your $1,000 investment.';
+      cls = 'loss';
     } else {
-      // Option B: 55% chance of $100 bonus, 45% chance of $0
-      optionB_won = Math.random() < 0.55;
-      if (optionB_won) {
-        payoff = 100;
-        msg = 'Option B paid out: +$100 bonus';
-        detail = 'The market benchmark met the payout condition (10% return).';
-        cls = 'gain';
-      } else {
-        payoff = 0;
-        msg = 'Option B did not pay out';
-        detail = 'The market benchmark did not meet the payout condition. Your $1,000 principal was returned.';
-        cls = 'zero';
-      }
+      msg = 'Option A returned $0';
+      detail = 'The charted asset projected 0% on your $1,000 investment.';
+      cls = 'zero';
     }
-
-    // Show feedback (each trial fresh — no running balance shown)
-    var fb = document.getElementById('fb');
-    fb.className = 'feedback show ' + cls;
-    fb.innerHTML = '<strong>' + msg + '</strong>' +
-                   '<div class="feedback-detail">' + detail + '</div>' +
-                   '<div class="next-hint">Click <strong>Next</strong> below to continue to the next trial.</div>';
-
-    // ── Update HIDDEN cumulative tracker (researcher only) ──
-    cumPnL += payoff;
-    localStorage.setItem(CUM_KEY, cumPnL.toString());
-
-    // Append trial outcome to log
-    var log = JSON.parse(localStorage.getItem(TRIALS_KEY) || '[]');
-    log.push({
-      time: new Date().toISOString(),
-      chart: chartFile,
-      choice: choice,
-      payoff: payoff,
-      basePct: basePct,
-      optionB_won: optionB_won,
-      cumulative: cumPnL
-    });
-    localStorage.setItem(TRIALS_KEY, JSON.stringify(log));
-
-    // ── Send choice data to REVISIT ──
-    // Try multiple methods for compatibility
-    try {
-      if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
-        Revisit.postAnswers({
-          'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
-          'trial-payoff': payoff,
-          'optionB-won': optionB_won
-        });
-      } else if (window.parent && window.parent.postMessage) {
-        window.parent.postMessage({
-          type: 'revisit-data',
-          answers: {
-            'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
-            'trial-payoff': payoff
-          }
-        }, '*');
-      }
-    } catch(e) { console.warn('postAnswers failed:', e); }
+  } else {
+    optionB_won = Math.random() < 0.55;
+    if (optionB_won) {
+      payoff = 100;
+      msg = 'Option B paid out: +$100 bonus';
+      detail = 'The market benchmark met the payout condition (10% return).';
+      cls = 'gain';
+    } else {
+      payoff = 0;
+      msg = 'Option B returned $0';
+      detail = 'The market benchmark did not meet the payout condition; your principal was returned.';
+      cls = 'zero';
+    }
   }
 
-  // ── Try loading revisit-communicate.js (best effort) ──
-  function tryScript(src) {
-    var s = document.createElement('script');
-    s.src = src;
-    s.onerror = function() {};
-    document.head.appendChild(s);
-  }
-  tryScript('../../revisit-communicate.js');
-  tryScript('/revisit-communicate.js');
+  const fb = document.getElementById('fb');
+  fb.className = 'feedback ' + cls;
+  fb.innerHTML = '<div class="main"></div><div class="detail"></div><div class="next-hint">Click <strong>Next</strong> below to continue to the next trial.</div>';
+  fb.querySelector('.main').textContent = msg;
+  fb.querySelector('.detail').textContent = detail;
+
+  cumPnL += payoff;
+  localStorage.setItem(CUM_KEY, cumPnL.toString());
+  const log = JSON.parse(localStorage.getItem(TRIALS_KEY) || '[]');
+  log.push({
+    time: new Date().toISOString(),
+    chart: chartFile,
+    choice: choice,
+    payoff: payoff,
+    basePct: basePct,
+    optionB_won: optionB_won,
+    cumulative: cumPnL,
+    headline_id: headlineId || (headlineObj ? headlineObj.id : ''),
+    headline_valence: headlineObj ? headlineObj.valence : '',
+    headline_domain: headlineObj ? headlineObj.domain : '',
+    fan: params.get('fan') || '',
+    offset: params.get('offset') || '',
+    slope: params.get('slope') || ''
+  });
+  localStorage.setItem(TRIALS_KEY, JSON.stringify(log));
+
+  const answers = {
+    'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
+    'trial-payoff': payoff,
+    'optionB-won': optionB_won,
+    'headline-id': headlineId || (headlineObj ? headlineObj.id : ''),
+    'headline-valence': headlineObj ? headlineObj.valence : '',
+    'headline-domain': headlineObj ? headlineObj.domain : ''
+  };
+
+  try {
+    if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
+      Revisit.postAnswers(answers);
+    } else if (window.parent && window.parent.postMessage) {
+      window.parent.postMessage({ type: 'revisit-data', answers: answers }, '*');
+    }
+  } catch(e) { console.warn('postAnswers failed:', e); }
+}
+
+function tryScript(src) {
+  const s = document.createElement('script');
+  s.src = src;
+  s.onerror = function() {};
+  document.head.appendChild(s);
+}
+tryScript('../../revisit-communicate.js');
+tryScript('/revisit-communicate.js');
 </script>
-
 </body>
 </html>
