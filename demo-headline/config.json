@@ -42,7 +42,14 @@
               "label": "No, I do not consent",
               "value": "no"
             }
-          ]
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.5
+          }
         }
       ],
       "style": {
@@ -3663,10 +3670,28 @@
       }
     },
     "post-study-survey": {
-      "type": "markdown",
-      "path": "demo-headline/assets/post-study-survey.md",
+      "type": "questionnaire",
       "nextButtonText": "Continue",
+      "responseDividers": false,
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      },
       "response": [
+        {
+          "id": "post_study_survey_header",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "# Post-study survey\n\nPlease answer the following background questions. These questions help us interpret the study results across participants.\n\nYou may choose **Prefer not to say** whenever that option is available.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "16px",
+            "lineHeight": 1.45
+          }
+        },
         {
           "id": "demographic_gender",
           "prompt": "What is your gender?",
@@ -3695,7 +3720,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_gender_self_describe",
@@ -3704,7 +3735,13 @@
           "type": "shortText",
           "location": "belowStimulus",
           "placeholder": "Optional",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_race_ethnicity",
@@ -3751,7 +3788,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_race_ethnicity_other",
@@ -3760,7 +3803,13 @@
           "type": "shortText",
           "location": "belowStimulus",
           "placeholder": "Optional",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_age",
@@ -3798,7 +3847,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_education",
@@ -3836,7 +3891,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "chart_graph_use_frequency",
@@ -3866,7 +3927,13 @@
               "value": "Never"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "investing_experience_years",
@@ -3900,7 +3967,13 @@
               "value": "More than 15 years"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "current_invested_amount",
@@ -3938,7 +4011,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "financial_news_frequency",
@@ -3968,7 +4047,13 @@
               "value": "Never"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "financial_concepts_understanding",
@@ -4007,20 +4092,39 @@
             }
           ],
           "horizontal": true,
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         }
-      ],
+      ]
+    },
+    "post-study-free-response": {
+      "type": "questionnaire",
+      "nextButtonText": "Continue to debrief",
+      "responseDividers": false,
       "style": {
         "maxWidth": "900px",
         "width": "100%",
         "margin": "0 auto"
-      }
-    },
-    "post-study-free-response": {
-      "type": "markdown",
-      "path": "demo-headline/assets/post-study-free-response.md",
-      "nextButtonText": "Continue to debrief",
+      },
       "response": [
+        {
+          "id": "post_study_feedback_header",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "# Post-study feedback\n\nPlease answer the following questions about how you approached the task. There are no right or wrong answers.\n\nWe are interested in how you interpreted the charts and related information when making your decisions.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "16px",
+            "lineHeight": 1.45
+          }
+        },
         {
           "id": "free_response_chart_features",
           "prompt": "Which features of the charts did you pay the most attention to when making your decisions? For example, you might mention the projected lines, the historical trend, the spread between forecast lines, the position relative to Option B, or something else.",
@@ -4028,7 +4132,13 @@
           "type": "longText",
           "location": "belowStimulus",
           "placeholder": "Briefly describe what you focused on when reading the charts.",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "free_response_decision_strategy",
@@ -4037,7 +4147,13 @@
           "type": "longText",
           "location": "belowStimulus",
           "placeholder": "Briefly describe your decision process.",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "free_response_confusing_or_difficult",
@@ -4045,14 +4161,16 @@
           "required": false,
           "type": "longText",
           "location": "belowStimulus",
-          "placeholder": "Optional feedback."
+          "placeholder": "Optional feedback.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         }
-      ],
-      "style": {
-        "maxWidth": "900px",
-        "width": "100%",
-        "margin": "0 auto"
-      }
+      ]
     }
   },
   "sequence": {
