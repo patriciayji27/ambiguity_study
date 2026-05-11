@@ -15,20 +15,21 @@
   .chart-col img { width: 100%; height: auto; display: block; }
   .chart-only { display: flex; justify-content: center; }
   .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
-  .options-area { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .option-col { display: flex; flex-direction: column; gap: 10px; }
-  .option-row { border: 1px solid #dadce0; border-radius: 10px; padding: 14px 16px; background: #fff; min-height: 108px; }
-  .option-row.option-a { border-top: 4px solid #2b6cb0; }
-  .option-row.option-b { border-top: 4px solid #3b7f48; }
-  .option-label { display: flex; align-items: center; gap: 8px; font-weight: 650; font-size: 15px; margin-bottom: 6px; }
+  .options-area { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+  .option-col { display: flex; flex-direction: column; height: 100%; }
+  .option-panel { display: flex; flex-direction: column; justify-content: space-between; gap: 14px; height: 100%; }
+  .option-row { border: 1px solid #d7dbe0; border-radius: 12px; padding: 14px 18px 16px; background: #fff; min-height: 132px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .option-row.option-a { border-top: 4px solid #2f6fb3; }
+  .option-row.option-b { border-top: 4px solid #4a8d57; }
+  .option-label { display: flex; align-items: center; gap: 8px; font-weight: 650; font-size: 15px; margin-bottom: 8px; color: #1f1f1f; }
   .option-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: 0 0 10px; }
-  .dot-a { background: #2b6cb0; }
-  .dot-b { background: #3b7f48; }
-  .option-desc { font-size: 13px; line-height: 1.45; color: #444; }
-  .color-ref-a { color: #2b6cb0; font-weight: 600; }
-  .color-ref-b { color: #3b7f48; font-weight: 600; }
-  .choice-area { margin-top: 0; display: contents; }
-  .choice-btn { border: 1px solid #1a73e8; color: #1a73e8; background: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; cursor: pointer; min-width: 180px; align-self: center; }
+  .dot-a { background: #2f6fb3; }
+  .dot-b { background: #4a8d57; }
+  .option-desc { font-size: 13px; line-height: 1.48; color: #444; }
+  .color-ref-a { color: #2f6fb3; font-weight: 600; }
+  .color-ref-b { color: #4a8d57; font-weight: 600; }
+  .choice-area { display: none; }
+  .choice-btn { border: 1px solid #1a73e8; color: #1a73e8; background: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; cursor: pointer; width: 220px; align-self: center; }
   .choice-btn:hover:not(:disabled) { background: #f4f8ff; }
   .choice-btn.selected { background: #1a73e8; color: #fff; }
   .choice-btn:disabled { cursor: default; opacity: 0.65; }
@@ -40,7 +41,8 @@
   .next-hint { margin-top: 8px; color: #5f6368; font-size: 13px; }
   @media (max-width: 820px) {
     .two-col { grid-template-columns: 1fr; gap: 12px; }
-    .options-area { grid-template-columns: 1fr; }
+    .options-area { grid-template-columns: 1fr; gap: 14px; }
+    .option-row { min-height: 0; }
     .choice-btn { width: 100%; }
   }
 </style>
@@ -51,18 +53,22 @@
   <div id="root"></div>
   <div class="options-area">
     <div class="option-col">
-      <div class="option-row option-a">
-        <div class="option-label"><span class="option-dot dot-a"></span>Option A</div>
-        <div class="option-desc">The asset whose past and projected performance is shown in <span class="color-ref-a">blue</span> above.</div>
+      <div class="option-panel">
+        <div class="option-row option-a">
+          <div class="option-label"><span class="option-dot dot-a"></span>Option A</div>
+          <div class="option-desc">The asset shown in <span class="color-ref-a">blue</span> above, including its recent past performance and projected future range.</div>
+        </div>
+        <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A</button>
       </div>
-      <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A</button>
     </div>
     <div class="option-col">
-      <div class="option-row option-b">
-        <div class="option-label"><span class="option-dot dot-b"></span>Option B</div>
-        <div class="option-desc">The fixed-odds alternative, represented by the <span class="color-ref-b">green</span> reference lines above. It pays a $100 bonus (10% return) if the market benchmark closes above its current level; otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%.</div>
+      <div class="option-panel">
+        <div class="option-row option-b">
+          <div class="option-label"><span class="option-dot dot-b"></span>Option B</div>
+          <div class="option-desc">The fixed-odds alternative, indicated by the <span class="color-ref-b">green</span> reference lines above: a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise the $1,000 principal is returned. Estimated probability of payout: 55%.</div>
+        </div>
+        <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B</button>
       </div>
-      <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B</button>
     </div>
   </div>
   <div class="feedback" id="fb"></div>
