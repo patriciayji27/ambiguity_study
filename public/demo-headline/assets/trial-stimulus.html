@@ -15,21 +15,12 @@
   .chart-col img { width: 100%; height: auto; display: block; }
   .chart-only { display: flex; justify-content: center; }
   .chart-only img { max-width: 720px; width: 100%; height: auto; display: block; }
-  .options-area { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
-  .option-col { display: flex; flex-direction: column; height: 100%; }
-  .option-panel { display: flex; flex-direction: column; justify-content: space-between; gap: 14px; height: 100%; }
-  .option-row { border: 1px solid #d7dbe0; border-radius: 12px; padding: 14px 18px 16px; background: #fff; min-height: 132px; display: flex; flex-direction: column; justify-content: flex-start; }
-  .option-row.option-a { border-top: 4px solid #2f6fb3; }
-  .option-row.option-b { border-top: 4px solid #4a8d57; }
-  .option-label { display: flex; align-items: center; gap: 8px; font-weight: 650; font-size: 15px; margin-bottom: 8px; color: #1f1f1f; }
-  .option-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: 0 0 10px; }
-  .dot-a { background: #2f6fb3; }
-  .dot-b { background: #4a8d57; }
-  .option-desc { font-size: 13px; line-height: 1.48; color: #444; }
-  .color-ref-a { color: #2f6fb3; font-weight: 600; }
-  .color-ref-b { color: #4a8d57; font-weight: 600; }
-  .choice-area { display: none; }
-  .choice-btn { border: 1px solid #1a73e8; color: #1a73e8; background: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; cursor: pointer; width: 220px; align-self: center; }
+  .options-area { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .option-row { border: 1px solid #dadce0; border-radius: 10px; padding: 14px 16px; background: #fff; min-height: 88px; }
+  .option-label { font-weight: 650; font-size: 15px; margin-bottom: 6px; }
+  .option-desc { font-size: 13px; line-height: 1.45; color: #444; }
+  .choice-area { margin-top: 14px; display: flex; gap: 12px; justify-content: center; }
+  .choice-btn { border: 1px solid #1a73e8; color: #1a73e8; background: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; cursor: pointer; min-width: 240px; }
   .choice-btn:hover:not(:disabled) { background: #f4f8ff; }
   .choice-btn.selected { background: #1a73e8; color: #fff; }
   .choice-btn:disabled { cursor: default; opacity: 0.65; }
@@ -41,35 +32,27 @@
   .next-hint { margin-top: 8px; color: #5f6368; font-size: 13px; }
   @media (max-width: 820px) {
     .two-col { grid-template-columns: 1fr; gap: 12px; }
-    .options-area { grid-template-columns: 1fr; gap: 14px; }
-    .option-row { min-height: 0; }
-    .choice-btn { width: 100%; }
+    .options-area { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 <div class="frame">
-  <div class="invest-prompt">Imagine you have <strong>$1,000</strong> to invest in this trial.</div>
+  <div class="invest-prompt">Use the headline and chart to choose the option you think will perform better over the 60-day horizon. Once you choose, your answer is final.</div>
   <div id="root"></div>
   <div class="options-area">
-    <div class="option-col">
-      <div class="option-panel">
-        <div class="option-row option-a">
-          <div class="option-label"><span class="option-dot dot-a"></span>Option A</div>
-          <div class="option-desc">The asset shown in <span class="color-ref-a">blue</span> above, including its recent past performance and projected future range.</div>
-        </div>
-        <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A</button>
-      </div>
+    <div class="option-row">
+      <div class="option-label">Option A</div>
+      <div class="option-desc">An index fund whose recent performance and uncertain future performance are shown in blue above.</div>
     </div>
-    <div class="option-col">
-      <div class="option-panel">
-        <div class="option-row option-b">
-          <div class="option-label"><span class="option-dot dot-b"></span>Option B</div>
-          <div class="option-desc">The fixed-odds alternative, indicated by the <span class="color-ref-b">green</span> reference lines above: a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise the $1,000 principal is returned. Estimated probability of payout: 55%.</div>
-        </div>
-        <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B</button>
-      </div>
+    <div class="option-row">
+      <div class="option-label">Option B</div>
+      <div class="option-desc">A structured note shown in green above. If its market benchmark condition is met, the hypothetical $1,000 investment earns a +10% return; otherwise the principal is returned. Estimated probability of payout: 55%.</div>
     </div>
+  </div>
+  <div class="choice-area">
+    <button class="choice-btn" id="btn-a" onclick="choose('A')">Choose Option A: index fund (blue)</button>
+    <button class="choice-btn" id="btn-b" onclick="choose('B')">Choose Option B: structured note (green)</button>
   </div>
   <div class="feedback" id="fb"></div>
 </div>
@@ -275,8 +258,8 @@ const HEADLINE_BANK = {
     "valence": "ambiguous",
     "strength": 0,
     "domain": "volatility",
-    "headline": "Options markets price caution despite calm index moves",
-    "lede": "Implied volatility edged higher even though the broad market showed limited movement on the day."
+    "headline": "Volatility signals rise while index moves remain quiet",
+    "lede": "Investors added more downside protection even though the broad market showed limited movement on the day."
   },
   "AMB26": {
     "id": "AMB26",
@@ -379,8 +362,8 @@ const HEADLINE_BANK = {
     "valence": "ambiguous",
     "strength": 0,
     "domain": "global",
-    "headline": "Export data improve while domestic demand indicators soften",
-    "lede": "The cross-current made it difficult to infer whether growth momentum is accelerating or merely rotating."
+    "headline": "Global trade improves while local demand remains soft",
+    "lede": "Overseas shipments looked better, but domestic consumer and business indicators remained mixed."
   },
   "AMB39": {
     "id": "AMB39",
