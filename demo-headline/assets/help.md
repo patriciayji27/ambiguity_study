@@ -16,4 +16,4 @@ If you encounter any technical issues during the study, try the following:
 
 ## Contact
 
-If you need assistance, please reach out to **researcher@university.edu**.
+If you need assistance, please reach out to **datacognitionlab@gmail.com**.

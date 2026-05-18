@@ -3,283 +3,434 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Risk Preference Price Lists</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 12px; color: #1a1a1a; }
-  .frame { max-width: 720px; margin: 0 auto; }
-  .progress { font-size: 13px; color: #666; margin-bottom: 8px; }
-  .mpl-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
-  .mpl-context { font-size: 14px; color: #555; margin-bottom: 18px; line-height: 1.5; }
-  .question-card { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px 20px; margin-top: 12px; }
-  .question-prompt { font-size: 15px; margin-bottom: 14px; line-height: 1.5; }
-  .options { display: flex; flex-direction: column; gap: 10px; }
-  .opt-btn { padding: 14px 18px; font-size: 15px; font-weight: 500; border: 2px solid #2166AC; border-radius: 6px; background: white; color: #2166AC; cursor: pointer; text-align: left; transition: all 0.12s; }
-  .opt-btn:hover { background: #e3f2fd; }
-  .opt-btn:disabled { cursor: default; opacity: 0.5; }
-  .done-msg { padding: 24px; text-align: center; font-size: 16px; color: #2e7d32; background: #f1f8e9; border-radius: 8px; }
-  .done-msg strong { display: block; font-size: 18px; margin-bottom: 6px; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #202124;
+    background: transparent;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  .card {
+    border: 1px solid #d7dbe0;
+    border-radius: 12px;
+    background: #fff;
+    padding: 18px 20px;
+  }
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .part-label {
+    color: #5f6368;
+    font-size: 13px;
+    letter-spacing: .01em;
+  }
+  .progress {
+    color: #5f6368;
+    font-size: 13px;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 650;
+  }
+  .summary {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3c4043;
+  }
+  .gamble-box {
+    border-left: 4px solid #1a73e8;
+    background: #f8fbff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 14px 0;
+  }
+  .gamble-title {
+    font-size: 14px;
+    font-weight: 650;
+    margin-bottom: 6px;
+  }
+  .gamble-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3c4043;
+  }
+  .notice {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #5f6368;
+    margin: 10px 0 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  th, td {
+    border-bottom: 1px solid #e8eaed;
+    padding: 10px 8px;
+    vertical-align: middle;
+  }
+  th {
+    text-align: left;
+    font-weight: 650;
+    color: #3c4043;
+    background: #fafafa;
+  }
+  td.price { width: 150px; font-variant-numeric: tabular-nums; }
+  .choice-cell { display: flex; gap: 12px; flex-wrap: wrap; }
+  label.choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #3c4043;
+  }
+  input[type="radio"] { margin: 0; }
+  .actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+  }
+  button {
+    border: 1px solid #1a73e8;
+    background: #fff;
+    color: #1a73e8;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: #f4f8ff; }
+  button:disabled { cursor: default; opacity: .55; }
+  .error {
+    color: #b3261e;
+    font-size: 13px;
+    min-height: 18px;
+    margin-right: auto;
+  }
+  .done {
+    text-align: center;
+    padding: 36px 20px;
+  }
+  .done h1 { margin-bottom: 12px; }
+  .done p { color: #3c4043; line-height: 1.5; }
+  .small { color: #5f6368; font-size: 13px; }
+  @media (max-width: 720px) {
+    .card { padding: 14px; }
+    .topline { flex-direction: column; align-items: flex-start; }
+    td.price { width: auto; }
+    th:nth-child(2), td:nth-child(2) { width: 60%; }
+    .choice-cell { flex-direction: column; gap: 8px; }
+  }
 </style>
 </head>
 <body>
-<div class="frame">
-  <div class="progress" id="progress"></div>
-  <div class="mpl-title" id="title"></div>
-  <div class="mpl-context" id="context"></div>
-  <div id="qa"></div>
+<div class="wrap">
+  <div class="card" id="root"></div>
 </div>
-
 <script>
-// ══════════════════════════════════════════════════════════════
-// MPL DEFINITIONS
-// 4 price lists covering prospect theory's main predictions:
-//   1. Risk aversion in gains    (gain at p=0.55)
-//   2. Risk attitude in losses    (loss at p=0.55)
-//   3. Loss aversion (mixed)      (50/50 gain or fixed loss)
-//   4. Probability weighting      (low-prob gain at p=0.10)
-// Following Holden et al. 2025: each MPL holds the gamble constant
-// and varies the certain alternative across rows.
-// ══════════════════════════════════════════════════════════════
-
-var MPLS = [
+const PRICE_LISTS = [
   {
-    id: 'gain',
-    title: 'Part 1 of 4 — Choices about possible gains',
-    context: 'In each question, you will choose between a guaranteed amount of money and a gamble. The gamble is the same in all questions in this section: <strong>a 55% chance of winning $5,000 and a 45% chance of winning $0</strong>. Only the guaranteed amount changes.',
-    rows: [4500, 4000, 3500, 3000, 2750, 2500, 2000, 1500, 1000, 750, 500],
-    fmtCertain: function(v) { return 'A guaranteed gain of $' + v.toLocaleString(); },
-    fmtGamble: function() { return 'A 55% chance of gaining $5,000 and a 45% chance of gaining $0'; },
-    labelCertain: 'certain',
-    labelGamble: 'gamble'
+    id: 'gain_50_1000',
+    type: 'gain_contract',
+    title: 'Price list: gain contract with a 50% chance of $1,000',
+    brief: 'You are pricing a risky gain contract.',
+    description: 'This contract pays $1,000 with a 50% chance and $0 with a 50% chance.',
+    decisionText: 'Would you pay the listed price to receive this contract?',
+    yesText: 'Yes, I would pay this price',
+    noText: 'No, I would not pay this price',
+    prices: [0, 100, 250, 400, 500, 600, 750, 900, 1000]
   },
   {
-    id: 'loss',
-    title: 'Part 2 of 4 — Choices about possible losses',
-    context: 'In each question, you will choose between a guaranteed loss and a gamble that might involve a larger loss. The gamble is the same in all questions: <strong>a 55% chance of losing $5,000 and a 45% chance of losing $0</strong>. Only the guaranteed loss changes.',
-    rows: [-500, -750, -1000, -1500, -2000, -2750, -3000, -3500, -4000, -4250, -4500],
-    fmtCertain: function(v) { return 'A guaranteed loss of $' + Math.abs(v).toLocaleString(); },
-    fmtGamble: function() { return 'A 55% chance of losing $5,000 and a 45% chance of losing $0'; },
-    labelCertain: 'certain',
-    labelGamble: 'gamble'
+    id: 'gain_50_4000',
+    type: 'gain_contract',
+    title: 'Price list: gain contract with a 50% chance of $4,000',
+    brief: 'You are pricing a higher-stakes risky gain contract.',
+    description: 'This contract pays $4,000 with a 50% chance and $0 with a 50% chance.',
+    decisionText: 'Would you pay the listed price to receive this contract?',
+    yesText: 'Yes, I would pay this price',
+    noText: 'No, I would not pay this price',
+    prices: [0, 400, 1000, 1600, 2000, 2400, 3000, 3600, 4000]
   },
   {
-    id: 'mixed',
-    title: 'Part 3 of 4 — Mixed gain and loss gambles',
-    context: 'In each question, you will decide whether to <strong>accept or reject</strong> a 50/50 gamble. The possible loss is the same in all questions: a 50% chance of losing $1,500. Only the possible gain changes.',
-    rows: [1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 7000],
-    fmtCertain: function(v) { return 'Reject the gamble (no gain, no loss)'; },
-    fmtGamble: function(v) { return 'Accept: 50% chance of gaining $' + v.toLocaleString() + ', 50% chance of losing $1,500'; },
-    labelCertain: 'reject',
-    labelGamble: 'accept'
+    id: 'gain_55_1000',
+    type: 'gain_contract',
+    title: 'Price list: gain contract with a 55% chance of $1,000',
+    brief: 'You are pricing a risky gain contract with the same probability used later in the study.',
+    description: 'This contract pays $1,000 with a 55% chance and $0 with a 45% chance.',
+    decisionText: 'Would you pay the listed price to receive this contract?',
+    yesText: 'Yes, I would pay this price',
+    noText: 'No, I would not pay this price',
+    prices: [0, 100, 250, 400, 500, 550, 650, 800, 1000]
   },
   {
-    id: 'lowprob_gain',
-    title: 'Part 4 of 4 — Choices about a small chance of a large gain',
-    context: 'In each question, you will choose between a guaranteed amount of money and a gamble with a small chance of a large prize. The gamble is the same in all questions: <strong>a 10% chance of winning $10,000 and a 90% chance of winning $0</strong>. Only the guaranteed amount changes.',
-    rows: [2500, 2000, 1500, 1200, 1000, 800, 600, 400, 250, 150, 50],
-    fmtCertain: function(v) { return 'A guaranteed gain of $' + v.toLocaleString(); },
-    fmtGamble: function() { return 'A 10% chance of gaining $10,000 and a 90% chance of gaining $0'; },
-    labelCertain: 'certain',
-    labelGamble: 'gamble'
+    id: 'loss_50_1000_insurance',
+    type: 'loss_protection',
+    title: 'Price list: protection against a 50% chance of losing $1,000',
+    brief: 'You are pricing protection against a possible loss.',
+    description: 'Without protection, there is a 50% chance you lose $1,000 and a 50% chance you lose $0. Paying for protection removes this risky loss completely.',
+    decisionText: 'Would you pay the listed price for protection against this risky loss?',
+    yesText: 'Yes, I would pay this price for protection',
+    noText: 'No, I would not pay this price',
+    prices: [0, 100, 250, 400, 500, 600, 750, 900, 1000]
   }
 ];
 
-// ══════════════════════════════════════════════════════════════
-// RAPID ELICITATION STATE MACHINE
-// Per Holden et al. 2025: random start row, jump to extreme after
-// first answer, then bisect until switch point identified.
-// ══════════════════════════════════════════════════════════════
+const STORAGE_KEY = 'dcl_risk_price_list_v1';
+const params = new URLSearchParams(window.location.search);
+const participantId = params.get('PROLIFIC_PID') || params.get('participantId') || params.get('participant') || 'anonymous';
 
-var mplIdx = 0;
-var state = null;     // current MPL bisection state
-var allResults = [];  // per-MPL results
-
-function startMPL(idx) {
-  var mpl = MPLS[idx];
-  var N = mpl.rows.length;
-  state = {
-    mpl: mpl,
-    N: N,
-    rangeLow: 0,        // earliest possible switch row (inclusive)
-    rangeHigh: N,       // latest possible switch row + 1 (N = corner: always certain)
-    history: [],
-    currentRow: Math.floor(Math.random() * N),  // random starting row
-    randomStart: -1
+function hashString(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+function mulberry32(seed) {
+  return function() {
+    let t = seed += 0x6D2B79F5;
+    t = Math.imul(t ^ t >>> 15, t | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
   };
-  state.randomStart = state.currentRow;
-  document.getElementById('title').innerHTML = mpl.title;
-  document.getElementById('context').innerHTML = mpl.context;
-  document.getElementById('progress').textContent = 'Risk Preferences (Section ' + (idx + 1) + ' of 3)';
-  renderQuestion();
+}
+function shuffle(arr, rng) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function dollars(x) { return '$' + Number(x).toLocaleString(); }
+
+const seed = hashString(String(participantId) + '|risk-price-list-v1');
+const rng = mulberry32(seed);
+const sectionOrder = shuffle(PRICE_LISTS.map(x => x.id), rng);
+const rowOrders = {};
+PRICE_LISTS.forEach(section => {
+  rowOrders[section.id] = shuffle(section.prices, rng);
+});
+
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+if (!state || state.participantId !== participantId) {
+  state = {
+    participantId,
+    seed,
+    currentIndex: 0,
+    sectionOrder,
+    rowOrders,
+    responses: {},
+    completed: false,
+    startedAt: new Date().toISOString()
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function renderQuestion() {
-  var mpl = state.mpl;
-  var row = state.currentRow;
-  var certainAmt = mpl.rows[row];
+const byId = Object.fromEntries(PRICE_LISTS.map(s => [s.id, s]));
+const root = document.getElementById('root');
 
-  var labelA, labelB, valueA, valueB;
-  if (mpl.id === 'mixed') {
-    // For mixed: A = reject, B = accept the 50/50 gamble
-    labelA = mpl.fmtCertain(certainAmt);
-    labelB = mpl.fmtGamble(certainAmt);
-    valueA = 'reject';
-    valueB = 'accept';
-  } else {
-    labelA = mpl.fmtCertain(certainAmt);
-    labelB = mpl.fmtGamble(certainAmt);
-    valueA = 'certain';
-    valueB = 'gamble';
-  }
-
-  document.getElementById('qa').innerHTML =
-    '<div class="question-card">' +
-      '<div class="question-prompt">Which would you prefer?</div>' +
-      '<div class="options">' +
-        '<button class="opt-btn" onclick="recordAnswer(\'' + valueA + '\')">' + labelA + '</button>' +
-        '<button class="opt-btn" onclick="recordAnswer(\'' + valueB + '\')">' + labelB + '</button>' +
-      '</div>' +
-    '</div>';
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function recordAnswer(answer) {
-  var mpl = state.mpl;
-  var row = state.currentRow;
+function render() {
+  if (state.completed) return renderDone();
+  const sectionId = state.sectionOrder[state.currentIndex];
+  const section = byId[sectionId];
+  const responses = state.responses[sectionId] || {};
+  const rowPrices = state.rowOrders[sectionId];
 
-  // Disable buttons
-  var btns = document.querySelectorAll('.opt-btn');
-  for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+  root.innerHTML = `
+    <div class="topline">
+      <div>
+        <div class="part-label">Part ${state.currentIndex + 1} of ${state.sectionOrder.length}</div>
+        <h1>${section.title}</h1>
+      </div>
+      <div class="progress">${state.currentIndex + 1}/${state.sectionOrder.length}</div>
+    </div>
+    <p class="summary">${section.brief} Each row asks about a different possible price. The rows are intentionally shown in randomized order.</p>
+    <div class="gamble-box">
+      <div class="gamble-title">Risky option</div>
+      <div class="gamble-text">${section.description}</div>
+    </div>
+    <p class="notice">${section.decisionText}</p>
+    <table aria-label="Risk price list">
+      <thead>
+        <tr>
+          <th>Listed price</th>
+          <th>Your choice</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rowPrices.map(price => `
+          <tr>
+            <td class="price">${dollars(price)}</td>
+            <td>
+              <div class="choice-cell">
+                <label class="choice"><input type="radio" name="${section.id}_${price}" value="yes" ${responses[price] === 'yes' ? 'checked' : ''} onchange="record('${section.id}', ${price}, 'yes')"> ${section.yesText}</label>
+                <label class="choice"><input type="radio" name="${section.id}_${price}" value="no" ${responses[price] === 'no' ? 'checked' : ''} onchange="record('${section.id}', ${price}, 'no')"> ${section.noText}</label>
+              </div>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+    <div class="actions">
+      <div class="error" id="err"></div>
+      <button onclick="nextSection()">${state.currentIndex === state.sectionOrder.length - 1 ? 'Complete risk preference task' : 'Continue'}</button>
+    </div>
+  `;
+}
 
-  state.history.push({
-    row: row,
-    rowAmount: mpl.rows[row],
-    answer: answer,
-    timestamp: Date.now()
-  });
+window.record = function(sectionId, price, value) {
+  if (!state.responses[sectionId]) state.responses[sectionId] = {};
+  state.responses[sectionId][String(price)] = value;
+  saveState();
+  postPartialAnswers();
+};
 
-  // Map answer to bisection direction
-  // "certain"/"reject" preferred → switch is at later row (smaller certain / better gain needed)
-  //   → rangeLow = row + 1
-  // "gamble"/"accept" preferred → switch is at this row or earlier
-  //   → rangeHigh = row
-  if (answer === 'certain' || answer === 'reject') {
-    state.rangeLow = Math.max(state.rangeLow, row + 1);
-  } else {
-    state.rangeHigh = Math.min(state.rangeHigh, row);
-  }
+function sectionComplete(sectionId) {
+  const section = byId[sectionId];
+  const responses = state.responses[sectionId] || {};
+  return section.prices.every(p => responses[String(p)] === 'yes' || responses[String(p)] === 'no');
+}
 
-  // Convergence check
-  if (state.rangeLow >= state.rangeHigh) {
-    finalizeMPL();
+window.nextSection = function() {
+  const sectionId = state.sectionOrder[state.currentIndex];
+  const err = document.getElementById('err');
+  if (!sectionComplete(sectionId)) {
+    err.textContent = 'Please answer every row before continuing.';
     return;
   }
-
-  // Pick next row
-  var nextRow;
-  if (state.history.length === 1) {
-    // After first answer: jump to opposite extreme (per Holden et al.)
-    nextRow = (answer === 'certain' || answer === 'reject') ? (state.N - 1) : 0;
-    // Make sure it's still in range
-    if (nextRow < state.rangeLow) nextRow = state.rangeLow;
-    if (nextRow >= state.rangeHigh) nextRow = state.rangeHigh - 1;
+  err.textContent = '';
+  if (state.currentIndex < state.sectionOrder.length - 1) {
+    state.currentIndex += 1;
+    saveState();
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    // Bisect within current range
-    nextRow = Math.floor((state.rangeLow + state.rangeHigh - 1) / 2);
+    state.completed = true;
+    state.completedAt = new Date().toISOString();
+    saveState();
+    postFinalAnswers();
+    renderDone();
+  }
+};
+
+function scoreSection(section) {
+  const responses = state.responses[section.id] || {};
+  const sorted = section.prices.slice().sort((a, b) => a - b);
+  const yesPrices = sorted.filter(p => responses[String(p)] === 'yes');
+  const noPrices = sorted.filter(p => responses[String(p)] === 'no');
+  const highestYes = yesPrices.length ? Math.max(...yesPrices) : null;
+  const lowestNo = noPrices.length ? Math.min(...noPrices) : null;
+
+  let ceLower;
+  let ceUpper;
+  let cePoint;
+  if (highestYes === null) {
+    ceLower = sorted[0];
+    ceUpper = sorted[0];
+    cePoint = sorted[0];
+  } else {
+    const noAbove = noPrices.filter(p => p > highestYes);
+    ceLower = highestYes;
+    ceUpper = noAbove.length ? Math.min(...noAbove) : highestYes;
+    cePoint = (ceLower + ceUpper) / 2;
   }
 
-  state.currentRow = nextRow;
-  setTimeout(renderQuestion, 280);  // brief delay for UX
+  let inconsistencyCount = 0;
+  for (let i = 0; i < sorted.length; i++) {
+    for (let j = i + 1; j < sorted.length; j++) {
+      const low = sorted[i];
+      const high = sorted[j];
+      if (responses[String(low)] === 'no' && responses[String(high)] === 'yes') {
+        inconsistencyCount += 1;
+      }
+    }
+  }
+
+  return {
+    id: section.id,
+    type: section.type,
+    ce_point: cePoint,
+    ce_lower: ceLower,
+    ce_upper: ceUpper,
+    highest_yes: highestYes,
+    lowest_no: lowestNo,
+    n_yes: yesPrices.length,
+    n_no: noPrices.length,
+    inconsistency_count: inconsistencyCount,
+    row_order: state.rowOrders[section.id],
+    responses: responses
+  };
 }
 
-function finalizeMPL() {
-  var mpl = state.mpl;
-  var switchRow = state.rangeLow;
-  var ce, ceLow, ceHigh;
-
-  if (switchRow === 0) {
-    // Corner: gamble always preferred (or accepted)
-    ce = null;
-    ceLow = mpl.rows[0];   // CE > top row
-    ceHigh = null;
-    cornerType = 'always_gamble';
-  } else if (switchRow >= state.N) {
-    // Corner: certain always preferred (or always rejected)
-    ce = null;
-    ceLow = null;
-    ceHigh = mpl.rows[state.N - 1];  // CE < bottom row
-    cornerType = 'always_certain';
-  } else {
-    // Switch identified between row (switchRow - 1) and row switchRow
-    // Both rows seen by the participant; CE is between them
-    ceLow = mpl.rows[switchRow];      // smaller end of bracket
-    ceHigh = mpl.rows[switchRow - 1]; // larger end of bracket
-    ce = (ceLow + ceHigh) / 2;
-    cornerType = null;
-  }
-
-  allResults.push({
-    mpl_id: mpl.id,
-    switchRow: switchRow,
-    ce: ce,
-    ceLow: ceLow,
-    ceHigh: ceHigh,
-    randomStart: state.randomStart,
-    nQuestions: state.history.length,
-    cornerType: cornerType,
-    history: state.history
+function buildAnswers(finalFlag) {
+  const scores = PRICE_LISTS.map(scoreSection);
+  const flat = {
+    'risk-price-list-complete': !!finalFlag,
+    'risk-price-list-participant-id': participantId,
+    'risk-price-list-section-order': state.sectionOrder.join('|'),
+    'risk-price-list-started-at': state.startedAt || '',
+    'risk-price-list-completed-at': state.completedAt || '',
+    'risk-price-list-json': JSON.stringify({ scores, state })
+  };
+  scores.forEach(s => {
+    flat[`risk-ce-${s.id}`] = s.ce_point;
+    flat[`risk-ce-lower-${s.id}`] = s.ce_lower;
+    flat[`risk-ce-upper-${s.id}`] = s.ce_upper;
+    flat[`risk-highest-yes-${s.id}`] = s.highest_yes;
+    flat[`risk-lowest-no-${s.id}`] = s.lowest_no;
+    flat[`risk-inconsistency-count-${s.id}`] = s.inconsistency_count;
+    flat[`risk-response-row-order-${s.id}`] = s.row_order.join('|');
   });
-
-  mplIdx += 1;
-  if (mplIdx < MPLS.length) {
-    setTimeout(function() { startMPL(mplIdx); }, 300);
-  } else {
-    showDone();
-  }
+  return flat;
 }
 
-function showDone() {
-  // Persist all results to localStorage
-  try {
-    localStorage.setItem('hl_study_risk_precheck', JSON.stringify({
-      timestamp: new Date().toISOString(),
-      results: allResults
-    }));
-  } catch (e) { console.warn('localStorage failed', e); }
-
-  // Build summary for postAnswers
-  var summary = {};
-  for (var i = 0; i < allResults.length; i++) {
-    var r = allResults[i];
-    summary[r.mpl_id + '_switch_row'] = r.switchRow;
-    summary[r.mpl_id + '_ce'] = r.ce;
-    summary[r.mpl_id + '_ce_low'] = r.ceLow;
-    summary[r.mpl_id + '_ce_high'] = r.ceHigh;
-  }
-  // Single field with full JSON for capture
-  summary['risk_precheck_complete'] = 'completed';
-  summary['risk_precheck_data'] = JSON.stringify(allResults);
-
-  // Send to REVISIT
+function postAnswers(answers) {
   try {
     if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
-      Revisit.postAnswers(summary);
+      Revisit.postAnswers(answers);
     } else if (window.parent && window.parent.postMessage) {
-      window.parent.postMessage({type: 'revisit-data', answers: summary}, '*');
+      window.parent.postMessage({ type: 'revisit-data', answers: answers }, '*');
     }
-  } catch (e) { console.warn('postAnswers failed', e); }
+  } catch (e) {
+    console.warn('postAnswers failed:', e);
+  }
+}
+function postPartialAnswers() { postAnswers(buildAnswers(false)); }
+function postFinalAnswers() { postAnswers(buildAnswers(true)); }
 
-  document.getElementById('title').textContent = 'Section complete';
-  document.getElementById('context').textContent = '';
-  document.getElementById('progress').textContent = '';
-  document.getElementById('qa').innerHTML =
-    '<div class="done-msg">' +
-      '<strong>Thank you.</strong>' +
-      'Your risk preference responses have been recorded. Click <em>Next</em> below to continue.' +
-    '</div>';
+function renderDone() {
+  root.innerHTML = `
+    <div class="done">
+      <h1>Risk preference task complete</h1>
+      <p>Your responses have been recorded. Click Next below to continue to the main study.</p>
+      <p class="small">These responses will be used to estimate certainty-equivalent prices for the risky options shown in this task.</p>
+    </div>
+  `;
 }
 
-// ── Try loading revisit-communicate.js (best effort) ──
 function tryScript(src) {
-  var s = document.createElement('script');
+  const s = document.createElement('script');
   s.src = src;
   s.onerror = function() {};
   document.head.appendChild(s);
@@ -287,8 +438,7 @@ function tryScript(src) {
 tryScript('../../revisit-communicate.js');
 tryScript('/revisit-communicate.js');
 
-// Start
-startMPL(0);
+render();
 </script>
 </body>
 </html>

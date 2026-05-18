@@ -1,13 +1,11 @@
-# Risk Preferences
+# Risk preferences
 
-Before the main task, we would like to understand how you approach decisions involving uncertain outcomes.
+Before the main task, we would like to understand how you value uncertain outcomes with explicitly stated probabilities.
 
-You will see several short parts. The type of decision changes across parts, and the current part label will tell you what kind of choice you are making. Some parts ask you to choose between a guaranteed outcome and a gamble. Other parts ask whether you would accept or reject a risky bet.
+You will complete four short price-list sections. In each section, you will see one risky option and a list of possible prices. For each price, choose whether you would pay that price for the risky option, or for the protection described in that section.
 
-Please read the part label and the question on each screen before answering. The amounts involved range from a few hundred to several thousand dollars.
+The prices are hypothetical, but please answer as if the money were real and the consequences were yours. Your answers let us estimate a certainty-equivalent price for each risky option: the price at which the risky option and the listed price have about the same subjective value to you.
 
-There are no right or wrong answers. We are interested in your genuine preferences. The amounts are hypothetical, but please respond as if the money were real and the consequences were yours to live with.
-
-You will only see one question at a time, and you will move through the parts quickly. The whole risk preferences task takes about two minutes.
+The type of decision changes across sections. The current section heading will state whether you are pricing a gain contract or pricing protection against a possible loss.
 
 When you are ready, click Continue below.
