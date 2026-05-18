@@ -27,7 +27,7 @@ Your responses will be collected anonymously and stored securely. No personally 
 Your participation is entirely voluntary. You may withdraw at any time without penalty by closing your browser window.
 
 ### Contact
-If you have questions about this study, please contact the research team at [LAB_CROWDSOURCING_EMAIL].
+If you have questions about this study, please contact the research team at datacognitionlab@gmail.com.
 
 ---
 
