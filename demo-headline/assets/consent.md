@@ -18,7 +18,7 @@ The study takes approximately 15–20 minutes to complete.
 There are no known risks beyond those encountered in everyday life. Your decisions will determine your bonus with no possibility of losing money. The investments themselves are hypothetical. Your participation will contribute to research on how people interpret financial visualizations and information.
 
 ### Compensation
-You will receive the base payment described in the study posting. Depending on your decisions and the randomly generated outcomes, you may also receive a performance-based bonus within the range described in the posting.
+You will receive a base payment of $5 for full participation. Depending on your performance, you will also receive a bonus ranging from $0 to $15.
 
 ### Confidentiality
 Your responses will be collected anonymously and stored securely. No personally identifying information will be linked to your responses. Data will be used for academic research purposes only.

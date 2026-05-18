@@ -38,7 +38,7 @@
 </head>
 <body>
 <div class="frame">
-  <div class="invest-prompt">Use the headline and chart to choose the option you think will perform better over the 60-day horizon. Once you choose, your answer is final.</div>
+  <div class="invest-prompt">Imagine you have $1,000 to invest in Option A or B below. <b>You can maximize your bonus by using the headline and chart to choose the option you believe will perform the best over the next 60 days.</b> Once you click an option, your choice is final.</div>
   <div id="root"></div>
   <div class="options-area">
     <div class="option-row">
@@ -936,22 +936,22 @@ function choose(choice) {
 
   let payoff = 0;
   let msg = '';
-  let detail = '';
-  let cls = '';
-  let optionB_won = null;
+  let detail = ''; 
+  let cls = ''; 
+  let optionB_won = null; 
 
   if (choice === 'A') {
     payoff = Math.round(TRIAL_PRINCIPAL * basePct / 100);
     if (payoff > 0) {
-      msg = 'Option A returned +$' + payoff.toLocaleString();
+      msg = '<i>Generated outcome:</i> Option A returned +$' + payoff.toLocaleString();
       detail = 'The charted asset projected +' + basePct.toFixed(1) + '% on your $1,000 investment.';
       cls = 'gain';
     } else if (payoff < 0) {
-      msg = 'Option A returned -$' + Math.abs(payoff).toLocaleString();
+      msg = '<i>Generated outcome:</i> Option A returned -$' + Math.abs(payoff).toLocaleString();
       detail = 'The charted asset projected ' + basePct.toFixed(1) + '% on your $1,000 investment.';
       cls = 'loss';
     } else {
-      msg = 'Option A returned $0';
+      msg = '<i>Generated outcome:</i> Option A returned $0';
       detail = 'The charted asset projected 0% on your $1,000 investment.';
       cls = 'zero';
     }
@@ -959,12 +959,12 @@ function choose(choice) {
     optionB_won = Math.random() < 0.55;
     if (optionB_won) {
       payoff = 100;
-      msg = 'Option B paid out: +$100 bonus';
+      msg = '<i>Generated outcome:</i> Option B paid out: +$100 bonus';
       detail = 'The market benchmark met the payout condition (10% return).';
       cls = 'gain';
     } else {
       payoff = 0;
-      msg = 'Option B returned $0';
+      msg = '<i>Generated outcome:</i> Option B returned $0';
       detail = 'The market benchmark did not meet the payout condition; your principal was returned.';
       cls = 'zero';
     }
