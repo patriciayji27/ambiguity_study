@@ -13,7 +13,7 @@
     ]
   },
   "uiConfig": {
-    "contactEmail": "[LAB_CROWDSOURCING_EMAIL]",
+    "contactEmail": "pyji@uchicago.edu",
     "helpTextPath": "demo-headline/assets/help.md",
     "logoPath": "demo-headline/assets/logo.png",
     "withProgressBar": true,
@@ -42,7 +42,14 @@
               "label": "No, I do not consent",
               "value": "no"
             }
-          ]
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.5
+          }
         }
       ],
       "style": {
@@ -86,42 +93,112 @@
       }
     },
     "practice-trial-1": {
-      "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?practice=1&c=practice-trial-1.png&sig=11.5&h=Market+outlook+improves+after+broad-based+gains&l=Recent+market+information+points+to+stronger+conditions%2C+while+the+chart+shows+the+uncertain+60-day+forecast.&sent=practice&domain=practice&fan=practice&offset=6.0&slope=positive",
+      "type": "image",
+      "path": "demo-headline/assets/plots/practice-trial-1.png",
+      "instructionLocation": "aboveStimulus",
+      "instruction": "Practice Trial 1 of 2\n\nImagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "practice-trial-1",
         "isPractice": true,
-        "chart_file": "practice-trial-1.png",
-        "base_target_pct": 11.5,
-        "chart_edge_pp": 6.0,
-        "correct": "optionA"
+        "signal_pct": 11.5
       },
-      "response": [],
+      "correctAnswer": [
+        {
+          "id": "investment-choice",
+          "answer": "optionA"
+        }
+      ],
+      "response": [
+        {
+          "id": "optionA-info",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "**Option A** is the asset whose projected performance is shown in the chart."
+        },
+        {
+          "id": "optionB-info",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "**Option B** is a structured note that pays a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%."
+        },
+        {
+          "id": "investment-choice",
+          "prompt": "Which option would you choose?",
+          "required": true,
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            {
+              "label": "Option A — The asset shown in the chart",
+              "value": "optionA"
+            },
+            {
+              "label": "Option B — The structured note",
+              "value": "optionB"
+            }
+          ]
+        }
+      ],
       "style": {
-        "maxWidth": "1100px",
+        "maxWidth": "700px",
         "width": "100%",
-        "height": "780px",
+        "height": "auto",
         "margin": "0 auto"
       }
     },
     "practice-trial-2": {
-      "type": "website",
-      "path": "demo-headline/assets/trial-stimulus.html?practice=1&c=practice-trial-2.png&sig=-0.5&h=Markets+soften+as+demand+indicators+lose+momentum&l=Recent+market+information+points+to+weaker+conditions%2C+while+the+chart+shows+the+uncertain+60-day+forecast.&sent=practice&domain=practice&fan=practice&offset=-6.0&slope=negative",
+      "type": "image",
+      "path": "demo-headline/assets/plots/practice-trial-2.png",
+      "instructionLocation": "aboveStimulus",
+      "instruction": "Practice Trial 2 of 2\n\nImagine you have $1,000 to invest.",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "practice-trial-2",
         "isPractice": true,
-        "chart_file": "practice-trial-2.png",
-        "base_target_pct": -0.5,
-        "chart_edge_pp": -6.0,
-        "correct": "optionB"
+        "signal_pct": -0.5
       },
-      "response": [],
+      "correctAnswer": [
+        {
+          "id": "investment-choice",
+          "answer": "optionB"
+        }
+      ],
+      "response": [
+        {
+          "id": "optionA-info",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "**Option A** is the asset whose projected performance is shown in the chart."
+        },
+        {
+          "id": "optionB-info",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "**Option B** is a structured note that pays a $100 bonus (10% return) if the market benchmark closes above its current level, otherwise your $1,000 principal is returned. Estimated probability the payout condition is met: 55%."
+        },
+        {
+          "id": "investment-choice",
+          "prompt": "Which option would you choose?",
+          "required": true,
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            {
+              "label": "Option A — The asset shown in the chart",
+              "value": "optionA"
+            },
+            {
+              "label": "Option B — The structured note",
+              "value": "optionB"
+            }
+          ]
+        }
+      ],
       "style": {
-        "maxWidth": "1100px",
+        "maxWidth": "700px",
         "width": "100%",
-        "height": "780px",
+        "height": "auto",
         "margin": "0 auto"
       }
     },
@@ -3593,10 +3670,28 @@
       }
     },
     "post-study-survey": {
-      "type": "markdown",
-      "path": "demo-headline/assets/post-study-survey.md",
+      "type": "questionnaire",
       "nextButtonText": "Continue",
+      "responseDividers": false,
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      },
       "response": [
+        {
+          "id": "post_study_survey_header",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "# Post-study survey\n\nPlease answer the following background questions. These questions help us interpret the study results across participants.\n\nYou may choose **Prefer not to say** whenever that option is available.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "16px",
+            "lineHeight": 1.45
+          }
+        },
         {
           "id": "demographic_gender",
           "prompt": "What is your gender?",
@@ -3625,7 +3720,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_gender_self_describe",
@@ -3634,7 +3735,13 @@
           "type": "shortText",
           "location": "belowStimulus",
           "placeholder": "Optional",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_race_ethnicity",
@@ -3681,7 +3788,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_race_ethnicity_other",
@@ -3690,7 +3803,13 @@
           "type": "shortText",
           "location": "belowStimulus",
           "placeholder": "Optional",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_age",
@@ -3728,7 +3847,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "demographic_education",
@@ -3766,7 +3891,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "chart_graph_use_frequency",
@@ -3796,7 +3927,13 @@
               "value": "Never"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "investing_experience_years",
@@ -3830,7 +3967,13 @@
               "value": "More than 15 years"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "current_invested_amount",
@@ -3868,7 +4011,13 @@
               "value": "Prefer not to say"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "financial_news_frequency",
@@ -3898,7 +4047,13 @@
               "value": "Never"
             }
           ],
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "financial_concepts_understanding",
@@ -3937,28 +4092,53 @@
             }
           ],
           "horizontal": true,
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         }
-      ],
+      ]
+    },
+    "post-study-free-response": {
+      "type": "questionnaire",
+      "nextButtonText": "Continue to debrief",
+      "responseDividers": false,
       "style": {
         "maxWidth": "900px",
         "width": "100%",
         "margin": "0 auto"
-      }
-    },
-    "post-study-free-response": {
-      "type": "markdown",
-      "path": "demo-headline/assets/post-study-free-response.md",
-      "nextButtonText": "Continue to debrief",
+      },
       "response": [
         {
+          "id": "post_study_feedback_header",
+          "type": "textOnly",
+          "location": "belowStimulus",
+          "prompt": "# Post-study feedback\n\nPlease answer the following questions about how you approached the task. There are no right or wrong answers.\n\nWe are interested in how you interpreted the charts and related information when making your decisions.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "16px",
+            "lineHeight": 1.45
+          }
+        },
+        {
           "id": "free_response_chart_features",
-          "prompt": "Which visual cues, chart patterns, or headline information did you rely on when making your decisions?",
+          "prompt": "Which features of the charts did you pay the most attention to when making your decisions? For example, you might mention the projected lines, the historical trend, the spread between forecast lines, the position relative to Option B, or something else.",
           "required": true,
           "type": "longText",
           "location": "belowStimulus",
-          "placeholder": "Briefly describe what information you used when making your decisions.",
-          "withDivider": true
+          "placeholder": "Briefly describe what you focused on when reading the charts.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "free_response_decision_strategy",
@@ -3967,7 +4147,13 @@
           "type": "longText",
           "location": "belowStimulus",
           "placeholder": "Briefly describe your decision process.",
-          "withDivider": true
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         },
         {
           "id": "free_response_confusing_or_difficult",
@@ -3975,14 +4161,16 @@
           "required": false,
           "type": "longText",
           "location": "belowStimulus",
-          "placeholder": "Optional feedback."
+          "placeholder": "Optional feedback.",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         }
-      ],
-      "style": {
-        "maxWidth": "900px",
-        "width": "100%",
-        "margin": "0 auto"
-      }
+      ]
     }
   },
   "sequence": {
@@ -4287,8 +4475,8 @@
           }
         ]
       },
-      "post-study-free-response",
       "post-study-survey",
+      "post-study-free-response",
       "debrief"
     ]
   }
