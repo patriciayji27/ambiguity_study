@@ -38,7 +38,7 @@
 </head>
 <body>
 <div class="frame">
-  <div class="invest-prompt">Imagine you have $1,000 to invest in Option A or B below. <b>You can maximize your bonus by using the headline and chart to choose the option you believe will perform the best over the next 60 days.</b> Once you click an option, your choice is final.</div>
+  <div class="invest-prompt">Use the headline and chart to choose the option you think will perform better over the 60-day horizon. Once you choose, your answer is final.</div>
   <div id="root"></div>
   <div class="options-area">
     <div class="option-row">
@@ -857,6 +857,7 @@ const HEADLINE_BANK = {
 
 const params = new URLSearchParams(window.location.search);
 const chartFile = params.get('c') || '';
+const isPractice = params.get('practice') === '1' || params.get('practice') === 'true';
 const headlineId = params.get('hid') || params.get('headline_id') || '';
 const sigRaw = params.get('sig');
 const basePct = sigRaw ? parseFloat(sigRaw) : 5.5;
@@ -936,22 +937,22 @@ function choose(choice) {
 
   let payoff = 0;
   let msg = '';
-  let detail = ''; 
-  let cls = ''; 
-  let optionB_won = null; 
+  let detail = '';
+  let cls = '';
+  let optionB_won = null;
 
   if (choice === 'A') {
     payoff = Math.round(TRIAL_PRINCIPAL * basePct / 100);
     if (payoff > 0) {
-      msg = '<i>Generated outcome:</i> Option A returned +$' + payoff.toLocaleString();
+      msg = 'Option A returned +$' + payoff.toLocaleString();
       detail = 'The charted asset projected +' + basePct.toFixed(1) + '% on your $1,000 investment.';
       cls = 'gain';
     } else if (payoff < 0) {
-      msg = '<i>Generated outcome:</i> Option A returned -$' + Math.abs(payoff).toLocaleString();
+      msg = 'Option A returned -$' + Math.abs(payoff).toLocaleString();
       detail = 'The charted asset projected ' + basePct.toFixed(1) + '% on your $1,000 investment.';
       cls = 'loss';
     } else {
-      msg = '<i>Generated outcome:</i> Option A returned $0';
+      msg = 'Option A returned $0';
       detail = 'The charted asset projected 0% on your $1,000 investment.';
       cls = 'zero';
     }
@@ -959,12 +960,12 @@ function choose(choice) {
     optionB_won = Math.random() < 0.55;
     if (optionB_won) {
       payoff = 100;
-      msg = '<i>Generated outcome:</i> Option B paid out: +$100 bonus';
+      msg = 'Option B paid out: +$100 bonus';
       detail = 'The market benchmark met the payout condition (10% return).';
       cls = 'gain';
     } else {
       payoff = 0;
-      msg = '<i>Generated outcome:</i> Option B returned $0';
+      msg = 'Option B returned $0';
       detail = 'The market benchmark did not meet the payout condition; your principal was returned.';
       cls = 'zero';
     }
@@ -976,12 +977,15 @@ function choose(choice) {
   fb.querySelector('.main').textContent = msg;
   fb.querySelector('.detail').textContent = detail;
 
-  cumPnL += payoff;
-  localStorage.setItem(CUM_KEY, cumPnL.toString());
+  if (!isPractice) {
+    cumPnL += payoff;
+    localStorage.setItem(CUM_KEY, cumPnL.toString());
+  }
   const log = JSON.parse(localStorage.getItem(TRIALS_KEY) || '[]');
   log.push({
     time: new Date().toISOString(),
     chart: chartFile,
+    is_practice: isPractice,
     choice: choice,
     payoff: payoff,
     basePct: basePct,
@@ -998,6 +1002,7 @@ function choose(choice) {
 
   const answers = {
     'investment-choice': choice === 'A' ? 'optionA' : 'optionB',
+    'is-practice': isPractice,
     'trial-payoff': payoff,
     'optionB-won': optionB_won,
     'headline-id': headlineId || (headlineObj ? headlineObj.id : ''),
