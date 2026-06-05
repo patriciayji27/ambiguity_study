@@ -1,89 +1,4295 @@
 {
-  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.3.2/src/parser/StudyConfigSchema.json",
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
   "studyMetadata": {
-    "title": "Passing Data from reVISit to HTML and back",
-    "version": "pilot",
+    "title": "Investment Decision-Making Under Uncertainty: Headline Study",
+    "version": "4.1.2",
     "authors": [
-      "The reVISit Team"
+      "DCL Research Team"
     ],
-    "date": "2023-04-14",
-    "description": "A demo of how to pass visualization data from reVISit to HTML and send user answers from HTML back to the reVISit.",
+    "date": "2026-05-09",
+    "description": "Examines how news headlines and uncertainty visualization influence financial decision-making.",
     "organizations": [
-      "University of Utah",
-      "WPI",
-      "University of Toronto"
+      "DCL Lab"
     ]
   },
   "uiConfig": {
-    "contactEmail": "contact@revisit.dev",
-    "helpTextPath": "demo-html-input/assets/help.md",
-    "logoPath": "revisitAssets/revisitLogoSquare.svg",
+    "contactEmail": "[LAB_CROWDSOURCING_EMAIL]",
+    "helpTextPath": "demo-headline/assets/help.md",
+    "logoPath": "demo-headline/assets/logo.png",
     "withProgressBar": true,
     "autoDownloadStudy": false,
-    "autoDownloadTime": 5000,
-    "withSidebar": false
-  },
-  "baseComponents": {
-    "bar-chart": {
-      "type": "website",
-      "response": [
-        {
-          "id": "barChart",
-          "prompt": "Your selected answer:",
-          "location": "belowStimulus",
-          "type": "reactive"
-        }
-      ],
-      "path": "demo-html-input/assets/bar-chart-interaction.html",
-      "instructionLocation": "aboveStimulus"
-    }
+    "withSidebar": false,
+    "studyEndMsg": "Thank you for completing this study!",
+    "urlParticipantIdParam": "PROLIFIC_PID"
   },
   "components": {
-    "introduction": {
+    "consent": {
       "type": "markdown",
-      "path": "demo-html-input/assets/introduction.md",
-      "response": []
-    },
-    "bar-chart-1": {
-      "baseComponent": "bar-chart",
-      "description": "A trial for the user to click the larges bar",
-      "instruction": "Click on the largest bar",
-      "parameters": {
-        "barData": [
-          0.32,
-          0.01,
-          1.2,
-          1.3,
-          0.82,
-          0.4,
-          0.3
-        ]
+      "path": "demo-headline/assets/consent.md",
+      "nextButtonText": "I agree to participate",
+      "response": [
+        {
+          "id": "consent-agree",
+          "prompt": "Do you consent to participate in this study?",
+          "required": true,
+          "type": "radio",
+          "options": [
+            {
+              "label": "Yes, I consent to participate",
+              "value": "yes"
+            },
+            {
+              "label": "No, I do not consent",
+              "value": "no"
+            }
+          ]
+        }
+      ],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
       }
     },
-    "bar-chart-2": {
-      "baseComponent": "bar-chart",
-      "description": "A trial for the user to click the smallest bar",
-      "instruction": "Click on the smallest bar",
-      "parameters": {
-        "barData": [
-          1.2,
-          1.2,
-          1.2,
-          1.3,
-          0.82,
-          0.4,
-          -0.3,
-          0.3
-        ]
+    "introduction": {
+      "type": "markdown",
+      "path": "demo-headline/assets/introduction.md",
+      "nextButtonText": "Continue",
+      "response": [],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    },
+    "risk-precheck-intro": {
+      "type": "markdown",
+      "path": "demo-headline/assets/risk-precheck.md",
+      "nextButtonText": "Continue",
+      "response": [],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    },
+    "risk-precheck": {
+      "type": "website",
+      "path": "demo-headline/assets/risk-precheck.html",
+      "nextButtonLocation": "belowStimulus",
+      "response": [],
+      "style": {
+        "maxWidth": "780px",
+        "width": "100%",
+        "height": "620px",
+        "margin": "0 auto"
+      }
+    },
+    "practice-trial-1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?practice=1&c=practice-trial-1.png&sig=11.5&h=Market+outlook+improves+after+broad-based+gains&l=Recent+market+information+points+to+stronger+conditions%2C+while+the+chart+shows+the+uncertain+60-day+forecast.&sent=practice&domain=practice&fan=practice&offset=6.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "practice-trial-1",
+        "isPractice": true,
+        "chart_file": "practice-trial-1.png",
+        "base_target_pct": 11.5,
+        "chart_edge_pp": 6.0,
+        "correct": "optionA"
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "practice-trial-2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?practice=1&c=practice-trial-2.png&sig=-0.5&h=Markets+soften+as+demand+indicators+lose+momentum&l=Recent+market+information+points+to+weaker+conditions%2C+while+the+chart+shows+the+uncertain+60-day+forecast.&sent=practice&domain=practice&fan=practice&offset=-6.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "practice-trial-2",
+        "isPractice": true,
+        "chart_file": "practice-trial-2.png",
+        "base_target_pct": -0.5,
+        "chart_edge_pp": -6.0,
+        "correct": "optionB"
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "debrief": {
+      "type": "markdown",
+      "path": "demo-headline/assets/debrief.md",
+      "nextButtonText": "Finish",
+      "response": [],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C01-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C01-S1.png&sig=3.5&h=Sticky+inflation+revives+concern+over+delayed+rate+relief&l=Investors+grew+more+cautious+after+price+data+suggested+policy+may+need+to+stay+restrictive+for+longer.&hid=NEG01&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C01-S1",
+        "cell_id": "C01",
+        "chart_file": "C01-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG01",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Sticky inflation revives concern over delayed rate relief",
+        "headline_lede": "Investors grew more cautious after price data suggested policy may need to stay restrictive for longer."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C01-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C01-S2.png&sig=3.5&h=Higher+yields+pressure+risk+assets+as+policy+uncertainty+rises&l=Rate-sensitive+sectors+weakened+as+traders+reduced+expectations+for+near-term+easing.&hid=NEG02&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C01-S2",
+        "cell_id": "C01",
+        "chart_file": "C01-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG02",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Higher yields pressure risk assets as policy uncertainty rises",
+        "headline_lede": "Rate-sensitive sectors weakened as traders reduced expectations for near-term easing."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C01-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C01-S3.png&sig=3.5&h=Markets+soften+as+officials+push+back+on+early+cuts&l=Central-bank+commentary+emphasized+caution%2C+weighing+on+sentiment+toward+equities.&hid=NEG03&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C01-S3",
+        "cell_id": "C01",
+        "chart_file": "C01-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG03",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Markets soften as officials push back on early cuts",
+        "headline_lede": "Central-bank commentary emphasized caution, weighing on sentiment toward equities."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C02-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C02-S1.png&sig=5.5&h=Fed+officials+split+as+growth+cools+while+prices+stay+firm&l=Policy+commentary+left+investors+weighing+softer+activity+data+against+inflation+readings+that+remain+above+target.&hid=AMB01&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C02-S1",
+        "cell_id": "C02",
+        "chart_file": "C02-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB01",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Fed officials split as growth cools while prices stay firm",
+        "headline_lede": "Policy commentary left investors weighing softer activity data against inflation readings that remain above target."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C02-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C02-S2.png&sig=5.5&h=Rate-cut+timing+stays+uncertain+after+mixed+policy+signals&l=Traders+saw+little+consensus+after+officials+emphasized+both+progress+on+inflation+and+caution+about+easing+too+early.&hid=AMB02&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C02-S2",
+        "cell_id": "C02",
+        "chart_file": "C02-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB02",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Rate-cut timing stays uncertain after mixed policy signals",
+        "headline_lede": "Traders saw little consensus after officials emphasized both progress on inflation and caution about easing too early."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C02-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C02-S3.png&sig=5.5&h=Yields+drift+as+investors+parse+uneven+macro+data&l=Bond-market+moves+were+muted+as+weaker+growth+indicators+competed+with+signs+that+price+pressures+may+persist.&hid=AMB03&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C02-S3",
+        "cell_id": "C02",
+        "chart_file": "C02-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB03",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Yields drift as investors parse uneven macro data",
+        "headline_lede": "Bond-market moves were muted as weaker growth indicators competed with signs that price pressures may persist."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C03-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C03-S1.png&sig=7.5&h=Softer+inflation+data+support+hopes+for+easier+policy&l=Investors+took+modest+encouragement+from+price+data+that+moved+closer+to+the+central+bank%E2%80%99s+target.&hid=POS01&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C03-S1",
+        "cell_id": "C03",
+        "chart_file": "C03-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS01",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Softer inflation data support hopes for easier policy",
+        "headline_lede": "Investors took modest encouragement from price data that moved closer to the central bank’s target."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C03-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C03-S2.png&sig=7.5&h=Rate-sensitive+shares+firm+as+policy+pressure+appears+to+ease&l=Lower+yields+helped+sentiment+in+areas+of+the+market+most+exposed+to+financing+costs.&hid=POS02&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C03-S2",
+        "cell_id": "C03",
+        "chart_file": "C03-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS02",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Rate-sensitive shares firm as policy pressure appears to ease",
+        "headline_lede": "Lower yields helped sentiment in areas of the market most exposed to financing costs."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C03-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C03-S3.png&sig=7.5&h=Markets+gain+as+inflation+trend+shows+incremental+improvement&l=The+latest+data+reduced+some+concern+that+restrictive+policy+will+need+to+last+much+longer.&hid=POS03&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C03-S3",
+        "cell_id": "C03",
+        "chart_file": "C03-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS03",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "policy",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Markets gain as inflation trend shows incremental improvement",
+        "headline_lede": "The latest data reduced some concern that restrictive policy will need to last much longer."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C04-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C04-S1.png&sig=3.5&h=Guidance+cuts+point+to+weaker+demand+next+quarter&l=Several+management+teams+cited+slower+order+growth+and+more+cautious+customer+behavior.&hid=NEG04&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C04-S1",
+        "cell_id": "C04",
+        "chart_file": "C04-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG04",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Guidance cuts point to weaker demand next quarter",
+        "headline_lede": "Several management teams cited slower order growth and more cautious customer behavior."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C04-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C04-S2.png&sig=3.5&h=Profit+warnings+increase+as+margin+pressure+returns&l=Companies+flagged+cost+and+demand+headwinds+that+could+limit+earnings+growth.&hid=NEG05&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C04-S2",
+        "cell_id": "C04",
+        "chart_file": "C04-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG05",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Profit warnings increase as margin pressure returns",
+        "headline_lede": "Companies flagged cost and demand headwinds that could limit earnings growth."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C04-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C04-S3.png&sig=3.5&h=Analysts+trim+estimates+after+disappointing+outlooks&l=Forward+earnings+expectations+moved+lower+following+a+wave+of+cautious+corporate+updates.&hid=NEG06&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C04-S3",
+        "cell_id": "C04",
+        "chart_file": "C04-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG06",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Analysts trim estimates after disappointing outlooks",
+        "headline_lede": "Forward earnings expectations moved lower following a wave of cautious corporate updates."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C05-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C05-S1.png&sig=5.5&h=Labor+data+point+in+opposite+directions+before+next+jobs+report&l=Hiring+remained+positive%2C+but+softer+hours+worked+and+slower+wage+growth+complicated+the+read+on+household+income.&hid=AMB04&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C05-S1",
+        "cell_id": "C05",
+        "chart_file": "C05-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB04",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "labor",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Labor data point in opposite directions before next jobs report",
+        "headline_lede": "Hiring remained positive, but softer hours worked and slower wage growth complicated the read on household income."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C05-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C05-S2.png&sig=5.5&h=Job+openings+cool+while+layoff+activity+remains+contained&l=The+labor+market+showed+signs+of+normalization+without+yet+confirming+a+sharper+deterioration+in+demand.&hid=AMB05&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C05-S2",
+        "cell_id": "C05",
+        "chart_file": "C05-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB05",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "labor",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Job openings cool while layoff activity remains contained",
+        "headline_lede": "The labor market showed signs of normalization without yet confirming a sharper deterioration in demand."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C05-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C05-S3.png&sig=5.5&h=Wage+growth+moderates%2C+but+services+hiring+stays+resilient&l=Investors+weighed+easing+pay+pressure+against+continued+strength+in+labor-intensive+parts+of+the+economy.&hid=AMB06&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C05-S3",
+        "cell_id": "C05",
+        "chart_file": "C05-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB06",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "labor",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Wage growth moderates, but services hiring stays resilient",
+        "headline_lede": "Investors weighed easing pay pressure against continued strength in labor-intensive parts of the economy."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C06-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C06-S1.png&sig=7.5&h=Corporate+guidance+improves+as+demand+proves+resilient&l=Management+commentary+pointed+to+steadier+orders+and+less+pressure+on+near-term+revenue+expectations.&hid=POS04&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C06-S1",
+        "cell_id": "C06",
+        "chart_file": "C06-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS04",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Corporate guidance improves as demand proves resilient",
+        "headline_lede": "Management commentary pointed to steadier orders and less pressure on near-term revenue expectations."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C06-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C06-S2.png&sig=7.5&h=Earnings+revisions+turn+higher+after+constructive+updates&l=Analysts+raised+forecasts+selectively+after+companies+reported+better-than-feared+operating+trends.&hid=POS05&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C06-S2",
+        "cell_id": "C06",
+        "chart_file": "C06-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS05",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Earnings revisions turn higher after constructive updates",
+        "headline_lede": "Analysts raised forecasts selectively after companies reported better-than-feared operating trends."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C06-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C06-S3.png&sig=7.5&h=Margins+stabilize+as+firms+manage+costs+more+effectively&l=Cost+controls+and+easing+input+pressure+helped+improve+the+near-term+profit+outlook.&hid=POS06&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C06-S3",
+        "cell_id": "C06",
+        "chart_file": "C06-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS06",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Margins stabilize as firms manage costs more effectively",
+        "headline_lede": "Cost controls and easing input pressure helped improve the near-term profit outlook."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C07-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C07-S1.png&sig=3.5&h=Consumer+cracks+widen+as+discretionary+spending+slows&l=Recent+data+showed+households+pulling+back+on+higher-ticket+purchases+and+nonessential+categories.&hid=NEG07&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C07-S1",
+        "cell_id": "C07",
+        "chart_file": "C07-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG07",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Consumer cracks widen as discretionary spending slows",
+        "headline_lede": "Recent data showed households pulling back on higher-ticket purchases and nonessential categories."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C07-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C07-S2.png&sig=3.5&h=Retail+weakness+raises+concern+over+household+resilience&l=Sales+trends+disappointed+as+shoppers+became+more+selective+under+higher+price+pressure.&hid=NEG08&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C07-S2",
+        "cell_id": "C07",
+        "chart_file": "C07-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG08",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Retail weakness raises concern over household resilience",
+        "headline_lede": "Sales trends disappointed as shoppers became more selective under higher price pressure."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C07-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C07-S3.png&sig=3.5&h=Credit-card+delinquencies+edge+higher+as+demand+softens&l=Signs+of+household+stress+increased%2C+adding+caution+to+the+growth+outlook.&hid=NEG09&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C07-S3",
+        "cell_id": "C07",
+        "chart_file": "C07-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "NEG09",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Credit-card delinquencies edge higher as demand softens",
+        "headline_lede": "Signs of household stress increased, adding caution to the growth outlook."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C08-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C08-S1.png&sig=5.5&h=Earnings+beats+mask+uneven+guidance+across+sectors&l=Several+companies+exceeded+near-term+estimates+while+management+teams+gave+more+cautious+outlooks+for+the+next+quarter.&hid=AMB07&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C08-S1",
+        "cell_id": "C08",
+        "chart_file": "C08-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB07",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Earnings beats mask uneven guidance across sectors",
+        "headline_lede": "Several companies exceeded near-term estimates while management teams gave more cautious outlooks for the next quarter."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C08-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C08-S2.png&sig=5.5&h=Revenue+trends+improve%2C+but+margin+commentary+stays+mixed&l=Corporate+updates+showed+better+top-line+momentum+alongside+debate+over+whether+cost+pressure+has+fully+faded.&hid=AMB08&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C08-S2",
+        "cell_id": "C08",
+        "chart_file": "C08-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB08",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Revenue trends improve, but margin commentary stays mixed",
+        "headline_lede": "Corporate updates showed better top-line momentum alongside debate over whether cost pressure has fully faded."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C08-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C08-S3.png&sig=5.5&h=Analysts+lift+estimates+selectively+after+uneven+results&l=Forecast+revisions+improved+for+some+industries+while+cyclical+sectors+continued+to+face+skepticism.&hid=AMB09&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C08-S3",
+        "cell_id": "C08",
+        "chart_file": "C08-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "AMB09",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "earnings",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Analysts lift estimates selectively after uneven results",
+        "headline_lede": "Forecast revisions improved for some industries while cyclical sectors continued to face skepticism."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C09-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C09-S1.png&sig=7.5&h=Consumer+demand+holds+up+despite+higher+financing+costs&l=Retail+and+services+data+suggested+households+remain+willing+to+spend+in+key+categories.&hid=POS07&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C09-S1",
+        "cell_id": "C09",
+        "chart_file": "C09-S1.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS07",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Consumer demand holds up despite higher financing costs",
+        "headline_lede": "Retail and services data suggested households remain willing to spend in key categories."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C09-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C09-S2.png&sig=7.5&h=Spending+data+surprise+to+the+upside+across+core+categories&l=Demand+looked+broader+than+expected%2C+supporting+a+more+constructive+read+on+the+economy.&hid=POS08&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C09-S2",
+        "cell_id": "C09",
+        "chart_file": "C09-S2.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS08",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Spending data surprise to the upside across core categories",
+        "headline_lede": "Demand looked broader than expected, supporting a more constructive read on the economy."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C09-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C09-S3.png&sig=7.5&h=Household+balance+sheets+look+sturdier+than+feared&l=Recent+data+showed+fewer+signs+of+stress+than+investors+had+expected+earlier+in+the+quarter.&hid=POS09&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C09-S3",
+        "cell_id": "C09",
+        "chart_file": "C09-S3.png",
+        "prior_plot_sentiment": "bullish",
+        "headline_id": "POS09",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Household balance sheets look sturdier than feared",
+        "headline_lede": "Recent data showed fewer signs of stress than investors had expected earlier in the quarter."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C10-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C10-S1.png&sig=3.5&h=Tech+shares+slip+as+valuation+concerns+resurface&l=Investors+questioned+whether+recent+gains+have+moved+faster+than+the+earnings+outlook.&hid=NEG10&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C10-S1",
+        "cell_id": "C10",
+        "chart_file": "C10-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG10",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Tech shares slip as valuation concerns resurface",
+        "headline_lede": "Investors questioned whether recent gains have moved faster than the earnings outlook."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C10-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C10-S2.png&sig=3.5&h=AI+spending+optimism+cools+after+cautious+supplier+commentary&l=Updates+from+key+suppliers+suggested+some+customers+may+phase+investment+more+slowly.&hid=NEG11&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C10-S2",
+        "cell_id": "C10",
+        "chart_file": "C10-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG11",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "AI spending optimism cools after cautious supplier commentary",
+        "headline_lede": "Updates from key suppliers suggested some customers may phase investment more slowly."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C10-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C10-S3.png&sig=3.5&h=Growth+stocks+lag+as+long-duration+pressure+returns&l=Higher+discount+rates+weighed+on+companies+with+more+earnings+expected+in+future+years.&hid=NEG12&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C10-S3",
+        "cell_id": "C10",
+        "chart_file": "C10-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG12",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 13.5,
+        "bear_target_pct": -6.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.5,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Growth stocks lag as long-duration pressure returns",
+        "headline_lede": "Higher discount rates weighed on companies with more earnings expected in future years."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C11-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C11-S1.png&sig=5.5&h=Consumer+spending+holds+up+as+savings+buffers+thin&l=Retail+activity+remained+positive%2C+but+households+showed+more+sensitivity+to+prices+and+financing+costs.&hid=AMB10&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C11-S1",
+        "cell_id": "C11",
+        "chart_file": "C11-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB10",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Consumer spending holds up as savings buffers thin",
+        "headline_lede": "Retail activity remained positive, but households showed more sensitivity to prices and financing costs."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C11-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C11-S2.png&sig=5.5&h=Retail+sales+stabilize+while+discretionary+categories+lag&l=Headline+spending+avoided+a+sharp+drop%2C+though+higher-ticket+purchases+remained+softer+than+staples+and+services.&hid=AMB11&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C11-S2",
+        "cell_id": "C11",
+        "chart_file": "C11-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB11",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Retail sales stabilize while discretionary categories lag",
+        "headline_lede": "Headline spending avoided a sharp drop, though higher-ticket purchases remained softer than staples and services."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C11-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C11-S3.png&sig=5.5&h=Household+demand+looks+resilient+but+less+broad-based&l=Spending+strength+became+more+concentrated%2C+leaving+investors+unsure+how+durable+the+expansion+is.&hid=AMB12&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C11-S3",
+        "cell_id": "C11",
+        "chart_file": "C11-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB12",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "consumer",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 15.5,
+        "bear_target_pct": -4.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Household demand looks resilient but less broad-based",
+        "headline_lede": "Spending strength became more concentrated, leaving investors unsure how durable the expansion is."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C12-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C12-S1.png&sig=7.5&h=AI+infrastructure+demand+lifts+outlook+for+technology+spending&l=Companies+tied+to+compute+and+data-center+investment+reported+continued+order+strength.&hid=POS10&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C12-S1",
+        "cell_id": "C12",
+        "chart_file": "C12-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS10",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "AI infrastructure demand lifts outlook for technology spending",
+        "headline_lede": "Companies tied to compute and data-center investment reported continued order strength."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C12-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C12-S2.png&sig=7.5&h=Tech+sentiment+improves+as+enterprise+budgets+hold+firm&l=Software+and+infrastructure+commentary+suggested+customers+are+still+funding+priority+projects.&hid=POS11&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C12-S2",
+        "cell_id": "C12",
+        "chart_file": "C12-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS11",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Tech sentiment improves as enterprise budgets hold firm",
+        "headline_lede": "Software and infrastructure commentary suggested customers are still funding priority projects."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C12-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C12-S3.png&sig=7.5&h=Growth+shares+advance+on+stronger+investment-cycle+signals&l=Investors+responded+to+evidence+that+capital+spending+plans+remain+intact.&hid=POS12&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C12-S3",
+        "cell_id": "C12",
+        "chart_file": "C12-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS12",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 17.5,
+        "bear_target_pct": -2.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.5,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Growth shares advance on stronger investment-cycle signals",
+        "headline_lede": "Investors responded to evidence that capital spending plans remain intact."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C13-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C13-S1.png&sig=3.5&h=Credit+stress+pockets+grow+as+refinancing+costs+stay+high&l=Lower-rated+borrowers+faced+renewed+pressure+as+debt+maturities+approached.&hid=NEG13&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C13-S1",
+        "cell_id": "C13",
+        "chart_file": "C13-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG13",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Credit stress pockets grow as refinancing costs stay high",
+        "headline_lede": "Lower-rated borrowers faced renewed pressure as debt maturities approached."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C13-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C13-S2.png&sig=3.5&h=Spreads+widen+modestly+after+cautious+lender+commentary&l=Bank+updates+suggested+tighter+credit+standards+and+weaker+borrower+demand.&hid=NEG14&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C13-S2",
+        "cell_id": "C13",
+        "chart_file": "C13-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG14",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Spreads widen modestly after cautious lender commentary",
+        "headline_lede": "Bank updates suggested tighter credit standards and weaker borrower demand."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C13-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C13-S3.png&sig=3.5&h=Corporate+borrowing+costs+rise+as+default+concerns+build&l=Investors+demanded+more+compensation+for+credit+risk%2C+especially+in+cyclical+sectors.&hid=NEG15&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C13-S3",
+        "cell_id": "C13",
+        "chart_file": "C13-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG15",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 18.5,
+        "bear_target_pct": -11.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 0.75,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Corporate borrowing costs rise as default concerns build",
+        "headline_lede": "Investors demanded more compensation for credit risk, especially in cyclical sectors."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C14-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C14-S1.png&sig=5.5&h=Credit+spreads+stay+calm+despite+rising+refinancing+questions&l=Funding+markets+remained+orderly%2C+but+investors+continued+to+monitor+maturities+for+lower-rated+borrowers.&hid=AMB13&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C14-S1",
+        "cell_id": "C14",
+        "chart_file": "C14-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB13",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Credit spreads stay calm despite rising refinancing questions",
+        "headline_lede": "Funding markets remained orderly, but investors continued to monitor maturities for lower-rated borrowers."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C14-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C14-S2.png&sig=5.5&h=Corporate+bond+demand+holds+as+default+concerns+edge+higher&l=New+issuance+was+absorbed+without+major+stress+even+as+analysts+flagged+pockets+of+credit+deterioration.&hid=AMB14&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C14-S2",
+        "cell_id": "C14",
+        "chart_file": "C14-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB14",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Corporate bond demand holds as default concerns edge higher",
+        "headline_lede": "New issuance was absorbed without major stress even as analysts flagged pockets of credit deterioration."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C14-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C14-S3.png&sig=5.5&h=Lenders+report+tighter+standards+while+markets+remain+liquid&l=Bank+commentary+pointed+to+caution%2C+but+public+credit+markets+did+not+yet+show+broad+funding+pressure.&hid=AMB15&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C14-S3",
+        "cell_id": "C14",
+        "chart_file": "C14-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB15",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 20.5,
+        "bear_target_pct": -9.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 1.75,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Lenders report tighter standards while markets remain liquid",
+        "headline_lede": "Bank commentary pointed to caution, but public credit markets did not yet show broad funding pressure."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C15-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C15-S1.png&sig=7.5&h=Credit+markets+signal+confidence+as+spreads+tighten+modestly&l=Corporate+borrowing+conditions+improved%2C+suggesting+investors+see+limited+near-term+default+risk.&hid=POS13&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C15-S1",
+        "cell_id": "C15",
+        "chart_file": "C15-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS13",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Credit markets signal confidence as spreads tighten modestly",
+        "headline_lede": "Corporate borrowing conditions improved, suggesting investors see limited near-term default risk."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C15-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C15-S2.png&sig=7.5&h=New+issuance+clears+smoothly+as+risk+appetite+improves&l=Demand+for+corporate+bonds+remained+solid+even+as+supply+picked+up.&hid=POS14&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C15-S2",
+        "cell_id": "C15",
+        "chart_file": "C15-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS14",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "New issuance clears smoothly as risk appetite improves",
+        "headline_lede": "Demand for corporate bonds remained solid even as supply picked up."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C15-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C15-S3.png&sig=7.5&h=Financing+conditions+ease+for+higher-quality+borrowers&l=Lower+risk+premiums+supported+a+more+constructive+view+of+corporate+balance+sheets.&hid=POS15&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C15-S3",
+        "cell_id": "C15",
+        "chart_file": "C15-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS15",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "credit",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 22.5,
+        "bear_target_pct": -7.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 0.75,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Financing conditions ease for higher-quality borrowers",
+        "headline_lede": "Lower risk premiums supported a more constructive view of corporate balance sheets."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C16-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C16-S1.png&sig=3.5&h=Market+breadth+deteriorates+as+rally+narrows+again&l=A+small+group+of+large-cap+winners+masked+weakness+across+much+of+the+index.&hid=NEG16&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C16-S1",
+        "cell_id": "C16",
+        "chart_file": "C16-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG16",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": -1.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Market breadth deteriorates as rally narrows again",
+        "headline_lede": "A small group of large-cap winners masked weakness across much of the index."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C16-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C16-S2.png&sig=3.5&h=Defensive+rotation+points+to+lower+risk+appetite&l=Investors+favored+stable+sectors+while+economically+sensitive+groups+moved+lower.&hid=NEG17&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C16-S2",
+        "cell_id": "C16",
+        "chart_file": "C16-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG17",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": -2.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Defensive rotation points to lower risk appetite",
+        "headline_lede": "Investors favored stable sectors while economically sensitive groups moved lower."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C16-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C16-S3.png&sig=3.5&h=Cyclical+shares+weaken+after+softer+activity+data&l=Industrials+and+consumer-linked+names+declined+as+growth+concerns+resurfaced.&hid=NEG18&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C16-S3",
+        "cell_id": "C16",
+        "chart_file": "C16-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "NEG18",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": -2.0,
+        "base_target_pct": 3.5,
+        "bull_target_pct": 23.5,
+        "bear_target_pct": -16.5,
+        "chart_edge_pp": -2.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": -2.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Cyclical shares weaken after softer activity data",
+        "headline_lede": "Industrials and consumer-linked names declined as growth concerns resurfaced."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C17-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C17-S1.png&sig=5.5&h=Energy+prices+ease%2C+but+supply+risks+remain+in+focus&l=Oil+and+gas+markets+pulled+back+from+recent+highs+while+geopolitical+and+inventory+concerns+stayed+unresolved.&hid=AMB16&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C17-S1",
+        "cell_id": "C17",
+        "chart_file": "C17-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB16",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "energy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "positive",
+        "visual_direction_score": 0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Energy prices ease, but supply risks remain in focus",
+        "headline_lede": "Oil and gas markets pulled back from recent highs while geopolitical and inventory concerns stayed unresolved."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C17-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C17-S2.png&sig=5.5&h=Lower+fuel+costs+support+sentiment+as+shipping+costs+stay+elevated&l=Investors+balanced+relief+from+energy+prices+against+signs+that+logistics+expenses+remain+sticky.&hid=AMB17&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C17-S2",
+        "cell_id": "C17",
+        "chart_file": "C17-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB17",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "energy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "negative",
+        "visual_direction_score": -0.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Lower fuel costs support sentiment as shipping costs stay elevated",
+        "headline_lede": "Investors balanced relief from energy prices against signs that logistics expenses remain sticky."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C17-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C17-S3.png&sig=5.5&h=Commodity+markets+send+mixed+signal+on+global+demand&l=Industrial+inputs+softened+while+energy+volatility+kept+the+inflation+outlook+difficult+to+interpret.&hid=AMB18&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C17-S3",
+        "cell_id": "C17",
+        "chart_file": "C17-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "AMB18",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "energy",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 0.0,
+        "base_target_pct": 5.5,
+        "bull_target_pct": 25.5,
+        "bear_target_pct": -14.5,
+        "chart_edge_pp": 0.0,
+        "difficulty_score": 2.0,
+        "slope": "flat",
+        "visual_direction_score": 0.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Commodity markets send mixed signal on global demand",
+        "headline_lede": "Industrial inputs softened while energy volatility kept the inflation outlook difficult to interpret."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C18-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C18-S1.png&sig=7.5&h=Market+breadth+improves+as+gains+extend+beyond+mega-caps&l=More+sectors+joined+the+advance%2C+reducing+concern+that+index+strength+is+too+concentrated.&hid=POS16&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C18-S1",
+        "cell_id": "C18",
+        "chart_file": "C18-S1.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS16",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": 2.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Market breadth improves as gains extend beyond mega-caps",
+        "headline_lede": "More sectors joined the advance, reducing concern that index strength is too concentrated."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C18-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C18-S2.png&sig=7.5&h=Cyclical+shares+firm+as+growth+concerns+ease&l=Industrials+and+consumer-sensitive+groups+improved+alongside+better+economic+data.&hid=POS17&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C18-S2",
+        "cell_id": "C18",
+        "chart_file": "C18-S2.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS17",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": 1.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Cyclical shares firm as growth concerns ease",
+        "headline_lede": "Industrials and consumer-sensitive groups improved alongside better economic data."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C18-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C18-S3.png&sig=7.5&h=Rotation+into+lagging+sectors+supports+broader+rally&l=Investors+added+exposure+outside+the+largest+technology+names%2C+a+sign+of+healthier+participation.&hid=POS18&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C18-S3",
+        "cell_id": "C18",
+        "chart_file": "C18-S3.png",
+        "prior_plot_sentiment": "bearish",
+        "headline_id": "POS18",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "wide",
+        "base_offset_pp": 2.0,
+        "base_target_pct": 7.5,
+        "bull_target_pct": 27.5,
+        "bear_target_pct": -12.5,
+        "chart_edge_pp": 2.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": 2.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Rotation into lagging sectors supports broader rally",
+        "headline_lede": "Investors added exposure outside the largest technology names, a sign of healthier participation."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C19-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C19-S1.png&sig=4.5&h=Hedging+demand+rises+as+investors+cut+risk+exposure&l=Options+activity+showed+more+demand+for+downside+protection+after+a+volatile+stretch.&hid=NEG19&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C19-S1",
+        "cell_id": "C19",
+        "chart_file": "C19-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "NEG19",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Hedging demand rises as investors cut risk exposure",
+        "headline_lede": "Options activity showed more demand for downside protection after a volatile stretch."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C19-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C19-S2.png&sig=4.5&h=Fund+flows+turn+defensive+amid+valuation+concerns&l=Investors+moved+capital+toward+cash+and+lower-risk+assets+as+equity+multiples+came+under+scrutiny.&hid=NEG20&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C19-S2",
+        "cell_id": "C19",
+        "chart_file": "C19-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "NEG20",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Fund flows turn defensive amid valuation concerns",
+        "headline_lede": "Investors moved capital toward cash and lower-risk assets as equity multiples came under scrutiny."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C19-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C19-S3.png&sig=4.5&h=Liquidity+looks+thinner+as+large+orders+move+prices+more+sharply&l=Trading+conditions+became+less+forgiving%2C+increasing+concern+about+short-term+volatility.&hid=NEG21&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C19-S3",
+        "cell_id": "C19",
+        "chart_file": "C19-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "NEG21",
+        "headline_valence": "slight_negative",
+        "headline_strength": -1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Liquidity looks thinner as large orders move prices more sharply",
+        "headline_lede": "Trading conditions became less forgiving, increasing concern about short-term volatility."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C20-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C20-S1.png&sig=6.5&h=Fund+flows+turn+positive+as+cash+moves+back+into+equities&l=Allocation+data+showed+investors+gradually+rebuilding+risk+exposure+after+a+defensive+stretch.&hid=POS19&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C20-S1",
+        "cell_id": "C20",
+        "chart_file": "C20-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS19",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Fund flows turn positive as cash moves back into equities",
+        "headline_lede": "Allocation data showed investors gradually rebuilding risk exposure after a defensive stretch."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C20-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C20-S2.png&sig=6.5&h=Liquidity+backdrop+improves+as+volatility+demand+fades&l=Lower+hedging+pressure+and+steadier+funding+markets+supported+risk+assets.&hid=POS20&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C20-S2",
+        "cell_id": "C20",
+        "chart_file": "C20-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS20",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Liquidity backdrop improves as volatility demand fades",
+        "headline_lede": "Lower hedging pressure and steadier funding markets supported risk assets."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C20-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C20-S3.png&sig=6.5&h=Deal+activity+picks+up+as+confidence+in+valuations+improves&l=Capital-market+activity+resumed%2C+suggesting+buyers+and+sellers+are+becoming+more+aligned.&hid=POS21&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C20-S3",
+        "cell_id": "C20",
+        "chart_file": "C20-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS21",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Deal activity picks up as confidence in valuations improves",
+        "headline_lede": "Capital-market activity resumed, suggesting buyers and sellers are becoming more aligned."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C21-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C21-S1.png&sig=4.5&h=Tech+shares+pause+as+AI+spending+debate+intensifies&l=Investors+weighed+stronger+infrastructure+demand+against+questions+about+return+on+investment+and+valuation+discipline.&hid=AMB19&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C21-S1",
+        "cell_id": "C21",
+        "chart_file": "C21-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB19",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Tech shares pause as AI spending debate intensifies",
+        "headline_lede": "Investors weighed stronger infrastructure demand against questions about return on investment and valuation discipline."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C21-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C21-S2.png&sig=4.5&h=Chip+demand+remains+firm+while+software+budgets+look+uneven&l=Earnings+commentary+suggested+continued+investment+in+compute+capacity+but+more+selective+enterprise+spending.&hid=AMB20&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C21-S2",
+        "cell_id": "C21",
+        "chart_file": "C21-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB20",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Chip demand remains firm while software budgets look uneven",
+        "headline_lede": "Earnings commentary suggested continued investment in compute capacity but more selective enterprise spending."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C21-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C21-S3.png&sig=4.5&h=Mega-cap+gains+narrow+as+investors+reassess+growth+durability&l=Leadership+remained+concentrated%2C+making+it+harder+to+read+whether+the+broader+market+trend+has+improved.&hid=AMB21&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C21-S3",
+        "cell_id": "C21",
+        "chart_file": "C21-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB21",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "technology",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Mega-cap gains narrow as investors reassess growth durability",
+        "headline_lede": "Leadership remained concentrated, making it harder to read whether the broader market trend has improved."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C22-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C22-S1.png&sig=6.5&h=Global+growth+data+improve+at+the+margin&l=Better+trade+and+manufacturing+readings+reduced+concern+about+a+synchronized+slowdown.&hid=POS22&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C22-S1",
+        "cell_id": "C22",
+        "chart_file": "C22-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS22",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "global",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Global growth data improve at the margin",
+        "headline_lede": "Better trade and manufacturing readings reduced concern about a synchronized slowdown."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C22-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C22-S2.png&sig=6.5&h=Export+demand+strengthens+as+overseas+indicators+stabilize&l=International+data+provided+a+modest+tailwind+for+companies+with+global+revenue+exposure.&hid=POS23&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C22-S2",
+        "cell_id": "C22",
+        "chart_file": "C22-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS23",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "global",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Export demand strengthens as overseas indicators stabilize",
+        "headline_lede": "International data provided a modest tailwind for companies with global revenue exposure."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C22-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C22-S3.png&sig=6.5&h=Factory+activity+recovers+from+recent+weakness&l=Manufacturing+surveys+showed+tentative+improvement+after+a+soft+patch.&hid=POS24&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C22-S3",
+        "cell_id": "C22",
+        "chart_file": "C22-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "POS24",
+        "headline_valence": "slight_positive",
+        "headline_strength": 1,
+        "headline_domain": "global",
+        "headline_visual_congruence": "congruent",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Factory activity recovers from recent weakness",
+        "headline_lede": "Manufacturing surveys showed tentative improvement after a soft patch."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C23-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C23-S1.png&sig=4.5&h=Index+holds+steady+as+market+breadth+sends+a+weaker+signal&l=Large-cap+strength+offset+softness+in+more+cyclical+shares%2C+leaving+the+headline+index+little+changed.&hid=AMB22&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C23-S1",
+        "cell_id": "C23",
+        "chart_file": "C23-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB22",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Index holds steady as market breadth sends a weaker signal",
+        "headline_lede": "Large-cap strength offset softness in more cyclical shares, leaving the headline index little changed."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C23-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C23-S2.png&sig=4.5&h=Small-cap+momentum+fades+while+defensive+sectors+catch+a+bid&l=The+rotation+in+leadership+suggested+investors+were+not+fully+committing+to+a+risk-on+view.&hid=AMB23&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C23-S2",
+        "cell_id": "C23",
+        "chart_file": "C23-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB23",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Small-cap momentum fades while defensive sectors catch a bid",
+        "headline_lede": "The rotation in leadership suggested investors were not fully committing to a risk-on view."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C23-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C23-S3.png&sig=4.5&h=Sector+leadership+shifts+without+a+clear+market+direction&l=Gains+in+some+defensive+groups+balanced+weakness+in+economically+sensitive+areas.&hid=AMB24&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C23-S3",
+        "cell_id": "C23",
+        "chart_file": "C23-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB24",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "breadth",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Sector leadership shifts without a clear market direction",
+        "headline_lede": "Gains in some defensive groups balanced weakness in economically sensitive areas."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C24-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C24-S1.png&sig=6.5&h=Options+markets+price+caution+despite+calm+index+moves&l=Implied+volatility+edged+higher+even+though+the+broad+market+showed+limited+movement+on+the+day.&hid=AMB25&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C24-S1",
+        "cell_id": "C24",
+        "chart_file": "C24-S1.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB25",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "volatility",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Options markets price caution despite calm index moves",
+        "headline_lede": "Implied volatility edged higher even though the broad market showed limited movement on the day."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C24-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C24-S2.png&sig=6.5&h=Hedging+demand+rises+as+realized+volatility+stays+low&l=Investors+added+protection+while+recent+price+action+remained+quieter+than+the+options+market+implied.&hid=AMB26&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C24-S2",
+        "cell_id": "C24",
+        "chart_file": "C24-S2.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB26",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "volatility",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Hedging demand rises as realized volatility stays low",
+        "headline_lede": "Investors added protection while recent price action remained quieter than the options market implied."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C24-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C24-S3.png&sig=6.5&h=Volatility+gauges+diverge+ahead+of+major+data+releases&l=Short-dated+hedges+became+more+expensive+while+longer-term+measures+showed+less+stress.&hid=AMB27&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C24-S3",
+        "cell_id": "C24",
+        "chart_file": "C24-S3.png",
+        "prior_plot_sentiment": "neutral",
+        "headline_id": "AMB27",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "volatility",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Volatility gauges diverge ahead of major data releases",
+        "headline_lede": "Short-dated hedges became more expensive while longer-term measures showed less stress."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C25-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C25-S1.png&sig=4.5&h=Dollar+strength+complicates+outlook+for+multinational+earnings&l=Currency+moves+supported+import+prices+but+created+translation+headwinds+for+companies+with+large+overseas+exposure.&hid=AMB28&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C25-S1",
+        "cell_id": "C25",
+        "chart_file": "C25-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB28",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "dollar",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Dollar strength complicates outlook for multinational earnings",
+        "headline_lede": "Currency moves supported import prices but created translation headwinds for companies with large overseas exposure."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C25-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C25-S2.png&sig=4.5&h=Global+markets+steady+as+currency+moves+cloud+earnings+read-through&l=The+dollar%E2%80%99s+move+left+investors+debating+whether+foreign+demand+or+translation+effects+matter+more.&hid=AMB29&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C25-S2",
+        "cell_id": "C25",
+        "chart_file": "C25-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB29",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "dollar",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Global markets steady as currency moves cloud earnings read-through",
+        "headline_lede": "The dollar’s move left investors debating whether foreign demand or translation effects matter more."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C25-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C25-S3.png&sig=4.5&h=Stronger+dollar+offsets+part+of+the+benefit+from+lower+input+costs&l=Companies+with+international+revenue+faced+a+mixed+setup+as+currency+and+commodity+effects+moved+in+opposite+directions.&hid=AMB30&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C25-S3",
+        "cell_id": "C25",
+        "chart_file": "C25-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB30",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "dollar",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 14.5,
+        "bear_target_pct": -5.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Stronger dollar offsets part of the benefit from lower input costs",
+        "headline_lede": "Companies with international revenue faced a mixed setup as currency and commodity effects moved in opposite directions."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C26-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C26-S1.png&sig=6.5&h=Housing+activity+improves+from+low+levels+as+mortgage+rates+stay+high&l=Builder+commentary+turned+less+negative%2C+but+affordability+remained+a+constraint+on+stronger+demand.&hid=AMB31&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C26-S1",
+        "cell_id": "C26",
+        "chart_file": "C26-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB31",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "housing",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Housing activity improves from low levels as mortgage rates stay high",
+        "headline_lede": "Builder commentary turned less negative, but affordability remained a constraint on stronger demand."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C26-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C26-S2.png&sig=6.5&h=Homebuilder+sentiment+rises+while+transaction+volumes+stay+muted&l=Investors+saw+tentative+stabilization%2C+though+high+financing+costs+continued+to+limit+turnover.&hid=AMB32&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C26-S2",
+        "cell_id": "C26",
+        "chart_file": "C26-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB32",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "housing",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Homebuilder sentiment rises while transaction volumes stay muted",
+        "headline_lede": "Investors saw tentative stabilization, though high financing costs continued to limit turnover."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C26-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C26-S3.png&sig=6.5&h=Construction+data+firm%2C+but+affordability+pressure+persists&l=Supply+activity+looked+healthier+than+existing-home+sales%2C+leaving+the+housing+signal+mixed.&hid=AMB33&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C26-S3",
+        "cell_id": "C26",
+        "chart_file": "C26-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB33",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "housing",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "tight",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 16.5,
+        "bear_target_pct": -3.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.0,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Construction data firm, but affordability pressure persists",
+        "headline_lede": "Supply activity looked healthier than existing-home sales, leaving the housing signal mixed."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C27-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C27-S1.png&sig=4.5&h=Liquidity+conditions+improve+while+cash+balances+remain+elevated&l=Markets+absorbed+issuance+smoothly%2C+but+investors+still+held+substantial+dry+powder+outside+equities.&hid=AMB34&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C27-S1",
+        "cell_id": "C27",
+        "chart_file": "C27-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB34",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Liquidity conditions improve while cash balances remain elevated",
+        "headline_lede": "Markets absorbed issuance smoothly, but investors still held substantial dry powder outside equities."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C27-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C27-S2.png&sig=4.5&h=Fund+flows+stabilize+after+weeks+of+defensive+positioning&l=Allocations+stopped+moving+sharply+toward+cash%2C+though+risk+appetite+remained+selective.&hid=AMB35&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C27-S2",
+        "cell_id": "C27",
+        "chart_file": "C27-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB35",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Fund flows stabilize after weeks of defensive positioning",
+        "headline_lede": "Allocations stopped moving sharply toward cash, though risk appetite remained selective."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C27-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C27-S3.png&sig=4.5&h=Deal+activity+reopens+gradually+as+valuation+gaps+persist&l=Capital-market+activity+picked+up%2C+but+buyers+and+sellers+remained+far+apart+on+pricing.&hid=AMB36&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C27-S3",
+        "cell_id": "C27",
+        "chart_file": "C27-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB36",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "liquidity",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 19.5,
+        "bear_target_pct": -10.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.25,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Deal activity reopens gradually as valuation gaps persist",
+        "headline_lede": "Capital-market activity picked up, but buyers and sellers remained far apart on pricing."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C28-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C28-S1.png&sig=6.5&h=Global+growth+signals+diverge+across+major+regions&l=Strength+in+some+economies+contrasted+with+weaker+manufacturing+and+trade+data+elsewhere.&hid=AMB37&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C28-S1",
+        "cell_id": "C28",
+        "chart_file": "C28-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB37",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "global",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Global growth signals diverge across major regions",
+        "headline_lede": "Strength in some economies contrasted with weaker manufacturing and trade data elsewhere."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C28-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C28-S2.png&sig=6.5&h=Export+data+improve+while+domestic+demand+indicators+soften&l=The+cross-current+made+it+difficult+to+infer+whether+growth+momentum+is+accelerating+or+merely+rotating.&hid=AMB38&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C28-S2",
+        "cell_id": "C28",
+        "chart_file": "C28-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB38",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "global",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Export data improve while domestic demand indicators soften",
+        "headline_lede": "The cross-current made it difficult to infer whether growth momentum is accelerating or merely rotating."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C28-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C28-S3.png&sig=6.5&h=International+markets+trade+unevenly+after+mixed+factory+data&l=Regional+performance+varied+as+investors+compared+resilient+services+activity+with+weaker+goods+demand.&hid=AMB39&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C28-S3",
+        "cell_id": "C28",
+        "chart_file": "C28-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB39",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "global",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "medium",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 21.5,
+        "bear_target_pct": -8.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.25,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "International markets trade unevenly after mixed factory data",
+        "headline_lede": "Regional performance varied as investors compared resilient services activity with weaker goods demand."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C29-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C29-S1.png&sig=4.5&h=Cost+pressure+eases%2C+but+pricing+power+looks+less+certain&l=Companies+reported+relief+on+some+input+costs+while+warning+that+customers+are+becoming+more+price-sensitive.&hid=AMB40&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C29-S1",
+        "cell_id": "C29",
+        "chart_file": "C29-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB40",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "margins",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": -0.25,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Cost pressure eases, but pricing power looks less certain",
+        "headline_lede": "Companies reported relief on some input costs while warning that customers are becoming more price-sensitive."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C29-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C29-S2.png&sig=4.5&h=Margin+outlook+steadies+as+demand+visibility+remains+limited&l=Management+teams+sounded+more+comfortable+on+costs+but+less+certain+about+order+growth.&hid=AMB41&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C29-S2",
+        "cell_id": "C29",
+        "chart_file": "C29-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB41",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "margins",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": -1.75,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Margin outlook steadies as demand visibility remains limited",
+        "headline_lede": "Management teams sounded more comfortable on costs but less certain about order growth."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C29-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C29-S3.png&sig=4.5&h=Inventory+normalization+supports+margins+while+sales+trends+vary&l=Retailers+cited+cleaner+inventories+even+as+category-level+demand+remained+uneven.&hid=AMB42&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C29-S3",
+        "cell_id": "C29",
+        "chart_file": "C29-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB42",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "margins",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": -1.0,
+        "base_target_pct": 4.5,
+        "bull_target_pct": 24.5,
+        "bear_target_pct": -15.5,
+        "chart_edge_pp": -1.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": -1.0,
+        "correct": "optionB",
+        "is_attention_check": false,
+        "headline_text": "Inventory normalization supports margins while sales trends vary",
+        "headline_lede": "Retailers cited cleaner inventories even as category-level demand remained uneven."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C30-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C30-S1.png&sig=6.5&h=Investors+trim+risk+slowly+after+a+crowded+rally&l=Positioning+data+suggested+some+profit-taking+without+a+broad+reversal+in+market+exposure.&hid=AMB43&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C30-S1",
+        "cell_id": "C30",
+        "chart_file": "C30-S1.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB43",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "positioning",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "positive",
+        "visual_direction_score": 1.75,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Investors trim risk slowly after a crowded rally",
+        "headline_lede": "Positioning data suggested some profit-taking without a broad reversal in market exposure."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C30-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C30-S2.png&sig=6.5&h=Flows+show+caution+as+benchmark+remains+near+recent+highs&l=Investors+added+selectively+rather+than+chasing+the+index-wide+move.&hid=AMB44&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C30-S2",
+        "cell_id": "C30",
+        "chart_file": "C30-S2.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB44",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "positioning",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "negative",
+        "visual_direction_score": 0.25,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Flows show caution as benchmark remains near recent highs",
+        "headline_lede": "Investors added selectively rather than chasing the index-wide move."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-C30-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=C30-S3.png&sig=6.5&h=Crowded+positioning+raises+debate+over+near-term+upside&l=Strategists+disagreed+on+whether+strong+momentum+reflects+conviction+or+vulnerability+to+disappointment.&hid=AMB45&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-C30-S3",
+        "cell_id": "C30",
+        "chart_file": "C30-S3.png",
+        "prior_plot_sentiment": "mixed",
+        "headline_id": "AMB45",
+        "headline_valence": "ambiguous",
+        "headline_strength": 0,
+        "headline_domain": "positioning",
+        "headline_visual_congruence": "ambiguous_or_neutral",
+        "fan_width": "wide",
+        "base_offset_pp": 1.0,
+        "base_target_pct": 6.5,
+        "bull_target_pct": 26.5,
+        "bear_target_pct": -13.5,
+        "chart_edge_pp": 1.0,
+        "difficulty_score": 1.5,
+        "slope": "flat",
+        "visual_direction_score": 1.0,
+        "correct": "optionA",
+        "is_attention_check": false,
+        "headline_text": "Crowded positioning raises debate over near-term upside",
+        "headline_lede": "Strategists disagreed on whether strong momentum reflects conviction or vulnerability to disappointment."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC1-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC1-S1.png&sig=24.0&h=Market+outlook+turns+clearly+positive+after+broad-based+gains&l=Strong+earnings%2C+improving+demand%2C+and+supportive+policy+expectations+all+pointed+in+the+same+favorable+direction.&hid=ATN_POS_1&sent=attention_positive&domain=attention&fan=tight&offset=18.5&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC1-S1",
+        "cell_id": "AC1",
+        "chart_file": "AC1-S1.png",
+        "prior_plot_sentiment": "attention_positive",
+        "headline_id": "ATN_POS_1",
+        "headline_valence": "attention_positive",
+        "headline_strength": 3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": 18.5,
+        "base_target_pct": 24.0,
+        "bull_target_pct": 34.0,
+        "bear_target_pct": 14.0,
+        "chart_edge_pp": 18.5,
+        "difficulty_score": 0.0,
+        "slope": "positive",
+        "visual_direction_score": 3,
+        "correct": "optionA",
+        "is_attention_check": true,
+        "headline_text": "Market outlook turns clearly positive after broad-based gains",
+        "headline_lede": "Strong earnings, improving demand, and supportive policy expectations all pointed in the same favorable direction."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC1-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC1-S2.png&sig=24.0&h=Stocks+rally+as+economic+indicators+beat+expectations&l=Multiple+data+releases+showed+stronger+growth+and+easing+inflation+pressure%2C+creating+an+unusually+clear+positive+setup.&hid=ATN_POS_2&sent=attention_positive&domain=attention&fan=tight&offset=18.5&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC1-S2",
+        "cell_id": "AC1",
+        "chart_file": "AC1-S2.png",
+        "prior_plot_sentiment": "attention_positive",
+        "headline_id": "ATN_POS_2",
+        "headline_valence": "attention_positive",
+        "headline_strength": 3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": 18.5,
+        "base_target_pct": 24.0,
+        "bull_target_pct": 34.0,
+        "bear_target_pct": 14.0,
+        "chart_edge_pp": 18.5,
+        "difficulty_score": 0.0,
+        "slope": "negative",
+        "visual_direction_score": 3,
+        "correct": "optionA",
+        "is_attention_check": true,
+        "headline_text": "Stocks rally as economic indicators beat expectations",
+        "headline_lede": "Multiple data releases showed stronger growth and easing inflation pressure, creating an unusually clear positive setup."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC1-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC1-S3.png&sig=24.0&h=Investors+embrace+risk+as+momentum+strengthens+across+sectors&l=Market+breadth+improved+sharply+as+nearly+every+major+sector+participated+in+the+advance.&hid=ATN_POS_3&sent=attention_positive&domain=attention&fan=tight&offset=18.5&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC1-S3",
+        "cell_id": "AC1",
+        "chart_file": "AC1-S3.png",
+        "prior_plot_sentiment": "attention_positive",
+        "headline_id": "ATN_POS_3",
+        "headline_valence": "attention_positive",
+        "headline_strength": 3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": 18.5,
+        "base_target_pct": 24.0,
+        "bull_target_pct": 34.0,
+        "bear_target_pct": 14.0,
+        "chart_edge_pp": 18.5,
+        "difficulty_score": 0.0,
+        "slope": "flat",
+        "visual_direction_score": 3,
+        "correct": "optionA",
+        "is_attention_check": true,
+        "headline_text": "Investors embrace risk as momentum strengthens across sectors",
+        "headline_lede": "Market breadth improved sharply as nearly every major sector participated in the advance."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC2-S1": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC2-S1.png&sig=-14.0&h=Market+outlook+turns+clearly+negative+after+broad-based+declines&l=Weak+earnings%2C+deteriorating+demand%2C+and+tighter+financial+conditions+all+pointed+in+the+same+unfavorable+direction.&hid=ATN_NEG_1&sent=attention_negative&domain=attention&fan=tight&offset=-19.5&slope=positive",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC2-S1",
+        "cell_id": "AC2",
+        "chart_file": "AC2-S1.png",
+        "prior_plot_sentiment": "attention_negative",
+        "headline_id": "ATN_NEG_1",
+        "headline_valence": "attention_negative",
+        "headline_strength": -3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": -19.5,
+        "base_target_pct": -14.0,
+        "bull_target_pct": -4.0,
+        "bear_target_pct": -24.0,
+        "chart_edge_pp": -19.5,
+        "difficulty_score": 0.0,
+        "slope": "positive",
+        "visual_direction_score": -3,
+        "correct": "optionB",
+        "is_attention_check": true,
+        "headline_text": "Market outlook turns clearly negative after broad-based declines",
+        "headline_lede": "Weak earnings, deteriorating demand, and tighter financial conditions all pointed in the same unfavorable direction."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC2-S2": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC2-S2.png&sig=-14.0&h=Stocks+fall+as+economic+indicators+miss+expectations&l=Multiple+data+releases+showed+weaker+growth+and+renewed+inflation+pressure%2C+creating+an+unusually+clear+negative+setup.&hid=ATN_NEG_2&sent=attention_negative&domain=attention&fan=tight&offset=-19.5&slope=negative",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC2-S2",
+        "cell_id": "AC2",
+        "chart_file": "AC2-S2.png",
+        "prior_plot_sentiment": "attention_negative",
+        "headline_id": "ATN_NEG_2",
+        "headline_valence": "attention_negative",
+        "headline_strength": -3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": -19.5,
+        "base_target_pct": -14.0,
+        "bull_target_pct": -4.0,
+        "bear_target_pct": -24.0,
+        "chart_edge_pp": -19.5,
+        "difficulty_score": 0.0,
+        "slope": "negative",
+        "visual_direction_score": -3,
+        "correct": "optionB",
+        "is_attention_check": true,
+        "headline_text": "Stocks fall as economic indicators miss expectations",
+        "headline_lede": "Multiple data releases showed weaker growth and renewed inflation pressure, creating an unusually clear negative setup."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "hl-AC2-S3": {
+      "type": "website",
+      "path": "demo-headline/assets/trial-stimulus.html?c=AC2-S3.png&sig=-14.0&h=Investors+cut+risk+as+losses+spread+across+sectors&l=Market+breadth+deteriorated+sharply+as+selling+pressure+reached+nearly+every+major+sector.&hid=ATN_NEG_3&sent=attention_negative&domain=attention&fan=tight&offset=-19.5&slope=flat",
+      "nextButtonLocation": "belowStimulus",
+      "meta": {
+        "trial_id": "hl-AC2-S3",
+        "cell_id": "AC2",
+        "chart_file": "AC2-S3.png",
+        "prior_plot_sentiment": "attention_negative",
+        "headline_id": "ATN_NEG_3",
+        "headline_valence": "attention_negative",
+        "headline_strength": -3,
+        "headline_domain": "attention",
+        "headline_visual_congruence": "attention_check",
+        "fan_width": "tight",
+        "base_offset_pp": -19.5,
+        "base_target_pct": -14.0,
+        "bull_target_pct": -4.0,
+        "bear_target_pct": -24.0,
+        "chart_edge_pp": -19.5,
+        "difficulty_score": 0.0,
+        "slope": "flat",
+        "visual_direction_score": -3,
+        "correct": "optionB",
+        "is_attention_check": true,
+        "headline_text": "Investors cut risk as losses spread across sectors",
+        "headline_lede": "Market breadth deteriorated sharply as selling pressure reached nearly every major sector."
+      },
+      "response": [],
+      "style": {
+        "maxWidth": "1100px",
+        "width": "100%",
+        "height": "780px",
+        "margin": "0 auto"
+      }
+    },
+    "post-study-survey": {
+      "type": "markdown",
+      "path": "demo-headline/assets/post-study-survey.md",
+      "nextButtonText": "Continue",
+      "response": [
+        {
+          "id": "demographic_gender",
+          "prompt": "What is your gender?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Man",
+              "value": "Man"
+            },
+            {
+              "label": "Woman",
+              "value": "Woman"
+            },
+            {
+              "label": "Non-binary / Third gender",
+              "value": "Non-binary / Third gender"
+            },
+            {
+              "label": "Prefer to self-describe",
+              "value": "Prefer to self-describe"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "Prefer not to say"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "demographic_gender_self_describe",
+          "prompt": "If you selected “Prefer to self-describe” for gender, you may describe here.",
+          "required": false,
+          "type": "shortText",
+          "location": "belowStimulus",
+          "placeholder": "Optional",
+          "withDivider": true
+        },
+        {
+          "id": "demographic_race_ethnicity",
+          "prompt": "What is your race or ethnicity? Select all that apply.",
+          "required": true,
+          "type": "checkbox",
+          "location": "belowStimulus",
+          "minSelections": 1,
+          "options": [
+            {
+              "label": "White / Caucasian",
+              "value": "White / Caucasian"
+            },
+            {
+              "label": "Black / African American",
+              "value": "Black / African American"
+            },
+            {
+              "label": "Hispanic / Latino",
+              "value": "Hispanic / Latino"
+            },
+            {
+              "label": "Asian / Asian American",
+              "value": "Asian / Asian American"
+            },
+            {
+              "label": "Native American / Alaska Native",
+              "value": "Native American / Alaska Native"
+            },
+            {
+              "label": "Native Hawaiian / Pacific Islander",
+              "value": "Native Hawaiian / Pacific Islander"
+            },
+            {
+              "label": "Middle Eastern / North African",
+              "value": "Middle Eastern / North African"
+            },
+            {
+              "label": "Other",
+              "value": "Other"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "Prefer not to say"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "demographic_race_ethnicity_other",
+          "prompt": "If you selected “Other” for race or ethnicity, you may describe here.",
+          "required": false,
+          "type": "shortText",
+          "location": "belowStimulus",
+          "placeholder": "Optional",
+          "withDivider": true
+        },
+        {
+          "id": "demographic_age",
+          "prompt": "What is your age?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "18–24",
+              "value": "18–24"
+            },
+            {
+              "label": "25–34",
+              "value": "25–34"
+            },
+            {
+              "label": "35–44",
+              "value": "35–44"
+            },
+            {
+              "label": "45–54",
+              "value": "45–54"
+            },
+            {
+              "label": "55–64",
+              "value": "55–64"
+            },
+            {
+              "label": "65 or older",
+              "value": "65 or older"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "Prefer not to say"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "demographic_education",
+          "prompt": "What is the highest level of education you have completed?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Less than high school",
+              "value": "Less than high school"
+            },
+            {
+              "label": "High school diploma / GED",
+              "value": "High school diploma / GED"
+            },
+            {
+              "label": "Some college / Associate’s degree",
+              "value": "Some college / Associate’s degree"
+            },
+            {
+              "label": "Bachelor’s degree",
+              "value": "Bachelor’s degree"
+            },
+            {
+              "label": "Master’s degree",
+              "value": "Master’s degree"
+            },
+            {
+              "label": "Doctoral or professional degree (PhD, MD, JD)",
+              "value": "Doctoral or professional degree (PhD, MD, JD)"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "Prefer not to say"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "chart_graph_use_frequency",
+          "prompt": "How often do you use or read data charts or graphs of any kind?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Daily",
+              "value": "Daily"
+            },
+            {
+              "label": "Weekly",
+              "value": "Weekly"
+            },
+            {
+              "label": "Monthly",
+              "value": "Monthly"
+            },
+            {
+              "label": "Seldom (a few times a year)",
+              "value": "Seldom (a few times a year)"
+            },
+            {
+              "label": "Never",
+              "value": "Never"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "investing_experience_years",
+          "prompt": "How many years of experience do you have investing in financial markets, such as stocks, bonds, ETFs, or mutual funds?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "None — I have never invested",
+              "value": "None — I have never invested"
+            },
+            {
+              "label": "Less than 1 year",
+              "value": "Less than 1 year"
+            },
+            {
+              "label": "1–3 years",
+              "value": "1–3 years"
+            },
+            {
+              "label": "4–7 years",
+              "value": "4–7 years"
+            },
+            {
+              "label": "8–15 years",
+              "value": "8–15 years"
+            },
+            {
+              "label": "More than 15 years",
+              "value": "More than 15 years"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "current_invested_amount",
+          "prompt": "Approximately how much do you currently have invested across all financial accounts, including retirement and brokerage accounts?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "I do not currently invest",
+              "value": "I do not currently invest"
+            },
+            {
+              "label": "Under $1,000",
+              "value": "Under $1,000"
+            },
+            {
+              "label": "$1,000–$10,000",
+              "value": "$1,000–$10,000"
+            },
+            {
+              "label": "$10,001–$50,000",
+              "value": "$10,001–$50,000"
+            },
+            {
+              "label": "$50,001–$250,000",
+              "value": "$50,001–$250,000"
+            },
+            {
+              "label": "Over $250,000",
+              "value": "Over $250,000"
+            },
+            {
+              "label": "Prefer not to say",
+              "value": "Prefer not to say"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "financial_news_frequency",
+          "prompt": "How often do you follow financial news, such as TV, websites, podcasts, or social media?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Daily",
+              "value": "Daily"
+            },
+            {
+              "label": "A few times per week",
+              "value": "A few times per week"
+            },
+            {
+              "label": "Weekly",
+              "value": "Weekly"
+            },
+            {
+              "label": "Monthly or less",
+              "value": "Monthly or less"
+            },
+            {
+              "label": "Never",
+              "value": "Never"
+            }
+          ],
+          "withDivider": true
+        },
+        {
+          "id": "financial_concepts_understanding",
+          "prompt": "How would you rate your overall understanding of financial concepts, such as compound interest, diversification, and the risk-return tradeoff?",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "1 — Very low",
+              "value": "1"
+            },
+            {
+              "label": "2",
+              "value": "2"
+            },
+            {
+              "label": "3",
+              "value": "3"
+            },
+            {
+              "label": "4",
+              "value": "4"
+            },
+            {
+              "label": "5",
+              "value": "5"
+            },
+            {
+              "label": "6",
+              "value": "6"
+            },
+            {
+              "label": "7 — Very high",
+              "value": "7"
+            }
+          ],
+          "horizontal": true,
+          "withDivider": true
+        }
+      ],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    },
+    "post-study-free-response": {
+      "type": "markdown",
+      "path": "demo-headline/assets/post-study-free-response.md",
+      "nextButtonText": "Continue to debrief",
+      "response": [
+        {
+          "id": "free_response_chart_features",
+          "prompt": "Which visual cues, chart patterns, or headline information did you rely on when making your decisions?",
+          "required": true,
+          "type": "longText",
+          "location": "belowStimulus",
+          "placeholder": "Briefly describe what information you used when making your decisions.",
+          "withDivider": true
+        },
+        {
+          "id": "free_response_decision_strategy",
+          "prompt": "How did you decide between Option A and Option B? Please describe the strategy, rule, or reasoning you used.",
+          "required": true,
+          "type": "longText",
+          "location": "belowStimulus",
+          "placeholder": "Briefly describe your decision process.",
+          "withDivider": true
+        },
+        {
+          "id": "free_response_confusing_or_difficult",
+          "prompt": "Were any parts of the study confusing or difficult? If so, please describe them.",
+          "required": false,
+          "type": "longText",
+          "location": "belowStimulus",
+          "placeholder": "Optional feedback."
+        }
+      ],
+      "style": {
+        "maxWidth": "900px",
+        "width": "100%",
+        "margin": "0 auto"
       }
     }
   },
   "sequence": {
     "order": "fixed",
     "components": [
+      "consent",
       "introduction",
-      "bar-chart-1",
-      "bar-chart-2"
+      "risk-precheck-intro",
+      "risk-precheck",
+      "practice-trial-1",
+      "practice-trial-2",
+      {
+        "order": "random",
+        "components": [
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C01-S1",
+              "hl-C01-S2",
+              "hl-C01-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C02-S1",
+              "hl-C02-S2",
+              "hl-C02-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C03-S1",
+              "hl-C03-S2",
+              "hl-C03-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C04-S1",
+              "hl-C04-S2",
+              "hl-C04-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C05-S1",
+              "hl-C05-S2",
+              "hl-C05-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C06-S1",
+              "hl-C06-S2",
+              "hl-C06-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C07-S1",
+              "hl-C07-S2",
+              "hl-C07-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C08-S1",
+              "hl-C08-S2",
+              "hl-C08-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C09-S1",
+              "hl-C09-S2",
+              "hl-C09-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C10-S1",
+              "hl-C10-S2",
+              "hl-C10-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C11-S1",
+              "hl-C11-S2",
+              "hl-C11-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C12-S1",
+              "hl-C12-S2",
+              "hl-C12-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C13-S1",
+              "hl-C13-S2",
+              "hl-C13-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C14-S1",
+              "hl-C14-S2",
+              "hl-C14-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C15-S1",
+              "hl-C15-S2",
+              "hl-C15-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C16-S1",
+              "hl-C16-S2",
+              "hl-C16-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C17-S1",
+              "hl-C17-S2",
+              "hl-C17-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C18-S1",
+              "hl-C18-S2",
+              "hl-C18-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C19-S1",
+              "hl-C19-S2",
+              "hl-C19-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C20-S1",
+              "hl-C20-S2",
+              "hl-C20-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C21-S1",
+              "hl-C21-S2",
+              "hl-C21-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C22-S1",
+              "hl-C22-S2",
+              "hl-C22-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C23-S1",
+              "hl-C23-S2",
+              "hl-C23-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C24-S1",
+              "hl-C24-S2",
+              "hl-C24-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C25-S1",
+              "hl-C25-S2",
+              "hl-C25-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C26-S1",
+              "hl-C26-S2",
+              "hl-C26-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C27-S1",
+              "hl-C27-S2",
+              "hl-C27-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C28-S1",
+              "hl-C28-S2",
+              "hl-C28-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C29-S1",
+              "hl-C29-S2",
+              "hl-C29-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-C30-S1",
+              "hl-C30-S2",
+              "hl-C30-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-AC1-S1",
+              "hl-AC1-S2",
+              "hl-AC1-S3"
+            ]
+          },
+          {
+            "order": "random",
+            "numSamples": 1,
+            "components": [
+              "hl-AC2-S1",
+              "hl-AC2-S2",
+              "hl-AC2-S3"
+            ]
+          }
+        ]
+      },
+      "post-study-free-response",
+      "post-study-survey",
+      "debrief"
     ]
   }
 }
