@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Risk Preference Price Lists</title>
+<title>Decision Questions</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -13,128 +13,153 @@
     color: #202124;
     background: transparent;
   }
-  .wrap { max-width: 900px; margin: 0 auto; }
+  .wrap { max-width: 820px; margin: 0 auto; }
   .card {
     border: 1px solid #d7dbe0;
     border-radius: 12px;
     background: #fff;
-    padding: 18px 20px;
-  }
-  .topline {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  .part-label {
-    color: #5f6368;
-    font-size: 13px;
-    letter-spacing: .01em;
-  }
-  .progress {
-    color: #5f6368;
-    font-size: 13px;
+    padding: 24px 26px;
   }
   h1 {
-    margin: 0 0 8px;
-    font-size: 22px;
+    margin: 0 0 10px;
+    font-size: 24px;
     line-height: 1.25;
-    font-weight: 650;
+    font-weight: 620;
   }
-  .summary {
-    margin: 0 0 14px;
-    font-size: 14px;
-    line-height: 1.5;
+  h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 620;
+  }
+  p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.55;
     color: #3c4043;
   }
-  .gamble-box {
-    border-left: 4px solid #1a73e8;
-    background: #f8fbff;
-    padding: 12px 14px;
-    border-radius: 8px;
-    margin: 14px 0;
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
   }
-  .gamble-title {
-    font-size: 14px;
-    font-weight: 650;
-    margin-bottom: 6px;
-  }
-  .gamble-text {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #3c4043;
-  }
-  .notice {
+  .progress-text {
     font-size: 13px;
-    line-height: 1.45;
     color: #5f6368;
-    margin: 10px 0 12px;
+    white-space: nowrap;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 14px;
+  .bar {
+    flex: 1;
+    height: 8px;
+    background: #eceff3;
+    border-radius: 99px;
+    overflow: hidden;
   }
-  th, td {
-    border-bottom: 1px solid #e8eaed;
-    padding: 10px 8px;
-    vertical-align: middle;
+  .bar-fill {
+    height: 100%;
+    background: #1a73e8;
+    border-radius: 99px;
+    transition: width .18s ease;
   }
-  th {
-    text-align: left;
-    font-weight: 650;
-    color: #3c4043;
+  .panel {
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 15px 17px;
+    margin: 14px 0 18px;
     background: #fafafa;
   }
-  td.price { width: 150px; font-variant-numeric: tabular-nums; }
-  .choice-cell { display: flex; gap: 12px; flex-wrap: wrap; }
-  label.choice {
-    display: inline-flex;
+  .panel p:last-child { margin-bottom: 0; }
+  .outcome-card {
+    border: 1px solid #d7dbe0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 16px 0 18px;
+    background: #fff;
+  }
+  .outcome-card p {
+    font-size: 16px;
+    color: #202124;
+    margin-bottom: 8px;
+  }
+  .outcome-card p:last-child { margin-bottom: 0; }
+  .response-box {
+    margin-top: 12px;
+    border-top: 1px solid #e8eaed;
+    padding-top: 16px;
+  }
+  label {
+    display: block;
+    font-size: 15px;
+    line-height: 1.48;
+    color: #202124;
+    margin-bottom: 8px;
+  }
+  .input-row {
+    display: flex;
     align-items: center;
-    gap: 6px;
-    cursor: pointer;
+    gap: 8px;
+    margin-top: 7px;
+  }
+  .prefix {
+    font-size: 18px;
     color: #3c4043;
   }
-  input[type="radio"] { margin: 0; }
+  input[type="text"] {
+    width: 190px;
+    padding: 10px 11px;
+    border: 1px solid #c7cbd1;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, .14);
+  }
+  .note {
+    font-size: 13px;
+    color: #5f6368;
+    margin-top: 8px;
+  }
   .actions {
-    margin-top: 18px;
+    margin-top: 22px;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
     align-items: center;
+    gap: 12px;
   }
-  button {
-    border: 1px solid #1a73e8;
-    background: #fff;
-    color: #1a73e8;
-    border-radius: 8px;
-    padding: 10px 16px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  button:hover:not(:disabled) { background: #f4f8ff; }
-  button:disabled { cursor: default; opacity: .55; }
   .error {
     color: #b3261e;
     font-size: 13px;
-    min-height: 18px;
+    line-height: 1.4;
     margin-right: auto;
+    min-height: 18px;
   }
+  button {
+    border: 1px solid #1a73e8;
+    background: #1a73e8;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: #1558b0; }
+  button:disabled { cursor: default; opacity: .55; }
   .done {
     text-align: center;
-    padding: 36px 20px;
+    padding: 38px 20px;
   }
   .done h1 { margin-bottom: 12px; }
-  .done p { color: #3c4043; line-height: 1.5; }
   .small { color: #5f6368; font-size: 13px; }
-  @media (max-width: 720px) {
-    .card { padding: 14px; }
-    .topline { flex-direction: column; align-items: flex-start; }
-    td.price { width: auto; }
-    th:nth-child(2), td:nth-child(2) { width: 60%; }
-    .choice-cell { flex-direction: column; gap: 8px; }
+  @media (max-width: 640px) {
+    body { padding: 8px; }
+    .card { padding: 18px 16px; }
+    .progress-row { flex-direction: column; align-items: stretch; }
+    .progress-text { white-space: normal; }
+    input[type="text"] { width: 100%; }
   }
 </style>
 </head>
@@ -142,59 +167,71 @@
 <div class="wrap">
   <div class="card" id="root"></div>
 </div>
+
 <script>
-const PRICE_LISTS = [
-  {
-    id: 'gain_50_1000',
-    type: 'gain_contract',
-    title: 'Price list: gain contract with a 50% chance of $1,000',
-    brief: 'You are pricing a risky gain contract.',
-    description: 'This contract pays $1,000 with a 50% chance and $0 with a 50% chance.',
-    decisionText: 'Would you pay the listed price to receive this contract?',
-    yesText: 'Yes, I would pay this price',
-    noText: 'No, I would not pay this price',
-    prices: [0, 100, 250, 400, 500, 600, 750, 900, 1000]
-  },
-  {
-    id: 'gain_50_4000',
-    type: 'gain_contract',
-    title: 'Price list: gain contract with a 50% chance of $4,000',
-    brief: 'You are pricing a higher-stakes risky gain contract.',
-    description: 'This contract pays $4,000 with a 50% chance and $0 with a 50% chance.',
-    decisionText: 'Would you pay the listed price to receive this contract?',
-    yesText: 'Yes, I would pay this price',
-    noText: 'No, I would not pay this price',
-    prices: [0, 400, 1000, 1600, 2000, 2400, 3000, 3600, 4000]
-  },
-  {
-    id: 'gain_55_1000',
-    type: 'gain_contract',
-    title: 'Price list: gain contract with a 55% chance of $1,000',
-    brief: 'You are pricing a risky gain contract with the same probability used later in the study.',
-    description: 'This contract pays $1,000 with a 55% chance and $0 with a 45% chance.',
-    decisionText: 'Would you pay the listed price to receive this contract?',
-    yesText: 'Yes, I would pay this price',
-    noText: 'No, I would not pay this price',
-    prices: [0, 100, 250, 400, 500, 550, 650, 800, 1000]
-  },
-  {
-    id: 'loss_50_1000_insurance',
-    type: 'loss_protection',
-    title: 'Price list: protection against a 50% chance of losing $1,000',
-    brief: 'You are pricing protection against a possible loss.',
-    description: 'Without protection, there is a 50% chance you lose $1,000 and a 50% chance you lose $0. Paying for protection removes this risky loss completely.',
-    decisionText: 'Would you pay the listed price for protection against this risky loss?',
-    yesText: 'Yes, I would pay this price for protection',
-    noText: 'No, I would not pay this price',
-    prices: [0, 100, 250, 400, 500, 600, 750, 900, 1000]
-  }
+const VERSION = 'urn-direct-certainty-equivalent-v4';
+const STORAGE_KEY = 'dcl_risk_ce_urn_v4';
+const TOTAL_ITEMS = 16;
+
+// Eight positive-side x-axis targets, approximately log-spaced in risk-neutral expected value.
+// The mirrored negative side uses the same magnitudes with negative sign.
+// These values are hidden from participants.
+
+const BASE_ITEMS = [
+  { index: 1, red: 90, blue: 10, amount: 6  },  // EV 5.40
+  { index: 2, red: 55, blue: 45, amount: 15 },  // EV 8.25
+  { index: 3, red: 75, blue: 25, amount: 20 },  // EV 15.00
+  { index: 4, red: 35, blue: 65, amount: 60 },  // EV 21.00
+  { index: 5, red: 90, blue: 10, amount: 40 },  // EV 36.00
+  { index: 6, red: 55, blue: 45, amount: 100 }, // EV 55.00
+  { index: 7, red: 35, blue: 65, amount: 250 }, // EV 87.50
+  { index: 8, red: 75, blue: 25, amount: 190 }  // EV 142.50
 ];
 
-const STORAGE_KEY = 'dcl_risk_price_list_v1';
+function buildItems() {
+  const gains = BASE_ITEMS.map(item => {
+    const p = item.red / 100;
+    const ev = +(p * item.amount).toFixed(4);
+    return {
+      id: `gain_${String(item.index).padStart(2, '0')}_${item.red}_${item.amount}`,
+      domain: 'gain',
+      prompt_kind: 'payment',
+      red_balls: item.red,
+      blue_balls: item.blue,
+      probability_red: p,
+      outcome_amount: item.amount,
+      risk_neutral_expected_value: ev,
+      x_axis_value: ev,
+      x_axis_abs: ev,
+      log_index: item.index
+    };
+  });
+  const losses = BASE_ITEMS.map(item => {
+    const p = item.red / 100;
+    const ev = +(p * item.amount).toFixed(4);
+    return {
+      id: `loss_${String(item.index).padStart(2, '0')}_${item.red}_${item.amount}`,
+      domain: 'loss',
+      prompt_kind: 'loss',
+      red_balls: item.red,
+      blue_balls: item.blue,
+      probability_red: p,
+      outcome_amount: item.amount,
+      risk_neutral_expected_value: -ev,
+      x_axis_value: -ev,
+      x_axis_abs: ev,
+      log_index: item.index
+    };
+  });
+  return [...gains, ...losses];
+}
+
+const ALL_ITEMS = buildItems();
 const params = new URLSearchParams(window.location.search);
 const participantId = params.get('PROLIFIC_PID') || params.get('participantId') || params.get('participant') || 'anonymous';
+const root = document.getElementById('root');
 
-function hashString(str) {
+function seededHash(str) {
   let h = 2166136261;
   for (let i = 0; i < str.length; i++) {
     h ^= str.charCodeAt(i);
@@ -202,6 +239,7 @@ function hashString(str) {
   }
   return h >>> 0;
 }
+
 function mulberry32(seed) {
   return function() {
     let t = seed += 0x6D2B79F5;
@@ -210,199 +248,277 @@ function mulberry32(seed) {
     return ((t ^ t >>> 14) >>> 0) / 4294967296;
   };
 }
-function shuffle(arr, rng) {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-function dollars(x) { return '$' + Number(x).toLocaleString(); }
 
-const seed = hashString(String(participantId) + '|risk-price-list-v1');
-const rng = mulberry32(seed);
-const sectionOrder = shuffle(PRICE_LISTS.map(x => x.id), rng);
-const rowOrders = {};
-PRICE_LISTS.forEach(section => {
-  rowOrders[section.id] = shuffle(section.prices, rng);
-});
+function shuffle(items, participant) {
+  const arr = items.slice();
+  const rand = mulberry32(seededHash(`${participant}_${VERSION}`));
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-if (!state || state.participantId !== participantId) {
+if (!state || state.participantId !== participantId || state.version !== VERSION) {
+  const orderedItems = shuffle(ALL_ITEMS, participantId);
   state = {
     participantId,
-    seed,
+    version: VERSION,
+    itemOrder: orderedItems.map(item => item.id),
     currentIndex: 0,
-    sectionOrder,
-    rowOrders,
     responses: {},
+    introSeen: false,
     completed: false,
     startedAt: new Date().toISOString()
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-const byId = Object.fromEntries(PRICE_LISTS.map(s => [s.id, s]));
-const root = document.getElementById('root');
-
 function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
-function render() {
-  if (state.completed) return renderDone();
-  const sectionId = state.sectionOrder[state.currentIndex];
-  const section = byId[sectionId];
-  const responses = state.responses[sectionId] || {};
-  const rowPrices = state.rowOrders[sectionId];
+function getOrderedItems() {
+  const byId = Object.fromEntries(ALL_ITEMS.map(item => [item.id, item]));
+  return state.itemOrder.map(id => byId[id]).filter(Boolean);
+}
 
+function currentItem() {
+  return getOrderedItems()[state.currentIndex];
+}
+
+function dollars(x) {
+  return '$' + Number(x).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>'"]/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[ch]));
+}
+
+function parseDollar(raw) {
+  const cleaned = String(raw ?? '').replace(/[$,\s]/g, '');
+  if (cleaned === '') return null;
+  const value = Number(cleaned);
+  if (!Number.isFinite(value)) return NaN;
+  return value;
+}
+
+function itemText(item) {
+  const amount = dollars(item.outcome_amount);
+  if (item.domain === 'gain') {
+    return {
+      paragraphs: [
+        `If the ball drawn is red, the option pays ${amount}.`,
+        `If the ball drawn is blue, the option pays $0.`
+      ],
+      question: `You can keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?`,
+      inputLabel: 'Guaranteed payment amount',
+      range: `Enter an amount from $0 to ${amount}.`
+    };
+  }
+  return {
+    paragraphs: [
+      `If the ball drawn is red, the option loses ${amount}.`,
+      `If the ball drawn is blue, the option loses $0.`
+    ],
+    question: `You can keep this uncertain option, or exchange it for a certain loss. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?`,
+    inputLabel: 'Certain loss amount',
+    range: `Enter a loss amount from $0 to ${amount}.`
+  };
+}
+
+function renderIntro() {
   root.innerHTML = `
-    <div class="topline">
-      <div>
-        <div class="part-label">Part ${state.currentIndex + 1} of ${state.sectionOrder.length}</div>
-        <h1>${section.title}</h1>
-      </div>
-      <div class="progress">${state.currentIndex + 1}/${state.sectionOrder.length}</div>
+    <h1>Decision questions</h1>
+    <p>You will answer ${TOTAL_ITEMS} short hypothetical questions involving a random draw from an urn.</p>
+    <div class="panel">
+      <p>Each question shows an urn containing red balls and blue balls. One ball is drawn at random, and the color determines the monetary outcome shown on that page.</p>
+      <p>Your task is to enter the guaranteed amount that would make you indifferent between the uncertain option and the guaranteed alternative.</p>
     </div>
-    <p class="summary">${section.brief} Each row asks about a different possible price. The rows are intentionally shown in randomized order.</p>
-    <div class="gamble-box">
-      <div class="gamble-title">Risky option</div>
-      <div class="gamble-text">${section.description}</div>
-    </div>
-    <p class="notice">${section.decisionText}</p>
-    <table aria-label="Risk price list">
-      <thead>
-        <tr>
-          <th>Listed price</th>
-          <th>Your choice</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${rowPrices.map(price => `
-          <tr>
-            <td class="price">${dollars(price)}</td>
-            <td>
-              <div class="choice-cell">
-                <label class="choice"><input type="radio" name="${section.id}_${price}" value="yes" ${responses[price] === 'yes' ? 'checked' : ''} onchange="record('${section.id}', ${price}, 'yes')"> ${section.yesText}</label>
-                <label class="choice"><input type="radio" name="${section.id}_${price}" value="no" ${responses[price] === 'no' ? 'checked' : ''} onchange="record('${section.id}', ${price}, 'no')"> ${section.noText}</label>
-              </div>
-            </td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
+    <p>By indifferent, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
     <div class="actions">
       <div class="error" id="err"></div>
-      <button onclick="nextSection()">${state.currentIndex === state.sectionOrder.length - 1 ? 'Complete risk preference task' : 'Continue'}</button>
+      <button onclick="beginQuestions()">Start questions</button>
+    </div>
+  `
+}
+
+function renderQuestion() {
+  const items = getOrderedItems();
+  const item = currentItem();
+  if (!item) return renderDone();
+
+  const progress = state.currentIndex + 1;
+  const pct = Math.round((state.currentIndex / items.length) * 100);
+  const priorRaw = state.responses[item.id]?.raw ?? '';
+  const text = itemText(item);
+
+  root.innerHTML = `
+    <div class="progress-row">
+      <div class="progress-text">Question ${progress} of ${items.length}</div>
+      <div class="bar" aria-hidden="true"><div class="bar-fill" style="width: ${pct}%"></div></div>
+    </div>
+    <h1>Decision question</h1>
+    <div class="panel">
+      <p>The urn contains ${item.red_balls} red balls and ${item.blue_balls} blue balls. One ball will be drawn at random.</p>
+    </div>
+    <div class="outcome-card">
+      ${text.paragraphs.map(p => `<p>${p}</p>`).join('')}
+    </div>
+    <div class="response-box">
+      <label for="ceInput">${text.question}</label>
+      <div class="input-row">
+        <span class="prefix">$</span>
+        <input id="ceInput" type="text" inputmode="decimal" autocomplete="off" aria-label="${escapeHtml(text.inputLabel)}" value="${escapeHtml(priorRaw)}" onkeydown="handleKey(event)" />
+      </div>
+      <div class="note">${text.range}</div>
+      <div class="note">These amounts are hypothetical. Your own money is not at risk.</div>
+    </div>
+    <div class="actions">
+      <div class="error" id="err"></div>
+      <button onclick="submitCurrent()">${progress === items.length ? 'Submit answers' : 'Continue'}</button>
     </div>
   `;
+
+  const input = document.getElementById('ceInput');
+  if (input) input.focus();
 }
 
-window.record = function(sectionId, price, value) {
-  if (!state.responses[sectionId]) state.responses[sectionId] = {};
-  state.responses[sectionId][String(price)] = value;
-  saveState();
-  postPartialAnswers();
+window.handleKey = function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    submitCurrent();
+  }
 };
 
-function sectionComplete(sectionId) {
-  const section = byId[sectionId];
-  const responses = state.responses[sectionId] || {};
-  return section.prices.every(p => responses[String(p)] === 'yes' || responses[String(p)] === 'no');
+window.beginQuestions = function() {
+  state.introSeen = true;
+  saveState();
+  renderQuestion();
+};
+
+function validateValue(item, raw) {
+  const value = parseDollar(raw);
+  if (value === null) return 'Please enter a dollar amount before continuing.';
+  if (!Number.isFinite(value)) return 'Please enter a valid dollar amount.';
+  if (value < 0) return 'Please enter an amount of $0 or greater.';
+  if (value > item.outcome_amount) return `Please enter an amount no greater than ${dollars(item.outcome_amount)}.`;
+  return '';
 }
 
-window.nextSection = function() {
-  const sectionId = state.sectionOrder[state.currentIndex];
+window.submitCurrent = function() {
+  const item = currentItem();
+  const input = document.getElementById('ceInput');
   const err = document.getElementById('err');
-  if (!sectionComplete(sectionId)) {
-    err.textContent = 'Please answer every row before continuing.';
+  const raw = input ? input.value : '';
+  const problem = validateValue(item, raw);
+  if (problem) {
+    err.textContent = problem;
     return;
   }
-  err.textContent = '';
-  if (state.currentIndex < state.sectionOrder.length - 1) {
-    state.currentIndex += 1;
-    saveState();
-    render();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
+
+  state.responses[item.id] = {
+    raw,
+    entered_amount: parseDollar(raw),
+    submittedAt: new Date().toISOString()
+  };
+  state.currentIndex += 1;
+  saveState();
+  postAnswers(buildAnswers(false));
+
+  if (state.currentIndex >= getOrderedItems().length) {
     state.completed = true;
     state.completedAt = new Date().toISOString();
     saveState();
-    postFinalAnswers();
+    postAnswers(buildAnswers(true));
     renderDone();
+  } else {
+    renderQuestion();
   }
 };
 
-function scoreSection(section) {
-  const responses = state.responses[section.id] || {};
-  const sorted = section.prices.slice().sort((a, b) => a - b);
-  const yesPrices = sorted.filter(p => responses[String(p)] === 'yes');
-  const noPrices = sorted.filter(p => responses[String(p)] === 'no');
-  const highestYes = yesPrices.length ? Math.max(...yesPrices) : null;
-  const lowestNo = noPrices.length ? Math.min(...noPrices) : null;
-
-  let ceLower;
-  let ceUpper;
-  let cePoint;
-  if (highestYes === null) {
-    ceLower = sorted[0];
-    ceUpper = sorted[0];
-    cePoint = sorted[0];
-  } else {
-    const noAbove = noPrices.filter(p => p > highestYes);
-    ceLower = highestYes;
-    ceUpper = noAbove.length ? Math.min(...noAbove) : highestYes;
-    cePoint = (ceLower + ceUpper) / 2;
-  }
-
-  let inconsistencyCount = 0;
-  for (let i = 0; i < sorted.length; i++) {
-    for (let j = i + 1; j < sorted.length; j++) {
-      const low = sorted[i];
-      const high = sorted[j];
-      if (responses[String(low)] === 'no' && responses[String(high)] === 'yes') {
-        inconsistencyCount += 1;
-      }
-    }
-  }
+function scoreItem(item) {
+  const response = state.responses[item.id] || {};
+  const entered = Number(response.entered_amount);
+  const valid = Number.isFinite(entered);
+  const signedCe = valid ? (item.domain === 'gain' ? entered : -entered) : null;
 
   return {
-    id: section.id,
-    type: section.type,
-    ce_point: cePoint,
-    ce_lower: ceLower,
-    ce_upper: ceUpper,
-    highest_yes: highestYes,
-    lowest_no: lowestNo,
-    n_yes: yesPrices.length,
-    n_no: noPrices.length,
-    inconsistency_count: inconsistencyCount,
-    row_order: state.rowOrders[section.id],
-    responses: responses
+    id: item.id,
+    domain: item.domain,
+    red_balls: item.red_balls,
+    blue_balls: item.blue_balls,
+    probability_red: item.probability_red,
+    outcome_amount: item.outcome_amount,
+    risk_neutral_expected_value: item.risk_neutral_expected_value,
+    x_axis_value: item.x_axis_value,
+    x_axis_abs: item.x_axis_abs,
+    log_index: item.log_index,
+    raw_response: response.raw ?? null,
+    entered_amount: valid ? entered : null,
+    signed_certainty_equivalent: signedCe,
+    submitted_at: response.submittedAt || null
   };
 }
 
+function mean(values) {
+  const valid = values.filter(v => Number.isFinite(v));
+  if (!valid.length) return null;
+  return valid.reduce((a, b) => a + b, 0) / valid.length;
+}
+
 function buildAnswers(finalFlag) {
-  const scores = PRICE_LISTS.map(scoreSection);
-  const flat = {
-    'risk-price-list-complete': !!finalFlag,
-    'risk-price-list-participant-id': participantId,
-    'risk-price-list-section-order': state.sectionOrder.join('|'),
-    'risk-price-list-started-at': state.startedAt || '',
-    'risk-price-list-completed-at': state.completedAt || '',
-    'risk-price-list-json': JSON.stringify({ scores, state })
+  const orderedItems = getOrderedItems();
+  const scores = orderedItems.map(scoreItem);
+  const gainScores = scores.filter(s => s.domain === 'gain');
+  const lossScores = scores.filter(s => s.domain === 'loss');
+  const completedCount = scores.filter(s => Number.isFinite(s.entered_amount)).length;
+
+  const answers = {
+    'risk-precheck-complete': !!finalFlag,
+    'risk-precheck-version': VERSION,
+    'risk-precheck-participant-id': participantId,
+    'risk-precheck-started-at': state.startedAt || '',
+    'risk-precheck-completed-at': state.completedAt || '',
+    'risk-precheck-current-index': state.currentIndex,
+    'risk-precheck-completed-count': completedCount,
+    'risk-precheck-item-order-json': JSON.stringify(state.itemOrder),
+    'risk-precheck-json': JSON.stringify({ scores, state }),
+    'risk-gain-ce-mean': mean(gainScores.map(s => s.signed_certainty_equivalent)),
+    'risk-loss-ce-mean': mean(lossScores.map(s => s.signed_certainty_equivalent)),
+    'risk-ce-all-mean': mean(scores.map(s => s.signed_certainty_equivalent)),
+    'risk-curve-points-json': JSON.stringify(scores.map(s => ({
+      id: s.id,
+      domain: s.domain,
+      red_balls: s.red_balls,
+      blue_balls: s.blue_balls,
+      probability_red: s.probability_red,
+      outcome_amount: s.outcome_amount,
+      x_axis_value: s.x_axis_value,
+      x_axis_abs: s.x_axis_abs,
+      risk_neutral_expected_value: s.risk_neutral_expected_value,
+      entered_amount: s.entered_amount,
+      signed_certainty_equivalent: s.signed_certainty_equivalent
+    })))
   };
-  scores.forEach(s => {
-    flat[`risk-ce-${s.id}`] = s.ce_point;
-    flat[`risk-ce-lower-${s.id}`] = s.ce_lower;
-    flat[`risk-ce-upper-${s.id}`] = s.ce_upper;
-    flat[`risk-highest-yes-${s.id}`] = s.highest_yes;
-    flat[`risk-lowest-no-${s.id}`] = s.lowest_no;
-    flat[`risk-inconsistency-count-${s.id}`] = s.inconsistency_count;
-    flat[`risk-response-row-order-${s.id}`] = s.row_order.join('|');
+
+  scores.forEach((s, idx) => {
+    answers[`risk-order-${idx + 1}`] = s.id;
+    answers[`risk-domain-${s.id}`] = s.domain;
+    answers[`risk-red-balls-${s.id}`] = s.red_balls;
+    answers[`risk-blue-balls-${s.id}`] = s.blue_balls;
+    answers[`risk-probability-red-${s.id}`] = s.probability_red;
+    answers[`risk-outcome-${s.id}`] = s.outcome_amount;
+    answers[`risk-x-axis-${s.id}`] = s.x_axis_value;
+    answers[`risk-expected-value-${s.id}`] = s.risk_neutral_expected_value;
+    answers[`risk-entered-amount-${s.id}`] = s.entered_amount;
+    answers[`risk-signed-ce-${s.id}`] = s.signed_certainty_equivalent;
   });
-  return flat;
+
+  return answers;
 }
 
 function postAnswers(answers) {
@@ -410,21 +526,18 @@ function postAnswers(answers) {
     if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
       Revisit.postAnswers(answers);
     } else if (window.parent && window.parent.postMessage) {
-      window.parent.postMessage({ type: 'revisit-data', answers: answers }, '*');
+      window.parent.postMessage({ type: 'revisit-data', answers }, '*');
     }
   } catch (e) {
     console.warn('postAnswers failed:', e);
   }
 }
-function postPartialAnswers() { postAnswers(buildAnswers(false)); }
-function postFinalAnswers() { postAnswers(buildAnswers(true)); }
 
 function renderDone() {
   root.innerHTML = `
     <div class="done">
-      <h1>Risk preference task complete</h1>
-      <p>Your responses have been recorded. Click Next below to continue to the main study.</p>
-      <p class="small">These responses will be used to estimate certainty-equivalent prices for the risky options shown in this task.</p>
+      <h1>Decision questions complete</h1>
+      <p>Your responses have been recorded. Click Next below to continue.</p>
     </div>
   `;
 }
@@ -438,7 +551,13 @@ function tryScript(src) {
 tryScript('../../revisit-communicate.js');
 tryScript('/revisit-communicate.js');
 
-render();
+if (state.completed) {
+  renderDone();
+} else if (state.introSeen) {
+  renderQuestion();
+} else {
+  renderIntro();
+}
 </script>
 </body>
 </html>
