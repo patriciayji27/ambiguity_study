@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Decision Questions</title>
+<title>Risk Preference Questions</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -24,12 +24,6 @@
     margin: 0 0 10px;
     font-size: 24px;
     line-height: 1.25;
-    font-weight: 620;
-  }
-  h2 {
-    margin: 0 0 8px;
-    font-size: 18px;
-    line-height: 1.35;
     font-weight: 620;
   }
   p {
@@ -121,6 +115,7 @@
   .note {
     font-size: 13px;
     color: #5f6368;
+    line-height: 1.45;
     margin-top: 8px;
   }
   .actions {
@@ -146,7 +141,12 @@
     font-size: 14px;
     cursor: pointer;
   }
+  button.secondary {
+    background: #fff;
+    color: #1a73e8;
+  }
   button:hover:not(:disabled) { background: #1558b0; }
+  button.secondary:hover:not(:disabled) { background: #f4f8ff; }
   button:disabled { cursor: default; opacity: .55; }
   .done {
     text-align: center;
@@ -160,6 +160,7 @@
     .progress-row { flex-direction: column; align-items: stretch; }
     .progress-text { white-space: normal; }
     input[type="text"] { width: 100%; }
+    .actions { flex-wrap: wrap; }
   }
 </style>
 </head>
@@ -169,33 +170,31 @@
 </div>
 
 <script>
-const VERSION = 'urn-direct-certainty-equivalent-v4';
-const STORAGE_KEY = 'dcl_risk_ce_urn_v4';
+const VERSION = 'urn-direct-certainty-equivalent-p55-p75-v1';
+const STORAGE_KEY = 'dcl_risk_ce_urn_p55_p75_v1';
 const TOTAL_ITEMS = 16;
 
-// Eight positive-side x-axis targets, approximately log-spaced in risk-neutral expected value.
-// The mirrored negative side uses the same magnitudes with negative sign.
-// These values are hidden from participants.
-
+// Hidden modeling grid. Participants do not see expected values.
+// The positive x-axis uses approximately log-spaced risk-neutral expected values.
+// The loss side mirrors the same grid with a negative sign.
 const BASE_ITEMS = [
-  { index: 1, red: 90, blue: 10, amount: 6  },  // EV 5.40
-  { index: 2, red: 55, blue: 45, amount: 15 },  // EV 8.25
-  { index: 3, red: 75, blue: 25, amount: 20 },  // EV 15.00
-  { index: 4, red: 35, blue: 65, amount: 60 },  // EV 21.00
-  { index: 5, red: 90, blue: 10, amount: 40 },  // EV 36.00
-  { index: 6, red: 55, blue: 45, amount: 100 }, // EV 55.00
-  { index: 7, red: 35, blue: 65, amount: 250 }, // EV 87.50
-  { index: 8, red: 75, blue: 25, amount: 190 }  // EV 142.50
+  { log_index: 1, red: 55, blue: 45, amount: 40  },  // EV 22.0
+  { log_index: 2, red: 55, blue: 45, amount: 80  },  // EV 44.0
+  { log_index: 3, red: 55, blue: 45, amount: 160 },  // EV 88.0
+  { log_index: 4, red: 55, blue: 45, amount: 320 },  // EV 176.0
+  { log_index: 1, red: 75, blue: 25, amount: 30  },  // EV 22.5
+  { log_index: 2, red: 75, blue: 25, amount: 60  },  // EV 45.0
+  { log_index: 3, red: 75, blue: 25, amount: 120 },  // EV 90.0
+  { log_index: 4, red: 75, blue: 25, amount: 240 }   // EV 180.0
 ];
 
 function buildItems() {
-  const gains = BASE_ITEMS.map(item => {
-    const p = item.red / 100;
+  const gains = BASE_ITEMS.map((item, idx) => {
+    const p = item.red / (item.red + item.blue);
     const ev = +(p * item.amount).toFixed(4);
     return {
-      id: `gain_${String(item.index).padStart(2, '0')}_${item.red}_${item.amount}`,
+      id: `gain_${String(idx + 1).padStart(2, '0')}_${item.red}_${item.amount}`,
       domain: 'gain',
-      prompt_kind: 'payment',
       red_balls: item.red,
       blue_balls: item.blue,
       probability_red: p,
@@ -203,16 +202,16 @@ function buildItems() {
       risk_neutral_expected_value: ev,
       x_axis_value: ev,
       x_axis_abs: ev,
-      log_index: item.index
+      x_axis_log_abs: +Math.log(ev).toFixed(6),
+      log_index: item.log_index
     };
   });
-  const losses = BASE_ITEMS.map(item => {
-    const p = item.red / 100;
+  const losses = BASE_ITEMS.map((item, idx) => {
+    const p = item.red / (item.red + item.blue);
     const ev = +(p * item.amount).toFixed(4);
     return {
-      id: `loss_${String(item.index).padStart(2, '0')}_${item.red}_${item.amount}`,
+      id: `loss_${String(idx + 1).padStart(2, '0')}_${item.red}_${item.amount}`,
       domain: 'loss',
-      prompt_kind: 'loss',
       red_balls: item.red,
       blue_balls: item.blue,
       probability_red: p,
@@ -220,7 +219,8 @@ function buildItems() {
       risk_neutral_expected_value: -ev,
       x_axis_value: -ev,
       x_axis_abs: ev,
-      log_index: item.index
+      x_axis_log_abs: +Math.log(ev).toFixed(6),
+      log_index: item.log_index
     };
   });
   return [...gains, ...losses];
@@ -260,6 +260,10 @@ function shuffle(items, participant) {
 }
 
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+if (params.get('reset') === '1') {
+  localStorage.removeItem(STORAGE_KEY);
+  state = null;
+}
 if (!state || state.participantId !== participantId || state.version !== VERSION) {
   const orderedItems = shuffle(ALL_ITEMS, participantId);
   state = {
@@ -310,23 +314,23 @@ function itemText(item) {
   const amount = dollars(item.outcome_amount);
   if (item.domain === 'gain') {
     return {
-      paragraphs: [
-        `If the ball drawn is red, the option pays ${amount}.`,
-        `If the ball drawn is blue, the option pays $0.`
+      outcome: [
+        `If the ball drawn is red, the uncertain option pays ${amount}.`,
+        `If the ball drawn is blue, the uncertain option pays $0.`
       ],
-      question: `You can keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?`,
+      question: 'You may keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?',
       inputLabel: 'Guaranteed payment amount',
-      range: `Enter an amount from $0 to ${amount}.`
+      range: `Enter a guaranteed payment from $0 to ${amount}.`
     };
   }
   return {
-    paragraphs: [
-      `If the ball drawn is red, the option loses ${amount}.`,
-      `If the ball drawn is blue, the option loses $0.`
+    outcome: [
+      `If the ball drawn is red, the uncertain option results in a loss of ${amount}.`,
+      `If the ball drawn is blue, the uncertain option results in a loss of $0.`
     ],
-    question: `You can keep this uncertain option, or exchange it for a certain loss. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?`,
+    question: 'You may keep this uncertain option, or accept a certain loss instead. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?',
     inputLabel: 'Certain loss amount',
-    range: `Enter a loss amount from $0 to ${amount}.`
+    range: `Enter the size of the certain loss, from $0 to ${amount}.`
   };
 }
 
@@ -336,14 +340,15 @@ function renderIntro() {
     <p>You will answer ${TOTAL_ITEMS} short hypothetical questions involving a random draw from an urn.</p>
     <div class="panel">
       <p>Each question shows an urn containing red balls and blue balls. One ball is drawn at random, and the color determines the monetary outcome shown on that page.</p>
-      <p>Your task is to enter the guaranteed amount that would make you indifferent between the uncertain option and the guaranteed alternative.</p>
+      <p>Your task is to enter the guaranteed amount that would make the uncertain option and the guaranteed alternative feel equivalent to you.</p>
     </div>
-    <p>By indifferent, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
+    <p>By <em>indifferent</em>, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
+    <p class="small">These questions are hypothetical and do not create any possibility of losing your own money.</p>
     <div class="actions">
       <div class="error" id="err"></div>
       <button onclick="beginQuestions()">Start questions</button>
     </div>
-  `
+  `;
 }
 
 function renderQuestion() {
@@ -366,7 +371,7 @@ function renderQuestion() {
       <p>The urn contains ${item.red_balls} red balls and ${item.blue_balls} blue balls. One ball will be drawn at random.</p>
     </div>
     <div class="outcome-card">
-      ${text.paragraphs.map(p => `<p>${p}</p>`).join('')}
+      ${text.outcome.map(p => `<p>${p}</p>`).join('')}
     </div>
     <div class="response-box">
       <label for="ceInput">${text.question}</label>
@@ -375,10 +380,11 @@ function renderQuestion() {
         <input id="ceInput" type="text" inputmode="decimal" autocomplete="off" aria-label="${escapeHtml(text.inputLabel)}" value="${escapeHtml(priorRaw)}" onkeydown="handleKey(event)" />
       </div>
       <div class="note">${text.range}</div>
-      <div class="note">These amounts are hypothetical. Your own money is not at risk.</div>
+      <div class="note">Please enter the dollar amount only. These questions are hypothetical.</div>
     </div>
     <div class="actions">
       <div class="error" id="err"></div>
+      ${progress > 1 ? '<button class="secondary" onclick="goBack()">Back</button>' : ''}
       <button onclick="submitCurrent()">${progress === items.length ? 'Submit answers' : 'Continue'}</button>
     </div>
   `;
@@ -398,6 +404,14 @@ window.beginQuestions = function() {
   state.introSeen = true;
   saveState();
   renderQuestion();
+};
+
+window.goBack = function() {
+  if (state.currentIndex > 0) {
+    state.currentIndex -= 1;
+    saveState();
+    renderQuestion();
+  }
 };
 
 function validateValue(item, raw) {
@@ -445,6 +459,11 @@ function scoreItem(item) {
   const entered = Number(response.entered_amount);
   const valid = Number.isFinite(entered);
   const signedCe = valid ? (item.domain === 'gain' ? entered : -entered) : null;
+  const unsignedEv = item.x_axis_abs;
+  const signedEv = item.risk_neutral_expected_value;
+  const riskPremium = valid
+    ? (item.domain === 'gain' ? unsignedEv - entered : entered - unsignedEv)
+    : null;
 
   return {
     id: item.id,
@@ -452,14 +471,17 @@ function scoreItem(item) {
     red_balls: item.red_balls,
     blue_balls: item.blue_balls,
     probability_red: item.probability_red,
+    probability_level: item.probability_red === 0.55 ? 'p55' : 'p75',
     outcome_amount: item.outcome_amount,
-    risk_neutral_expected_value: item.risk_neutral_expected_value,
+    risk_neutral_expected_value: signedEv,
     x_axis_value: item.x_axis_value,
     x_axis_abs: item.x_axis_abs,
+    x_axis_log_abs: item.x_axis_log_abs,
     log_index: item.log_index,
     raw_response: response.raw ?? null,
     entered_amount: valid ? entered : null,
     signed_certainty_equivalent: signedCe,
+    risk_premium: riskPremium,
     submitted_at: response.submittedAt || null
   };
 }
@@ -470,12 +492,24 @@ function mean(values) {
   return valid.reduce((a, b) => a + b, 0) / valid.length;
 }
 
+function subsetMean(scores, filterFn, field) {
+  return mean(scores.filter(filterFn).map(s => s[field]));
+}
+
 function buildAnswers(finalFlag) {
   const orderedItems = getOrderedItems();
   const scores = orderedItems.map(scoreItem);
-  const gainScores = scores.filter(s => s.domain === 'gain');
-  const lossScores = scores.filter(s => s.domain === 'loss');
   const completedCount = scores.filter(s => Number.isFinite(s.entered_amount)).length;
+
+  const gain = s => s.domain === 'gain';
+  const loss = s => s.domain === 'loss';
+  const p55 = s => s.probability_level === 'p55';
+  const p75 = s => s.probability_level === 'p75';
+
+  const gainPremiumP55 = subsetMean(scores, s => gain(s) && p55(s), 'risk_premium');
+  const gainPremiumP75 = subsetMean(scores, s => gain(s) && p75(s), 'risk_premium');
+  const lossPremiumP55 = subsetMean(scores, s => loss(s) && p55(s), 'risk_premium');
+  const lossPremiumP75 = subsetMean(scores, s => loss(s) && p75(s), 'risk_premium');
 
   const answers = {
     'risk-precheck-complete': !!finalFlag,
@@ -487,21 +521,32 @@ function buildAnswers(finalFlag) {
     'risk-precheck-completed-count': completedCount,
     'risk-precheck-item-order-json': JSON.stringify(state.itemOrder),
     'risk-precheck-json': JSON.stringify({ scores, state }),
-    'risk-gain-ce-mean': mean(gainScores.map(s => s.signed_certainty_equivalent)),
-    'risk-loss-ce-mean': mean(lossScores.map(s => s.signed_certainty_equivalent)),
+    'risk-gain-ce-mean': subsetMean(scores, gain, 'signed_certainty_equivalent'),
+    'risk-loss-ce-mean': subsetMean(scores, loss, 'signed_certainty_equivalent'),
     'risk-ce-all-mean': mean(scores.map(s => s.signed_certainty_equivalent)),
+    'risk-gain-premium-mean': subsetMean(scores, gain, 'risk_premium'),
+    'risk-loss-premium-mean': subsetMean(scores, loss, 'risk_premium'),
+    'risk-gain-premium-p55': gainPremiumP55,
+    'risk-gain-premium-p75': gainPremiumP75,
+    'risk-loss-premium-p55': lossPremiumP55,
+    'risk-loss-premium-p75': lossPremiumP75,
+    'risk-gain-premium-p75-minus-p55': Number.isFinite(gainPremiumP75) && Number.isFinite(gainPremiumP55) ? gainPremiumP75 - gainPremiumP55 : null,
+    'risk-loss-premium-p75-minus-p55': Number.isFinite(lossPremiumP75) && Number.isFinite(lossPremiumP55) ? lossPremiumP75 - lossPremiumP55 : null,
     'risk-curve-points-json': JSON.stringify(scores.map(s => ({
       id: s.id,
       domain: s.domain,
       red_balls: s.red_balls,
       blue_balls: s.blue_balls,
       probability_red: s.probability_red,
+      probability_level: s.probability_level,
       outcome_amount: s.outcome_amount,
       x_axis_value: s.x_axis_value,
       x_axis_abs: s.x_axis_abs,
+      x_axis_log_abs: s.x_axis_log_abs,
       risk_neutral_expected_value: s.risk_neutral_expected_value,
       entered_amount: s.entered_amount,
-      signed_certainty_equivalent: s.signed_certainty_equivalent
+      signed_certainty_equivalent: s.signed_certainty_equivalent,
+      risk_premium: s.risk_premium
     })))
   };
 
@@ -511,11 +556,14 @@ function buildAnswers(finalFlag) {
     answers[`risk-red-balls-${s.id}`] = s.red_balls;
     answers[`risk-blue-balls-${s.id}`] = s.blue_balls;
     answers[`risk-probability-red-${s.id}`] = s.probability_red;
+    answers[`risk-probability-level-${s.id}`] = s.probability_level;
     answers[`risk-outcome-${s.id}`] = s.outcome_amount;
     answers[`risk-x-axis-${s.id}`] = s.x_axis_value;
+    answers[`risk-x-axis-log-abs-${s.id}`] = s.x_axis_log_abs;
     answers[`risk-expected-value-${s.id}`] = s.risk_neutral_expected_value;
     answers[`risk-entered-amount-${s.id}`] = s.entered_amount;
     answers[`risk-signed-ce-${s.id}`] = s.signed_certainty_equivalent;
+    answers[`risk-premium-${s.id}`] = s.risk_premium;
   });
 
   return answers;
