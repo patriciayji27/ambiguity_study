@@ -4,18 +4,16 @@
 The attention check verifies that participants are reading instructions and responding thoughtfully rather than clicking randomly.
 
 ## Implementation
-The attention check is embedded among the 32 main trials in a randomized position. It uses the same visual format as regular trials (chart + Option A/B choice) so that it does not visually stand out.
+The attention check trials are embedded among the main trials in randomized positions. They use the same visual format as regular trials (chart + Option A/B choice) so that they do not visually stand out.
 
 ## Question Design
-The attention check displays a chart stimulus identical in format to regular trials, but the instruction text explicitly states:
-
-> "This is an attention check. Please read the options carefully. Regardless of what the chart shows, **please select Option B** below."
+The attention check trials display chart stimuli identical in format to regular trials, but the headline and chart evidence are unusually clear and aligned.
 
 ### Correct Answer
-Participants who are reading the instructions should select **Option B**.
+Participants who are reading the instructions should select **Option A** for the clearly positive attention check and **Option B** for the clearly negative attention check.
 
 ### Failure Criteria
-Participants who select Option A on this question may not be reading the instructions carefully. This can be used as a data quality filter during analysis.
+Participants who select the opposite option on these questions may not be reading the instructions carefully. This can be used as a data quality filter during analysis.
 
 ## Rationale
 This approach follows common practices in online behavioral studies (e.g., Oppenheimer, Meyvis, & Davidenko, 2009). By embedding the check within the normal trial flow and maintaining the same visual format, we minimize disruption while reliably detecting inattentive responding.

@@ -170,23 +170,30 @@
 </div>
 
 <script>
-const VERSION = 'urn-direct-certainty-equivalent-p55-p75-v1';
-const STORAGE_KEY = 'dcl_risk_ce_urn_p55_p75_v1';
+const params = new URLSearchParams(window.location.search);
+const pParam = (params.get('p') || params.get('probability') || '55').replace('%', '');
+const probabilityLevel = pParam === '75' || pParam === '0.75' ? 'p75' : 'p55';
+const PROBABILITY_CONFIGS = {
+  p55: { label: '55%', red: 55, blue: 45 },
+  p75: { label: '75%', red: 75, blue: 25 }
+};
+const PROBABILITY_CONFIG = PROBABILITY_CONFIGS[probabilityLevel];
+const VERSION = `urn-direct-certainty-equivalent-${probabilityLevel}-v2`;
+const STORAGE_KEY = `dcl_risk_ce_urn_${probabilityLevel}_v2`;
+const ANSWER_PREFIX = `risk-precheck-${probabilityLevel}`;
+const METRIC_PREFIX = `risk-${probabilityLevel}`;
 const TOTAL_ITEMS = 16;
 
 // Hidden modeling grid. Participants do not see expected values.
-// The positive x-axis uses approximately log-spaced risk-neutral expected values.
-// The loss side mirrors the same grid with a negative sign.
-const BASE_ITEMS = [
-  { log_index: 1, red: 55, blue: 45, amount: 40  },  // EV 22.0
-  { log_index: 2, red: 55, blue: 45, amount: 80  },  // EV 44.0
-  { log_index: 3, red: 55, blue: 45, amount: 160 },  // EV 88.0
-  { log_index: 4, red: 55, blue: 45, amount: 320 },  // EV 176.0
-  { log_index: 1, red: 75, blue: 25, amount: 30  },  // EV 22.5
-  { log_index: 2, red: 75, blue: 25, amount: 60  },  // EV 45.0
-  { log_index: 3, red: 75, blue: 25, amount: 120 },  // EV 90.0
-  { log_index: 4, red: 75, blue: 25, amount: 240 }   // EV 180.0
-];
+// Each probability condition uses the dollar amounts that previously appeared
+// across the mixed p55/p75 precheck, then mirrors them for gain and loss items.
+const OUTCOME_AMOUNTS = [30, 40, 60, 80, 120, 160, 240, 320];
+const BASE_ITEMS = OUTCOME_AMOUNTS.map((amount, idx) => ({
+  log_index: idx + 1,
+  red: PROBABILITY_CONFIG.red,
+  blue: PROBABILITY_CONFIG.blue,
+  amount
+}));
 
 function buildItems() {
   const gains = BASE_ITEMS.map((item, idx) => {
@@ -227,7 +234,6 @@ function buildItems() {
 }
 
 const ALL_ITEMS = buildItems();
-const params = new URLSearchParams(window.location.search);
 const participantId = params.get('PROLIFIC_PID') || params.get('participantId') || params.get('participant') || 'anonymous';
 const root = document.getElementById('root');
 
@@ -315,8 +321,8 @@ function itemText(item) {
   if (item.domain === 'gain') {
     return {
       outcome: [
-        `If the ball drawn is red, the uncertain option pays ${amount}.`,
-        `If the ball drawn is blue, the uncertain option pays $0.`
+        `If the ball drawn is red, the uncertain option would result in a <strong>gain of ${amount}</strong>.`,
+        `If the ball drawn is blue, the uncertain option would result in a <strong>gain of $0</strong>.`
       ],
       question: 'You may keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?',
       inputLabel: 'Guaranteed payment amount',
@@ -325,8 +331,8 @@ function itemText(item) {
   }
   return {
     outcome: [
-      `If the ball drawn is red, the uncertain option results in a loss of ${amount}.`,
-      `If the ball drawn is blue, the uncertain option results in a loss of $0.`
+      `If the ball drawn is red, the uncertain option would result in a <strong>loss of ${amount}</strong>.`,
+      `If the ball drawn is blue, the uncertain option would result in a <strong>loss of $0</strong>.`
     ],
     question: 'You may keep this uncertain option, or accept a certain loss instead. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?',
     inputLabel: 'Certain loss amount',
@@ -336,8 +342,9 @@ function itemText(item) {
 
 function renderIntro() {
   root.innerHTML = `
-    <h1>Decision questions</h1>
-    <p>You will answer ${TOTAL_ITEMS} short hypothetical questions involving a random draw from an urn.</p>
+    <h1>Risk preference questions</h1>
+    <p>Before the main task, we would like to understand how you value uncertain outcomes with explicitly stated probabilities.</p>
+    <p>You will answer ${TOTAL_ITEMS} short hypothetical questions involving a random draw from an urn. In this section, the urn contains ${PROBABILITY_CONFIG.red} red balls and ${PROBABILITY_CONFIG.blue} blue balls, so the chance of drawing a red ball is ${PROBABILITY_CONFIG.label}.</p>
     <div class="panel">
       <p>Each question shows an urn containing red balls and blue balls. One ball is drawn at random, and the color determines the monetary outcome shown on that page.</p>
       <p>Your task is to enter the guaranteed amount that would make the uncertain option and the guaranteed alternative feel equivalent to you.</p>
@@ -471,7 +478,7 @@ function scoreItem(item) {
     red_balls: item.red_balls,
     blue_balls: item.blue_balls,
     probability_red: item.probability_red,
-    probability_level: item.probability_red === 0.55 ? 'p55' : 'p75',
+    probability_level: probabilityLevel,
     outcome_amount: item.outcome_amount,
     risk_neutral_expected_value: signedEv,
     x_axis_value: item.x_axis_value,
@@ -503,36 +510,29 @@ function buildAnswers(finalFlag) {
 
   const gain = s => s.domain === 'gain';
   const loss = s => s.domain === 'loss';
-  const p55 = s => s.probability_level === 'p55';
-  const p75 = s => s.probability_level === 'p75';
-
-  const gainPremiumP55 = subsetMean(scores, s => gain(s) && p55(s), 'risk_premium');
-  const gainPremiumP75 = subsetMean(scores, s => gain(s) && p75(s), 'risk_premium');
-  const lossPremiumP55 = subsetMean(scores, s => loss(s) && p55(s), 'risk_premium');
-  const lossPremiumP75 = subsetMean(scores, s => loss(s) && p75(s), 'risk_premium');
+  const gainPremium = subsetMean(scores, gain, 'risk_premium');
+  const lossPremium = subsetMean(scores, loss, 'risk_premium');
 
   const answers = {
-    'risk-precheck-complete': !!finalFlag,
-    'risk-precheck-version': VERSION,
-    'risk-precheck-participant-id': participantId,
-    'risk-precheck-started-at': state.startedAt || '',
-    'risk-precheck-completed-at': state.completedAt || '',
-    'risk-precheck-current-index': state.currentIndex,
-    'risk-precheck-completed-count': completedCount,
-    'risk-precheck-item-order-json': JSON.stringify(state.itemOrder),
-    'risk-precheck-json': JSON.stringify({ scores, state }),
-    'risk-gain-ce-mean': subsetMean(scores, gain, 'signed_certainty_equivalent'),
-    'risk-loss-ce-mean': subsetMean(scores, loss, 'signed_certainty_equivalent'),
-    'risk-ce-all-mean': mean(scores.map(s => s.signed_certainty_equivalent)),
-    'risk-gain-premium-mean': subsetMean(scores, gain, 'risk_premium'),
-    'risk-loss-premium-mean': subsetMean(scores, loss, 'risk_premium'),
-    'risk-gain-premium-p55': gainPremiumP55,
-    'risk-gain-premium-p75': gainPremiumP75,
-    'risk-loss-premium-p55': lossPremiumP55,
-    'risk-loss-premium-p75': lossPremiumP75,
-    'risk-gain-premium-p75-minus-p55': Number.isFinite(gainPremiumP75) && Number.isFinite(gainPremiumP55) ? gainPremiumP75 - gainPremiumP55 : null,
-    'risk-loss-premium-p75-minus-p55': Number.isFinite(lossPremiumP75) && Number.isFinite(lossPremiumP55) ? lossPremiumP75 - lossPremiumP55 : null,
-    'risk-curve-points-json': JSON.stringify(scores.map(s => ({
+    [`${ANSWER_PREFIX}-complete`]: !!finalFlag,
+    [`${ANSWER_PREFIX}-version`]: VERSION,
+    [`${ANSWER_PREFIX}-participant-id`]: participantId,
+    [`${ANSWER_PREFIX}-probability-level`]: probabilityLevel,
+    [`${ANSWER_PREFIX}-probability-red`]: PROBABILITY_CONFIG.red / 100,
+    [`${ANSWER_PREFIX}-started-at`]: state.startedAt || '',
+    [`${ANSWER_PREFIX}-completed-at`]: state.completedAt || '',
+    [`${ANSWER_PREFIX}-current-index`]: state.currentIndex,
+    [`${ANSWER_PREFIX}-completed-count`]: completedCount,
+    [`${ANSWER_PREFIX}-item-order-json`]: JSON.stringify(state.itemOrder),
+    [`${ANSWER_PREFIX}-json`]: JSON.stringify({ scores, state }),
+    [`${METRIC_PREFIX}-gain-ce-mean`]: subsetMean(scores, gain, 'signed_certainty_equivalent'),
+    [`${METRIC_PREFIX}-loss-ce-mean`]: subsetMean(scores, loss, 'signed_certainty_equivalent'),
+    [`${METRIC_PREFIX}-ce-all-mean`]: mean(scores.map(s => s.signed_certainty_equivalent)),
+    [`${METRIC_PREFIX}-gain-premium-mean`]: gainPremium,
+    [`${METRIC_PREFIX}-loss-premium-mean`]: lossPremium,
+    [`risk-gain-premium-${probabilityLevel}`]: gainPremium,
+    [`risk-loss-premium-${probabilityLevel}`]: lossPremium,
+    [`${METRIC_PREFIX}-curve-points-json`]: JSON.stringify(scores.map(s => ({
       id: s.id,
       domain: s.domain,
       red_balls: s.red_balls,
@@ -551,19 +551,19 @@ function buildAnswers(finalFlag) {
   };
 
   scores.forEach((s, idx) => {
-    answers[`risk-order-${idx + 1}`] = s.id;
-    answers[`risk-domain-${s.id}`] = s.domain;
-    answers[`risk-red-balls-${s.id}`] = s.red_balls;
-    answers[`risk-blue-balls-${s.id}`] = s.blue_balls;
-    answers[`risk-probability-red-${s.id}`] = s.probability_red;
-    answers[`risk-probability-level-${s.id}`] = s.probability_level;
-    answers[`risk-outcome-${s.id}`] = s.outcome_amount;
-    answers[`risk-x-axis-${s.id}`] = s.x_axis_value;
-    answers[`risk-x-axis-log-abs-${s.id}`] = s.x_axis_log_abs;
-    answers[`risk-expected-value-${s.id}`] = s.risk_neutral_expected_value;
-    answers[`risk-entered-amount-${s.id}`] = s.entered_amount;
-    answers[`risk-signed-ce-${s.id}`] = s.signed_certainty_equivalent;
-    answers[`risk-premium-${s.id}`] = s.risk_premium;
+    answers[`${METRIC_PREFIX}-order-${idx + 1}`] = s.id;
+    answers[`${METRIC_PREFIX}-domain-${s.id}`] = s.domain;
+    answers[`${METRIC_PREFIX}-red-balls-${s.id}`] = s.red_balls;
+    answers[`${METRIC_PREFIX}-blue-balls-${s.id}`] = s.blue_balls;
+    answers[`${METRIC_PREFIX}-probability-red-${s.id}`] = s.probability_red;
+    answers[`${METRIC_PREFIX}-probability-level-${s.id}`] = s.probability_level;
+    answers[`${METRIC_PREFIX}-outcome-${s.id}`] = s.outcome_amount;
+    answers[`${METRIC_PREFIX}-x-axis-${s.id}`] = s.x_axis_value;
+    answers[`${METRIC_PREFIX}-x-axis-log-abs-${s.id}`] = s.x_axis_log_abs;
+    answers[`${METRIC_PREFIX}-expected-value-${s.id}`] = s.risk_neutral_expected_value;
+    answers[`${METRIC_PREFIX}-entered-amount-${s.id}`] = s.entered_amount;
+    answers[`${METRIC_PREFIX}-signed-ce-${s.id}`] = s.signed_certainty_equivalent;
+    answers[`${METRIC_PREFIX}-premium-${s.id}`] = s.risk_premium;
   });
 
   return answers;
