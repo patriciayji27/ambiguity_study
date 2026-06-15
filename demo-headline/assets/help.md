@@ -10,7 +10,7 @@ If you encounter any technical issues during the study, try the following:
 
 ## Study Questions
 
-- **What am I supposed to do?** On each trial, compare the charted asset (Option A) to the fixed-odds investment (Option B) and choose the one you'd prefer.
+- **What am I supposed to do?** On each trial, compare the charted asset (Option A) to the fixed-odds investment (Option B) and choose the one you'd prefer to invest in.
 - **Is there a right answer?** There are no trick questions. Use your best judgment to pick the investment you think is better.
 - **How long will this take?** Approximately 15–20 minutes.
 

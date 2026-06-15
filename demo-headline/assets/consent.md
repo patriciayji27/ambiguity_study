@@ -9,7 +9,7 @@ You are invited to participate in a research study about how people make financi
 ### What You Will Do
 - Answer a few questions about your risk preferences.
 - Complete 2 short practice rounds to become familiar with the task.
-- View 32 investment decision trials. Each trial asks you to choose between an index fund shown in blue and a structured note shown in green.
+- View 64 investment decision trials. Each trial asks you to choose between an index fund shown in blue and a structured note shown in green.
 - Answer a brief demographic survey and provide optional feedback.
 
 The study takes approximately 15–20 minutes to complete.
