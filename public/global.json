@@ -4,6 +4,7 @@
     "tutorial",
     "tutorial-replication",
     "demo-headline",
+    "demo-headline-p75",
     "demo-uncertainty"
   ],
   "configs": {
@@ -18,6 +19,9 @@
     },
     "demo-uncertainty": {
       "path": "demo-uncertainty/config.json"
+    },
+    "demo-headline-p75": {
+      "path": "demo-headline-p75/config.json"
     }
   }
 }

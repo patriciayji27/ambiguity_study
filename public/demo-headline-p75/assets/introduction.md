@@ -13,7 +13,7 @@ The horizontal axis shows time. Day 0 is today:
 - The left side of the chart shows recent performance before today.
 - The right side of the chart shows possible outcomes over the next 60 days.
 
-![Example investment chart](demo-headline/assets/plots/practice-trial-1.png)
+![Example investment chart](demo-headline-p75/assets/plots/practice-trial-1.png)
 
 ## Option A: stock index
 
@@ -37,12 +37,12 @@ A structured note is a financial product whose payoff depends on whether a marke
 For Option B, on every trial:
 - If the benchmark closes above its current level, the investment earns a +10% return on $1,000.
 - If the benchmark does not close above its current level, the $1,000 principal is returned, equal to a 0% return.
-- The estimated probability that the +10% payout condition is met is shown on the trial. In this study, it will be 55%.
+- The estimated probability that the +10% payout condition is met is shown on the trial. In this study, it will be 75%.
 
 On the chart, Option B is shown by the green horizontal lines:
 - The 0% green line is the return if the note does not pay the +10% return.
 - The +10% green line is the return if the note pays the +10% return.
-- The dashed green line is the average return implied by the stated payout probability: 5.5% for a 55% chance of receiving +10%.
+- The dashed green line is the average return implied by the stated payout probability: 7.5% for a 75% chance of receiving +10%.
 
 The dashed green line is not a guaranteed return. It is the expected value of Option B's payoff.
 
