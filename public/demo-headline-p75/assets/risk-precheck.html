@@ -345,14 +345,15 @@ function itemText(item) {
 function renderIntro() {
   root.innerHTML = `
     <h1>Risk preference questions</h1>
+
     <p>Before the main task, we would like to understand how you value uncertain outcomes with explicitly stated probabilities.</p>
-    <p>You will answer ${TOTAL_ITEMS} short hypothetical questions involving a random draw from an urn. In this section, the urn contains ${PROBABILITY_CONFIG.red} red balls and ${PROBABILITY_CONFIG.blue} blue balls, so the chance of drawing a red ball is ${PROBABILITY_CONFIG.label}.</p>
-    <div class="panel">
-      <p>Each question shows an urn containing red balls and blue balls. One ball is drawn at random, and the color determines the monetary outcome shown on that page.</p>
-      <p>Your task is to enter the guaranteed amount that would make the uncertain option and the guaranteed alternative feel equivalent to you.</p>
-    </div>
-    <p>By <em>indifferent</em>, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
+
+    <p>You will answer ${TOTAL_ITEMS} short questions involving an urn containing ${PROBABILITY_CONFIG.red + PROBABILITY_CONFIG.blue} colored balls. One ball is drawn at random, and the color determines a hypothetical monetary outcome. The urn contains ${PROBABILITY_CONFIG.red} red balls and ${PROBABILITY_CONFIG.blue} blue balls, so the chance of drawing a red ball is ${PROBABILITY_CONFIG.label}.</p>
+
+    <p>Your task is to enter the guaranteed dollar amount that would make you indifferent between the uncertain option and the guaranteed alternative. By <em>indifferent</em>, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
+
     <p class="small">These questions are hypothetical and do not create any possibility of losing your own money.</p>
+
     <div class="actions">
       <div class="error" id="err"></div>
       <button onclick="beginQuestions()">Start questions</button>
