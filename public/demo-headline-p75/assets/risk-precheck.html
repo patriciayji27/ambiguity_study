@@ -320,6 +320,7 @@ function parseDollar(raw) {
 
 function itemText(item) {
   const amount = dollars(item.outcome_amount);
+
   if (item.domain === 'gain') {
     return {
       outcome: [
@@ -327,18 +328,21 @@ function itemText(item) {
         `If the ball drawn is blue, the uncertain option would result in a <strong>gain of $0</strong>.`
       ],
       question: 'You may keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?',
-      inputLabel: 'Guaranteed payment amount',
-      range: `Enter a guaranteed payment from $0 to ${amount}.`
+      inputLabel: '$____',
+      range: `Enter a guaranteed payment from $0 to ${amount}.`,
+      instruction: 'Please enter the dollar amount only.'
     };
   }
+
   return {
     outcome: [
       `If the ball drawn is red, the uncertain option would result in a <strong>loss of ${amount}</strong>.`,
       `If the ball drawn is blue, the uncertain option would result in a <strong>loss of $0</strong>.`
     ],
     question: 'You may keep this uncertain option, or accept a certain loss instead. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?',
-    inputLabel: 'Certain loss amount',
-    range: `Enter the size of the certain loss, from $0 to ${amount}.`
+    inputLabel: '$____',
+    range: `Enter the size of the certain loss, from $0 to ${amount}.`,
+    instruction: 'Please enter the dollar amount only.'
   };
 }
 
