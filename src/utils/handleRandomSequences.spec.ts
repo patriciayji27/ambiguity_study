@@ -33,7 +33,7 @@ const twoArmConfig: StudyConfig = {
   ...config,
   uiConfig: {
     ...config.uiConfig,
-    numSequences: 40,
+    numSequences: 50,
   },
   components: {
     consent: { type: 'questionnaire', response: [] } as QuestionnaireComponent,
@@ -81,8 +81,8 @@ describe('Generating sequences works as expected', () => {
     const p55Count = sequenceArray.filter((sequence) => sequenceIncludes(sequence, 'p55-introduction')).length;
     const p75Count = sequenceArray.filter((sequence) => sequenceIncludes(sequence, 'p75-introduction')).length;
 
-    expect(p55Count).toBe(20);
-    expect(p75Count).toBe(20);
+    expect(p55Count).toBe(25);
+    expect(p75Count).toBe(25);
   });
 
   test('generateSequenceArray returns balanced random sequences, numSamples = 1', async () => {
