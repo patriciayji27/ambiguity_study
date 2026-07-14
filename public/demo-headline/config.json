@@ -4496,7 +4496,7 @@
     },
     "p75-introduction": {
       "type": "markdown",
-      "path": "demo-headline-p75/assets/introduction.md",
+      "path": "demo-headline/assets-p75/introduction.md",
       "nextButtonText": "Continue",
       "response": [],
       "style": {
@@ -4510,7 +4510,7 @@
     },
     "p75-risk-precheck": {
       "type": "website",
-      "path": "demo-headline-p75/assets/risk-precheck.html?p=75",
+      "path": "demo-headline/assets-p75/risk-precheck.html?p=75",
       "nextButtonLocation": "belowStimulus",
       "response": [],
       "style": {
@@ -4525,7 +4525,7 @@
     },
     "p75-practice-trial-1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=practice-trial-1.png&sig=11.5&hid=ATN_POS_1&sent=attention_positive&domain=attention&fan=practice&offset=6.0&slope=practice&practice=1&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=practice-trial-1.png&sig=11.5&hid=ATN_POS_1&sent=attention_positive&domain=attention&fan=practice&offset=6.0&slope=practice&practice=1&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "practice-trial-1",
@@ -4551,7 +4551,7 @@
     },
     "p75-practice-trial-2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=practice-trial-2.png&sig=-0.5&hid=ATN_NEG_1&sent=attention_negative&domain=attention&fan=practice&offset=-6.0&slope=practice&practice=1&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=practice-trial-2.png&sig=-0.5&hid=ATN_NEG_1&sent=attention_negative&domain=attention&fan=practice&offset=-6.0&slope=practice&practice=1&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "practice-trial-2",
@@ -4577,7 +4577,7 @@
     },
     "p75-hl-C01-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C01-S1.png&sig=5.5&h=Sticky+inflation+revives+concern+over+delayed+rate+relief&l=Investors+grew+more+cautious+after+price+data+suggested+policy+may+need+to+stay+restrictive+for+longer.&hid=NEG01&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C01-S1.png&sig=5.5&h=Sticky+inflation+revives+concern+over+delayed+rate+relief&l=Investors+grew+more+cautious+after+price+data+suggested+policy+may+need+to+stay+restrictive+for+longer.&hid=NEG01&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C01-S1",
@@ -4617,7 +4617,7 @@
     },
     "p75-hl-C01-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C01-S2.png&sig=5.5&h=Higher+yields+pressure+risk+assets+as+policy+uncertainty+rises&l=Rate-sensitive+sectors+weakened+as+traders+reduced+expectations+for+near-term+easing.&hid=NEG02&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C01-S2.png&sig=5.5&h=Higher+yields+pressure+risk+assets+as+policy+uncertainty+rises&l=Rate-sensitive+sectors+weakened+as+traders+reduced+expectations+for+near-term+easing.&hid=NEG02&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C01-S2",
@@ -4657,7 +4657,7 @@
     },
     "p75-hl-C01-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C01-S3.png&sig=5.5&h=Markets+soften+as+officials+push+back+on+early+cuts&l=Central-bank+commentary+emphasized+caution%2C+weighing+on+sentiment+toward+equities.&hid=NEG03&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C01-S3.png&sig=5.5&h=Markets+soften+as+officials+push+back+on+early+cuts&l=Central-bank+commentary+emphasized+caution%2C+weighing+on+sentiment+toward+equities.&hid=NEG03&sent=slight_negative&domain=policy&fan=tight&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C01-S3",
@@ -4697,7 +4697,7 @@
     },
     "p75-hl-C02-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C02-S1.png&sig=7.5&h=Fed+officials+split+as+growth+cools+while+prices+stay+firm&l=Policy+commentary+left+investors+weighing+softer+activity+data+against+inflation+readings+that+remain+above+target.&hid=AMB01&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C02-S1.png&sig=7.5&h=Fed+officials+split+as+growth+cools+while+prices+stay+firm&l=Policy+commentary+left+investors+weighing+softer+activity+data+against+inflation+readings+that+remain+above+target.&hid=AMB01&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C02-S1",
@@ -4737,7 +4737,7 @@
     },
     "p75-hl-C02-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C02-S2.png&sig=7.5&h=Rate-cut+timing+stays+uncertain+after+mixed+policy+signals&l=Traders+saw+little+consensus+after+officials+emphasized+both+progress+on+inflation+and+caution+about+easing+too+early.&hid=AMB02&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C02-S2.png&sig=7.5&h=Rate-cut+timing+stays+uncertain+after+mixed+policy+signals&l=Traders+saw+little+consensus+after+officials+emphasized+both+progress+on+inflation+and+caution+about+easing+too+early.&hid=AMB02&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C02-S2",
@@ -4777,7 +4777,7 @@
     },
     "p75-hl-C02-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C02-S3.png&sig=7.5&h=Yields+drift+as+investors+parse+uneven+macro+data&l=Bond-market+moves+were+muted+as+weaker+growth+indicators+competed+with+signs+that+price+pressures+may+persist.&hid=AMB03&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C02-S3.png&sig=7.5&h=Yields+drift+as+investors+parse+uneven+macro+data&l=Bond-market+moves+were+muted+as+weaker+growth+indicators+competed+with+signs+that+price+pressures+may+persist.&hid=AMB03&sent=ambiguous&domain=policy&fan=tight&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C02-S3",
@@ -4817,7 +4817,7 @@
     },
     "p75-hl-C03-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C03-S1.png&sig=9.5&h=Softer+inflation+data+support+hopes+for+easier+policy&l=Investors+took+modest+encouragement+from+price+data+that+moved+closer+to+the+central+bank%E2%80%99s+target.&hid=POS01&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C03-S1.png&sig=9.5&h=Softer+inflation+data+support+hopes+for+easier+policy&l=Investors+took+modest+encouragement+from+price+data+that+moved+closer+to+the+central+bank%E2%80%99s+target.&hid=POS01&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C03-S1",
@@ -4857,7 +4857,7 @@
     },
     "p75-hl-C03-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C03-S2.png&sig=9.5&h=Rate-sensitive+shares+firm+as+policy+pressure+appears+to+ease&l=Lower+yields+helped+sentiment+in+areas+of+the+market+most+exposed+to+financing+costs.&hid=POS02&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C03-S2.png&sig=9.5&h=Rate-sensitive+shares+firm+as+policy+pressure+appears+to+ease&l=Lower+yields+helped+sentiment+in+areas+of+the+market+most+exposed+to+financing+costs.&hid=POS02&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C03-S2",
@@ -4897,7 +4897,7 @@
     },
     "p75-hl-C03-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C03-S3.png&sig=9.5&h=Markets+gain+as+inflation+trend+shows+incremental+improvement&l=The+latest+data+reduced+some+concern+that+restrictive+policy+will+need+to+last+much+longer.&hid=POS03&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C03-S3.png&sig=9.5&h=Markets+gain+as+inflation+trend+shows+incremental+improvement&l=The+latest+data+reduced+some+concern+that+restrictive+policy+will+need+to+last+much+longer.&hid=POS03&sent=slight_positive&domain=policy&fan=tight&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C03-S3",
@@ -4937,7 +4937,7 @@
     },
     "p75-hl-C04-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C04-S1.png&sig=5.5&h=Guidance+cuts+point+to+weaker+demand+next+quarter&l=Several+management+teams+cited+slower+order+growth+and+more+cautious+customer+behavior.&hid=NEG04&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C04-S1.png&sig=5.5&h=Guidance+cuts+point+to+weaker+demand+next+quarter&l=Several+management+teams+cited+slower+order+growth+and+more+cautious+customer+behavior.&hid=NEG04&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C04-S1",
@@ -4977,7 +4977,7 @@
     },
     "p75-hl-C04-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C04-S2.png&sig=5.5&h=Profit+warnings+increase+as+margin+pressure+returns&l=Companies+flagged+cost+and+demand+headwinds+that+could+limit+earnings+growth.&hid=NEG05&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C04-S2.png&sig=5.5&h=Profit+warnings+increase+as+margin+pressure+returns&l=Companies+flagged+cost+and+demand+headwinds+that+could+limit+earnings+growth.&hid=NEG05&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C04-S2",
@@ -5017,7 +5017,7 @@
     },
     "p75-hl-C04-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C04-S3.png&sig=5.5&h=Analysts+trim+estimates+after+disappointing+outlooks&l=Forward+earnings+expectations+moved+lower+following+a+wave+of+cautious+corporate+updates.&hid=NEG06&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C04-S3.png&sig=5.5&h=Analysts+trim+estimates+after+disappointing+outlooks&l=Forward+earnings+expectations+moved+lower+following+a+wave+of+cautious+corporate+updates.&hid=NEG06&sent=slight_negative&domain=earnings&fan=medium&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C04-S3",
@@ -5057,7 +5057,7 @@
     },
     "p75-hl-C05-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C05-S1.png&sig=7.5&h=Labor+data+point+in+opposite+directions+before+next+jobs+report&l=Hiring+remained+positive%2C+but+softer+hours+worked+and+slower+wage+growth+complicated+the+read+on+household+income.&hid=AMB04&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C05-S1.png&sig=7.5&h=Labor+data+point+in+opposite+directions+before+next+jobs+report&l=Hiring+remained+positive%2C+but+softer+hours+worked+and+slower+wage+growth+complicated+the+read+on+household+income.&hid=AMB04&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C05-S1",
@@ -5097,7 +5097,7 @@
     },
     "p75-hl-C05-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C05-S2.png&sig=7.5&h=Job+openings+cool+while+layoff+activity+remains+contained&l=The+labor+market+showed+signs+of+normalization+without+yet+confirming+a+sharper+deterioration+in+demand.&hid=AMB05&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C05-S2.png&sig=7.5&h=Job+openings+cool+while+layoff+activity+remains+contained&l=The+labor+market+showed+signs+of+normalization+without+yet+confirming+a+sharper+deterioration+in+demand.&hid=AMB05&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C05-S2",
@@ -5137,7 +5137,7 @@
     },
     "p75-hl-C05-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C05-S3.png&sig=7.5&h=Wage+growth+moderates%2C+but+services+hiring+stays+resilient&l=Investors+weighed+easing+pay+pressure+against+continued+strength+in+labor-intensive+parts+of+the+economy.&hid=AMB06&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C05-S3.png&sig=7.5&h=Wage+growth+moderates%2C+but+services+hiring+stays+resilient&l=Investors+weighed+easing+pay+pressure+against+continued+strength+in+labor-intensive+parts+of+the+economy.&hid=AMB06&sent=ambiguous&domain=labor&fan=medium&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C05-S3",
@@ -5177,7 +5177,7 @@
     },
     "p75-hl-C06-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C06-S1.png&sig=9.5&h=Corporate+guidance+improves+as+demand+proves+resilient&l=Management+commentary+pointed+to+steadier+orders+and+less+pressure+on+near-term+revenue+expectations.&hid=POS04&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C06-S1.png&sig=9.5&h=Corporate+guidance+improves+as+demand+proves+resilient&l=Management+commentary+pointed+to+steadier+orders+and+less+pressure+on+near-term+revenue+expectations.&hid=POS04&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C06-S1",
@@ -5217,7 +5217,7 @@
     },
     "p75-hl-C06-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C06-S2.png&sig=9.5&h=Earnings+revisions+turn+higher+after+constructive+updates&l=Analysts+raised+forecasts+selectively+after+companies+reported+better-than-feared+operating+trends.&hid=POS05&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C06-S2.png&sig=9.5&h=Earnings+revisions+turn+higher+after+constructive+updates&l=Analysts+raised+forecasts+selectively+after+companies+reported+better-than-feared+operating+trends.&hid=POS05&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C06-S2",
@@ -5257,7 +5257,7 @@
     },
     "p75-hl-C06-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C06-S3.png&sig=9.5&h=Margins+stabilize+as+firms+manage+costs+more+effectively&l=Cost+controls+and+easing+input+pressure+helped+improve+the+near-term+profit+outlook.&hid=POS06&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C06-S3.png&sig=9.5&h=Margins+stabilize+as+firms+manage+costs+more+effectively&l=Cost+controls+and+easing+input+pressure+helped+improve+the+near-term+profit+outlook.&hid=POS06&sent=slight_positive&domain=earnings&fan=medium&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C06-S3",
@@ -5297,7 +5297,7 @@
     },
     "p75-hl-C07-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C07-S1.png&sig=5.5&h=Consumer+cracks+widen+as+discretionary+spending+slows&l=Recent+data+showed+households+pulling+back+on+higher-ticket+purchases+and+nonessential+categories.&hid=NEG07&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C07-S1.png&sig=5.5&h=Consumer+cracks+widen+as+discretionary+spending+slows&l=Recent+data+showed+households+pulling+back+on+higher-ticket+purchases+and+nonessential+categories.&hid=NEG07&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C07-S1",
@@ -5337,7 +5337,7 @@
     },
     "p75-hl-C07-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C07-S2.png&sig=5.5&h=Retail+weakness+raises+concern+over+household+resilience&l=Sales+trends+disappointed+as+shoppers+became+more+selective+under+higher+price+pressure.&hid=NEG08&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C07-S2.png&sig=5.5&h=Retail+weakness+raises+concern+over+household+resilience&l=Sales+trends+disappointed+as+shoppers+became+more+selective+under+higher+price+pressure.&hid=NEG08&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C07-S2",
@@ -5377,7 +5377,7 @@
     },
     "p75-hl-C07-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C07-S3.png&sig=5.5&h=Credit-card+delinquencies+edge+higher+as+demand+softens&l=Signs+of+household+stress+increased%2C+adding+caution+to+the+growth+outlook.&hid=NEG09&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C07-S3.png&sig=5.5&h=Credit-card+delinquencies+edge+higher+as+demand+softens&l=Signs+of+household+stress+increased%2C+adding+caution+to+the+growth+outlook.&hid=NEG09&sent=slight_negative&domain=consumer&fan=wide&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C07-S3",
@@ -5417,7 +5417,7 @@
     },
     "p75-hl-C08-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C08-S1.png&sig=7.5&h=Earnings+beats+mask+uneven+guidance+across+sectors&l=Several+companies+exceeded+near-term+estimates+while+management+teams+gave+more+cautious+outlooks+for+the+next+quarter.&hid=AMB07&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C08-S1.png&sig=7.5&h=Earnings+beats+mask+uneven+guidance+across+sectors&l=Several+companies+exceeded+near-term+estimates+while+management+teams+gave+more+cautious+outlooks+for+the+next+quarter.&hid=AMB07&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C08-S1",
@@ -5457,7 +5457,7 @@
     },
     "p75-hl-C08-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C08-S2.png&sig=7.5&h=Revenue+trends+improve%2C+but+margin+commentary+stays+mixed&l=Corporate+updates+showed+better+top-line+momentum+alongside+debate+over+whether+cost+pressure+has+fully+faded.&hid=AMB08&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C08-S2.png&sig=7.5&h=Revenue+trends+improve%2C+but+margin+commentary+stays+mixed&l=Corporate+updates+showed+better+top-line+momentum+alongside+debate+over+whether+cost+pressure+has+fully+faded.&hid=AMB08&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C08-S2",
@@ -5497,7 +5497,7 @@
     },
     "p75-hl-C08-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C08-S3.png&sig=7.5&h=Analysts+lift+estimates+selectively+after+uneven+results&l=Forecast+revisions+improved+for+some+industries+while+cyclical+sectors+continued+to+face+skepticism.&hid=AMB09&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C08-S3.png&sig=7.5&h=Analysts+lift+estimates+selectively+after+uneven+results&l=Forecast+revisions+improved+for+some+industries+while+cyclical+sectors+continued+to+face+skepticism.&hid=AMB09&sent=ambiguous&domain=earnings&fan=wide&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C08-S3",
@@ -5537,7 +5537,7 @@
     },
     "p75-hl-C09-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C09-S1.png&sig=9.5&h=Consumer+demand+holds+up+despite+higher+financing+costs&l=Retail+and+services+data+suggested+households+remain+willing+to+spend+in+key+categories.&hid=POS07&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C09-S1.png&sig=9.5&h=Consumer+demand+holds+up+despite+higher+financing+costs&l=Retail+and+services+data+suggested+households+remain+willing+to+spend+in+key+categories.&hid=POS07&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C09-S1",
@@ -5577,7 +5577,7 @@
     },
     "p75-hl-C09-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C09-S2.png&sig=9.5&h=Spending+data+surprise+to+the+upside+across+core+categories&l=Demand+looked+broader+than+expected%2C+supporting+a+more+constructive+read+on+the+economy.&hid=POS08&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C09-S2.png&sig=9.5&h=Spending+data+surprise+to+the+upside+across+core+categories&l=Demand+looked+broader+than+expected%2C+supporting+a+more+constructive+read+on+the+economy.&hid=POS08&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C09-S2",
@@ -5617,7 +5617,7 @@
     },
     "p75-hl-C09-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C09-S3.png&sig=9.5&h=Household+balance+sheets+look+sturdier+than+feared&l=Recent+data+showed+fewer+signs+of+stress+than+investors+had+expected+earlier+in+the+quarter.&hid=POS09&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C09-S3.png&sig=9.5&h=Household+balance+sheets+look+sturdier+than+feared&l=Recent+data+showed+fewer+signs+of+stress+than+investors+had+expected+earlier+in+the+quarter.&hid=POS09&sent=slight_positive&domain=consumer&fan=wide&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C09-S3",
@@ -5657,7 +5657,7 @@
     },
     "p75-hl-C10-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C10-S1.png&sig=5.5&h=Tech+shares+slip+as+valuation+concerns+resurface&l=Investors+questioned+whether+recent+gains+have+moved+faster+than+the+earnings+outlook.&hid=NEG10&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C10-S1.png&sig=5.5&h=Tech+shares+slip+as+valuation+concerns+resurface&l=Investors+questioned+whether+recent+gains+have+moved+faster+than+the+earnings+outlook.&hid=NEG10&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C10-S1",
@@ -5697,7 +5697,7 @@
     },
     "p75-hl-C10-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C10-S2.png&sig=5.5&h=AI+spending+optimism+cools+after+cautious+supplier+commentary&l=Updates+from+key+suppliers+suggested+some+customers+may+phase+investment+more+slowly.&hid=NEG11&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C10-S2.png&sig=5.5&h=AI+spending+optimism+cools+after+cautious+supplier+commentary&l=Updates+from+key+suppliers+suggested+some+customers+may+phase+investment+more+slowly.&hid=NEG11&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C10-S2",
@@ -5737,7 +5737,7 @@
     },
     "p75-hl-C10-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C10-S3.png&sig=5.5&h=Growth+stocks+lag+as+long-duration+pressure+returns&l=Higher+discount+rates+weighed+on+companies+with+more+earnings+expected+in+future+years.&hid=NEG12&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C10-S3.png&sig=5.5&h=Growth+stocks+lag+as+long-duration+pressure+returns&l=Higher+discount+rates+weighed+on+companies+with+more+earnings+expected+in+future+years.&hid=NEG12&sent=slight_negative&domain=technology&fan=tight&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C10-S3",
@@ -5777,7 +5777,7 @@
     },
     "p75-hl-C11-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C11-S1.png&sig=7.5&h=Consumer+spending+holds+up+as+savings+buffers+thin&l=Retail+activity+remained+positive%2C+but+households+showed+more+sensitivity+to+prices+and+financing+costs.&hid=AMB10&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C11-S1.png&sig=7.5&h=Consumer+spending+holds+up+as+savings+buffers+thin&l=Retail+activity+remained+positive%2C+but+households+showed+more+sensitivity+to+prices+and+financing+costs.&hid=AMB10&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C11-S1",
@@ -5817,7 +5817,7 @@
     },
     "p75-hl-C11-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C11-S2.png&sig=7.5&h=Retail+sales+stabilize+while+discretionary+categories+lag&l=Headline+spending+avoided+a+sharp+drop%2C+though+higher-ticket+purchases+remained+softer+than+staples+and+services.&hid=AMB11&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C11-S2.png&sig=7.5&h=Retail+sales+stabilize+while+discretionary+categories+lag&l=Headline+spending+avoided+a+sharp+drop%2C+though+higher-ticket+purchases+remained+softer+than+staples+and+services.&hid=AMB11&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C11-S2",
@@ -5857,7 +5857,7 @@
     },
     "p75-hl-C11-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C11-S3.png&sig=7.5&h=Household+demand+looks+resilient+but+less+broad-based&l=Spending+strength+became+more+concentrated%2C+leaving+investors+unsure+how+durable+the+expansion+is.&hid=AMB12&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C11-S3.png&sig=7.5&h=Household+demand+looks+resilient+but+less+broad-based&l=Spending+strength+became+more+concentrated%2C+leaving+investors+unsure+how+durable+the+expansion+is.&hid=AMB12&sent=ambiguous&domain=consumer&fan=tight&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C11-S3",
@@ -5897,7 +5897,7 @@
     },
     "p75-hl-C12-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C12-S1.png&sig=9.5&h=AI+infrastructure+demand+lifts+outlook+for+technology+spending&l=Companies+tied+to+compute+and+data-center+investment+reported+continued+order+strength.&hid=POS10&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C12-S1.png&sig=9.5&h=AI+infrastructure+demand+lifts+outlook+for+technology+spending&l=Companies+tied+to+compute+and+data-center+investment+reported+continued+order+strength.&hid=POS10&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C12-S1",
@@ -5937,7 +5937,7 @@
     },
     "p75-hl-C12-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C12-S2.png&sig=9.5&h=Tech+sentiment+improves+as+enterprise+budgets+hold+firm&l=Software+and+infrastructure+commentary+suggested+customers+are+still+funding+priority+projects.&hid=POS11&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C12-S2.png&sig=9.5&h=Tech+sentiment+improves+as+enterprise+budgets+hold+firm&l=Software+and+infrastructure+commentary+suggested+customers+are+still+funding+priority+projects.&hid=POS11&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C12-S2",
@@ -5977,7 +5977,7 @@
     },
     "p75-hl-C12-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C12-S3.png&sig=9.5&h=Growth+shares+advance+on+stronger+investment-cycle+signals&l=Investors+responded+to+evidence+that+capital+spending+plans+remain+intact.&hid=POS12&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C12-S3.png&sig=9.5&h=Growth+shares+advance+on+stronger+investment-cycle+signals&l=Investors+responded+to+evidence+that+capital+spending+plans+remain+intact.&hid=POS12&sent=slight_positive&domain=technology&fan=tight&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C12-S3",
@@ -6017,7 +6017,7 @@
     },
     "p75-hl-C13-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C13-S1.png&sig=5.5&h=Credit+stress+pockets+grow+as+refinancing+costs+stay+high&l=Lower-rated+borrowers+faced+renewed+pressure+as+debt+maturities+approached.&hid=NEG13&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C13-S1.png&sig=5.5&h=Credit+stress+pockets+grow+as+refinancing+costs+stay+high&l=Lower-rated+borrowers+faced+renewed+pressure+as+debt+maturities+approached.&hid=NEG13&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C13-S1",
@@ -6057,7 +6057,7 @@
     },
     "p75-hl-C13-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C13-S2.png&sig=5.5&h=Spreads+widen+modestly+after+cautious+lender+commentary&l=Bank+updates+suggested+tighter+credit+standards+and+weaker+borrower+demand.&hid=NEG14&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C13-S2.png&sig=5.5&h=Spreads+widen+modestly+after+cautious+lender+commentary&l=Bank+updates+suggested+tighter+credit+standards+and+weaker+borrower+demand.&hid=NEG14&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C13-S2",
@@ -6097,7 +6097,7 @@
     },
     "p75-hl-C13-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C13-S3.png&sig=5.5&h=Corporate+borrowing+costs+rise+as+default+concerns+build&l=Investors+demanded+more+compensation+for+credit+risk%2C+especially+in+cyclical+sectors.&hid=NEG15&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C13-S3.png&sig=5.5&h=Corporate+borrowing+costs+rise+as+default+concerns+build&l=Investors+demanded+more+compensation+for+credit+risk%2C+especially+in+cyclical+sectors.&hid=NEG15&sent=slight_negative&domain=credit&fan=medium&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C13-S3",
@@ -6137,7 +6137,7 @@
     },
     "p75-hl-C14-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C14-S1.png&sig=7.5&h=Credit+spreads+stay+calm+despite+rising+refinancing+questions&l=Funding+markets+remained+orderly%2C+but+investors+continued+to+monitor+maturities+for+lower-rated+borrowers.&hid=AMB13&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C14-S1.png&sig=7.5&h=Credit+spreads+stay+calm+despite+rising+refinancing+questions&l=Funding+markets+remained+orderly%2C+but+investors+continued+to+monitor+maturities+for+lower-rated+borrowers.&hid=AMB13&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C14-S1",
@@ -6177,7 +6177,7 @@
     },
     "p75-hl-C14-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C14-S2.png&sig=7.5&h=Corporate+bond+demand+holds+as+default+concerns+edge+higher&l=New+issuance+was+absorbed+without+major+stress+even+as+analysts+flagged+pockets+of+credit+deterioration.&hid=AMB14&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C14-S2.png&sig=7.5&h=Corporate+bond+demand+holds+as+default+concerns+edge+higher&l=New+issuance+was+absorbed+without+major+stress+even+as+analysts+flagged+pockets+of+credit+deterioration.&hid=AMB14&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C14-S2",
@@ -6217,7 +6217,7 @@
     },
     "p75-hl-C14-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C14-S3.png&sig=7.5&h=Lenders+report+tighter+standards+while+markets+remain+liquid&l=Bank+commentary+pointed+to+caution%2C+but+public+credit+markets+did+not+yet+show+broad+funding+pressure.&hid=AMB15&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C14-S3.png&sig=7.5&h=Lenders+report+tighter+standards+while+markets+remain+liquid&l=Bank+commentary+pointed+to+caution%2C+but+public+credit+markets+did+not+yet+show+broad+funding+pressure.&hid=AMB15&sent=ambiguous&domain=credit&fan=medium&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C14-S3",
@@ -6257,7 +6257,7 @@
     },
     "p75-hl-C15-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C15-S1.png&sig=9.5&h=Credit+markets+signal+confidence+as+spreads+tighten+modestly&l=Corporate+borrowing+conditions+improved%2C+suggesting+investors+see+limited+near-term+default+risk.&hid=POS13&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C15-S1.png&sig=9.5&h=Credit+markets+signal+confidence+as+spreads+tighten+modestly&l=Corporate+borrowing+conditions+improved%2C+suggesting+investors+see+limited+near-term+default+risk.&hid=POS13&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C15-S1",
@@ -6297,7 +6297,7 @@
     },
     "p75-hl-C15-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C15-S2.png&sig=9.5&h=New+issuance+clears+smoothly+as+risk+appetite+improves&l=Demand+for+corporate+bonds+remained+solid+even+as+supply+picked+up.&hid=POS14&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C15-S2.png&sig=9.5&h=New+issuance+clears+smoothly+as+risk+appetite+improves&l=Demand+for+corporate+bonds+remained+solid+even+as+supply+picked+up.&hid=POS14&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C15-S2",
@@ -6337,7 +6337,7 @@
     },
     "p75-hl-C15-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C15-S3.png&sig=9.5&h=Financing+conditions+ease+for+higher-quality+borrowers&l=Lower+risk+premiums+supported+a+more+constructive+view+of+corporate+balance+sheets.&hid=POS15&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C15-S3.png&sig=9.5&h=Financing+conditions+ease+for+higher-quality+borrowers&l=Lower+risk+premiums+supported+a+more+constructive+view+of+corporate+balance+sheets.&hid=POS15&sent=slight_positive&domain=credit&fan=medium&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C15-S3",
@@ -6377,7 +6377,7 @@
     },
     "p75-hl-C16-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C16-S1.png&sig=5.5&h=Market+breadth+deteriorates+as+rally+narrows+again&l=A+small+group+of+large-cap+winners+masked+weakness+across+much+of+the+index.&hid=NEG16&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C16-S1.png&sig=5.5&h=Market+breadth+deteriorates+as+rally+narrows+again&l=A+small+group+of+large-cap+winners+masked+weakness+across+much+of+the+index.&hid=NEG16&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C16-S1",
@@ -6417,7 +6417,7 @@
     },
     "p75-hl-C16-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C16-S2.png&sig=5.5&h=Defensive+rotation+points+to+lower+risk+appetite&l=Investors+favored+stable+sectors+while+economically+sensitive+groups+moved+lower.&hid=NEG17&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C16-S2.png&sig=5.5&h=Defensive+rotation+points+to+lower+risk+appetite&l=Investors+favored+stable+sectors+while+economically+sensitive+groups+moved+lower.&hid=NEG17&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C16-S2",
@@ -6457,7 +6457,7 @@
     },
     "p75-hl-C16-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C16-S3.png&sig=5.5&h=Cyclical+shares+weaken+after+softer+activity+data&l=Industrials+and+consumer-linked+names+declined+as+growth+concerns+resurfaced.&hid=NEG18&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C16-S3.png&sig=5.5&h=Cyclical+shares+weaken+after+softer+activity+data&l=Industrials+and+consumer-linked+names+declined+as+growth+concerns+resurfaced.&hid=NEG18&sent=slight_negative&domain=breadth&fan=wide&offset=-2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C16-S3",
@@ -6497,7 +6497,7 @@
     },
     "p75-hl-C17-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C17-S1.png&sig=7.5&h=Energy+prices+ease%2C+but+supply+risks+remain+in+focus&l=Oil+and+gas+markets+pulled+back+from+recent+highs+while+geopolitical+and+inventory+concerns+stayed+unresolved.&hid=AMB16&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C17-S1.png&sig=7.5&h=Energy+prices+ease%2C+but+supply+risks+remain+in+focus&l=Oil+and+gas+markets+pulled+back+from+recent+highs+while+geopolitical+and+inventory+concerns+stayed+unresolved.&hid=AMB16&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C17-S1",
@@ -6537,7 +6537,7 @@
     },
     "p75-hl-C17-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C17-S2.png&sig=7.5&h=Lower+fuel+costs+support+sentiment+as+shipping+costs+stay+elevated&l=Investors+balanced+relief+from+energy+prices+against+signs+that+logistics+expenses+remain+sticky.&hid=AMB17&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C17-S2.png&sig=7.5&h=Lower+fuel+costs+support+sentiment+as+shipping+costs+stay+elevated&l=Investors+balanced+relief+from+energy+prices+against+signs+that+logistics+expenses+remain+sticky.&hid=AMB17&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C17-S2",
@@ -6577,7 +6577,7 @@
     },
     "p75-hl-C17-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C17-S3.png&sig=7.5&h=Commodity+markets+send+mixed+signal+on+global+demand&l=Industrial+inputs+softened+while+energy+volatility+kept+the+inflation+outlook+difficult+to+interpret.&hid=AMB18&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C17-S3.png&sig=7.5&h=Commodity+markets+send+mixed+signal+on+global+demand&l=Industrial+inputs+softened+while+energy+volatility+kept+the+inflation+outlook+difficult+to+interpret.&hid=AMB18&sent=ambiguous&domain=energy&fan=wide&offset=0.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C17-S3",
@@ -6617,7 +6617,7 @@
     },
     "p75-hl-C18-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C18-S1.png&sig=9.5&h=Market+breadth+improves+as+gains+extend+beyond+mega-caps&l=More+sectors+joined+the+advance%2C+reducing+concern+that+index+strength+is+too+concentrated.&hid=POS16&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C18-S1.png&sig=9.5&h=Market+breadth+improves+as+gains+extend+beyond+mega-caps&l=More+sectors+joined+the+advance%2C+reducing+concern+that+index+strength+is+too+concentrated.&hid=POS16&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C18-S1",
@@ -6657,7 +6657,7 @@
     },
     "p75-hl-C18-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C18-S2.png&sig=9.5&h=Cyclical+shares+firm+as+growth+concerns+ease&l=Industrials+and+consumer-sensitive+groups+improved+alongside+better+economic+data.&hid=POS17&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C18-S2.png&sig=9.5&h=Cyclical+shares+firm+as+growth+concerns+ease&l=Industrials+and+consumer-sensitive+groups+improved+alongside+better+economic+data.&hid=POS17&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C18-S2",
@@ -6697,7 +6697,7 @@
     },
     "p75-hl-C18-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C18-S3.png&sig=9.5&h=Rotation+into+lagging+sectors+supports+broader+rally&l=Investors+added+exposure+outside+the+largest+technology+names%2C+a+sign+of+healthier+participation.&hid=POS18&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C18-S3.png&sig=9.5&h=Rotation+into+lagging+sectors+supports+broader+rally&l=Investors+added+exposure+outside+the+largest+technology+names%2C+a+sign+of+healthier+participation.&hid=POS18&sent=slight_positive&domain=breadth&fan=wide&offset=2.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C18-S3",
@@ -6737,7 +6737,7 @@
     },
     "p75-hl-C19-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C19-S1.png&sig=6.5&h=Hedging+demand+rises+as+investors+cut+risk+exposure&l=Options+activity+showed+more+demand+for+downside+protection+after+a+volatile+stretch.&hid=NEG19&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C19-S1.png&sig=6.5&h=Hedging+demand+rises+as+investors+cut+risk+exposure&l=Options+activity+showed+more+demand+for+downside+protection+after+a+volatile+stretch.&hid=NEG19&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C19-S1",
@@ -6777,7 +6777,7 @@
     },
     "p75-hl-C19-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C19-S2.png&sig=6.5&h=Fund+flows+turn+defensive+amid+valuation+concerns&l=Investors+moved+capital+toward+cash+and+lower-risk+assets+as+equity+multiples+came+under+scrutiny.&hid=NEG20&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C19-S2.png&sig=6.5&h=Fund+flows+turn+defensive+amid+valuation+concerns&l=Investors+moved+capital+toward+cash+and+lower-risk+assets+as+equity+multiples+came+under+scrutiny.&hid=NEG20&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C19-S2",
@@ -6817,7 +6817,7 @@
     },
     "p75-hl-C19-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C19-S3.png&sig=6.5&h=Liquidity+looks+thinner+as+large+orders+move+prices+more+sharply&l=Trading+conditions+became+less+forgiving%2C+increasing+concern+about+short-term+volatility.&hid=NEG21&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C19-S3.png&sig=6.5&h=Liquidity+looks+thinner+as+large+orders+move+prices+more+sharply&l=Trading+conditions+became+less+forgiving%2C+increasing+concern+about+short-term+volatility.&hid=NEG21&sent=slight_negative&domain=liquidity&fan=tight&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C19-S3",
@@ -6857,7 +6857,7 @@
     },
     "p75-hl-C20-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C20-S1.png&sig=8.5&h=Fund+flows+turn+positive+as+cash+moves+back+into+equities&l=Allocation+data+showed+investors+gradually+rebuilding+risk+exposure+after+a+defensive+stretch.&hid=POS19&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C20-S1.png&sig=8.5&h=Fund+flows+turn+positive+as+cash+moves+back+into+equities&l=Allocation+data+showed+investors+gradually+rebuilding+risk+exposure+after+a+defensive+stretch.&hid=POS19&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C20-S1",
@@ -6897,7 +6897,7 @@
     },
     "p75-hl-C20-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C20-S2.png&sig=8.5&h=Liquidity+backdrop+improves+as+volatility+demand+fades&l=Lower+hedging+pressure+and+steadier+funding+markets+supported+risk+assets.&hid=POS20&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C20-S2.png&sig=8.5&h=Liquidity+backdrop+improves+as+volatility+demand+fades&l=Lower+hedging+pressure+and+steadier+funding+markets+supported+risk+assets.&hid=POS20&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C20-S2",
@@ -6937,7 +6937,7 @@
     },
     "p75-hl-C20-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C20-S3.png&sig=8.5&h=Deal+activity+picks+up+as+confidence+in+valuations+improves&l=Capital-market+activity+resumed%2C+suggesting+buyers+and+sellers+are+becoming+more+aligned.&hid=POS21&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C20-S3.png&sig=8.5&h=Deal+activity+picks+up+as+confidence+in+valuations+improves&l=Capital-market+activity+resumed%2C+suggesting+buyers+and+sellers+are+becoming+more+aligned.&hid=POS21&sent=slight_positive&domain=liquidity&fan=tight&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C20-S3",
@@ -6977,7 +6977,7 @@
     },
     "p75-hl-C21-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C21-S1.png&sig=6.5&h=Tech+shares+pause+as+AI+spending+debate+intensifies&l=Investors+weighed+stronger+infrastructure+demand+against+questions+about+return+on+investment+and+valuation+discipline.&hid=AMB19&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C21-S1.png&sig=6.5&h=Tech+shares+pause+as+AI+spending+debate+intensifies&l=Investors+weighed+stronger+infrastructure+demand+against+questions+about+return+on+investment+and+valuation+discipline.&hid=AMB19&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C21-S1",
@@ -7017,7 +7017,7 @@
     },
     "p75-hl-C21-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C21-S2.png&sig=6.5&h=Chip+demand+remains+firm+while+software+budgets+look+uneven&l=Earnings+commentary+suggested+continued+investment+in+compute+capacity+but+more+selective+enterprise+spending.&hid=AMB20&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C21-S2.png&sig=6.5&h=Chip+demand+remains+firm+while+software+budgets+look+uneven&l=Earnings+commentary+suggested+continued+investment+in+compute+capacity+but+more+selective+enterprise+spending.&hid=AMB20&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C21-S2",
@@ -7057,7 +7057,7 @@
     },
     "p75-hl-C21-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C21-S3.png&sig=6.5&h=Mega-cap+gains+narrow+as+investors+reassess+growth+durability&l=Leadership+remained+concentrated%2C+making+it+harder+to+read+whether+the+broader+market+trend+has+improved.&hid=AMB21&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C21-S3.png&sig=6.5&h=Mega-cap+gains+narrow+as+investors+reassess+growth+durability&l=Leadership+remained+concentrated%2C+making+it+harder+to+read+whether+the+broader+market+trend+has+improved.&hid=AMB21&sent=ambiguous&domain=technology&fan=medium&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C21-S3",
@@ -7097,7 +7097,7 @@
     },
     "p75-hl-C22-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C22-S1.png&sig=8.5&h=Global+growth+data+improve+at+the+margin&l=Better+trade+and+manufacturing+readings+reduced+concern+about+a+synchronized+slowdown.&hid=POS22&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C22-S1.png&sig=8.5&h=Global+growth+data+improve+at+the+margin&l=Better+trade+and+manufacturing+readings+reduced+concern+about+a+synchronized+slowdown.&hid=POS22&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C22-S1",
@@ -7137,7 +7137,7 @@
     },
     "p75-hl-C22-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C22-S2.png&sig=8.5&h=Export+demand+strengthens+as+overseas+indicators+stabilize&l=International+data+provided+a+modest+tailwind+for+companies+with+global+revenue+exposure.&hid=POS23&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C22-S2.png&sig=8.5&h=Export+demand+strengthens+as+overseas+indicators+stabilize&l=International+data+provided+a+modest+tailwind+for+companies+with+global+revenue+exposure.&hid=POS23&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C22-S2",
@@ -7177,7 +7177,7 @@
     },
     "p75-hl-C22-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C22-S3.png&sig=8.5&h=Factory+activity+recovers+from+recent+weakness&l=Manufacturing+surveys+showed+tentative+improvement+after+a+soft+patch.&hid=POS24&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C22-S3.png&sig=8.5&h=Factory+activity+recovers+from+recent+weakness&l=Manufacturing+surveys+showed+tentative+improvement+after+a+soft+patch.&hid=POS24&sent=slight_positive&domain=global&fan=medium&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C22-S3",
@@ -7217,7 +7217,7 @@
     },
     "p75-hl-C23-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C23-S1.png&sig=6.5&h=Index+holds+steady+as+market+breadth+sends+a+weaker+signal&l=Large-cap+strength+offset+softness+in+more+cyclical+shares%2C+leaving+the+headline+index+little+changed.&hid=AMB22&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C23-S1.png&sig=6.5&h=Index+holds+steady+as+market+breadth+sends+a+weaker+signal&l=Large-cap+strength+offset+softness+in+more+cyclical+shares%2C+leaving+the+headline+index+little+changed.&hid=AMB22&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C23-S1",
@@ -7257,7 +7257,7 @@
     },
     "p75-hl-C23-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C23-S2.png&sig=6.5&h=Small-cap+momentum+fades+while+defensive+sectors+catch+a+bid&l=The+rotation+in+leadership+suggested+investors+were+not+fully+committing+to+a+risk-on+view.&hid=AMB23&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C23-S2.png&sig=6.5&h=Small-cap+momentum+fades+while+defensive+sectors+catch+a+bid&l=The+rotation+in+leadership+suggested+investors+were+not+fully+committing+to+a+risk-on+view.&hid=AMB23&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C23-S2",
@@ -7297,7 +7297,7 @@
     },
     "p75-hl-C23-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C23-S3.png&sig=6.5&h=Sector+leadership+shifts+without+a+clear+market+direction&l=Gains+in+some+defensive+groups+balanced+weakness+in+economically+sensitive+areas.&hid=AMB24&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C23-S3.png&sig=6.5&h=Sector+leadership+shifts+without+a+clear+market+direction&l=Gains+in+some+defensive+groups+balanced+weakness+in+economically+sensitive+areas.&hid=AMB24&sent=ambiguous&domain=breadth&fan=wide&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C23-S3",
@@ -7337,7 +7337,7 @@
     },
     "p75-hl-C24-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C24-S1.png&sig=8.5&h=Options+markets+price+caution+despite+calm+index+moves&l=Implied+volatility+edged+higher+even+though+the+broad+market+showed+limited+movement+on+the+day.&hid=AMB25&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C24-S1.png&sig=8.5&h=Options+markets+price+caution+despite+calm+index+moves&l=Implied+volatility+edged+higher+even+though+the+broad+market+showed+limited+movement+on+the+day.&hid=AMB25&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C24-S1",
@@ -7377,7 +7377,7 @@
     },
     "p75-hl-C24-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C24-S2.png&sig=8.5&h=Hedging+demand+rises+as+realized+volatility+stays+low&l=Investors+added+protection+while+recent+price+action+remained+quieter+than+the+options+market+implied.&hid=AMB26&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C24-S2.png&sig=8.5&h=Hedging+demand+rises+as+realized+volatility+stays+low&l=Investors+added+protection+while+recent+price+action+remained+quieter+than+the+options+market+implied.&hid=AMB26&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C24-S2",
@@ -7417,7 +7417,7 @@
     },
     "p75-hl-C24-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C24-S3.png&sig=8.5&h=Volatility+gauges+diverge+ahead+of+major+data+releases&l=Short-dated+hedges+became+more+expensive+while+longer-term+measures+showed+less+stress.&hid=AMB27&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C24-S3.png&sig=8.5&h=Volatility+gauges+diverge+ahead+of+major+data+releases&l=Short-dated+hedges+became+more+expensive+while+longer-term+measures+showed+less+stress.&hid=AMB27&sent=ambiguous&domain=volatility&fan=wide&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C24-S3",
@@ -7457,7 +7457,7 @@
     },
     "p75-hl-C25-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C25-S1.png&sig=6.5&h=Dollar+strength+complicates+outlook+for+multinational+earnings&l=Currency+moves+supported+import+prices+but+created+translation+headwinds+for+companies+with+large+overseas+exposure.&hid=AMB28&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C25-S1.png&sig=6.5&h=Dollar+strength+complicates+outlook+for+multinational+earnings&l=Currency+moves+supported+import+prices+but+created+translation+headwinds+for+companies+with+large+overseas+exposure.&hid=AMB28&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C25-S1",
@@ -7497,7 +7497,7 @@
     },
     "p75-hl-C25-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C25-S2.png&sig=6.5&h=Global+markets+steady+as+currency+moves+cloud+earnings+read-through&l=The+dollar%E2%80%99s+move+left+investors+debating+whether+foreign+demand+or+translation+effects+matter+more.&hid=AMB29&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C25-S2.png&sig=6.5&h=Global+markets+steady+as+currency+moves+cloud+earnings+read-through&l=The+dollar%E2%80%99s+move+left+investors+debating+whether+foreign+demand+or+translation+effects+matter+more.&hid=AMB29&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C25-S2",
@@ -7537,7 +7537,7 @@
     },
     "p75-hl-C25-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C25-S3.png&sig=6.5&h=Stronger+dollar+offsets+part+of+the+benefit+from+lower+input+costs&l=Companies+with+international+revenue+faced+a+mixed+setup+as+currency+and+commodity+effects+moved+in+opposite+directions.&hid=AMB30&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C25-S3.png&sig=6.5&h=Stronger+dollar+offsets+part+of+the+benefit+from+lower+input+costs&l=Companies+with+international+revenue+faced+a+mixed+setup+as+currency+and+commodity+effects+moved+in+opposite+directions.&hid=AMB30&sent=ambiguous&domain=dollar&fan=tight&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C25-S3",
@@ -7577,7 +7577,7 @@
     },
     "p75-hl-C26-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C26-S1.png&sig=8.5&h=Housing+activity+improves+from+low+levels+as+mortgage+rates+stay+high&l=Builder+commentary+turned+less+negative%2C+but+affordability+remained+a+constraint+on+stronger+demand.&hid=AMB31&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C26-S1.png&sig=8.5&h=Housing+activity+improves+from+low+levels+as+mortgage+rates+stay+high&l=Builder+commentary+turned+less+negative%2C+but+affordability+remained+a+constraint+on+stronger+demand.&hid=AMB31&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C26-S1",
@@ -7617,7 +7617,7 @@
     },
     "p75-hl-C26-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C26-S2.png&sig=8.5&h=Homebuilder+sentiment+rises+while+transaction+volumes+stay+muted&l=Investors+saw+tentative+stabilization%2C+though+high+financing+costs+continued+to+limit+turnover.&hid=AMB32&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C26-S2.png&sig=8.5&h=Homebuilder+sentiment+rises+while+transaction+volumes+stay+muted&l=Investors+saw+tentative+stabilization%2C+though+high+financing+costs+continued+to+limit+turnover.&hid=AMB32&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C26-S2",
@@ -7657,7 +7657,7 @@
     },
     "p75-hl-C26-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C26-S3.png&sig=8.5&h=Construction+data+firm%2C+but+affordability+pressure+persists&l=Supply+activity+looked+healthier+than+existing-home+sales%2C+leaving+the+housing+signal+mixed.&hid=AMB33&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C26-S3.png&sig=8.5&h=Construction+data+firm%2C+but+affordability+pressure+persists&l=Supply+activity+looked+healthier+than+existing-home+sales%2C+leaving+the+housing+signal+mixed.&hid=AMB33&sent=ambiguous&domain=housing&fan=tight&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C26-S3",
@@ -7697,7 +7697,7 @@
     },
     "p75-hl-C27-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C27-S1.png&sig=6.5&h=Liquidity+conditions+improve+while+cash+balances+remain+elevated&l=Markets+absorbed+issuance+smoothly%2C+but+investors+still+held+substantial+dry+powder+outside+equities.&hid=AMB34&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C27-S1.png&sig=6.5&h=Liquidity+conditions+improve+while+cash+balances+remain+elevated&l=Markets+absorbed+issuance+smoothly%2C+but+investors+still+held+substantial+dry+powder+outside+equities.&hid=AMB34&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C27-S1",
@@ -7737,7 +7737,7 @@
     },
     "p75-hl-C27-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C27-S2.png&sig=6.5&h=Fund+flows+stabilize+after+weeks+of+defensive+positioning&l=Allocations+stopped+moving+sharply+toward+cash%2C+though+risk+appetite+remained+selective.&hid=AMB35&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C27-S2.png&sig=6.5&h=Fund+flows+stabilize+after+weeks+of+defensive+positioning&l=Allocations+stopped+moving+sharply+toward+cash%2C+though+risk+appetite+remained+selective.&hid=AMB35&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C27-S2",
@@ -7777,7 +7777,7 @@
     },
     "p75-hl-C27-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C27-S3.png&sig=6.5&h=Deal+activity+reopens+gradually+as+valuation+gaps+persist&l=Capital-market+activity+picked+up%2C+but+buyers+and+sellers+remained+far+apart+on+pricing.&hid=AMB36&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C27-S3.png&sig=6.5&h=Deal+activity+reopens+gradually+as+valuation+gaps+persist&l=Capital-market+activity+picked+up%2C+but+buyers+and+sellers+remained+far+apart+on+pricing.&hid=AMB36&sent=ambiguous&domain=liquidity&fan=medium&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C27-S3",
@@ -7817,7 +7817,7 @@
     },
     "p75-hl-C28-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C28-S1.png&sig=8.5&h=Global+growth+signals+diverge+across+major+regions&l=Strength+in+some+economies+contrasted+with+weaker+manufacturing+and+trade+data+elsewhere.&hid=AMB37&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C28-S1.png&sig=8.5&h=Global+growth+signals+diverge+across+major+regions&l=Strength+in+some+economies+contrasted+with+weaker+manufacturing+and+trade+data+elsewhere.&hid=AMB37&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C28-S1",
@@ -7857,7 +7857,7 @@
     },
     "p75-hl-C28-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C28-S2.png&sig=8.5&h=Export+data+improve+while+domestic+demand+indicators+soften&l=The+cross-current+made+it+difficult+to+infer+whether+growth+momentum+is+accelerating+or+merely+rotating.&hid=AMB38&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C28-S2.png&sig=8.5&h=Export+data+improve+while+domestic+demand+indicators+soften&l=The+cross-current+made+it+difficult+to+infer+whether+growth+momentum+is+accelerating+or+merely+rotating.&hid=AMB38&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C28-S2",
@@ -7897,7 +7897,7 @@
     },
     "p75-hl-C28-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C28-S3.png&sig=8.5&h=International+markets+trade+unevenly+after+mixed+factory+data&l=Regional+performance+varied+as+investors+compared+resilient+services+activity+with+weaker+goods+demand.&hid=AMB39&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C28-S3.png&sig=8.5&h=International+markets+trade+unevenly+after+mixed+factory+data&l=Regional+performance+varied+as+investors+compared+resilient+services+activity+with+weaker+goods+demand.&hid=AMB39&sent=ambiguous&domain=global&fan=medium&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C28-S3",
@@ -7937,7 +7937,7 @@
     },
     "p75-hl-C29-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C29-S1.png&sig=6.5&h=Cost+pressure+eases%2C+but+pricing+power+looks+less+certain&l=Companies+reported+relief+on+some+input+costs+while+warning+that+customers+are+becoming+more+price-sensitive.&hid=AMB40&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C29-S1.png&sig=6.5&h=Cost+pressure+eases%2C+but+pricing+power+looks+less+certain&l=Companies+reported+relief+on+some+input+costs+while+warning+that+customers+are+becoming+more+price-sensitive.&hid=AMB40&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C29-S1",
@@ -7977,7 +7977,7 @@
     },
     "p75-hl-C29-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C29-S2.png&sig=6.5&h=Margin+outlook+steadies+as+demand+visibility+remains+limited&l=Management+teams+sounded+more+comfortable+on+costs+but+less+certain+about+order+growth.&hid=AMB41&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C29-S2.png&sig=6.5&h=Margin+outlook+steadies+as+demand+visibility+remains+limited&l=Management+teams+sounded+more+comfortable+on+costs+but+less+certain+about+order+growth.&hid=AMB41&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C29-S2",
@@ -8017,7 +8017,7 @@
     },
     "p75-hl-C29-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C29-S3.png&sig=6.5&h=Inventory+normalization+supports+margins+while+sales+trends+vary&l=Retailers+cited+cleaner+inventories+even+as+category-level+demand+remained+uneven.&hid=AMB42&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C29-S3.png&sig=6.5&h=Inventory+normalization+supports+margins+while+sales+trends+vary&l=Retailers+cited+cleaner+inventories+even+as+category-level+demand+remained+uneven.&hid=AMB42&sent=ambiguous&domain=margins&fan=wide&offset=-1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C29-S3",
@@ -8057,7 +8057,7 @@
     },
     "p75-hl-C30-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C30-S1.png&sig=8.5&h=Investors+trim+risk+slowly+after+a+crowded+rally&l=Positioning+data+suggested+some+profit-taking+without+a+broad+reversal+in+market+exposure.&hid=AMB43&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C30-S1.png&sig=8.5&h=Investors+trim+risk+slowly+after+a+crowded+rally&l=Positioning+data+suggested+some+profit-taking+without+a+broad+reversal+in+market+exposure.&hid=AMB43&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C30-S1",
@@ -8097,7 +8097,7 @@
     },
     "p75-hl-C30-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C30-S2.png&sig=8.5&h=Flows+show+caution+as+benchmark+remains+near+recent+highs&l=Investors+added+selectively+rather+than+chasing+the+index-wide+move.&hid=AMB44&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C30-S2.png&sig=8.5&h=Flows+show+caution+as+benchmark+remains+near+recent+highs&l=Investors+added+selectively+rather+than+chasing+the+index-wide+move.&hid=AMB44&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C30-S2",
@@ -8137,7 +8137,7 @@
     },
     "p75-hl-C30-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-C30-S3.png&sig=8.5&h=Crowded+positioning+raises+debate+over+near-term+upside&l=Strategists+disagreed+on+whether+strong+momentum+reflects+conviction+or+vulnerability+to+disappointment.&hid=AMB45&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-C30-S3.png&sig=8.5&h=Crowded+positioning+raises+debate+over+near-term+upside&l=Strategists+disagreed+on+whether+strong+momentum+reflects+conviction+or+vulnerability+to+disappointment.&hid=AMB45&sent=ambiguous&domain=positioning&fan=wide&offset=1.0&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-C30-S3",
@@ -8177,7 +8177,7 @@
     },
     "p75-hl-AC1-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC1-S1.png&sig=24.0&h=Market+outlook+turns+clearly+positive+after+broad-based+gains&l=Strong+earnings%2C+improving+demand%2C+and+supportive+policy+expectations+all+pointed+in+the+same+favorable+direction.&hid=ATN_POS_1&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC1-S1.png&sig=24.0&h=Market+outlook+turns+clearly+positive+after+broad-based+gains&l=Strong+earnings%2C+improving+demand%2C+and+supportive+policy+expectations+all+pointed+in+the+same+favorable+direction.&hid=ATN_POS_1&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC1-S1",
@@ -8217,7 +8217,7 @@
     },
     "p75-hl-AC1-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC1-S2.png&sig=24.0&h=Stocks+rally+as+economic+indicators+beat+expectations&l=Multiple+data+releases+showed+stronger+growth+and+easing+inflation+pressure%2C+creating+an+unusually+clear+positive+setup.&hid=ATN_POS_2&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC1-S2.png&sig=24.0&h=Stocks+rally+as+economic+indicators+beat+expectations&l=Multiple+data+releases+showed+stronger+growth+and+easing+inflation+pressure%2C+creating+an+unusually+clear+positive+setup.&hid=ATN_POS_2&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC1-S2",
@@ -8257,7 +8257,7 @@
     },
     "p75-hl-AC1-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC1-S3.png&sig=24.0&h=Investors+embrace+risk+as+momentum+strengthens+across+sectors&l=Market+breadth+improved+sharply+as+nearly+every+major+sector+participated+in+the+advance.&hid=ATN_POS_3&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC1-S3.png&sig=24.0&h=Investors+embrace+risk+as+momentum+strengthens+across+sectors&l=Market+breadth+improved+sharply+as+nearly+every+major+sector+participated+in+the+advance.&hid=ATN_POS_3&sent=attention_positive&domain=attention&fan=tight&offset=16.5&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC1-S3",
@@ -8297,7 +8297,7 @@
     },
     "p75-hl-AC2-S1": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC2-S1.png&sig=-14.0&h=Market+outlook+turns+clearly+negative+after+broad-based+declines&l=Weak+earnings%2C+deteriorating+demand%2C+and+tighter+financial+conditions+all+pointed+in+the+same+unfavorable+direction.&hid=ATN_NEG_1&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=positive&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC2-S1.png&sig=-14.0&h=Market+outlook+turns+clearly+negative+after+broad-based+declines&l=Weak+earnings%2C+deteriorating+demand%2C+and+tighter+financial+conditions+all+pointed+in+the+same+unfavorable+direction.&hid=ATN_NEG_1&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=positive&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC2-S1",
@@ -8337,7 +8337,7 @@
     },
     "p75-hl-AC2-S2": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC2-S2.png&sig=-14.0&h=Stocks+fall+as+economic+indicators+miss+expectations&l=Multiple+data+releases+showed+weaker+growth+and+renewed+inflation+pressure%2C+creating+an+unusually+clear+negative+setup.&hid=ATN_NEG_2&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=negative&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC2-S2.png&sig=-14.0&h=Stocks+fall+as+economic+indicators+miss+expectations&l=Multiple+data+releases+showed+weaker+growth+and+renewed+inflation+pressure%2C+creating+an+unusually+clear+negative+setup.&hid=ATN_NEG_2&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=negative&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC2-S2",
@@ -8377,7 +8377,7 @@
     },
     "p75-hl-AC2-S3": {
       "type": "website",
-      "path": "demo-headline-p75/assets/trial-stimulus.html?c=P75-AC2-S3.png&sig=-14.0&h=Investors+cut+risk+as+losses+spread+across+sectors&l=Market+breadth+deteriorated+sharply+as+selling+pressure+reached+nearly+every+major+sector.&hid=ATN_NEG_3&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=flat&p=0.75&ev=7.5",
+      "path": "demo-headline/assets-p75/trial-stimulus.html?c=P75-AC2-S3.png&sig=-14.0&h=Investors+cut+risk+as+losses+spread+across+sectors&l=Market+breadth+deteriorated+sharply+as+selling+pressure+reached+nearly+every+major+sector.&hid=ATN_NEG_3&sent=attention_negative&domain=attention&fan=tight&offset=-21.5&slope=flat&p=0.75&ev=7.5",
       "nextButtonLocation": "belowStimulus",
       "meta": {
         "trial_id": "hl-P75-AC2-S3",

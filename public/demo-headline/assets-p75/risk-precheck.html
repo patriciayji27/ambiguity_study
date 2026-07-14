@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Risk Preference Questions</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #202124;
+    background: transparent;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; }
+  .card {
+    border: 1px solid #d7dbe0;
+    border-radius: 12px;
+    background: #fff;
+    padding: 24px 26px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 620;
+  }
+  p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #3c4043;
+  }
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .progress-text {
+    font-size: 13px;
+    color: #5f6368;
+    white-space: nowrap;
+  }
+  .bar {
+    flex: 1;
+    height: 8px;
+    background: #eceff3;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #1a73e8;
+    border-radius: 99px;
+    transition: width .18s ease;
+  }
+  .panel {
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 15px 17px;
+    margin: 14px 0 18px;
+    background: #fafafa;
+  }
+  .panel p:last-child { margin-bottom: 0; }
+  .outcome-card {
+    border: 1px solid #d7dbe0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 16px 0 18px;
+    background: #fff;
+  }
+  .outcome-card p {
+    font-size: 16px;
+    color: #202124;
+    margin-bottom: 8px;
+  }
+  .outcome-card p:last-child { margin-bottom: 0; }
+  .response-box {
+    margin-top: 12px;
+    border-top: 1px solid #e8eaed;
+    padding-top: 16px;
+  }
+  label {
+    display: block;
+    font-size: 15px;
+    line-height: 1.48;
+    color: #202124;
+    margin-bottom: 8px;
+  }
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+  }
+  .prefix {
+    font-size: 18px;
+    color: #3c4043;
+  }
+  input[type="text"] {
+    width: 190px;
+    padding: 10px 11px;
+    border: 1px solid #c7cbd1;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, .14);
+  }
+  .note {
+    font-size: 13px;
+    color: #5f6368;
+    line-height: 1.45;
+    margin-top: 8px;
+  }
+  .actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  .error {
+    color: #b3261e;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-right: auto;
+    min-height: 18px;
+  }
+  button {
+    border: 1px solid #1a73e8;
+    background: #1a73e8;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button.secondary {
+    background: #fff;
+    color: #1a73e8;
+  }
+  button:hover:not(:disabled) { background: #1558b0; }
+  button.secondary:hover:not(:disabled) { background: #f4f8ff; }
+  button:disabled { cursor: default; opacity: .55; }
+  .done {
+    text-align: center;
+    padding: 38px 20px;
+  }
+  .done h1 { margin-bottom: 12px; }
+  .small { color: #5f6368; font-size: 13px; }
+  @media (max-width: 640px) {
+    body { padding: 8px; }
+    .card { padding: 18px 16px; }
+    .progress-row { flex-direction: column; align-items: stretch; }
+    .progress-text { white-space: normal; }
+    input[type="text"] { width: 100%; }
+    .actions { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card" id="root"></div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const rawProbabilityParam = params.get('p') || params.get('probability') || '55';
+const probabilityMatch = String(rawProbabilityParam).replace('%', '').match(/\d+(?:\.\d+)?/);
+const pParam = probabilityMatch ? probabilityMatch[0] : '55';
+const probabilityLevel = pParam === '75' || pParam === '0.75' ? 'p75' : 'p55';
+const PROBABILITY_CONFIGS = {
+  p55: { label: '55%', red: 55, blue: 45 },
+  p75: { label: '75%', red: 75, blue: 25 }
+};
+const PROBABILITY_CONFIG = PROBABILITY_CONFIGS[probabilityLevel];
+const VERSION = `urn-direct-certainty-equivalent-${probabilityLevel}-v2`;
+const STORAGE_KEY = `dcl_risk_ce_urn_${probabilityLevel}_v2`;
+const ANSWER_PREFIX = `risk-precheck-${probabilityLevel}`;
+const METRIC_PREFIX = `risk-${probabilityLevel}`;
+const TOTAL_ITEMS = 16;
+
+// Hidden modeling grid. Participants do not see expected values.
+// Each probability condition uses the dollar amounts that previously appeared
+// across the mixed p55/p75 precheck, then mirrors them for gain and loss items.
+const OUTCOME_AMOUNTS = [30, 40, 60, 80, 120, 160, 240, 320];
+const BASE_ITEMS = OUTCOME_AMOUNTS.map((amount, idx) => ({
+  log_index: idx + 1,
+  red: PROBABILITY_CONFIG.red,
+  blue: PROBABILITY_CONFIG.blue,
+  amount
+}));
+
+function buildItems() {
+  const gains = BASE_ITEMS.map((item, idx) => {
+    const p = item.red / (item.red + item.blue);
+    const ev = +(p * item.amount).toFixed(4);
+    return {
+      id: `gain_${String(idx + 1).padStart(2, '0')}_${item.red}_${item.amount}`,
+      domain: 'gain',
+      red_balls: item.red,
+      blue_balls: item.blue,
+      probability_red: p,
+      outcome_amount: item.amount,
+      risk_neutral_expected_value: ev,
+      x_axis_value: ev,
+      x_axis_abs: ev,
+      x_axis_log_abs: +Math.log(ev).toFixed(6),
+      log_index: item.log_index
+    };
+  });
+  const losses = BASE_ITEMS.map((item, idx) => {
+    const p = item.red / (item.red + item.blue);
+    const ev = +(p * item.amount).toFixed(4);
+    return {
+      id: `loss_${String(idx + 1).padStart(2, '0')}_${item.red}_${item.amount}`,
+      domain: 'loss',
+      red_balls: item.red,
+      blue_balls: item.blue,
+      probability_red: p,
+      outcome_amount: item.amount,
+      risk_neutral_expected_value: -ev,
+      x_axis_value: -ev,
+      x_axis_abs: ev,
+      x_axis_log_abs: +Math.log(ev).toFixed(6),
+      log_index: item.log_index
+    };
+  });
+  return [...gains, ...losses];
+}
+
+const ALL_ITEMS = buildItems();
+const participantId = params.get('PROLIFIC_PID') || params.get('participantId') || params.get('participant') || 'anonymous';
+const root = document.getElementById('root');
+
+function seededHash(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function mulberry32(seed) {
+  return function() {
+    let t = seed += 0x6D2B79F5;
+    t = Math.imul(t ^ t >>> 15, t | 1);
+    t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle(items, participant) {
+  const arr = items.slice();
+  const rand = mulberry32(seededHash(`${participant}_${VERSION}`));
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+if (params.get('reset') === '1') {
+  localStorage.removeItem(STORAGE_KEY);
+  state = null;
+}
+if (!state || state.participantId !== participantId || state.version !== VERSION) {
+  const orderedItems = shuffle(ALL_ITEMS, participantId);
+  state = {
+    participantId,
+    version: VERSION,
+    itemOrder: orderedItems.map(item => item.id),
+    currentIndex: 0,
+    responses: {},
+    introSeen: false,
+    completed: false,
+    startedAt: new Date().toISOString()
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function getOrderedItems() {
+  const byId = Object.fromEntries(ALL_ITEMS.map(item => [item.id, item]));
+  return state.itemOrder.map(id => byId[id]).filter(Boolean);
+}
+
+function currentItem() {
+  return getOrderedItems()[state.currentIndex];
+}
+
+function dollars(x) {
+  return '$' + Number(x).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>'"]/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[ch]));
+}
+
+function parseDollar(raw) {
+  const cleaned = String(raw ?? '').replace(/[$,\s]/g, '');
+  if (cleaned === '') return null;
+  const value = Number(cleaned);
+  if (!Number.isFinite(value)) return NaN;
+  return value;
+}
+
+function itemText(item) {
+  const amount = dollars(item.outcome_amount);
+
+  if (item.domain === 'gain') {
+    return {
+      outcome: [
+        `If the ball drawn is red, the uncertain option would result in a <strong>gain of ${amount}</strong>.`,
+        `If the ball drawn is blue, the uncertain option would result in a <strong>gain of $0</strong>.`
+      ],
+      question: 'You may keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?',
+      inputLabel: '$____',
+      range: `Enter a guaranteed payment from $0 to ${amount}.`,
+      instruction: 'Please enter the dollar amount only.'
+    };
+  }
+
+  return {
+    outcome: [
+      `If the ball drawn is red, the uncertain option would result in a <strong>loss of ${amount}</strong>.`,
+      `If the ball drawn is blue, the uncertain option would result in a <strong>loss of $0</strong>.`
+    ],
+    question: 'You may keep this uncertain option, or accept a certain loss instead. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?',
+    inputLabel: '$____',
+    range: `Enter the size of the certain loss, from $0 to ${amount}.`,
+    instruction: 'Please enter the dollar amount only.'
+  };
+}
+
+function renderIntro() {
+  root.innerHTML = `
+    <h1>Risk preference questions</h1>
+
+    <p>Before the main task, we would like to understand how you value uncertain outcomes with explicitly stated probabilities.</p>
+
+    <p>You will answer ${TOTAL_ITEMS} short questions involving an urn containing ${PROBABILITY_CONFIG.red + PROBABILITY_CONFIG.blue} colored balls. One ball is drawn at random, and the color determines a hypothetical monetary outcome. The urn contains ${PROBABILITY_CONFIG.red} red balls and ${PROBABILITY_CONFIG.blue} blue balls, so the chance of drawing a red ball is ${PROBABILITY_CONFIG.label}.</p>
+
+    <p>Your task is to enter the guaranteed dollar amount that would make you indifferent between the uncertain option and the guaranteed alternative. By <em>indifferent</em>, we mean that the uncertain option and the guaranteed alternative would feel equally good to you. There are no correct answers.</p>
+
+    <p class="small">These questions are hypothetical and do not create any possibility of losing your own money.</p>
+
+    <div class="actions">
+      <div class="error" id="err"></div>
+      <button onclick="beginQuestions()">Start questions</button>
+    </div>
+  `;
+}
+
+function renderQuestion() {
+  const items = getOrderedItems();
+  const item = currentItem();
+  if (!item) return renderDone();
+
+  const progress = state.currentIndex + 1;
+  const pct = Math.round((state.currentIndex / items.length) * 100);
+  const priorRaw = state.responses[item.id]?.raw ?? '';
+  const text = itemText(item);
+
+  root.innerHTML = `
+    <div class="progress-row">
+      <div class="progress-text">Question ${progress} of ${items.length}</div>
+      <div class="bar" aria-hidden="true"><div class="bar-fill" style="width: ${pct}%"></div></div>
+    </div>
+    <h1>Decision question</h1>
+    <div class="panel">
+      <p>The urn contains ${item.red_balls} red balls and ${item.blue_balls} blue balls. One ball will be drawn at random.</p>
+    </div>
+    <div class="outcome-card">
+      ${text.outcome.map(p => `<p>${p}</p>`).join('')}
+    </div>
+    <div class="response-box">
+      <label for="ceInput">${text.question}</label>
+      <div class="input-row">
+        <span class="prefix">$</span>
+        <input id="ceInput" type="text" inputmode="decimal" autocomplete="off" aria-label="${escapeHtml(text.inputLabel)}" value="${escapeHtml(priorRaw)}" onkeydown="handleKey(event)" />
+      </div>
+      <div class="note">${text.range}</div>
+      <div class="note">Please enter the dollar amount only. These questions are hypothetical.</div>
+    </div>
+    <div class="actions">
+      <div class="error" id="err"></div>
+      ${progress > 1 ? '<button class="secondary" onclick="goBack()">Back</button>' : ''}
+      <button onclick="submitCurrent()">${progress === items.length ? 'Submit answers' : 'Continue'}</button>
+    </div>
+  `;
+
+  const input = document.getElementById('ceInput');
+  if (input) input.focus();
+}
+
+window.handleKey = function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    submitCurrent();
+  }
+};
+
+window.beginQuestions = function() {
+  state.introSeen = true;
+  saveState();
+  renderQuestion();
+};
+
+window.goBack = function() {
+  if (state.currentIndex > 0) {
+    state.currentIndex -= 1;
+    saveState();
+    renderQuestion();
+  }
+};
+
+function validateValue(item, raw) {
+  const value = parseDollar(raw);
+  if (value === null) return 'Please enter a dollar amount before continuing.';
+  if (!Number.isFinite(value)) return 'Please enter a valid dollar amount.';
+  if (value < 0) return 'Please enter an amount of $0 or greater.';
+  if (value > item.outcome_amount) return `Please enter an amount no greater than ${dollars(item.outcome_amount)}.`;
+  return '';
+}
+
+window.submitCurrent = function() {
+  const item = currentItem();
+  const input = document.getElementById('ceInput');
+  const err = document.getElementById('err');
+  const raw = input ? input.value : '';
+  const problem = validateValue(item, raw);
+  if (problem) {
+    err.textContent = problem;
+    return;
+  }
+
+  state.responses[item.id] = {
+    raw,
+    entered_amount: parseDollar(raw),
+    submittedAt: new Date().toISOString()
+  };
+  state.currentIndex += 1;
+  saveState();
+  postAnswers(buildAnswers(false));
+
+  if (state.currentIndex >= getOrderedItems().length) {
+    state.completed = true;
+    state.completedAt = new Date().toISOString();
+    saveState();
+    postAnswers(buildAnswers(true));
+    renderDone();
+  } else {
+    renderQuestion();
+  }
+};
+
+function scoreItem(item) {
+  const response = state.responses[item.id] || {};
+  const entered = Number(response.entered_amount);
+  const valid = Number.isFinite(entered);
+  const signedCe = valid ? (item.domain === 'gain' ? entered : -entered) : null;
+  const unsignedEv = item.x_axis_abs;
+  const signedEv = item.risk_neutral_expected_value;
+  const riskPremium = valid
+    ? (item.domain === 'gain' ? unsignedEv - entered : entered - unsignedEv)
+    : null;
+
+  return {
+    id: item.id,
+    domain: item.domain,
+    red_balls: item.red_balls,
+    blue_balls: item.blue_balls,
+    probability_red: item.probability_red,
+    probability_level: probabilityLevel,
+    outcome_amount: item.outcome_amount,
+    risk_neutral_expected_value: signedEv,
+    x_axis_value: item.x_axis_value,
+    x_axis_abs: item.x_axis_abs,
+    x_axis_log_abs: item.x_axis_log_abs,
+    log_index: item.log_index,
+    raw_response: response.raw ?? null,
+    entered_amount: valid ? entered : null,
+    signed_certainty_equivalent: signedCe,
+    risk_premium: riskPremium,
+    submitted_at: response.submittedAt || null
+  };
+}
+
+function mean(values) {
+  const valid = values.filter(v => Number.isFinite(v));
+  if (!valid.length) return null;
+  return valid.reduce((a, b) => a + b, 0) / valid.length;
+}
+
+function subsetMean(scores, filterFn, field) {
+  return mean(scores.filter(filterFn).map(s => s[field]));
+}
+
+function buildAnswers(finalFlag) {
+  const orderedItems = getOrderedItems();
+  const scores = orderedItems.map(scoreItem);
+  const completedCount = scores.filter(s => Number.isFinite(s.entered_amount)).length;
+
+  const gain = s => s.domain === 'gain';
+  const loss = s => s.domain === 'loss';
+  const gainPremium = subsetMean(scores, gain, 'risk_premium');
+  const lossPremium = subsetMean(scores, loss, 'risk_premium');
+
+  const answers = {
+    [`${ANSWER_PREFIX}-complete`]: !!finalFlag,
+    [`${ANSWER_PREFIX}-version`]: VERSION,
+    [`${ANSWER_PREFIX}-participant-id`]: participantId,
+    [`${ANSWER_PREFIX}-probability-level`]: probabilityLevel,
+    [`${ANSWER_PREFIX}-probability-red`]: PROBABILITY_CONFIG.red / 100,
+    [`${ANSWER_PREFIX}-started-at`]: state.startedAt || '',
+    [`${ANSWER_PREFIX}-completed-at`]: state.completedAt || '',
+    [`${ANSWER_PREFIX}-current-index`]: state.currentIndex,
+    [`${ANSWER_PREFIX}-completed-count`]: completedCount,
+    [`${ANSWER_PREFIX}-item-order-json`]: JSON.stringify(state.itemOrder),
+    [`${ANSWER_PREFIX}-json`]: JSON.stringify({ scores, state }),
+    [`${METRIC_PREFIX}-gain-ce-mean`]: subsetMean(scores, gain, 'signed_certainty_equivalent'),
+    [`${METRIC_PREFIX}-loss-ce-mean`]: subsetMean(scores, loss, 'signed_certainty_equivalent'),
+    [`${METRIC_PREFIX}-ce-all-mean`]: mean(scores.map(s => s.signed_certainty_equivalent)),
+    [`${METRIC_PREFIX}-gain-premium-mean`]: gainPremium,
+    [`${METRIC_PREFIX}-loss-premium-mean`]: lossPremium,
+    [`risk-gain-premium-${probabilityLevel}`]: gainPremium,
+    [`risk-loss-premium-${probabilityLevel}`]: lossPremium,
+    [`${METRIC_PREFIX}-curve-points-json`]: JSON.stringify(scores.map(s => ({
+      id: s.id,
+      domain: s.domain,
+      red_balls: s.red_balls,
+      blue_balls: s.blue_balls,
+      probability_red: s.probability_red,
+      probability_level: s.probability_level,
+      outcome_amount: s.outcome_amount,
+      x_axis_value: s.x_axis_value,
+      x_axis_abs: s.x_axis_abs,
+      x_axis_log_abs: s.x_axis_log_abs,
+      risk_neutral_expected_value: s.risk_neutral_expected_value,
+      entered_amount: s.entered_amount,
+      signed_certainty_equivalent: s.signed_certainty_equivalent,
+      risk_premium: s.risk_premium
+    })))
+  };
+
+  scores.forEach((s, idx) => {
+    answers[`${METRIC_PREFIX}-order-${idx + 1}`] = s.id;
+    answers[`${METRIC_PREFIX}-domain-${s.id}`] = s.domain;
+    answers[`${METRIC_PREFIX}-red-balls-${s.id}`] = s.red_balls;
+    answers[`${METRIC_PREFIX}-blue-balls-${s.id}`] = s.blue_balls;
+    answers[`${METRIC_PREFIX}-probability-red-${s.id}`] = s.probability_red;
+    answers[`${METRIC_PREFIX}-probability-level-${s.id}`] = s.probability_level;
+    answers[`${METRIC_PREFIX}-outcome-${s.id}`] = s.outcome_amount;
+    answers[`${METRIC_PREFIX}-x-axis-${s.id}`] = s.x_axis_value;
+    answers[`${METRIC_PREFIX}-x-axis-log-abs-${s.id}`] = s.x_axis_log_abs;
+    answers[`${METRIC_PREFIX}-expected-value-${s.id}`] = s.risk_neutral_expected_value;
+    answers[`${METRIC_PREFIX}-entered-amount-${s.id}`] = s.entered_amount;
+    answers[`${METRIC_PREFIX}-signed-ce-${s.id}`] = s.signed_certainty_equivalent;
+    answers[`${METRIC_PREFIX}-premium-${s.id}`] = s.risk_premium;
+  });
+
+  return answers;
+}
+
+function postAnswers(answers) {
+  try {
+    if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
+      Revisit.postAnswers(answers);
+    } else if (window.parent && window.parent.postMessage) {
+      window.parent.postMessage({ type: 'revisit-data', answers }, '*');
+    }
+  } catch (e) {
+    console.warn('postAnswers failed:', e);
+  }
+}
+
+function renderDone() {
+  root.innerHTML = `
+    <div class="done">
+      <h1>Decision questions complete</h1>
+      <p>Your responses have been recorded. Click Next below to continue.</p>
+    </div>
+  `;
+}
+
+function tryScript(src) {
+  const s = document.createElement('script');
+  s.src = src;
+  s.onerror = function() {};
+  document.head.appendChild(s);
+}
+tryScript('../../revisit-communicate.js');
+tryScript('/revisit-communicate.js');
+
+if (state.completed) {
+  renderDone();
+} else if (state.introSeen) {
+  renderQuestion();
+} else {
+  renderIntro();
+}
+</script>
+</body>
+</html>
