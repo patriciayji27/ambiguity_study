@@ -35,9 +35,11 @@ jobs:
       # If on main with env vars, build with github environment variables
       - name: Build with github environment variables
         if: ${{ vars.VITE_STORAGE_ENGINE != '' }}
-        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE yarn build
+        run: yarn build
         env:
           VITE_STORAGE_ENGINE: ${{ vars.VITE_STORAGE_ENGINE }}
+          VITE_FIREBASE_CONFIG: ${{ vars.VITE_FIREBASE_CONFIG }}
+          VITE_RECAPTCHAV3TOKEN: ${{ vars.VITE_RECAPTCHAV3TOKEN }}
 
       - uses: peaceiris/actions-gh-pages@v3
         name: Deploy
@@ -108,9 +110,11 @@ jobs:
       # Build with github environment variables
       - name: Build with github environment variables
         if: ${{ vars.VITE_STORAGE_ENGINE != '' }}
-        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE VITE_BASE_PATH=$VITE_BASE_PATH yarn build
+        run: yarn build
         env:
           VITE_STORAGE_ENGINE: ${{ vars.VITE_STORAGE_ENGINE }}
+          VITE_FIREBASE_CONFIG: ${{ vars.VITE_FIREBASE_CONFIG }}
+          VITE_RECAPTCHAV3TOKEN: ${{ vars.VITE_RECAPTCHAV3TOKEN }}
           VITE_BASE_PATH: "/study/PR${{ github.event.number }}/"
 
       - name: Push PR deploy preview

@@ -29,7 +29,62 @@ const config: StudyConfig = {
   },
 };
 
+const twoArmConfig: StudyConfig = {
+  ...config,
+  uiConfig: {
+    ...config.uiConfig,
+    numSequences: 40,
+  },
+  components: {
+    consent: { type: 'questionnaire', response: [] } as QuestionnaireComponent,
+    'p55-introduction': { type: 'questionnaire', response: [] } as QuestionnaireComponent,
+    'p75-introduction': { type: 'questionnaire', response: [] } as QuestionnaireComponent,
+    debrief: { type: 'questionnaire', response: [] } as QuestionnaireComponent,
+  },
+  sequence: {
+    order: 'fixed',
+    components: [
+      'consent',
+      {
+        order: 'latinSquare',
+        numSamples: 1,
+        components: [
+          {
+            order: 'fixed',
+            id: 'probability-arm-p55',
+            components: ['p55-introduction'],
+          },
+          {
+            order: 'fixed',
+            id: 'probability-arm-p75',
+            components: ['p75-introduction'],
+          },
+        ],
+      },
+      'debrief',
+    ],
+  },
+};
+
+function sequenceIncludes(sequence: ReturnType<typeof generateSequenceArray>[number], componentId: string): boolean {
+  return sequence.components.some((component) => (
+    typeof component === 'string'
+      ? component === componentId
+      : sequenceIncludes(component, componentId)
+  ));
+}
+
 describe('Generating sequences works as expected', () => {
+  test('generateSequenceArray balances two nested latinSquare arms, numSamples = 1', async () => {
+    const sequenceArray = generateSequenceArray(twoArmConfig);
+
+    const p55Count = sequenceArray.filter((sequence) => sequenceIncludes(sequence, 'p55-introduction')).length;
+    const p75Count = sequenceArray.filter((sequence) => sequenceIncludes(sequence, 'p75-introduction')).length;
+
+    expect(p55Count).toBe(20);
+    expect(p75Count).toBe(20);
+  });
+
   test('generateSequenceArray returns balanced random sequences, numSamples = 1', async () => {
     const sequenceArray = generateSequenceArray(config);
 
