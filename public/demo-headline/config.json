@@ -21,7 +21,7 @@
     "withSidebar": false,
     "studyEndMsg": "Thank you for completing this study!",
     "urlParticipantIdParam": "PROLIFIC_PID",
-    "numSequences": 1000
+    "numSequences": 50
   },
   "components": {
     "consent": {
