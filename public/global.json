@@ -4,6 +4,7 @@
     "tutorial",
     "tutorial-replication",
     "demo-headline",
+    "demo-headline-recovery",
     "demo-uncertainty"
   ],
   "configs": {
@@ -15,6 +16,9 @@
     },
     "demo-headline": {
       "path": "demo-headline/config.json"
+    },
+    "demo-headline-recovery": {
+      "path": "demo-headline-recovery/config.json"
     },
     "demo-uncertainty": {
       "path": "demo-uncertainty/config.json"
