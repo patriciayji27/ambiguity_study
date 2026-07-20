@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../revisitUtilities/revisit-communicate.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 20px;
+      color: #202124;
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+    }
+    main { max-width: 680px; margin: 0 auto; }
+    h1 { margin: 0 0 12px; font-size: 24px; font-weight: 650; }
+    p { margin: 0 0 22px; color: #4b5563; font-size: 15px; line-height: 1.55; }
+    button {
+      min-height: 44px;
+      padding: 10px 18px;
+      border: 1px solid #174a7c;
+      border-radius: 6px;
+      color: #fff;
+      background: #174a7c;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover:not(:disabled) { background: #10385f; }
+    button:disabled { cursor: default; opacity: 0.65; }
+    #status {
+      min-height: 72px;
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-left: 4px solid #9aa0a6;
+      background: #f6f7f8;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    #status.success { border-color: #188038; background: #f0f8f2; }
+    #status.warning { border-color: #b06000; background: #fff7e8; }
+    #status.error { border-color: #b3261e; background: #fdf2f2; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Recover your original trial outcomes</h1>
+    <p>Use the button below once. After a recovery status appears, select
+      <strong>Submit recovery</strong> below this panel.</p>
+    <button id="recover" type="button">Recover stored trial data</button>
+    <div id="status" role="status" aria-live="polite">
+      No recovery attempt has been made yet.
+    </div>
+  </main>
+
+  <script>
+    const TRIALS_KEY = 'hl_study_trial_log';
+    const CUMULATIVE_KEY = 'hl_study_cumulative_pnl';
+    const button = document.getElementById('recover');
+    const status = document.getElementById('status');
+
+    function postAnswers(answers) {
+      if (window.Revisit && typeof window.Revisit.postAnswers === 'function') {
+        window.Revisit.postAnswers(answers);
+        return;
+      }
+      const iframeId = new URLSearchParams(window.location.search).get('id');
+      if (!iframeId || !window.parent) {
+        throw new Error('ReVISit communication is unavailable.');
+      }
+      window.parent.postMessage({
+        error: false,
+        type: '@REVISIT_COMMS/ANSWERS',
+        iframeId,
+        message: answers
+      }, '*');
+    }
+
+    function setStatus(kind, message) {
+      status.className = kind;
+      status.textContent = message;
+    }
+
+    button.addEventListener('click', () => {
+      button.disabled = true;
+      const exportedAt = new Date().toISOString();
+      let recoveryStatus = 'not-found';
+      let rawLog = '';
+      let trialCount = 0;
+
+      try {
+        rawLog = localStorage.getItem(TRIALS_KEY) || '';
+        if (rawLog) {
+          const parsed = JSON.parse(rawLog);
+          if (!Array.isArray(parsed)) {
+            throw new Error('The stored trial record is not a list.');
+          }
+          trialCount = parsed.filter((trial) => (
+            trial && typeof trial === 'object' &&
+            typeof trial.chart === 'string' &&
+            (trial.choice === 'A' || trial.choice === 'B') &&
+            Number.isFinite(Number(trial.payoff))
+          )).length;
+          recoveryStatus = trialCount > 0 ? 'found' : 'invalid';
+        }
+
+        postAnswers({
+          'recovery-status': recoveryStatus,
+          'recovered-trial-log': rawLog,
+          'recovered-trial-count': trialCount,
+          'recovery-exported-at': exportedAt,
+          'recovery-source-key': TRIALS_KEY,
+          'recovered-cumulative-pnl':
+            localStorage.getItem(CUMULATIVE_KEY) || ''
+        });
+
+        if (recoveryStatus === 'found') {
+          setStatus('success',
+            `Recovered ${trialCount} stored trial record${trialCount === 1 ? '' : 's'}. ` +
+            'Select Submit recovery below to finish.');
+        } else {
+          setStatus('warning',
+            'No usable headline-study trial records were found in this browser. ' +
+            'Select Submit recovery below so this status is recorded.');
+        }
+      } catch (error) {
+        try {
+          postAnswers({
+            'recovery-status': 'invalid',
+            'recovered-trial-log': rawLog,
+            'recovered-trial-count': 0,
+            'recovery-exported-at': exportedAt,
+            'recovery-error': String(error && error.message ? error.message : error)
+          });
+        } catch (postError) {
+          console.error(postError);
+        }
+        setStatus('error',
+          'The stored trial record could not be read. Select Submit recovery ' +
+          'below so this status is recorded.');
+      }
+    });
+  </script>
+</body>
+</html>

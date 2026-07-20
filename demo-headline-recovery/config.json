@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
+  "studyMetadata": {
+    "title": "Headline Study Payment Data Recovery",
+    "version": "1.0.0",
+    "authors": [
+      "DCL Research Team"
+    ],
+    "date": "2026-07-19",
+    "description": "Recovers locally stored trial outcomes needed to calculate the headline study's promised performance bonus.",
+    "organizations": [
+      "DCL Lab"
+    ]
+  },
+  "uiConfig": {
+    "contactEmail": "pyji@uchicago.edu",
+    "logoPath": "demo-headline/assets/logo.png",
+    "withProgressBar": true,
+    "autoDownloadStudy": false,
+    "withSidebar": false,
+    "studyEndMsg": "Your recovery response has been submitted. Thank you.",
+    "urlParticipantIdParam": "PROLIFIC_PID"
+  },
+  "components": {
+    "recovery-introduction": {
+      "type": "markdown",
+      "path": "demo-headline-recovery/introduction.md",
+      "nextButtonText": "Continue",
+      "response": [],
+      "style": {
+        "maxWidth": "760px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    },
+    "recover-browser-trial-log": {
+      "type": "website",
+      "path": "demo-headline-recovery/recovery.html",
+      "nextButtonLocation": "belowStimulus",
+      "nextButtonText": "Submit recovery",
+      "response": [
+        {
+          "id": "recovery-status",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
+      "style": {
+        "maxWidth": "760px",
+        "width": "100%",
+        "height": "430px",
+        "margin": "0 auto"
+      }
+    },
+    "recovery-debrief": {
+      "type": "markdown",
+      "path": "demo-headline-recovery/debrief.md",
+      "nextButtonText": "Finish",
+      "response": [],
+      "style": {
+        "maxWidth": "760px",
+        "width": "100%",
+        "margin": "0 auto"
+      }
+    }
+  },
+  "sequence": {
+    "order": "fixed",
+    "components": [
+      "recovery-introduction",
+      "recover-browser-trial-log",
+      "recovery-debrief"
+    ]
+  }
+}

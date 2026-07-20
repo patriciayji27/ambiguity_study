@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="../../revisitUtilities/revisit-communicate.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: transparent; padding: 8px; color: #202124; }
@@ -1039,22 +1040,26 @@ function choose(choice) {
   };
 
   try {
-    if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
-      Revisit.postAnswers(answers);
-    } else if (window.parent && window.parent.postMessage) {
-      window.parent.postMessage({ type: 'revisit-data', answers: answers }, '*');
-    }
-  } catch(e) { console.warn('postAnswers failed:', e); }
+    postRevisitAnswers(answers);
+  } catch(e) { console.error('Unable to record trial answers:', e); }
 }
 
-function tryScript(src) {
-  const s = document.createElement('script');
-  s.src = src;
-  s.onerror = function() {};
-  document.head.appendChild(s);
+function postRevisitAnswers(answers) {
+  if (window.Revisit && typeof window.Revisit.postAnswers === 'function') {
+    window.Revisit.postAnswers(answers);
+    return;
+  }
+  const iframeId = new URLSearchParams(window.location.search).get('id');
+  if (!iframeId || !window.parent) {
+    throw new Error('ReVISit communication is unavailable.');
+  }
+  window.parent.postMessage({
+    error: false,
+    type: '@REVISIT_COMMS/ANSWERS',
+    iframeId,
+    message: answers
+  }, '*');
 }
-tryScript('../../revisit-communicate.js');
-tryScript('/revisit-communicate.js');
 </script>
 </body>
 </html>

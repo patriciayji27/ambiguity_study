@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Risk Preference Questions</title>
+<script src="../../revisitUtilities/revisit-communicate.js"></script>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -455,7 +456,6 @@ window.submitCurrent = function() {
   };
   state.currentIndex += 1;
   saveState();
-  postAnswers(buildAnswers(false));
 
   if (state.currentIndex >= getOrderedItems().length) {
     state.completed = true;
@@ -577,15 +577,20 @@ function buildAnswers(finalFlag) {
 }
 
 function postAnswers(answers) {
-  try {
-    if (typeof Revisit !== 'undefined' && Revisit.postAnswers) {
-      Revisit.postAnswers(answers);
-    } else if (window.parent && window.parent.postMessage) {
-      window.parent.postMessage({ type: 'revisit-data', answers }, '*');
-    }
-  } catch (e) {
-    console.warn('postAnswers failed:', e);
+  if (window.Revisit && typeof window.Revisit.postAnswers === 'function') {
+    window.Revisit.postAnswers(answers);
+    return;
   }
+  const iframeId = new URLSearchParams(window.location.search).get('id');
+  if (!iframeId || !window.parent) {
+    throw new Error('ReVISit communication is unavailable.');
+  }
+  window.parent.postMessage({
+    error: false,
+    type: '@REVISIT_COMMS/ANSWERS',
+    iframeId,
+    message: answers
+  }, '*');
 }
 
 function renderDone() {
@@ -597,16 +602,8 @@ function renderDone() {
   `;
 }
 
-function tryScript(src) {
-  const s = document.createElement('script');
-  s.src = src;
-  s.onerror = function() {};
-  document.head.appendChild(s);
-}
-tryScript('../../revisit-communicate.js');
-tryScript('/revisit-communicate.js');
-
 if (state.completed) {
+  postAnswers(buildAnswers(true));
   renderDone();
 } else if (state.introSeen) {
   renderQuestion();

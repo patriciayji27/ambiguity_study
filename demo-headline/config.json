@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
   "studyMetadata": {
     "title": "Investment Decision-Making Under Uncertainty: Headline Study",
-    "version": "4.1.3-balanced-p55-p75",
+    "version": "4.1.4-revisit-capture-fix",
     "authors": [
       "DCL Research Team"
     ],
@@ -591,7 +591,17 @@
       "type": "website",
       "path": "demo-headline/assets/risk-precheck.html?p=55",
       "nextButtonLocation": "belowStimulus",
-      "response": [],
+      "response": [
+        {
+          "id": "risk-precheck-p55-complete",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "requiredValue": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "780px",
         "width": "100%",
@@ -620,7 +630,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -646,7 +665,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -686,7 +714,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -726,7 +763,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -766,7 +812,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -806,7 +861,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -846,7 +910,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -886,7 +959,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -926,7 +1008,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -966,7 +1057,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1006,7 +1106,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1046,7 +1155,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1086,7 +1204,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1126,7 +1253,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1166,7 +1302,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1206,7 +1351,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1246,7 +1400,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1286,7 +1449,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1326,7 +1498,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1366,7 +1547,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1406,7 +1596,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1446,7 +1645,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1486,7 +1694,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1526,7 +1743,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1566,7 +1792,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1606,7 +1841,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1646,7 +1890,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1686,7 +1939,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1726,7 +1988,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1766,7 +2037,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1806,7 +2086,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1846,7 +2135,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1886,7 +2184,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1926,7 +2233,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -1966,7 +2282,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2006,7 +2331,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2046,7 +2380,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2086,7 +2429,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2126,7 +2478,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2166,7 +2527,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2206,7 +2576,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2246,7 +2625,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2286,7 +2674,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2326,7 +2723,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2366,7 +2772,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2406,7 +2821,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2446,7 +2870,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2486,7 +2919,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2526,7 +2968,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2566,7 +3017,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2606,7 +3066,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2646,7 +3115,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2686,7 +3164,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2726,7 +3213,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2766,7 +3262,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2806,7 +3311,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2846,7 +3360,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2886,7 +3409,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2926,7 +3458,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -2966,7 +3507,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3006,7 +3556,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3046,7 +3605,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3086,7 +3654,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3126,7 +3703,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3166,7 +3752,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3206,7 +3801,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3246,7 +3850,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3286,7 +3899,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3326,7 +3948,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3366,7 +3997,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3406,7 +4046,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3446,7 +4095,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3486,7 +4144,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3526,7 +4193,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3566,7 +4242,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3606,7 +4291,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3646,7 +4340,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3686,7 +4389,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3726,7 +4438,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3766,7 +4487,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3806,7 +4536,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3846,7 +4585,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3886,7 +4634,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3926,7 +4683,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -3966,7 +4732,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4006,7 +4781,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4046,7 +4830,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4086,7 +4879,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4126,7 +4928,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4166,7 +4977,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4206,7 +5026,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4246,7 +5075,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4286,7 +5124,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4326,7 +5173,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4366,7 +5222,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4406,7 +5271,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4446,7 +5320,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4486,7 +5369,16 @@
         "option_b_expected_return_pct": 5.5,
         "probability_arm": "p55"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4512,7 +5404,17 @@
       "type": "website",
       "path": "demo-headline/assets-p75/risk-precheck.html?p=75",
       "nextButtonLocation": "belowStimulus",
-      "response": [],
+      "response": [
+        {
+          "id": "risk-precheck-p75-complete",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "requiredValue": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "780px",
         "width": "100%",
@@ -4541,7 +5443,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4567,7 +5478,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4607,7 +5527,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4647,7 +5576,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4687,7 +5625,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4727,7 +5674,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4767,7 +5723,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4807,7 +5772,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4847,7 +5821,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4887,7 +5870,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4927,7 +5919,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -4967,7 +5968,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5007,7 +6017,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5047,7 +6066,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5087,7 +6115,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5127,7 +6164,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5167,7 +6213,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5207,7 +6262,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5247,7 +6311,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5287,7 +6360,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5327,7 +6409,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5367,7 +6458,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5407,7 +6507,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5447,7 +6556,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5487,7 +6605,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5527,7 +6654,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5567,7 +6703,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5607,7 +6752,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5647,7 +6801,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5687,7 +6850,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5727,7 +6899,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5767,7 +6948,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5807,7 +6997,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5847,7 +7046,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5887,7 +7095,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5927,7 +7144,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -5967,7 +7193,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6007,7 +7242,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6047,7 +7291,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6087,7 +7340,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6127,7 +7389,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6167,7 +7438,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6207,7 +7487,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6247,7 +7536,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6287,7 +7585,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6327,7 +7634,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6367,7 +7683,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6407,7 +7732,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6447,7 +7781,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6487,7 +7830,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6527,7 +7879,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6567,7 +7928,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6607,7 +7977,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6647,7 +8026,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6687,7 +8075,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6727,7 +8124,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6767,7 +8173,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6807,7 +8222,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6847,7 +8271,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6887,7 +8320,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6927,7 +8369,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -6967,7 +8418,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7007,7 +8467,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7047,7 +8516,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7087,7 +8565,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7127,7 +8614,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7167,7 +8663,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7207,7 +8712,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7247,7 +8761,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7287,7 +8810,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7327,7 +8859,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7367,7 +8908,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7407,7 +8957,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7447,7 +9006,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7487,7 +9055,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7527,7 +9104,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7567,7 +9153,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7607,7 +9202,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7647,7 +9251,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7687,7 +9300,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7727,7 +9349,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7767,7 +9398,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7807,7 +9447,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7847,7 +9496,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7887,7 +9545,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7927,7 +9594,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -7967,7 +9643,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8007,7 +9692,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8047,7 +9741,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8087,7 +9790,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8127,7 +9839,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8167,7 +9888,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8207,7 +9937,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8247,7 +9986,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8287,7 +10035,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8327,7 +10084,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8367,7 +10133,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
@@ -8407,7 +10182,16 @@
         "option_b_expected_return_pct": 7.5,
         "probability_arm": "p75"
       },
-      "response": [],
+      "response": [
+        {
+          "id": "investment-choice",
+          "prompt": "",
+          "location": "belowStimulus",
+          "type": "reactive",
+          "required": true,
+          "hidden": true
+        }
+      ],
       "style": {
         "maxWidth": "1100px",
         "width": "100%",
