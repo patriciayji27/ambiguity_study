@@ -6,7 +6,9 @@ compute deterministic Prolific bonuses when valid trial data is available.
 
 ## Quick run
 
-See `FULL_WORKFLOW.md` for the deployment and participant-recovery step.
+See `FULL_WORKFLOW.md` for the end-to-end workflow,
+`RECOVERY_OPERATIONS.md` for the production runbook, and
+`PAYMENT_POLICY.md` for the fixed and pending policy decisions.
 
 From this folder, run the complete download-and-compute pipeline with:
 
@@ -19,7 +21,9 @@ only fully validated bonuses, and writes the results under `output/`. Final
 `payments.csv` and `prolific_bonus_upload.csv` files appear only when every
 completed original participant has an exact validated bonus. Otherwise the
 command writes `PAYMENT_BLOCKED.txt` and `payment_readiness.csv` and exits.
-It does not issue payments or upload anything to Prolific.
+When ready, it also runs `verify_payment_outputs.py` before printing
+`PAYMENT WORKFLOW READY AND VERIFIED`. It does not issue payments or upload
+anything to Prolific.
 
 ## Current data warning
 
@@ -135,9 +139,8 @@ The script automatically uses `public/demo-headline/config.json`. Outputs are:
   the payoff implied by the study config.
 - `participant_data_audit.csv`: always created before payment computation.
 
-Non-Prolific test sessions are excluded by default. Incomplete sessions remain
-in `payments.csv` with blank, uncomputed bonus fields and a manual-review flag
-unless `--include-incomplete` is supplied.
+Non-Prolific test sessions and incomplete sessions are excluded from final
+`payments.csv`. They remain visible in `payment_readiness.csv` for audit.
 
 The `bonus_computed` column is the payment gate. It is true only when all 32
 non-practice choices and realized payoffs are available and every payoff
@@ -178,15 +181,28 @@ uv run python download_firebase_data.py \
 uv run python compute_payments.py --recovery-data-dir recovery-data
 ```
 
-When recovery is complete, review `output/payments.csv` and
-`output/prolific_bonus_upload.csv`. Before then, use
-`output/payment_readiness.csv` only to track recovery; it is not a payment list.
+When recovery is complete, review `output/payments.csv`,
+`output/prolific_bonus_upload.csv`, and `output/PAYMENT_VERIFIED.txt`.
+Before then, use `output/payment_readiness.csv` only to track recovery; it is
+not a payment list.
+
+If the approved recovery window closes before every exact log returns, fill in
+the ignored `payment_policy.json` and run:
+
+```bash
+./close_recovery_window.command
+```
+
+This preserves exact bonuses for returners and applies the written flat
+fallback only to completed non-returners. It refuses unapproved policy files,
+future deadlines, missing submission IDs, validation failures, or fallback
+amounts outside $0-$15.
 
 ## Payment rule
 
 - Base: $5.00 for full participation.
 - Bonus: three of the 32 non-practice investment trials are selected
-  deterministically from a hash of `BONUS_SEED_SALT` and `PROLIFIC_PID`.
+  deterministically from a hash of the fixed salt and `PROLIFIC_PID`.
 - Each selected trial contributes `0.10 * max(0, payoff - 50)` dollars.
 - The two practice rounds are excluded. The 30 ordinary trials and two
   embedded attention checks are included because the instructions say three
@@ -194,5 +210,19 @@ When recovery is complete, review `output/payments.csv` and
 - The final bonus is capped at the separately promised $15 maximum. This cap
   matters if the positive attention-check trial is selected.
 
-Keep `BONUS_SEED_SALT` unchanged after any payment is issued. The default is
-`demo-headline-v4-bonus`.
+The salt is permanently fixed in code as `demo-headline-v4-bonus`; environment
+overrides are not accepted.
+
+## Payment archive and Firebase lock-down
+
+After payment is confirmed, run:
+
+```bash
+./archive_payment_audit.command
+```
+
+The ignored archive contains the verified outputs, payment code, policy
+snapshot when applicable, fixed salt, source-manifest hashes, and repository
+commit. Move it to institution-approved encrypted storage. Then disable public
+Firebase Storage reads and use `FIREBASE_SERVICE_ACCOUNT` for subsequent
+downloads.

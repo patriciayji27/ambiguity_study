@@ -41,9 +41,8 @@ Determinism / auditability
 The 3 bonus trials are drawn with a PRNG seeded by
 SHA-256(BONUS_SEED_SALT + ":" + prolific_pid). Re-running the script therefore
 always reproduces the identical draw and identical bonuses for every
-participant, no matter the machine or the order files are read in. Change the
-salt (env var BONUS_SEED_SALT) only if you deliberately want a fresh draw --
-and never after bonuses have been paid.
+participant, no matter the machine or the order files are read in. The salt is
+permanently fixed in code so a later environment change cannot redraw bonuses.
 
 The payoff used for payment is the outcome that was actually generated and
 shown to the participant during the study (`trial-payoff` in the recorded
@@ -78,14 +77,13 @@ Outputs (in --out-dir)
     participant_data_audit.csv capture/completion audit, always written
 
 Requires:  pip install pandas
-Environment:  BONUS_SEED_SALT (optional; default "demo-headline-v4-bonus")
+The bonus seed salt is permanently fixed at "demo-headline-v4-bonus".
 """
 
 import argparse
 import hashlib
 import json
 import math
-import os
 import random
 import re
 import sys
@@ -108,7 +106,7 @@ N_BONUS_TRIALS = 3            # trials drawn at random per participant
 BONUS_THRESHOLD_DOLLARS = 50  # dollars gained in excess of this count...
 CENTS_PER_EXCESS_DOLLAR = 10  # ...10 cents each
 BONUS_CAP_CENTS = 1500        # stated ceiling ($15); needed if AC1 is drawn
-DEFAULT_SALT = "demo-headline-v4-bonus"
+BONUS_SEED_SALT = "demo-headline-v4-bonus"
 EXPECTED_MAIN_TRIALS = 30
 EXPECTED_NONPRACTICE_TRIALS = 32  # 30 main + 2 attention checks
 
@@ -912,6 +910,8 @@ def process(data_dir: Path, config_path: Path | None, out_dir: Path,
             "payoff_validation_issues": participant_issue_count,
             "payment_status": payment_status,
             "bonus_computed": bonus_computed,
+            "payment_method": ("exact_recovered_trials"
+                               if bonus_computed else None),
             "bonus_trial_components": ";".join(t["component"] for t in selected),
             "bonus_trial_payoffs": ";".join(
                 f"{effective_payoff(t):g}" for t in selected),
@@ -936,6 +936,12 @@ def process(data_dir: Path, config_path: Path | None, out_dir: Path,
     pay_path = out_dir / "payments.csv"
     upload_path = out_dir / "prolific_bonus_upload.csv"
     blocked_path = out_dir / "PAYMENT_BLOCKED.txt"
+    issues_path = out_dir / "validation_issues.csv"
+    verified_path = out_dir / "PAYMENT_VERIFIED.txt"
+    fallback_snapshot_path = out_dir / "fallback_policy_applied.json"
+
+    verified_path.unlink(missing_ok=True)
+    fallback_snapshot_path.unlink(missing_ok=True)
 
     trials_df.to_csv(trials_path, index=False)
     pay_df.to_csv(readiness_path, index=False)
@@ -946,10 +952,11 @@ def process(data_dir: Path, config_path: Path | None, out_dir: Path,
         (pay_df["submission_id"].isna() | (pay_df["submission_id"] == ""))
     ]
     if issue_rows:
-        issues_path = out_dir / "validation_issues.csv"
         pd.DataFrame(issue_rows).to_csv(issues_path, index=False)
         print(f"\nWARNING: {len(issue_rows)} payoff validation issue(s) "
               f"written to {issues_path} -- review before paying.")
+    else:
+        issues_path.unlink(missing_ok=True)
 
     # ------------------------------- summary --------------------------------
     n_complete = int(pay_df["completed"].sum())
@@ -1037,12 +1044,11 @@ def main():
                              "attempting payment computation")
     args = parser.parse_args()
 
-    salt = os.environ.get("BONUS_SEED_SALT", DEFAULT_SALT)
     config_path = find_config(args.config)
     if config_path:
         print(f"Using study config: {config_path}")
     ready = process(args.data_dir, config_path, args.out_dir,
-                    args.recovery_data_dir, salt,
+                    args.recovery_data_dir, BONUS_SEED_SALT,
                     args.include_incomplete, args.include_non_prolific,
                     args.audit_only)
     return 0 if ready else 2

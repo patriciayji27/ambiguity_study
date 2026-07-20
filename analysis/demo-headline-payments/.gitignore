@@ -8,6 +8,8 @@ serviceAccountKey.json
 data/
 recovery-data/
 output/
+audit-archives/
+payment_policy.json
 
 # Python
 __pycache__/
