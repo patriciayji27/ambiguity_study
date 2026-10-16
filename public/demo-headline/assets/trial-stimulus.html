@@ -1002,7 +1002,7 @@ function choose(choice) {
   // ever injected from strings (previously "<i>...</i>" was shown literally to participants).
   const fb = document.getElementById('fb');
   fb.className = 'feedback ' + cls;
-  fb.innerHTML = '<div class="main"><i>Generated outcome:</i> <span class="outcome"></span></div><div class="detail"></div><div class="next-hint">Click <strong>Next</strong> below to continue to the next trial.</div>';
+  fb.innerHTML = '<div class="main"><i>Realized outcome:</i> <span class="outcome"></span></div><div class="detail"></div><div class="next-hint">Click <strong>Next</strong> below to continue to the next trial.</div>';
   fb.querySelector('.outcome').textContent = msg;
   fb.querySelector('.detail').textContent = detail;
 
