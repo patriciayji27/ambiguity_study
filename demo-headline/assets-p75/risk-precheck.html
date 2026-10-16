@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Risk Preference Questions</title>
+<!-- Load revisit-communicate so answers can be sent to reVISit. Path is relative to demo-headline/<assets dir>/. -->
 <script src="../../revisitUtilities/revisit-communicate.js"></script>
 <style>
   * { box-sizing: border-box; }
@@ -182,7 +183,6 @@ const PROBABILITY_CONFIGS = {
 };
 const PROBABILITY_CONFIG = PROBABILITY_CONFIGS[probabilityLevel];
 const VERSION = `urn-direct-certainty-equivalent-${probabilityLevel}-v2`;
-const STORAGE_KEY = `dcl_risk_ce_urn_${probabilityLevel}_v2`;
 const ANSWER_PREFIX = `risk-precheck-${probabilityLevel}`;
 const METRIC_PREFIX = `risk-${probabilityLevel}`;
 const TOTAL_ITEMS = 16;
@@ -237,7 +237,21 @@ function buildItems() {
 }
 
 const ALL_ITEMS = buildItems();
-const participantId = params.get('PROLIFIC_PID') || params.get('participantId') || params.get('participant') || 'anonymous';
+
+// reVISit builds this iframe's URL from the config path plus trialid/id only, so the
+// participant's Prolific ID is read from the parent study URL (same origin).
+function readProlificId() {
+  try {
+    const parentPid = new URLSearchParams(window.parent.location.search).get('PROLIFIC_PID');
+    if (parentPid) return parentPid;
+  } catch (e) {
+    // Parent is not same-origin; fall through to this frame's own URL.
+  }
+  return params.get('PROLIFIC_PID') || '';
+}
+const participantId = readProlificId();
+// Without a Prolific ID, fall back to a random seed so participants do not all share one order.
+const shuffleSeed = participantId || `random_${Date.now()}_${Math.random()}`;
 const root = document.getElementById('root');
 
 function seededHash(str) {
@@ -258,9 +272,9 @@ function mulberry32(seed) {
   };
 }
 
-function shuffle(items, participant) {
+function shuffle(items, seed) {
   const arr = items.slice();
-  const rand = mulberry32(seededHash(`${participant}_${VERSION}`));
+  const rand = mulberry32(seededHash(`${seed}_${VERSION}`));
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -268,29 +282,19 @@ function shuffle(items, participant) {
   return arr;
 }
 
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-if (params.get('reset') === '1') {
-  localStorage.removeItem(STORAGE_KEY);
-  state = null;
-}
-if (!state || state.participantId !== participantId || state.version !== VERSION) {
-  const orderedItems = shuffle(ALL_ITEMS, participantId);
-  state = {
-    participantId,
-    version: VERSION,
-    itemOrder: orderedItems.map(item => item.id),
-    currentIndex: 0,
-    responses: {},
-    introSeen: false,
-    completed: false,
-    startedAt: new Date().toISOString()
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
-
-function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
+// State is kept in memory only. It was previously persisted in localStorage, which leaked
+// across participant sessions in the same browser: a later session could open on the
+// "complete" screen without ever sending answers to reVISit.
+const state = {
+  participantId,
+  version: VERSION,
+  itemOrder: shuffle(ALL_ITEMS, shuffleSeed).map(item => item.id),
+  currentIndex: 0,
+  responses: {},
+  introSeen: false,
+  completed: false,
+  startedAt: new Date().toISOString()
+};
 
 function getOrderedItems() {
   const byId = Object.fromEntries(ALL_ITEMS.map(item => [item.id, item]));
@@ -417,14 +421,12 @@ window.handleKey = function(event) {
 
 window.beginQuestions = function() {
   state.introSeen = true;
-  saveState();
   renderQuestion();
 };
 
 window.goBack = function() {
   if (state.currentIndex > 0) {
     state.currentIndex -= 1;
-    saveState();
     renderQuestion();
   }
 };
@@ -455,12 +457,12 @@ window.submitCurrent = function() {
     submittedAt: new Date().toISOString()
   };
   state.currentIndex += 1;
-  saveState();
 
+  // Answers are posted once, on completion. reVISit only persists answers when Next is
+  // clicked, and Next stays disabled until the reactive "-complete" key arrives.
   if (state.currentIndex >= getOrderedItems().length) {
     state.completed = true;
     state.completedAt = new Date().toISOString();
-    saveState();
     postAnswers(buildAnswers(true));
     renderDone();
   } else {
@@ -576,6 +578,8 @@ function buildAnswers(finalFlag) {
   return answers;
 }
 
+// Prefer revisit-communicate.js; if it failed to load, send the same @REVISIT_COMMS message
+// tagged with this iframe's id. Keys must include the reactive response id in config.json.
 function postAnswers(answers) {
   if (window.Revisit && typeof window.Revisit.postAnswers === 'function') {
     window.Revisit.postAnswers(answers);
@@ -602,14 +606,7 @@ function renderDone() {
   `;
 }
 
-if (state.completed) {
-  postAnswers(buildAnswers(true));
-  renderDone();
-} else if (state.introSeen) {
-  renderQuestion();
-} else {
-  renderIntro();
-}
+renderIntro();
 </script>
 </body>
 </html>
