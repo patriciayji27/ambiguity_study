@@ -19,7 +19,7 @@
     "withProgressBar": true,
     "autoDownloadStudy": false,
     "withSidebar": false,
-    "studyEndMsg": "Thank you for completing this study!",
+    "studyEndMsg": "Thank you for completing this study! Please click the button below to submit your Prolific ID and receive credit for your participation: https://app.prolific.com/submissions/complete?cc=CACWHFTH",
     "urlParticipantIdParam": "PROLIFIC_PID",
     "numSequences": 50
   },
@@ -566,7 +566,25 @@
       "type": "markdown",
       "path": "demo-headline/assets/debrief.md",
       "nextButtonText": "Finish",
-      "response": [],
+      "response": [
+        {
+          "id": "prolific_id",
+          "prompt": "Please enter your Prolific ID",
+          "secondaryText": "If you started this study from Prolific, this field is filled in automatically.",
+          "type": "shortText",
+          "location": "belowStimulus",
+          "required": true,
+          "placeholder": "Your Prolific ID",
+          "paramCapture": "PROLIFIC_PID",
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        }
+      ],
       "style": {
         "maxWidth": "900px",
         "width": "100%",
