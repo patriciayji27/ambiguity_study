@@ -3,7 +3,9 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, test } from 'vitest';
 import { parseStudyConfig } from './parser';
-import { ComponentBlock, StudyConfig, WebsiteComponent } from './types';
+import {
+  ComponentBlock, RadioResponse, StudyConfig, WebsiteComponent,
+} from './types';
 import { Sequence } from '../store/types';
 import { generateSequenceArray } from '../utils/handleRandomSequences';
 
@@ -99,6 +101,14 @@ describe('demo-headline config', () => {
     expect(config.components.debrief.response).toContainEqual(expect.objectContaining({
       id: 'prolific_id', type: 'shortText', required: true, paramCapture: 'PROLIFIC_PID',
     }));
+  });
+
+  test('post-study survey asks the 11 Vanguard investor questionnaire items, all required', () => {
+    const vanguard = (config.components['post-study-survey'].response || [])
+      .filter((response): response is RadioResponse => response.type === 'radio' && /^vanguard_q\d+_/.test(response.id));
+    expect(vanguard.map((response) => response.id.split('_')[1])).toEqual(Array.from({ length: 11 }, (_, i) => `q${i + 1}`));
+    expect(vanguard.map((response) => response.options.length)).toEqual([5, 5, 5, 6, 5, 4, 3, 5, 5, 4, 5]);
+    vanguard.forEach((response) => expect(response.required, response.id).toBe(true));
   });
 });
 

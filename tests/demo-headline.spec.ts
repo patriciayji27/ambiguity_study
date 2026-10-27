@@ -57,6 +57,18 @@ test('demo-headline records HTML choices, risk precheck, and Prolific ID', async
   await page.getByRole('radio', { name: 'Under $1,000' }).click();
   await page.getByRole('radio', { name: 'Weekly', exact: true }).nth(1).click();
   await page.getByRole('radio', { name: '4', exact: true }).click();
+  // Vanguard investor questionnaire (11 required items)
+  await page.getByRole('radio', { name: '2 years or less' }).click();
+  await page.getByRole('radio', { name: 'More than 8 years' }).click();
+  await page.getByRole('radio', { name: 'Somewhat experienced' }).click();
+  await page.getByRole('radio', { name: '1 year or less' }).click();
+  await page.getByRole('radio', { name: 'Stable', exact: true }).click();
+  await page.getByRole('radio', { name: 'Hold onto the investment and sell nothing' }).nth(0).click();
+  await page.getByRole('radio', { name: 'B - moderate volatility' }).click();
+  await page.getByRole('radio', { name: 'Disagree', exact: true }).nth(0).click();
+  await page.getByRole('radio', { name: 'Disagree', exact: true }).nth(1).click();
+  await page.getByRole('radio', { name: 'Hold onto the investment and sell nothing' }).nth(1).click();
+  await page.getByRole('radio', { name: 'Disagree', exact: true }).nth(2).click();
   await page.getByRole('button', { name: 'Continue', exact: true }).click();
 
   // Final page: Prolific ID is required
@@ -89,12 +101,15 @@ test('demo-headline records HTML choices, risk precheck, and Prolific ID', async
     const answers = Object.values(data.answers);
     const precheck = answers.find((a) => a.componentName.endsWith('-risk-precheck'));
     const arm = precheck?.componentName.slice(0, 3);
+    const survey = answers.find((a) => a.componentName === 'post-study-survey')?.answer || {};
     return {
       completed: data.completed,
       trialsWithChoice: answers.filter((a) => ['optionA', 'optionB'].includes(a.answer['investment-choice'] as string)).length,
       precheckComplete: precheck?.answer[`risk-precheck-${arm}-complete`],
       precheckEntered: Object.keys(precheck?.answer || {}).filter((k) => k.includes('-entered-amount-')).length,
       prolificId: answers.find((a) => a.componentName === 'debrief')?.answer.prolific_id,
+      vanguardAnswered: Object.entries(survey).filter(([id, value]) => /^vanguard_q\d+_/.test(id) && value).length,
+      vanguardQ7: survey.vanguard_q7_volatility_choice,
     };
   }), { timeout: 15000 }).toEqual({
     completed: true,
@@ -102,5 +117,7 @@ test('demo-headline records HTML choices, risk precheck, and Prolific ID', async
     precheckComplete: true,
     precheckEntered: 16,
     prolificId: 'E2E_PROLIFIC_ID',
+    vanguardAnswered: 11,
+    vanguardQ7: 'B - moderate volatility',
   });
 });
