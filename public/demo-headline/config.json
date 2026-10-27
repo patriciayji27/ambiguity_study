@@ -30,7 +30,7 @@
       "nextButtonText": "I agree to participate",
       "response": [
         {
-          "id": "prolificID",
+          "id": "consent-agree",
           "prompt": "Do you consent to participate in this study?",
           "required": true,
           "type": "radio",

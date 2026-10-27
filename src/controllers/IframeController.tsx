@@ -6,6 +6,7 @@ import { useCurrentComponent, useCurrentIdentifier } from '../routes/utils';
 import { useStoreDispatch, useStoreActions } from '../store/store';
 import { ParticipantData, WebsiteComponent } from '../parser/types';
 import { PREFIX as BASE_PREFIX } from '../utils/Prefix';
+import { getIframeSrc } from './getIframeSrc';
 
 const PREFIX = '@REVISIT_COMMS';
 
@@ -99,11 +100,13 @@ export function IframeController({ currentConfig, provState, answers }: { curren
     <iframe
       ref={ref}
       style={{ width: '100%', flexGrow: 1, border: 0 }}
-      src={
+      src={getIframeSrc(
         currentConfig.path.startsWith('http')
           ? currentConfig.path
-          : `${BASE_PREFIX}${currentConfig.path}?trialid=${currentComponent}&id=${iframeId}`
-      }
+          : `${BASE_PREFIX}${currentConfig.path}`,
+        currentComponent,
+        iframeId,
+      )}
     />
   );
 }

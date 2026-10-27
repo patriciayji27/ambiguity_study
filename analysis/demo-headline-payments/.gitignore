@@ -1,0 +1,18 @@
+# Credentials -- never commit
+serviceAccountKey.json
+*serviceAccount*.json
+*.pem
+.env
+
+# Participant data & payment outputs -- never commit
+data/
+recovery-data/
+output/
+audit-archives/
+payment_policy.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

@@ -1,0 +1,12 @@
+{
+  "status": "UNAPPROVED",
+  "drawPool": "32-non-practice",
+  "bonusSeedSalt": "demo-headline-v4-bonus",
+  "recoveryWindowStart": "YYYY-MM-DD",
+  "recoveryWindowEnd": "YYYY-MM-DD",
+  "fallbackBonusUsd": null,
+  "approvedBy": [],
+  "approvalDate": null,
+  "irbReview": "PENDING",
+  "rationale": "Document the written decision for non-returners here."
+}
