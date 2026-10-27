@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Risk Preference Questions</title>
-<!-- Load revisit-communicate so answers can be sent to reVISit. Path is relative to demo-headline/<assets dir>/. -->
+<!-- Load revisit-communicate so answers can be sent to reVISit. Path is relative to demo-headline/assets/. -->
 <script src="../../revisitUtilities/revisit-communicate.js"></script>
 <style>
   * { box-sizing: border-box; }
@@ -176,10 +176,10 @@ const params = new URLSearchParams(window.location.search);
 const rawProbabilityParam = params.get('p') || params.get('probability') || '55';
 const probabilityMatch = String(rawProbabilityParam).replace('%', '').match(/\d+(?:\.\d+)?/);
 const pParam = probabilityMatch ? probabilityMatch[0] : '55';
-const probabilityLevel = pParam === '75' || pParam === '0.75' ? 'p75' : 'p55';
+const probabilityLevel = pParam === '25' || pParam === '0.25' ? 'p25' : 'p55';
 const PROBABILITY_CONFIGS = {
   p55: { label: '55%', red: 55, blue: 45 },
-  p75: { label: '75%', red: 75, blue: 25 }
+  p25: { label: '25%', red: 25, blue: 75 }
 };
 const PROBABILITY_CONFIG = PROBABILITY_CONFIGS[probabilityLevel];
 const VERSION = `urn-direct-certainty-equivalent-${probabilityLevel}-v2`;
@@ -188,8 +188,7 @@ const METRIC_PREFIX = `risk-${probabilityLevel}`;
 const TOTAL_ITEMS = 16;
 
 // Hidden modeling grid. Participants do not see expected values.
-// Each probability condition uses the dollar amounts that previously appeared
-// across the mixed p55/p75 precheck, then mirrors them for gain and loss items.
+// Both probability arms use the same dollar amounts, mirrored for gain and loss items.
 const OUTCOME_AMOUNTS = [30, 40, 60, 80, 120, 160, 240, 320];
 const BASE_ITEMS = OUTCOME_AMOUNTS.map((amount, idx) => ({
   log_index: idx + 1,
@@ -282,9 +281,7 @@ function shuffle(items, seed) {
   return arr;
 }
 
-// State is kept in memory only. It was previously persisted in localStorage, which leaked
-// across participant sessions in the same browser: a later session could open on the
-// "complete" screen without ever sending answers to reVISit.
+// State is kept in memory only, so participants sharing a browser never inherit each other's progress.
 const state = {
   participantId,
   version: VERSION,
