@@ -50,7 +50,11 @@ describe('demo-headline config', () => {
         id: 'investment-choice', type: 'reactive', required: true, hidden: true,
       })]);
     });
-    expect(readFileSync(htmlFile(trials[0][1]), 'utf-8')).toContain("'investment-choice':");
+    const html = readFileSync(htmlFile(trials[0][1]), 'utf-8');
+    expect(html).toContain("'investment-choice':");
+    expect(html).toContain("'trial-payoff':");
+    // Fallback when revisit-communicate.js fails to load
+    expect(html).toContain("type: '@REVISIT_COMMS/ANSWERS'");
   });
 
   test('trial URLs match their meta and every chart exists', () => {
@@ -83,6 +87,8 @@ describe('demo-headline config', () => {
       const html = readFileSync(htmlFile(component), 'utf-8');
       expect(html).toMatch(/const ANSWER_PREFIX = `risk-precheck-\$\{probabilityLevel\}`;/);
       expect(html).toMatch(/\[`\$\{ANSWER_PREFIX\}-complete`\]: !!finalFlag/);
+      expect(html).toContain('postAnswers(buildAnswers(true))');
+      expect(html).toContain("type: '@REVISIT_COMMS/ANSWERS'");
       expect(html).toContain(`${arm}: { label: '${arm.slice(1)}%'`);
     });
   });
