@@ -559,6 +559,392 @@
             "fontSize": "15px",
             "lineHeight": 1.45
           }
+        },
+        {
+          "id": "vanguard_q1_spending_period",
+          "prompt": "As I withdraw money from these investments, I plan to spend it over a period of...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "2 years or less",
+              "value": "2 years or less"
+            },
+            {
+              "label": "3-5 years",
+              "value": "3-5 years"
+            },
+            {
+              "label": "6-10 years",
+              "value": "6-10 years"
+            },
+            {
+              "label": "11-15 years",
+              "value": "11-15 years"
+            },
+            {
+              "label": "More than 15 years",
+              "value": "More than 15 years"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q2_holding_period",
+          "prompt": "When making a long-term investment, I plan to keep the money invested for...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "1-2 years",
+              "value": "1-2 years"
+            },
+            {
+              "label": "3-4 years",
+              "value": "3-4 years"
+            },
+            {
+              "label": "5-6 years",
+              "value": "5-6 years"
+            },
+            {
+              "label": "7-8 years",
+              "value": "7-8 years"
+            },
+            {
+              "label": "More than 8 years",
+              "value": "More than 8 years"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q3_investing_experience",
+          "prompt": "When it comes to investing in stock or bond mutual funds or ETFs - or individual stocks or bonds - I would describe myself as...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Very inexperienced",
+              "value": "Very inexperienced"
+            },
+            {
+              "label": "Somewhat inexperienced",
+              "value": "Somewhat inexperienced"
+            },
+            {
+              "label": "Somewhat experienced",
+              "value": "Somewhat experienced"
+            },
+            {
+              "label": "Experienced",
+              "value": "Experienced"
+            },
+            {
+              "label": "Very experienced",
+              "value": "Very experienced"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q4_withdrawal_start",
+          "prompt": "I plan to begin taking money from my investments in...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "1 year or less",
+              "value": "1 year or less"
+            },
+            {
+              "label": "1-2 years",
+              "value": "1-2 years"
+            },
+            {
+              "label": "3-5 years",
+              "value": "3-5 years"
+            },
+            {
+              "label": "6-10 years",
+              "value": "6-10 years"
+            },
+            {
+              "label": "11-15 years",
+              "value": "11-15 years"
+            },
+            {
+              "label": "More than 15 years",
+              "value": "More than 15 years"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q5_income_stability",
+          "prompt": "My current and future income sources (for example, salary, social security, pensions) are...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Very unstable",
+              "value": "Very unstable"
+            },
+            {
+              "label": "Unstable",
+              "value": "Unstable"
+            },
+            {
+              "label": "Somewhat stable",
+              "value": "Somewhat stable"
+            },
+            {
+              "label": "Stable",
+              "value": "Stable"
+            },
+            {
+              "label": "Very stable",
+              "value": "Very stable"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q6_bond_loss_reaction",
+          "prompt": "From September 2008 through October 2008, bonds lost 4%. If I owned a bond investment that lost 4% in two months, I would...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "secondaryText": "(If you owned bonds during this period, please select the answer that matches your actions at that time.)",
+          "options": [
+            {
+              "label": "Sell all the remaining investment",
+              "value": "Sell all the remaining investment"
+            },
+            {
+              "label": "Sell a portion of the remaining investment",
+              "value": "Sell a portion of the remaining investment"
+            },
+            {
+              "label": "Hold onto the investment and sell nothing",
+              "value": "Hold onto the investment and sell nothing"
+            },
+            {
+              "label": "Buy more of the remaining investment",
+              "value": "Buy more of the remaining investment"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q7_volatility_choice",
+          "prompt": "The options below show the greatest 1-year loss and the highest 1-year gain on 3 different hypothetical investments of $10,000. Given the potential gain or loss in any 1 year, I would invest my money in...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "A - minimal volatility (greatest 1-year loss: $164; highest 1-year gain: $593)",
+              "value": "A - minimal volatility"
+            },
+            {
+              "label": "B - moderate volatility (greatest 1-year loss: $1,020; highest 1-year gain: $1,921)",
+              "value": "B - moderate volatility"
+            },
+            {
+              "label": "C - most volatility (greatest 1-year loss: $3,639; highest 1-year gain: $4,229)",
+              "value": "C - most volatility"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q8_sell_in_declines",
+          "prompt": "During market declines, I tend to sell portions of my riskier assets and invest the money in safer assets.",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Strongly disagree",
+              "value": "Strongly disagree"
+            },
+            {
+              "label": "Disagree",
+              "value": "Disagree"
+            },
+            {
+              "label": "Somewhat agree",
+              "value": "Somewhat agree"
+            },
+            {
+              "label": "Agree",
+              "value": "Agree"
+            },
+            {
+              "label": "Strongly agree",
+              "value": "Strongly agree"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q9_invest_on_brief_conversation",
+          "prompt": "I would invest in a mutual fund or ETF (exchange-traded fund) based solely on a brief conversation with a friend, co-worker, or relative.",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Strongly disagree",
+              "value": "Strongly disagree"
+            },
+            {
+              "label": "Disagree",
+              "value": "Disagree"
+            },
+            {
+              "label": "Somewhat agree",
+              "value": "Somewhat agree"
+            },
+            {
+              "label": "Agree",
+              "value": "Agree"
+            },
+            {
+              "label": "Strongly agree",
+              "value": "Strongly agree"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q10_stock_loss_reaction",
+          "prompt": "From September 2008 through November 2008, stocks lost over 31%. If I owned a stock investment that lost about 31% in three months, I would...",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "secondaryText": "(If you owned stocks during this period, please select the answer that matches your actions at that time.)",
+          "options": [
+            {
+              "label": "Sell all the remaining investment",
+              "value": "Sell all the remaining investment"
+            },
+            {
+              "label": "Sell a portion of the remaining investment",
+              "value": "Sell a portion of the remaining investment"
+            },
+            {
+              "label": "Hold onto the investment and sell nothing",
+              "value": "Hold onto the investment and sell nothing"
+            },
+            {
+              "label": "Buy more of the remaining investment",
+              "value": "Buy more of the remaining investment"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
+        },
+        {
+          "id": "vanguard_q11_prefer_stability",
+          "prompt": "Generally, I prefer an investment with little or no ups and downs in value, and I am willing to accept the lower returns these investments may make.",
+          "required": true,
+          "type": "radio",
+          "location": "belowStimulus",
+          "options": [
+            {
+              "label": "Strongly disagree",
+              "value": "Strongly disagree"
+            },
+            {
+              "label": "Disagree",
+              "value": "Disagree"
+            },
+            {
+              "label": "Somewhat agree",
+              "value": "Somewhat agree"
+            },
+            {
+              "label": "Agree",
+              "value": "Agree"
+            },
+            {
+              "label": "Strongly agree",
+              "value": "Strongly agree"
+            }
+          ],
+          "style": {
+            "maxWidth": "900px",
+            "width": "100%",
+            "margin": "0 auto",
+            "fontSize": "15px",
+            "lineHeight": 1.45
+          }
         }
       ]
     },
