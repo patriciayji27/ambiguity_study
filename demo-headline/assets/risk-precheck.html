@@ -288,8 +288,6 @@ const state = {
   itemOrder: shuffle(ALL_ITEMS, shuffleSeed).map(item => item.id),
   currentIndex: 0,
   responses: {},
-  introSeen: false,
-  completed: false,
   startedAt: new Date().toISOString()
 };
 
@@ -331,8 +329,7 @@ function itemText(item) {
       ],
       question: 'You may keep this uncertain option, or exchange it for a guaranteed payment. What guaranteed payment would make you indifferent between keeping the uncertain option and taking the guaranteed payment?',
       inputLabel: '$____',
-      range: `Enter a guaranteed payment from $0 to ${amount}.`,
-      instruction: 'Please enter the dollar amount only.'
+      range: `Enter a guaranteed payment from $0 to ${amount}.`
     };
   }
 
@@ -343,8 +340,7 @@ function itemText(item) {
     ],
     question: 'You may keep this uncertain option, or accept a certain loss instead. What certain loss amount would make you indifferent between keeping the uncertain option and accepting the certain loss?',
     inputLabel: '$____',
-    range: `Enter the size of the certain loss, from $0 to ${amount}.`,
-    instruction: 'Please enter the dollar amount only.'
+    range: `Enter the size of the certain loss, from $0 to ${amount}.`
   };
 }
 
@@ -417,7 +413,6 @@ window.handleKey = function(event) {
 };
 
 window.beginQuestions = function() {
-  state.introSeen = true;
   renderQuestion();
 };
 
@@ -458,7 +453,6 @@ window.submitCurrent = function() {
   // Answers are posted once, on completion. reVISit only persists answers when Next is
   // clicked, and Next stays disabled until the reactive "-complete" key arrives.
   if (state.currentIndex >= getOrderedItems().length) {
-    state.completed = true;
     state.completedAt = new Date().toISOString();
     postAnswers(buildAnswers(true));
     renderDone();
