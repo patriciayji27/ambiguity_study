@@ -81,7 +81,6 @@ const headline = {
   domain: params.get('domain') || ''
 };
 const TRIAL_PRINCIPAL = 1000;
-// p is the last parameter; parseFloat ignores the "?trialid=..." suffix older reVISit builds append.
 const optionBProb = parseFloat(params.get('p'));
 const optionBProbPct = optionBProb * 100;
 const optionBEvPct = optionBProb * 10;
@@ -109,7 +108,6 @@ function appendText(parent, className, text) {
 function renderStimulus() {
   const root = document.getElementById('root');
   const img = document.createElement('img');
-  img.id = 'ci';
   img.src = 'plots/' + chartFile;
   img.alt = 'Chart';
 
