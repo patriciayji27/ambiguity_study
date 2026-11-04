@@ -2,7 +2,7 @@
 
 In this study, you will make a series of investment decisions. On each trial, compare Option A with Option B and choose the option you would prefer to invest in. You can maximize your bonus by using the information provided in the chart and, when shown, the headline to choose the option that you think will perform better over a 60-day time horizon.
 
-Imagine that you have $1,000 to invest on each trial. The investments shown in the task are hypothetical, but after your choice on each trial, we will generate an outcome and show how much you would have made on the investment. Your choices and these generated outcomes will determine your bonus, with no possibility of losing money.
+Imagine that you have $1,000 to invest on each trial. The investments shown in the task are hypothetical, but after your choice on each trial, we will generate an outcome and show how much you would have made on the investment. Your choices and these generated outcomes will determine your bonus.
 
 ## What the chart shows
 
@@ -26,7 +26,7 @@ On the chart:
 - The blue lines and shaded area after Day 0 show possible future returns for Option A.
 - Wider blue projection bands mean the future outcome is more uncertain.
 
-In some main decision trials, a short market headline appears next to the chart; in others, only the chart is shown. The headline gives market context for Option A. It does not describe Option B's fixed payoff rule.
+In some trials, a short market headline appears next to the chart; in others, only the chart is shown. The headline gives market context for Option A. It does not describe Option B's fixed payoff rule.
 
 ## Option B: structured note
 

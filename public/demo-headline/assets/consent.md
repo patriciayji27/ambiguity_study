@@ -15,7 +15,7 @@ You are invited to participate in a research study about how people make financi
 The study takes approximately 15–20 minutes to complete.
 
 ### Risks and Benefits
-There are no known risks beyond those encountered in everyday life. Your decisions will determine your bonus with no possibility of losing money. The investments themselves are hypothetical. Your participation will contribute to research on how people interpret financial visualizations and information.
+There are no known risks beyond those encountered in everyday life. Your decisions will determine your bonus. The investments themselves are hypothetical. Your participation will contribute to research on how people interpret financial visualizations and information.
 
 ### Compensation
 You will receive a base payment of $5 for full participation. Depending on your performance, you will also receive a bonus ranging from $0 to $15.
