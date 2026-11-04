@@ -277,7 +277,7 @@ def trial(arm, name, base, half, trend, seed, headline, meta):
                      sent=headline['valence'], domain=headline['domain'])
     if meta.get('isPractice'):
         query['practice'] = 1
-    query['p'] = p  # keep last: older reVISit builds append "?trialid=..." to the final value
+    query['p'] = p
     return {
         'type': 'website',
         'path': 'demo-headline/assets/trial-stimulus.html?' + urlencode(query),

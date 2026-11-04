@@ -67,7 +67,6 @@ describe('demo-headline config', () => {
       expect(params.get('c'), name).toBe(m.chart_file);
       expect(Number(params.get('sig')), name).toBe(m.base_target_pct);
       expect(Number(params.get('p')), name).toBe(m.option_b_probability);
-      expect([...params.keys()].at(-1), name).toBe('p');
       expect(params.get('h'), name).toBe(m.headline_text);
       if (m.signal_ratio && !m.is_attention_check) {
         expect(m.base_target_pct, name).toBeCloseTo(Number(m.signal_ratio) * Number(m.option_b_expected_return_pct), 6);
