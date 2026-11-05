@@ -7,11 +7,11 @@ Latin-square order. Probability arm (p55 / p25) is between subjects.
   32 = fan (tight, wide) x headline group (ambiguous, none x2, unambiguous) x signal (4)
   signal r = E[A] / E[B]: E[A] is the fan midpoint (Option A's payoff), E[B] = p x 10%.
   Unambiguous headlines are negative at r < 1 and positive at r >= 1 (2 negative, 6 positive),
-  and share topic and history trend with the ambiguous headline of the same fan x signal.
+  and share topic with the ambiguous headline of the same fan x signal.
 
 Each condition has 3 history trends. Three Latin-square lists rotate the trends, so across
-lists every condition appears with every trend and, within a list, the two no-headline
-copies never share a trend.
+lists every condition appears with every trend and, within a list, the three headline levels
+of a fan x signal cell each get a different trend (the two no-headline copies share one).
 
 Run from the repo root with numpy + matplotlib:  python scripts/build_demo_headline.py
 """
@@ -31,7 +31,8 @@ PLOTS = STUDY / 'assets' / 'plots'
 ARMS = {'p55': 0.55, 'p25': 0.25}          # Option B pays +10% with probability p
 FANS = {'tight': 10, 'wide': 20}           # bull/bear half-width around E[A] (pp)
 SIGNALS = [0.5, 1.0, 1.5, 2.0]             # r = E[A] / E[B]
-GROUPS = ['amb', 'nh1', 'nh2', 'unamb']    # g in the trend rotation (f + g + s + list) % 3
+GROUPS = ['amb', 'nh1', 'nh2', 'unamb']    # nh1 / nh2: the two no-headline copies
+HEADLINE_LEVEL = {'nh1': 0, 'nh2': 0, 'amb': 1, 'unamb': 2}  # j in the trend rotation (f + j + s + list) % 3
 TRENDS = ['positive', 'negative', 'flat']  # S1, S2, S3
 NUM_LISTS = 3
 TRIALS_PER_LIST = 34
@@ -337,7 +338,7 @@ def arm_components(arm):
                             {'isPractice': True, 'correct': correct})
     for (f, fan), (g, group), (s, r), t in product(enumerate(FANS), enumerate(GROUPS),
                                                     enumerate(SIGNALS), range(3)):
-        k = (t - f - g - s) % NUM_LISTS
+        k = (t - f - HEADLINE_LEVEL[group] - s) % NUM_LISTS
         headline = pair_headline(k, f * 4 + s, group) if group in ('amb', 'unamb') else None
         name = main_name(arm, f, g, s, t)
         comps[name] = trial(arm, name, round(r * ev_b, 4), FANS[fan], TRENDS[t],
@@ -365,7 +366,7 @@ def arm_components(arm):
 def arm_block(arm):
     lists = []
     for k in range(NUM_LISTS):
-        names = [main_name(arm, f, g, s, (f + g + s + k) % NUM_LISTS)
+        names = [main_name(arm, f, g, s, (f + HEADLINE_LEVEL[GROUPS[g]] + s + k) % NUM_LISTS)
                  for f, g, s in product(range(len(FANS)), range(len(GROUPS)), range(len(SIGNALS)))]
         names += [f'{arm}-{ac}-S{(k + a) % NUM_LISTS + 1}' for a, ac in enumerate(ATTENTION)]
         assert len(names) == TRIALS_PER_LIST

@@ -146,7 +146,7 @@ describe('demo-headline sequences', () => {
     });
   });
 
-  test('history trends are balanced and differ between the two no-headline copies', () => {
+  test('history trends are balanced and differ between none, ambiguous, and unambiguous in each cell', () => {
     sequences.map(mainTrials).forEach((block) => {
       const conditions = block.map((name) => meta(name)).filter((m) => !m.is_attention_check);
       const counts = ['positive', 'negative', 'flat'].map((t) => conditions.filter((m) => m.history_trend === t).length);
@@ -156,8 +156,8 @@ describe('demo-headline sequences', () => {
         .map((m) => [String(m.condition_id).replace(`-${group}-`, '-'), m]));
       const [nh1, nh2, amb, unamb] = ['nh1', 'nh2', 'amb', 'unamb'].map(byCell);
       Object.keys(amb).forEach((cell) => {
-        expect(nh1[cell].history_trend).not.toBe(nh2[cell].history_trend);
-        expect(unamb[cell].history_trend).toBe(amb[cell].history_trend);
+        expect(nh1[cell].history_trend).toBe(nh2[cell].history_trend);
+        expect(new Set([nh1, amb, unamb].map((group) => group[cell].history_trend)).size).toBe(3);
         expect(unamb[cell].headline_domain).toBe(amb[cell].headline_domain);
       });
     });
