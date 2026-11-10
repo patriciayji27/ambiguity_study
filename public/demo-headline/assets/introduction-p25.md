@@ -50,7 +50,7 @@ The dashed green line is not a guaranteed return. It is the expected value of Op
 
 After you choose an option, we generate a hypothetical outcome for that trial based on the information shown in the headline and the chart. For Option B, the payout condition is met with the estimated probability shown on that trial. For Option A, payout condition corresponds to the information shown in the headline and the chart with unknown probability.
 
-We will choose three of these trials at random as the basis for your bonus. On these trials, each hypothetical dollar gained in excess of $15 adds 10 cents to your bonus. There are no negative bonuses. This means your bonus will range from $0 to $15 depending on performance.
+We will choose three of these trials at random as the basis for your bonus. On these trials, each hypothetical dollar gained in excess of $50 adds 10 cents to your bonus. There are no negative bonuses. This means your bonus will range from $0 to $15 depending on performance.
 
 In addition to your bonus, you will receive a flat reward of $5 for full participation.
 
